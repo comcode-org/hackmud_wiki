@@ -4,5 +4,8 @@
     "description": "Knowledge repository for the hackmud video game",
     "author": "ComCODE",
     "license": "CC-BY-NC-SA-4.0",
-    "private": true
+    "private": true,
+    "devDependencies": {
+        "prettier": "^3.0.3"
+    }
 }
