@@ -1,29 +1,31 @@
 {
-    "name": "hackmud_wiki",
-    "version": "0.0.1",
-    "description": "Knowledge repository for the hackmud video game",
-    "author": "ComCODE",
-    "license": "CC-BY-NC-SA-4.0",
-    "private": true,
-    "scripts": {
-        "start": "docusaurus start",
-        "build": "docusaurus build",
-        "swizzle": "docusaurus swizzle",
-        "deploy": "docusaurus deploy",
-        "clear": "docusaurus clear",
-        "serve": "docusaurus serve",
-        "write-translations": "docusaurus write-translations",
-        "write-heading-ids": "docusaurus write-heading-ids"
-    },
-    "dependencies": {
-        "@docusaurus/core": "^2.4.3",
-        "@docusaurus/plugin-content-docs": "^2.4.3",
-        "@docusaurus/theme-classic": "^2.4.3"
-    },
-    "devDependencies": {
-        "prettier": "^3.0.3"
-    },
-    "engines": {
-        "node": ">=16.14"
-    }
+  "name": "hackmud_wiki",
+  "version": "0.0.1",
+  "description": "Knowledge repository for the hackmud video game",
+  "author": "ComCODE",
+  "license": "CC-BY-NC-SA-4.0",
+  "private": true,
+  "scripts": {
+    "start": "docusaurus start",
+    "build": "docusaurus build",
+    "swizzle": "docusaurus swizzle",
+    "deploy": "docusaurus deploy",
+    "clear": "docusaurus clear",
+    "serve": "docusaurus serve",
+    "write-translations": "docusaurus write-translations",
+    "write-heading-ids": "docusaurus write-heading-ids",
+    "lint": "prettier --check .",
+    "fix": "prettier --write ."
+  },
+  "dependencies": {
+    "@docusaurus/core": "^2.4.3",
+    "@docusaurus/plugin-content-docs": "^2.4.3",
+    "@docusaurus/theme-classic": "^2.4.3"
+  },
+  "devDependencies": {
+    "prettier": "^3.0.3"
+  },
+  "engines": {
+    "node": ">=16.14"
+  }
 }
