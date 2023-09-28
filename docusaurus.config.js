@@ -1,6 +1,9 @@
+// @ts-check
+
 const GITHUB_ORG = "comcode-org";
 const GITHUB_PROJECT = "hackmud_wiki";
 
+// See: https://docusaurus.io/docs/api/docusaurus-config
 const config = {
   /**
    * GENERAL CONFIG
@@ -35,6 +38,7 @@ const config = {
   plugins: [
     [
       "@docusaurus/plugin-content-docs",
+      // See: https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#configuration
       {
         // Path of the docs plugin relative to the root. Since it's the only
         // plugin we're using, put it at the top
@@ -59,6 +63,7 @@ const config = {
   themes: [
     [
       "@docusaurus/theme-classic",
+      // See: https://docusaurus.io/docs/api/themes/@docusaurus/theme-classic#configuration
       {
         customCss: require.resolve("./src/css/custom.css"),
       },
@@ -68,6 +73,7 @@ const config = {
   /**
    * GLOBAL THEME CONFIG
    */
+  // See: https://docusaurus.io/docs/api/themes/configuration
   themeConfig: {
     // Supported and default color modes
     colorMode: {

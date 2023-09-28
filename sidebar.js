@@ -1,3 +1,4 @@
+// See: https://docusaurus.io/docs/sidebar
 const sidebars = {
   // Example sidebar that just lists all docs in
   // alphabetical order from file structure in ./docs
