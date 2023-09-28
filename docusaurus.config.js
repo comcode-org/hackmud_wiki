@@ -4,6 +4,7 @@ const GITHUB_ORG = "comcode-org";
 const GITHUB_PROJECT = "hackmud_wiki";
 
 // See: https://docusaurus.io/docs/api/docusaurus-config
+/** @type {import('@docusaurus/types').Config} */
 const config = {
   /**
    * GENERAL CONFIG
@@ -74,6 +75,7 @@ const config = {
    * GLOBAL THEME CONFIG
    */
   // See: https://docusaurus.io/docs/api/themes/configuration
+  /** @type {import('@docusaurus/theme-common').UserThemeConfig} */
   themeConfig: {
     // Supported and default color modes
     colorMode: {

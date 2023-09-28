@@ -23,7 +23,10 @@
     "@docusaurus/theme-classic": "^2.4.3"
   },
   "devDependencies": {
-    "prettier": "^3.0.3"
+    "@docusaurus/module-type-aliases": "^2.4.3",
+    "@tsconfig/docusaurus": "^2.0.1",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
   },
   "engines": {
     "node": ">=16.14"
