@@ -1,0 +1,9 @@
+# Production
+/build
+
+# Generated files
+.docusaurus
+.cache-loader
+
+# Lockfile
+pnpm-lock.yaml
