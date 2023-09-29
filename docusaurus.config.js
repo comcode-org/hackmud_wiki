@@ -6,9 +6,6 @@ const GITHUB_PROJECT = "hackmud_wiki";
 // See: https://docusaurus.io/docs/api/docusaurus-config
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  /**
-   * GENERAL CONFIG
-   */
   // Metadata
   title: "hackmud Wiki",
   tagline: "Knowledge repository for the video game hackmud",
@@ -22,10 +19,6 @@ const config = {
   organizationName: GITHUB_ORG,
   projectName: GITHUB_PROJECT,
 
-  // Fail loudly on broken links
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
-
   // Internationalization options, useful to set even if you only support one
   // language because it generates the `lang` attribute on the `html` tag
   i18n: {
@@ -33,9 +26,7 @@ const config = {
     locales: ["en"],
   },
 
-  /**
-   * INSTALLED PLUGINS
-   */
+  // Installed plugins
   plugins: [
     [
       "@docusaurus/plugin-content-docs",
@@ -45,8 +36,6 @@ const config = {
         // plugin we're using, put it at the top
         routeBasePath: "/",
         // Base url for "Edit This Page" button on content pages
-        // TODO: decide whether to accept *content* edits directly to `main`,
-        // or have a staging branch
         editUrl: `https://github.com/${GITHUB_ORG}/${GITHUB_PROJECT}/edit/main`,
         // Path to custom sidebar definition(s)
         //sidebarPath: require.resolve('./sidebar.js'),
@@ -58,9 +47,7 @@ const config = {
     ],
   ],
 
-  /**
-   * INSTALLED THEMES
-   */
+  // Installed themes
   themes: [
     [
       "@docusaurus/theme-classic",
@@ -71,9 +58,7 @@ const config = {
     ],
   ],
 
-  /**
-   * GLOBAL THEME CONFIG
-   */
+  // Global theme config
   // See: https://docusaurus.io/docs/api/themes/configuration
   /** @type {import('@docusaurus/theme-common').UserThemeConfig} */
   themeConfig: {
@@ -89,21 +74,10 @@ const config = {
     },
     navbar: {
       title: "hackmud Wiki",
-      /*logo: {
-                alt: 'hackmud logo',
-                src: 'img/logo.png'
-            }*/
     },
     footer: {
       copyright: `Copyright © ${new Date().getFullYear()} ComCODE`,
-      /*links: [
-                {
-                    title: 'hackmud',
-                    items: [
-                        {label: 'Steam', href:'https://store.steampowered.com/app/469920/hackmud/'}
-                    ]
-                }
-            ]*/
+      links: [],
     },
   },
 };
