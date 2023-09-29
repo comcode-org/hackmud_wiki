@@ -19,11 +19,16 @@
   "dependencies": {
     "@docusaurus/core": "^2.4.3",
     "@docusaurus/plugin-content-docs": "^2.4.3",
-    "@docusaurus/theme-classic": "^2.4.3"
+    "@docusaurus/theme-classic": "^2.4.3",
+    "@mdx-js/react": "^1.6.22",
+    "react": "^17.0.2"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "^2.4.3",
+    "@docusaurus/theme-common": "^2.4.3",
+    "@docusaurus/types": "^2.4.3",
     "@tsconfig/docusaurus": "^2.0.1",
+    "@types/node": "^20.7.1",
     "prettier": "^3.0.3",
     "typescript": "5.2.2"
   },
