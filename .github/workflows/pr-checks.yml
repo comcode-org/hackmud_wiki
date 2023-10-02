@@ -51,7 +51,7 @@ jobs:
         run: pnpm install
       - name: Run test build
         run: pnpm build
-  
+
   dependency-review:
     name: Check for security/license issues
     runs-on: ubuntu-latest
