@@ -17,5 +17,5 @@
 
 ### Running the development server
 
-1. Run `pnpm dev` in the root directory
+1. Run `pnpm start` in the root directory
 2. Navigate to `https://localhost:3000/hackmud_wiki`
