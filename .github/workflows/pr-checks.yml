@@ -1,0 +1,60 @@
+name: Run PR checks
+run-name: Checks for PR#${{ github.event.pull_request.number }}
+
+on:
+  pull_request:
+    branches:
+      - main
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.head_ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+env:
+  NODE_INSTALL_VERSION: 20.x
+  PNPM_INSTALL_VERSION: 8
+
+jobs:
+  lint:
+    name: Linter check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: ${{ env.PNPM_INSTALL_VERSION }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_INSTALL_VERSION }}
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run prettier
+        run: pnpm lint
+
+  build:
+    name: Build check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: ${{ env.PNPM_INSTALL_VERSION }}
+      - uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_INSTALL_VERSION }}
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: Run test build
+        run: pnpm build
+
+  dependency-review:
+    name: Check for security/license issues
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/dependency-review-action@v3
