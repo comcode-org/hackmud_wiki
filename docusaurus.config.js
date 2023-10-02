@@ -76,8 +76,12 @@ const config = {
       title: "hackmud Wiki",
     },
     footer: {
-      copyright: `Copyright © ${new Date().getFullYear()} ComCODE`,
-      links: [],
+      logo: {
+        alt: 'License: CC BY-NC-SA 4.0',
+        src: 'https://img.shields.io/badge/License-CC_BY--NC--SA_4.0-lightgrey.svg',
+        href: 'https://creativecommons.org/licenses/by-nc-sa/4.0/',
+      },
+      copyright: `Licensed for creative and educational use by ComCODE`,
     },
   },
 };
