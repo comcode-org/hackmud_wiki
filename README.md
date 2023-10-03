@@ -11,7 +11,7 @@
 ### Installation
 
 1. Clone the repository
-1. Set your Node.js runtime to version >= `20.x` (as specified in `.package.json`)
+1. Set your Node.js runtime to version >= `20.x` (as specified in "engines" in [./package.json](./package.json))
 1. Run `pnpm install` in the root directory
 
 ### Running the development server
