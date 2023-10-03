@@ -18,4 +18,4 @@
 
 1. Run `pnpm start` in the root directory
 1. Navigate to the URL specified in the console or allow the browser to open it automatically
-    - e.g. `[SUCCESS] Docusaurus website is running at: <website_url>`
+   - e.g. `[SUCCESS] Docusaurus website is running at: <website_url>`
