@@ -76,7 +76,7 @@ const config = {
       title: "hackmud Wiki",
     },
     footer: {
-      copyright: `Copyright © ${new Date().getFullYear()} ComCODE`,
+      copyright: `copyrongtd © ${new Date().getFullYear()} ComCODE`,
       links: [],
     },
   },
