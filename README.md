@@ -11,11 +11,11 @@
 ### Installation
 
 1. Clone the repository
-2. Run `pnpm install` in the root directory
-3. Set your Node.js runtime to version >= `20.x` (as specified in `.package.json`)
-    - You can achieve this by running `pnpm env use 20.x --global`
+1. Set your Node.js runtime to version >= `20.x` (as specified in `.package.json`)
+1. Run `pnpm install` in the root directory
 
 ### Running the development server
 
 1. Run `pnpm start` in the root directory
-2. Navigate to `https://localhost:3000/hackmud_wiki`
+1. Navigate to the URL specified in the console or allow the browser to open it automatically
+    - e.g. `[SUCCESS] Docusaurus website is running at: <website_url>`
