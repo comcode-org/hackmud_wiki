@@ -39,7 +39,7 @@ const config = {
         // Base url for "Edit This Page" button on content pages
         editUrl: `https://github.com/${GITHUB_ORG}/${GITHUB_PROJECT}/edit/main`,
         // Path to custom sidebar definition(s)
-        //sidebarPath: require.resolve('./sidebar.js'),
+        sidebarPath: require.resolve("./sidebar.js"),
         // Plugins for remark, at the Markdown AST level
         remarkPlugins: [],
         // Plugins for rehype, at the HTML AST level
@@ -75,10 +75,46 @@ const config = {
     },
     navbar: {
       title: "hackmud Wiki",
+      items: [
+        {
+          type: "dropdown",
+          label: "Upgrades",
+          items: [
+            {
+              type: "docSidebar",
+              sidebarId: "lockSidebar",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
+          label: "Lore",
+          items: [
+            {
+              type: "docSidebar",
+              sidebarId: "characterSidebar",
+            },
+            {
+              type: "docSidebar",
+              sidebarId: "eventSidebar",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
+          label: "Scripting",
+          items: [
+            {
+              type: "docSidebar",
+              sidebarId: "scriptingSidebar",
+            },
+          ],
+        },
+      ],
     },
     footer: {
-      copyright:
-        'Licensed by ComCODE with <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a> for creative and educational use.',
+      copyright: `Copyright © ${new Date().getFullYear()} ComCODE`,
+      links: [],
     },
   },
 
