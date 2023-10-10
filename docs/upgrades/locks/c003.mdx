@@ -1,0 +1,45 @@
+---
+title: c003
+---
+
+c003 is one of the very first locks you'll run into in hackmud.
+
+# Solutions
+
+Nc003 expects one of 8 colors and two color triads. c003_triad_1, c003_triad_2.
+
+## Colors
+
+Colors are strings.
+
+green
+lime
+blue
+cyan
+purple
+red
+orange
+yellow
+
+## c003_triads
+
+The c003_triad_1 and c003_triad_2 are the [color triads](https://en.wikipedia.org/wiki/Color_scheme#Triadic) for the color you are attempting. c003_triad_1 and c003_triad_2 are strings.
+
+| c003   | c003_triad_1 | c003_triad_2 |
+| :----- | :----------: | -----------: |
+| green  |    orange    |       purple |
+| yellow |    purple    |         cyan |
+| orange |     blue     |        green |
+| purple |    green     |       yellow |
+| cyan   |    yellow    |          red |
+| lime   |     red      |         blue |
+| red    |     cyan     |         lime |
+| blue   |     lime     |          red |
+
+# Example unlock
+
+eg user.entry_abc123{c003:"red",c003_triad_1:"cyan",c003_triad_2:"lime"}
+
+trust.public_sonoso{c003:"red",c003_triad_1:"cyan",c003_triad_2:"lime"}
+
+314Q159T265B358M979K323GC
