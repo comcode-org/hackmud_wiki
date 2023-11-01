@@ -1,0 +1,45 @@
+/* Hide checkbox used for :checked selector */
+.internalCheckbox {
+  display: none;
+}
+
+/* Style label as a button */
+.spoilerButton {
+  display: inline-block;
+  width: 100%;
+  margin-top: 12px;
+  padding: 5px 11px;
+
+  text-align: center;
+
+  background-color: var(--ifm-color-danger-contrast-background);
+  border: var(--ifm-alert-border-width) solid var(--ifm-color-danger-dark);
+  border-left-width: var(--ifm-alert-border-left-width);
+  border-radius: var(--ifm-alert-border-radius);
+
+  transition:
+    background-color 0.3s,
+    border-color 0.3s,
+    color 0.3s;
+}
+.spoilerButton::before {
+  content: "Click to show spoilers for ";
+}
+/* Show feedback when toggled on */
+.internalCheckbox:checked + .spoilerButton {
+  background-color: #222;
+  border-color: #666;
+  color: #666;
+}
+.internalCheckbox:checked + .spoilerButton::before {
+  content: "Click to hide spoilers for ";
+}
+
+/* Collapse everthing after the button */
+.spoilerButton ~ * {
+  visibility: collapse;
+}
+/* Uncollapse when toggled on */
+.internalCheckbox:checked + .spoilerButton ~ * {
+  visibility: visible;
+}
