@@ -50,4 +50,3 @@ This upgrade process is written for a major version upgrade with breaking change
 1. Upgrade package to next major version
 1. Clean up and migrate any incompatible build flags
 1. Create PR on new `topic branch` and merge with standard process
-
