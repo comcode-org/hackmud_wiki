@@ -27,11 +27,12 @@ Our projects depend on many pre-existing and separately maintained packages. The
 ### Policy & Values
 
 1. We regularly update our packages to make sure that our individual changes are small. This makes debugging and review easier.
-1. We don't update major version changes in packages before they are 'out of beta' or had 'enough bake time'.
 1. We optimistically take compatible versions as they are available.
+1. We update major version changes in packages when they are 'out of beta' and had 'enough bake time'.
+1. We create issues for major version upgrades. Issues are not needed for other upgrades.
+1. We document any upgrade specific decisions in the created issue for that upgrade.
 1. We rely on tools and test automation wherever possible to reduce the cost on the team for package updates.
 1. We use team judgment, validate our assumptions with others and make exceptions to our policy where appropriate.
-1. We document any upgrade specific decisions in the created issue for that upgrade.
 
 ### Upgrade Process
 
