@@ -89,7 +89,7 @@ const config = {
     mdx1Compat: {
       comments: false,
       admonitions: false,
-      headingIds: true,
+      headingIds: false,
     },
   },
 };
