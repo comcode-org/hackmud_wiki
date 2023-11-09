@@ -80,6 +80,18 @@ const config = {
         'Licensed by ComCODE with <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a> for creative and educational use.',
     },
   },
+
+  // Global markdown config
+  // See: https://docusaurus.io/docs/api/docusaurus-config#markdown
+  markdown: {
+    format: "mdx",
+    mermaid: false,
+    mdx1Compat: {
+      comments: false,
+      admonitions: false,
+      headingIds: false,
+    },
+  },
 };
 
 module.exports = config;
