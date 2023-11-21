@@ -52,14 +52,14 @@ This upgrade process is written for a major version upgrade with breaking change
 1. Clean up and migrate any incompatible build flags
 1. Create PR on new `topic branch` and merge with standard process
 
-### Spoiler Policy
+## Spoiler Policy
 
 This is a policy for handling the inclusion of spoilers in wiki content. It defines how to identify a spoiler and how they should fit into the flow of a page.  
 The Spoiler Policy should be treated as a living document, and be updated as necessary when spoiler-related concerns arise.
 
-#### Defining Spoilers
+### Defining Spoilers
 
-##### Upgrades
+#### Upgrades
 
 1. Any feature of a lock that can be discovered by providing incorrect arguments is not a spoiler. For example, given the following:
    ![image](https://github.com/comcode-org/hackmud_wiki/assets/1775803/5d6bd6b4-c346-4bcd-871c-47bb4da5d0bb)
@@ -67,16 +67,16 @@ The Spoiler Policy should be treated as a living document, and be updated as nec
    the fact that `ez_21` takes a `string` which is some kind of unlock command, and that `c003` takes a `string` which is the name of a color, do not need to be obscured.
 1. Explicit _complete_ answers to locks are spoilers. The complete list of unlock commands, and the complete list of colors would be spoilers. Where many solutions exist, using _one_ answer as an example is fine, e.g. `c001:"blue"` in an example invocation of `c001`, or a single `magnara` solution.
 
-##### Lore
+#### Lore
 
 1. For quests/events that are still playable, the entry point should not be considered a spoiler, and should be clearly separated from any further exploration of the script(s). Pretty much everything else is a spoiler, as it depends on the user having figured out the correct arguments to pass to proceed past the entry point.
 1. A short summary of a character should not be considered a spoiler. Details about the character that are _only_ revealed by having progressed through some event or other puzzle are spoilers.
 
-##### Scripting Stuff
+#### Scripting Stuff
 
 Generally not applicable. If there are spoiler concerns in documentation or guides, they can be handled on a case-by-case basis, and the Spoiler Policy can be updated if necessary.
 
-#### Handling Spoilers
+### Handling Spoilers
 
 1. Spoilers should exist somewhere on the same page as the relevant content. There should not be separate spoiler pages for a given topic.
 1. When practical, spoilers should exist in discrete blocks that can be toggled between a hidden and visible state. These blocks should be hidden by default.
