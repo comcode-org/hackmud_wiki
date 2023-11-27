@@ -1,1 +1,4 @@
-*       @comcode-org/reviewers
+# protected files and paths need to be added to this section as they are created
+LICENSE              @comcode-org/reviewers
+CODEOWNERS           @comcode-org/reviewers
+.github              @comcode-org/reviewers
