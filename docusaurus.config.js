@@ -12,8 +12,8 @@ const config = {
   //favicon: 'img/favicon.ico',
 
   // Deployment details
-  url: `https://${GITHUB_ORG}.github.io`,
-  baseUrl: `/${GITHUB_PROJECT}/`,
+  url: `https://wiki.hackmud.com`,
+  baseUrl: `/`,
 
   // GitHub Pages config for CLI deployment
   organizationName: GITHUB_ORG,
