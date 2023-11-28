@@ -13,7 +13,7 @@ const config = {
 
   // Deployment details
   url: `https://${GITHUB_ORG}.github.io`,
-  baseUrl: `/${GITHUB_PROJECT}/`,
+  baseUrl: `/`,
 
   // GitHub Pages config for CLI deployment
   organizationName: GITHUB_ORG,
