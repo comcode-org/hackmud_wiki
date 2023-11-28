@@ -1,4 +1,5 @@
 name: Deploy Docusaurus site to GitHub Pages
+run-name: Deploy ${{ github.ref_name }} branch to GitHub Pages
 
 on:
   push:
