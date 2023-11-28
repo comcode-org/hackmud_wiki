@@ -3,7 +3,7 @@ run-name: Deploy ${{ github.ref_name }} branch to GitHub Pages
 
 on:
   push:
-    branches: ["main", "daniel/deploy-action"]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
