@@ -1,0 +1,59 @@
+name: Deploy Docusaurus site to GitHub Pages
+
+on:
+  push:
+    branches: ["main", "daniel/deploy-action"]
+  workflow_dispatch:
+
+permissions:
+  # Needed to checkout repo
+  contents: read
+  # Needed by actions/deploy-pages
+  # to verify identity and publish
+  id-token: write
+  pages: write
+
+concurrency:
+  group: "deploy-pages"
+  cancel-in-progress: true
+
+env:
+  NODE_INSTALL_VERSION: 20.x
+  PNPM_INSTALL_VERSION: 8
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup
+        with:
+          version: ${{ env.PNPM_INSTALL_VERSION }}
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ env.NODE_INSTALL_VERSION }}
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build site
+        run: pnpm build
+      - name: Upload build artifact
+        uses: actions/upload-pages-artifact@v2
+        with:
+          path: ./build
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: build
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
