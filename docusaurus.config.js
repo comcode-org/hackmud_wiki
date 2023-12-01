@@ -1,4 +1,5 @@
 // @ts-check
+import pluginContentDocsWrapper from "./src/plugins/pluginContentDocsWrapper";
 
 const GITHUB_ORG = "comcode-org";
 const GITHUB_PROJECT = "hackmud_wiki";
@@ -29,7 +30,7 @@ const config = {
   // Installed plugins
   plugins: [
     [
-      "@docusaurus/plugin-content-docs",
+      pluginContentDocsWrapper, // wraps @docusaurus/plugin-content-docs
       // See: https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#configuration
       {
         // Path of the docs plugin relative to the root. Since it's the only
