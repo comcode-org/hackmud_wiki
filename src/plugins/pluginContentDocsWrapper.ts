@@ -6,10 +6,46 @@ import pluginContentDocs, {
 import { LoadContext, Plugin } from "@docusaurus/types";
 import remarkWikiLink from "remark-wiki-link";
 
+const WIKILINK_INTERNAL_CLASSNAME = "wikilink";
+const WIKILINK_NEW_CLASSNAME = "wikilink-new";
+const CREATE_PAGE_SLUG = "/create_a_page";
+
 function getCurrentVersion(content: LoadedContent): LoadedVersion {
-  return content.loadedVersions.find(
+  const currentVersion = content.loadedVersions.find(
     (version) => version.versionName === "current",
   );
+  if (currentVersion == undefined) {
+    throw new Error("could not find current version");
+  }
+  return currentVersion;
+}
+
+function inferFilenameFromName(name: string): string {
+  return name.toLowerCase().replace(/\s/g, "_");
+}
+
+function getSlug(nameOrSlug: string): string {
+  let slug = nameOrSlug;
+  const firstSlashIndex = nameOrSlug.indexOf("/");
+  if (firstSlashIndex < 0) {
+    slug = "/" + inferFilenameFromName(nameOrSlug);
+  } else if (firstSlashIndex > 0) {
+    slug = "/" + nameOrSlug;
+  }
+  return slug;
+}
+
+function nameMatchesAlias(name: string, alias: unknown): boolean {
+  if (typeof alias === "string") {
+    return alias === name;
+  } else if (Array.isArray(alias)) {
+    return alias.includes(name);
+  }
+  return false;
+}
+
+function createNewPageSlug(slug: string) {
+  return `${CREATE_PAGE_SLUG}?path=${slug}`;
 }
 
 function getConfiguredWikiLinkPlugin(
@@ -20,10 +56,10 @@ function getConfiguredWikiLinkPlugin(
     remarkWikiLink,
     {
       // class attached to all generated links
-      wikiLinkClassName: "wikilink",
+      wikiLinkClassName: WIKILINK_INTERNAL_CLASSNAME,
 
       // class attached to resolved links not found in permalinks
-      newClassName: "wikilink-new",
+      newClassName: WIKILINK_NEW_CLASSNAME,
 
       // list of permalinks that exist
       permalinks: docs.map((doc) => doc.permalink),
@@ -49,16 +85,17 @@ function getConfiguredWikiLinkPlugin(
        */
       pageResolver: function (pageName: string): string[] {
         const name = pageName.toLowerCase();
-        const slugReference = name[0] === "/" ? name : "/" + name;
+        const slug = getSlug(pageName);
 
         const relevantDocs = docs.filter(
           (doc) =>
             doc.title.toLowerCase() === name ||
-            doc.permalink.endsWith(slugReference),
+            nameMatchesAlias(name, doc.frontMatter.alias) ||
+            doc.permalink.toLowerCase().endsWith(slug),
         );
 
         if (relevantDocs.length <= 0) {
-          return [slugReference];
+          return [createNewPageSlug(slug)];
         }
 
         const topLevelRelevantDoc = relevantDocs.reduce((docA, docB) => {
@@ -88,7 +125,7 @@ export default async function pluginContentDocsWrapper(
     ...originalPlugin,
     contentLoaded: function (args) {
       options.remarkPlugins.push(getConfiguredWikiLinkPlugin(args.content));
-      return originalPlugin.contentLoaded(args);
+      return originalPlugin.contentLoaded?.(args);
     },
   };
 }
