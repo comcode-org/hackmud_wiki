@@ -2,7 +2,6 @@
  * WIKILINK CLASSES
  */
 /*.wikilink {}*/
-.wikilink-new,
-.wikilink-new:hover {
+a.wikilink-new {
   color: var(--ifm-color-danger);
 }
