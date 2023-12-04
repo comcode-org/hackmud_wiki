@@ -52,10 +52,8 @@ This upgrade process is written for a major version upgrade with breaking change
 1. Clean up and migrate any incompatible build flags
 1. Create PR on new `topic branch` and merge with standard process
 
-## Spoiler Policy
-New content guide goes here
-This is a policy for handling the inclusion of spoilers in wiki content. It defines how to identify a spoiler and how they should fit into the flow of a page.  
-The Spoiler Policy should be treated as a living document, and be updated as necessary when spoiler-related concerns arise.
+
+## Content Guide
 
 ### Defining Spoilers
 
@@ -83,3 +81,75 @@ Generally not applicable. If there are spoiler concerns in documentation or guid
 1. When possible, spoilers should be grouped together into a single section per page/topic. We should not use inline spoiler obfuscation that occurs in random short chunks throughout a page. They should instead exist in their own, collapsible section.
 1. When possible, spoilers should be grouped together into as few of these blocks as possible per page. Small blocks, or other non-standard inline obfuscation, should be avoided.
 1. In cases where the vast majority of the content of a given page would be classified as spoilers, and hiding so much of the content would be impractical or otherwise undesirable, it is sufficient to include an overt message warning readers of the spoilers ahead instead of hiding them. This warning should exist either at the top of the page or immediately after a small introductory section that is itself free of spoilers.
+
+### Adding Spoilers
+1. Spoilers should be added by following the following example:
+```html
+<details>
+  <summary>Lorem Ipsum</summary>
+  Dolor icecream :)
+</details>
+```
+
+### General
+1. Empty articles or placeholder articles should not be created. Only create articles with the intention to provide a majority of the info. 
+1. All articles should pertain to hackmud, its lore, or its mechanics. 
+1. Articles should not be created pertaining to the developers, players, or any other real life person. 
+1. All articles relating to mechanics should be mechanics that are currently in game and not historic or removed info. 
+1. All articles are markdown format, using the mdx file extension. 
+1. Any game text content/output should not be correct for formatting, spelling, or grammar. If information does not pertain to the article, omitting the lines and replacing them with “<lines omitted>” is acceptable.
+1. When in doubt, infer appropriate styling/content from previously written articles. If assumptions are still made, list these in a separate Pull Request so that they can be addressed for content guide improvements.
+
+### Community
+1. Articles detailing or describing user scripts are not allowed.
+1. Articles about third party programs are not allowed. Examples include Autohotkey, Sandboxie, JS Libraries, etc.
+1. Articles that violate the hackmud discord rules or volunteer code of conduct are not permitted.
+
+### Article Titles
+1. Capitalization of in game upgrades, corporations, or entities, should follow in-game styling and capitalization.
+
+### Writing
+1. The overall purpose of an article is to document facts. Speculation should be left out of articles. Citations for information are not required but may be requested during the Pull Request review process. 
+1. All articles should be written in third person with no referential nouns (e.g. you, your). An exception to this is for Tutorials, FAQs, and Writeups. 
+   - Bad Example: `EZ_21 is one of the first upgrades you could find.`
+   - Good Example: `EZ_21 is a tier 1 lock. It is commonly found in t1 NPCs.`
+1. Tutorial info should only be included in dedicated Tutorials, FAQs, and Writeups. 
+1. Articles should only contain information pertaining to content currently implemented in hackmud. Historic or planned content should not be added.
+   - Bad Example: `Previously, in sys.access_log, there would be NPCs that connect to users. These were called Account NPCs.`
+1. When including example code or scripts, they should be added in the markdown inside of a code block with the proper syntax highlighting. 
+```JS
+function(context,args){
+	return `D:)`
+}
+```
+
+#### Spelling
+   1. Articles should be written using American english.
+#### Capitalization
+   1. When referring to upgrades do not capitalize them as proper nouns. 
+
+### Headings
+1. All headings should start at 2 and increment as needed. 
+1. Heading 1 is reserved for the auto-generated article title.
+1. Headings should use sentence capitalization and not title capitalization
+1. If a section of an article is empty or needs information filled in, the pull request should be created as a draft with a comment requesting the help needed.
+1. Headings should never contain links.
+   
+### Linking
+1. Two links should not be immediately back to back to avoid appearing as one link. Comma-separated lists are okay.
+1. Links to other articles should not be excessively repeated. Only link to an article once per Heading section.
+   
+### Dates
+1. Dates should be written in ISO 8601 style, YYYY-MM-DD.
+1. Avoid referring to seasons such as summer, instead use early, mid, late 2023.
+   
+### Commands
+1. When quoting commands they should be formatted like the following: `xena.defender { bank: true, stuff: 123 }`
+   
+### Filenames
+1. [Snakecase](https://en.wikipedia.org/wiki/Snake_case) should be used for filenames.
+   
+### Templates
+1. If a template does not exist for what you want to make, propose a new one via a pull request. Otherwise use existing templates.
+
+
