@@ -1,0 +1,7 @@
+/**
+ * WIKILINK CLASSES
+ */
+/*.wikilink {}*/
+a.wikilink-new {
+  color: var(--ifm-color-danger);
+}
