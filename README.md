@@ -53,7 +53,7 @@ This upgrade process is written for a major version upgrade with breaking change
 1. Create PR on new `topic branch` and merge with standard process
 
 ## Spoiler Policy
-
+New content guide goes here
 This is a policy for handling the inclusion of spoilers in wiki content. It defines how to identify a spoiler and how they should fit into the flow of a page.  
 The Spoiler Policy should be treated as a living document, and be updated as necessary when spoiler-related concerns arise.
 
