@@ -55,42 +55,6 @@ This upgrade process is written for a major version upgrade with breaking change
 
 ## Content Guide
 
-### Defining Spoilers
-
-#### Upgrades
-
-1. Any feature of a lock that can be discovered by providing incorrect arguments is not a spoiler. For example, given the following:
-   ![image](https://github.com/comcode-org/hackmud_wiki/assets/1775803/5d6bd6b4-c346-4bcd-871c-47bb4da5d0bb)
-   ![image](https://github.com/comcode-org/hackmud_wiki/assets/1775803/16cd8f43-91e8-4b45-b49c-f0a3f942d639)
-   the fact that `ez_21` takes a `string` which is some kind of unlock command, and that `c003` takes a `string` which is the name of a color, do not need to be obscured.
-1. Explicit _complete_ answers to locks are spoilers. The complete list of unlock commands, and the complete list of colors would be spoilers. Where many solutions exist, using _one_ answer as an example is fine, e.g. `c001:"blue"` in an example invocation of `c001`, or a single `magnara` solution.
-
-#### Lore
-
-1. For quests/events that are still playable, the entry point should not be considered a spoiler, and should be clearly separated from any further exploration of the script(s). Pretty much everything else is a spoiler, as it depends on the user having figured out the correct arguments to pass to proceed past the entry point.
-1. A short summary of a character should not be considered a spoiler. Details about the character that are _only_ revealed by having progressed through some event or other puzzle are spoilers.
-
-#### Scripting Stuff
-
-Generally not applicable. If there are spoiler concerns in documentation or guides, they can be handled on a case-by-case basis, and the Spoiler Policy can be updated if necessary.
-
-### Handling Spoilers
-
-1. Spoilers should exist somewhere on the same page as the relevant content. There should not be separate spoiler pages for a given topic.
-1. When practical, spoilers should exist in discrete blocks that can be toggled between a hidden and visible state. These blocks should be hidden by default.
-1. When possible, spoilers should be grouped together into a single section per page/topic. We should not use inline spoiler obfuscation that occurs in random short chunks throughout a page. They should instead exist in their own, collapsible section.
-1. When possible, spoilers should be grouped together into as few of these blocks as possible per page. Small blocks, or other non-standard inline obfuscation, should be avoided.
-1. In cases where the vast majority of the content of a given page would be classified as spoilers, and hiding so much of the content would be impractical or otherwise undesirable, it is sufficient to include an overt message warning readers of the spoilers ahead instead of hiding them. This warning should exist either at the top of the page or immediately after a small introductory section that is itself free of spoilers.
-
-### Adding Spoilers
-1. Spoilers should be added by following the following example:
-```html
-<details>
-  <summary>Lorem Ipsum</summary>
-  Dolor icecream :)
-</details>
-```
-
 ### General
 1. Empty articles or placeholder articles should not be created. Only create articles with the intention to provide a majority of the info. 
 1. All articles should pertain to hackmud, its lore, or its mechanics. 
@@ -138,6 +102,43 @@ function(context,args){
 ### Linking
 1. Two links should not be immediately back to back to avoid appearing as one link. Comma-separated lists are okay.
 1. Links to other articles should not be excessively repeated. Only link to an article once per Heading section.
+
+### Defining Spoilers
+
+#### Upgrades
+
+1. Any feature of a lock that can be discovered by providing incorrect arguments is not a spoiler. For example, given the following:
+   ![image](https://github.com/comcode-org/hackmud_wiki/assets/1775803/5d6bd6b4-c346-4bcd-871c-47bb4da5d0bb)
+   ![image](https://github.com/comcode-org/hackmud_wiki/assets/1775803/16cd8f43-91e8-4b45-b49c-f0a3f942d639)
+   the fact that `ez_21` takes a `string` which is some kind of unlock command, and that `c003` takes a `string` which is the name of a color, do not need to be obscured.
+1. Explicit _complete_ answers to locks are spoilers. The complete list of unlock commands, and the complete list of colors would be spoilers. Where many solutions exist, using _one_ answer as an example is fine, e.g. `c001:"blue"` in an example invocation of `c001`, or a single `magnara` solution.
+
+#### Lore
+
+1. For quests/events that are still playable, the entry point should not be considered a spoiler, and should be clearly separated from any further exploration of the script(s). Pretty much everything else is a spoiler, as it depends on the user having figured out the correct arguments to pass to proceed past the entry point.
+1. A short summary of a character should not be considered a spoiler. Details about the character that are _only_ revealed by having progressed through some event or other puzzle are spoilers.
+
+#### Scripting Stuff
+
+Generally not applicable. If there are spoiler concerns in documentation or guides, they can be handled on a case-by-case basis, and the Spoiler Policy can be updated if necessary.
+
+### Handling Spoilers
+
+1. Spoilers should exist somewhere on the same page as the relevant content. There should not be separate spoiler pages for a given topic.
+1. When practical, spoilers should exist in discrete blocks that can be toggled between a hidden and visible state. These blocks should be hidden by default.
+1. When possible, spoilers should be grouped together into a single section per page/topic. We should not use inline spoiler obfuscation that occurs in random short chunks throughout a page. They should instead exist in their own, collapsible section.
+1. When possible, spoilers should be grouped together into as few of these blocks as possible per page. Small blocks, or other non-standard inline obfuscation, should be avoided.
+1. In cases where the vast majority of the content of a given page would be classified as spoilers, and hiding so much of the content would be impractical or otherwise undesirable, it is sufficient to include an overt message warning readers of the spoilers ahead instead of hiding them. This warning should exist either at the top of the page or immediately after a small introductory section that is itself free of spoilers.
+
+### Adding Spoilers
+1. Spoilers should be added by following the following example:
+```html
+<details>
+  <summary>Lorem Ipsum</summary>
+  Dolor icecream :)
+</details>
+```
+
    
 ### Dates
 1. Dates should be written in ISO 8601 style, YYYY-MM-DD.
