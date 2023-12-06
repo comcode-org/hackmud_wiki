@@ -95,7 +95,8 @@ function(context,args){
 ### Headings
 1. All headings should start at 2 and increment as needed. 
 1. Heading 1 is reserved for the auto-generated article title.
-1. Headings should use sentence capitalization and not title capitalization
+1. Headings should use sentence capitalization and not title capitalization.
+2. An exception to heading capitalization are upgrades, corporations, or entities. Those should follow in-game styling and capitalization.
 1. If a section of an article is empty or needs information filled in, the pull request should be created as a draft with a comment requesting the help needed.
 1. Headings should never contain links.
    
