@@ -61,7 +61,7 @@ This upgrade process is written for a major version upgrade with breaking change
 1. Articles should not be created pertaining to the developers, players, or any other real life person. 
 1. All articles relating to mechanics should contain content that is currently in game. Articles should not contain historic or removed info. 
 1. All articles are in markdown format, using the .mdx file extension. 
-1. Any game text content/output should not be corrected for formatting, spelling, or grammar. If information does not pertain to the article, omitting the lines and replacing them with “\<lines omitted\>” is acceptable.
+1. Any game text content/output should not be corrected for formatting, spelling, or grammar. If information does not pertain to the article, omitting the lines and replacing them with "\<lines omitted\>" is acceptable.
 1. When in doubt, infer appropriate styling/content from previously written articles. If assumptions are still made, list these in a separate Pull Request so that they can be addressed for content guide improvements.
 
 ### Community
