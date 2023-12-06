@@ -66,11 +66,11 @@ This upgrade process is written for a major version upgrade with breaking change
 
 ### Community
 1. Articles detailing or describing user scripts are not allowed.
-1. Articles about third party programs are not allowed. Examples include Autohotkey, Sandboxie, JS Libraries, etc.
+1. Articles about third party programs are not allowed. Examples include Autohotkey, Sandboxie, JS libraries, etc.
 1. Articles that violate the hackmud discord rules or volunteer code of conduct are not permitted.
 
 ### Article Titles
-1. Capitalization of in game upgrades, corporations, or entities, should follow in-game styling and capitalization.
+1. Capitalization of in game upgrades, corporations, or entities should follow in-game styling and capitalization.
 
 ### Writing
 1. The overall purpose of an article is to document facts. Speculation should be left out of articles. Citations for information are not required but may be requested during the Pull Request review process. 
@@ -88,15 +88,17 @@ function(context,args){
 ```
 
 #### Spelling
-   1. Articles should be written using American english.
+   1. Articles should be written using American English.
 #### Capitalization
    1. When referring to upgrades do not capitalize them as proper nouns. 
+    1. The name hackmud is always lowercase.
+    1. Even at the start of a sentence, a word or upgrade that should be lowercase is still lowercase.
 
 ### Headings
-1. All headings should start at 2 and increment as needed. 
-1. Heading 1 is reserved for the auto-generated article title.
+1. All headings should start at 2 `#`s and increment as needed. 
+1. Headings with 1 `#` are reserved for the auto-generated article title.
 1. Headings should use sentence capitalization and not title capitalization.
-2. An exception to heading capitalization are upgrades, corporations, or entities. Those should follow in-game styling and capitalization.
+1. Exceptions to heading capitalization are upgrades, corporations, and entities. Those should follow in-game styling and capitalization.
 1. If a section of an article is empty or needs information filled in, the pull request should be created as a draft with a comment requesting the help needed.
 1. Headings should never contain links.
    
