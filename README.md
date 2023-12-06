@@ -56,7 +56,7 @@ This upgrade process is written for a major version upgrade with breaking change
 ## Content Guide
 
 ### General
-1. Empty articles or placeholder articles should not be created. Only create articles with the intention to provide a majority of the info. 
+1. Only create articles with the intention to provide a majority of the info. Empty articles or placeholder articles should not be created.
 1. All articles should pertain to hackmud, its lore, or its mechanics. 
 1. Articles should not be created pertaining to the developers, players, or any other real life person. 
 1. All articles relating to mechanics should be mechanics that are currently in game and not historic or removed info. 
