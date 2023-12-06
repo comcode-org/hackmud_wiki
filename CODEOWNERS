@@ -2,3 +2,4 @@
 LICENSE              @comcode-org/reviewers
 CODEOWNERS           @comcode-org/reviewers
 .github              @comcode-org/reviewers
+pnpm-lock.yaml       @comcode-org/reviewers
