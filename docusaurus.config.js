@@ -1,4 +1,5 @@
 // @ts-check
+import pluginContentDocsWrapper from "./src/plugins/pluginContentDocsWrapper";
 
 const GITHUB_ORG = "comcode-org";
 const GITHUB_PROJECT = "hackmud_wiki";
@@ -12,8 +13,8 @@ const config = {
   //favicon: 'img/favicon.ico',
 
   // Deployment details
-  url: `https://${GITHUB_ORG}.github.io`,
-  baseUrl: `/${GITHUB_PROJECT}/`,
+  url: `https://wiki.hackmud.com`,
+  baseUrl: `/`,
 
   // GitHub Pages config for CLI deployment
   organizationName: GITHUB_ORG,
@@ -29,7 +30,7 @@ const config = {
   // Installed plugins
   plugins: [
     [
-      "@docusaurus/plugin-content-docs",
+      pluginContentDocsWrapper, // wraps @docusaurus/plugin-content-docs
       // See: https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#configuration
       {
         // Path of the docs plugin relative to the root. Since it's the only
@@ -53,7 +54,7 @@ const config = {
       "@docusaurus/theme-classic",
       // See: https://docusaurus.io/docs/api/themes/@docusaurus/theme-classic#configuration
       {
-        customCss: require.resolve("./src/css/custom.css"),
+        customCss: "./src/css/custom.css",
       },
     ],
   ],
@@ -80,6 +81,18 @@ const config = {
         'Licensed by ComCODE with <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a> for creative and educational use.',
     },
   },
+
+  // Global markdown config
+  // See: https://docusaurus.io/docs/api/docusaurus-config#markdown
+  markdown: {
+    format: "mdx",
+    mermaid: false,
+    mdx1Compat: {
+      comments: false,
+      admonitions: false,
+      headingIds: false,
+    },
+  },
 };
 
-module.exports = config;
+export default config;
