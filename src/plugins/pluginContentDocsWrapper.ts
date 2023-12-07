@@ -24,7 +24,7 @@ function inferFilenameFromName(name: string): string {
   return name.toLowerCase().replace(/\s/g, "_");
 }
 
-function getSlug(nameOrSlug: string): string {
+export function getSlug(nameOrSlug: string): string {
   let slug = nameOrSlug;
   const firstSlashIndex = nameOrSlug.indexOf("/");
   if (firstSlashIndex < 0) {
