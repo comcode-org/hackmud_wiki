@@ -35,8 +35,8 @@ jobs:
       - name: Run prettier
         run: pnpm lint
 
-  build:
-    name: Build check
+  test:
+    name: Test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -49,7 +49,9 @@ jobs:
           cache: pnpm
       - name: Install dependencies
         run: pnpm install
-      - name: Run test build
+      - name: Run test
+        run: pnpm test
+      - name: Run build
         run: pnpm build
 
   dependency-review:
