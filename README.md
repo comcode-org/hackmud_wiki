@@ -78,8 +78,8 @@ This upgrade process is written for a major version upgrade with breaking change
 
 1. The overall purpose of an article is to document facts. Speculation should be left out of articles. Citations for information are not required but may be requested during the Pull Request review process.
 1. All articles should be written in third person with no referential nouns (e.g. you, your). An exception to this is for Tutorials, FAQs, and Writeups.
-   - Bad Example: `EZ_21 is one of the first upgrades you could find.`
-   - Good Example: `EZ_21 is a tier 1 lock. It is commonly found in t1 NPCs.`
+   - Bad Example: `ez_21 is one of the first upgrades you could find.`
+   - Good Example: `ez_21 is a tier 1 lock. It is commonly found in t1 NPCs.`
 1. Tutorial info should only be included in dedicated Tutorials, FAQs, and Writeups.
 1. Articles should only contain information pertaining to content currently implemented in hackmud. Historic or planned content should not be added.
    - Bad Example: `Previously, in sys.access_log, there would be NPCs that connect to users. These were called Account NPCs.`
