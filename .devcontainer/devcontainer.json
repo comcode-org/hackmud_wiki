@@ -5,7 +5,7 @@
   "image": "mcr.microsoft.com/devcontainers/universal:2-linux",
   "customizations": {
     "vscode": {
-      "extensions": ["esbenp.prettier-vscode"]
+      "extensions": ["esbenp.prettier-vscode", "unifiedjs.vscode-mdx"]
     }
   }
 }
