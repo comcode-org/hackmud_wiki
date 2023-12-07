@@ -106,7 +106,11 @@ const config = {
           items: [
             {
               type: "docSidebar",
-              sidebarId: "scriptingSidebar",
+              sidebarId: "scriptsLibSidebar",
+            },
+            {
+              type: "docSidebar",
+              sidebarId: "trustScriptsSidebar",
             },
           ],
         },
