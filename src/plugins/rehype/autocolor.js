@@ -1,4 +1,5 @@
 import { findAndReplace } from "hast-util-find-and-replace";
+import { visit } from "unist-util-visit";
 import { fromHtml } from "hast-util-from-html";
 
 const trustUsers = [
@@ -106,7 +107,9 @@ function colorAll(_fullMatch, content) {
 
 const autocolorPlugin = (_config) => {
   return (ast) => {
-    findAndReplace(parent, [regexAutocolor, colorAll]);
+    visit(ast, "text", (node, _index, parent) => {
+      findAndReplace(parent, [regexAutocolor, colorAll]);
+    });
   };
 };
 
