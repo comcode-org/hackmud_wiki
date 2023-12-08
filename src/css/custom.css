@@ -5,3 +5,233 @@
 a.wikilink-new {
   color: var(--ifm-color-danger);
 }
+
+.color-trust {
+  color: #ff8000;
+}
+.color-user {
+  color: #9b9b9b;
+}
+.color-script {
+  color: #1eff00;
+}
+
+.color-cli {
+  color: #ffffff;
+}
+
+.color-gc-text {
+  color: #cacaca;
+}
+.color-gc-q {
+  color: #ff0000;
+}
+.color-gc-t {
+  color: #ff00ec;
+}
+.color-gc-b {
+  color: #fff404;
+}
+.color-gc-m {
+  color: #1eff00;
+}
+.color-gc-k {
+  color: #00ffff;
+}
+.color-gc-end {
+  color: #9b9b9b;
+}
+
+.color-key {
+  color: #00ffff;
+}
+.color-value {
+  color: #ff00ec;
+}
+
+.color-tag[tag="0"] {
+  color: #9b9b9b;
+}
+.color-tag[tag="1"] {
+  color: #ffffff;
+}
+.color-tag[tag="2"] {
+  color: #1eff00;
+}
+.color-tag[tag="3"] {
+  color: #0070dd;
+}
+.color-tag[tag="4"] {
+  color: #b035ee;
+}
+.color-tag[tag="5"] {
+  color: #ff8000;
+}
+.color-tag[tag="6"] {
+  color: #ff8000;
+}
+.color-tag[tag="7"] {
+  color: #ff8000;
+}
+.color-tag[tag="8"] {
+  color: #ff8000;
+}
+.color-tag[tag="9"] {
+  color: #ff8000;
+}
+.color-tag[tag="a"] {
+  color: #000000;
+}
+.color-tag[tag="b"] {
+  color: #3f3f3f;
+}
+.color-tag[tag="c"] {
+  color: #676767;
+}
+.color-tag[tag="d"] {
+  color: #7d0000;
+}
+.color-tag[tag="e"] {
+  color: #8e3434;
+}
+.color-tag[tag="f"] {
+  color: #a34f00;
+}
+.color-tag[tag="g"] {
+  color: #725437;
+}
+.color-tag[tag="h"] {
+  color: #a88600;
+}
+.color-tag[tag="i"] {
+  color: #b2934a;
+}
+.color-tag[tag="j"] {
+  color: #939500;
+}
+.color-tag[tag="k"] {
+  color: #495225;
+}
+.color-tag[tag="l"] {
+  color: #299400;
+}
+.color-tag[tag="m"] {
+  color: #23381b;
+}
+.color-tag[tag="n"] {
+  color: #00535b;
+}
+.color-tag[tag="o"] {
+  color: #324a4c;
+}
+.color-tag[tag="p"] {
+  color: #0073a6;
+}
+.color-tag[tag="q"] {
+  color: #385a6c;
+}
+.color-tag[tag="r"] {
+  color: #010067;
+}
+.color-tag[tag="s"] {
+  color: #507aa1;
+}
+.color-tag[tag="t"] {
+  color: #601c81;
+}
+.color-tag[tag="u"] {
+  color: #43314c;
+}
+.color-tag[tag="v"] {
+  color: #8c0069;
+}
+.color-tag[tag="w"] {
+  color: #973984;
+}
+.color-tag[tag="x"] {
+  color: #880024;
+}
+.color-tag[tag="y"] {
+  color: #762e4a;
+}
+.color-tag[tag="z"] {
+  color: #101215;
+}
+.color-tag[tag="A"] {
+  color: #ffffff;
+}
+.color-tag[tag="B"] {
+  color: #cacaca;
+}
+.color-tag[tag="C"] {
+  color: #9b9b9b;
+}
+.color-tag[tag="D"] {
+  color: #ff0000;
+}
+.color-tag[tag="E"] {
+  color: #ff8383;
+}
+.color-tag[tag="F"] {
+  color: #ff8000;
+}
+.color-tag[tag="G"] {
+  color: #f3aa6f;
+}
+.color-tag[tag="H"] {
+  color: #fbc803;
+}
+.color-tag[tag="I"] {
+  color: #ffd863;
+}
+.color-tag[tag="J"] {
+  color: #fff404;
+}
+.color-tag[tag="K"] {
+  color: #f3f998;
+}
+.color-tag[tag="L"] {
+  color: #1eff00;
+}
+.color-tag[tag="M"] {
+  color: #b3ff9b;
+}
+.color-tag[tag="N"] {
+  color: #00ffff;
+}
+.color-tag[tag="O"] {
+  color: #8fe6ff;
+}
+.color-tag[tag="P"] {
+  color: #0070dd;
+}
+.color-tag[tag="Q"] {
+  color: #a4e3ff;
+}
+.color-tag[tag="R"] {
+  color: #0000ff;
+}
+.color-tag[tag="S"] {
+  color: #7ab2f4;
+}
+.color-tag[tag="T"] {
+  color: #b035ee;
+}
+.color-tag[tag="U"] {
+  color: #e6c4ff;
+}
+.color-tag[tag="V"] {
+  color: #ff00ec;
+}
+.color-tag[tag="W"] {
+  color: #ff96e0;
+}
+.color-tag[tag="X"] {
+  color: #ff0070;
+}
+.color-tag[tag="Y"] {
+  color: #ff6a98;
+}
+.color-tag[tag="Z"] {
+  color: #0c112b;
+}
