@@ -1,5 +1,6 @@
 // @ts-check
 import pluginContentDocsWrapper from "./src/plugins/pluginContentDocsWrapper.ts";
+import autocolorPlugin from "./src/plugins/rehype/autocolor";
 
 const GITHUB_ORG = "comcode-org";
 const GITHUB_PROJECT = "hackmud_wiki";
@@ -43,7 +44,7 @@ const config = {
         // Plugins for remark, at the Markdown AST level
         remarkPlugins: [],
         // Plugins for rehype, at the HTML AST level
-        rehypePlugins: [],
+        rehypePlugins: [autocolorPlugin],
       },
     ],
   ],
