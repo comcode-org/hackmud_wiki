@@ -1,5 +1,5 @@
 // @ts-check
-import pluginContentDocsWrapper from "./src/plugins/pluginContentDocsWrapper";
+import pluginContentDocsWrapper from "./src/plugins/pluginContentDocsWrapper.ts";
 
 const GITHUB_ORG = "comcode-org";
 const GITHUB_PROJECT = "hackmud_wiki";
