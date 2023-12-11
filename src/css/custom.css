@@ -49,189 +49,189 @@ a.wikilink-new {
   color: #ff00ec;
 }
 
-.color-tag[tag="0"] {
+.color-tag[data-tag="0"] {
   color: #9b9b9b;
 }
-.color-tag[tag="1"] {
+.color-tag[data-tag="1"] {
   color: #ffffff;
 }
-.color-tag[tag="2"] {
+.color-tag[data-tag="2"] {
   color: #1eff00;
 }
-.color-tag[tag="3"] {
+.color-tag[data-tag="3"] {
   color: #0070dd;
 }
-.color-tag[tag="4"] {
+.color-tag[data-tag="4"] {
   color: #b035ee;
 }
-.color-tag[tag="5"] {
+.color-tag[data-tag="5"] {
   color: #ff8000;
 }
-.color-tag[tag="6"] {
+.color-tag[data-tag="6"] {
   color: #ff8000;
 }
-.color-tag[tag="7"] {
+.color-tag[data-tag="7"] {
   color: #ff8000;
 }
-.color-tag[tag="8"] {
+.color-tag[data-tag="8"] {
   color: #ff8000;
 }
-.color-tag[tag="9"] {
+.color-tag[data-tag="9"] {
   color: #ff8000;
 }
-.color-tag[tag="a"] {
+.color-tag[data-tag="a"] {
   color: #000000;
 }
-.color-tag[tag="b"] {
+.color-tag[data-tag="b"] {
   color: #3f3f3f;
 }
-.color-tag[tag="c"] {
+.color-tag[data-tag="c"] {
   color: #676767;
 }
-.color-tag[tag="d"] {
+.color-tag[data-tag="d"] {
   color: #7d0000;
 }
-.color-tag[tag="e"] {
+.color-tag[data-tag="e"] {
   color: #8e3434;
 }
-.color-tag[tag="f"] {
+.color-tag[data-tag="f"] {
   color: #a34f00;
 }
-.color-tag[tag="g"] {
+.color-tag[data-tag="g"] {
   color: #725437;
 }
-.color-tag[tag="h"] {
+.color-tag[data-tag="h"] {
   color: #a88600;
 }
-.color-tag[tag="i"] {
+.color-tag[data-tag="i"] {
   color: #b2934a;
 }
-.color-tag[tag="j"] {
+.color-tag[data-tag="j"] {
   color: #939500;
 }
-.color-tag[tag="k"] {
+.color-tag[data-tag="k"] {
   color: #495225;
 }
-.color-tag[tag="l"] {
+.color-tag[data-tag="l"] {
   color: #299400;
 }
-.color-tag[tag="m"] {
+.color-tag[data-tag="m"] {
   color: #23381b;
 }
-.color-tag[tag="n"] {
+.color-tag[data-tag="n"] {
   color: #00535b;
 }
-.color-tag[tag="o"] {
+.color-tag[data-tag="o"] {
   color: #324a4c;
 }
-.color-tag[tag="p"] {
+.color-tag[data-tag="p"] {
   color: #0073a6;
 }
-.color-tag[tag="q"] {
+.color-tag[data-tag="q"] {
   color: #385a6c;
 }
-.color-tag[tag="r"] {
+.color-tag[data-tag="r"] {
   color: #010067;
 }
-.color-tag[tag="s"] {
+.color-tag[data-tag="s"] {
   color: #507aa1;
 }
-.color-tag[tag="t"] {
+.color-tag[data-tag="t"] {
   color: #601c81;
 }
-.color-tag[tag="u"] {
+.color-tag[data-tag="u"] {
   color: #43314c;
 }
-.color-tag[tag="v"] {
+.color-tag[data-tag="v"] {
   color: #8c0069;
 }
-.color-tag[tag="w"] {
+.color-tag[data-tag="w"] {
   color: #973984;
 }
-.color-tag[tag="x"] {
+.color-tag[data-tag="x"] {
   color: #880024;
 }
-.color-tag[tag="y"] {
+.color-tag[data-tag="y"] {
   color: #762e4a;
 }
-.color-tag[tag="z"] {
+.color-tag[data-tag="z"] {
   color: #101215;
 }
-.color-tag[tag="A"] {
+.color-tag[data-tag="A"] {
   color: #ffffff;
 }
-.color-tag[tag="B"] {
+.color-tag[data-tag="B"] {
   color: #cacaca;
 }
-.color-tag[tag="C"] {
+.color-tag[data-tag="C"] {
   color: #9b9b9b;
 }
-.color-tag[tag="D"] {
+.color-tag[data-tag="D"] {
   color: #ff0000;
 }
-.color-tag[tag="E"] {
+.color-tag[data-tag="E"] {
   color: #ff8383;
 }
-.color-tag[tag="F"] {
+.color-tag[data-tag="F"] {
   color: #ff8000;
 }
-.color-tag[tag="G"] {
+.color-tag[data-tag="G"] {
   color: #f3aa6f;
 }
-.color-tag[tag="H"] {
+.color-tag[data-tag="H"] {
   color: #fbc803;
 }
-.color-tag[tag="I"] {
+.color-tag[data-tag="I"] {
   color: #ffd863;
 }
-.color-tag[tag="J"] {
+.color-tag[data-tag="J"] {
   color: #fff404;
 }
-.color-tag[tag="K"] {
+.color-tag[data-tag="K"] {
   color: #f3f998;
 }
-.color-tag[tag="L"] {
+.color-tag[data-tag="L"] {
   color: #1eff00;
 }
-.color-tag[tag="M"] {
+.color-tag[data-tag="M"] {
   color: #b3ff9b;
 }
-.color-tag[tag="N"] {
+.color-tag[data-tag="N"] {
   color: #00ffff;
 }
-.color-tag[tag="O"] {
+.color-tag[data-tag="O"] {
   color: #8fe6ff;
 }
-.color-tag[tag="P"] {
+.color-tag[data-tag="P"] {
   color: #0070dd;
 }
-.color-tag[tag="Q"] {
+.color-tag[data-tag="Q"] {
   color: #a4e3ff;
 }
-.color-tag[tag="R"] {
+.color-tag[data-tag="R"] {
   color: #0000ff;
 }
-.color-tag[tag="S"] {
+.color-tag[data-tag="S"] {
   color: #7ab2f4;
 }
-.color-tag[tag="T"] {
+.color-tag[data-tag="T"] {
   color: #b035ee;
 }
-.color-tag[tag="U"] {
+.color-tag[data-tag="U"] {
   color: #e6c4ff;
 }
-.color-tag[tag="V"] {
+.color-tag[data-tag="V"] {
   color: #ff00ec;
 }
-.color-tag[tag="W"] {
+.color-tag[data-tag="W"] {
   color: #ff96e0;
 }
-.color-tag[tag="X"] {
+.color-tag[data-tag="X"] {
   color: #ff0070;
 }
-.color-tag[tag="Y"] {
+.color-tag[data-tag="Y"] {
   color: #ff6a98;
 }
-.color-tag[tag="Z"] {
+.color-tag[data-tag="Z"] {
   color: #0c112b;
 }
