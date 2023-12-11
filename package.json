@@ -23,9 +23,10 @@
     "@docusaurus/theme-classic": "^3.0.1",
     "@mdx-js/react": "^3.0.0",
     "hast-util-find-and-replace": "^5.0.1",
-    "hast-util-from-html": "^2.0.1",
+    "hastscript": "^8.0.0",
     "react": "^18.2.0",
     "remark-wiki-link": "^2.0.1",
+    "unist-builder": "^4.0.0",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
