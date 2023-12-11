@@ -1,6 +1,7 @@
+import { h } from "hastscript";
 import { findAndReplace } from "hast-util-find-and-replace";
 import { visit } from "unist-util-visit";
-import { fromHtml } from "hast-util-from-html";
+import { u } from "unist-builder";
 
 const trustUsers = [
   "accts",
@@ -19,14 +20,14 @@ const trustUsers = [
 ];
 
 // Matches (( <content > ))
-const regexAutocolor = /\(\((.*?)\)\)/g;
+const regexAutocolorBlock = /\(\((.*?)\)\)/g;
 
 // Matches <user>.<script> *except* when preceeded by a #
 // This is so that in #s.<user>.<script>, the s.<user> portion won't be colored
 const regexScript =
   /\b(?<!#)([a-z_][a-z0-9_]{0,24})\.([a-z_][a-z0-9_]{0,24})\b/gi;
 
-// Matches ~<one character long color tag><content>~
+// Matches %<one character long color tag><content>%
 const regexColorTag = /%([0-9a-zA-z])(.+?)%/g;
 
 // Matches <key>: <value> with an arbitrary amount of spaces around the :
@@ -46,23 +47,26 @@ const regexGC =
 
 function colorScript(_fullMatch, user, script) {
   const isTrust = trustUsers.includes(user);
-  return (
-    `<span class="color-${isTrust ? "trust" : "user"}">${user}</span>` +
-    "." +
-    `<span class="color-script">${script}</span>`
-  );
+  return [
+    h("span", { class: `color-${isTrust ? "trust" : "user"}` }, user),
+    u("text", "."),
+    h("span", { class: "color-script" }, script),
+  ];
 }
 
 function colorTag(_fullMatch, tag, inner) {
-  return `<span class="color-tag" tag="${tag}">${inner}</span>`;
+  return h("span", { class: "color-tag", "data-tag": tag }, inner);
 }
 
 function colorKvp(_fullMatch, key, value) {
   if (!value) {
-    return `<span class="color-key">${key}</span>: `;
-  } else {
-    return `<span class="color-key">${key}</span>: <span class="color-value">${value}</span>`;
+    return h("span", { class: "color-key" }, key);
   }
+  return [
+    h("span", { class: "color-key" }, key),
+    u("text", ": "),
+    h("span", { class: "color-value" }, value),
+  ];
 }
 
 function colorGC(_fullMatch, q, t, b, m, k, units) {
@@ -77,38 +81,47 @@ function colorGC(_fullMatch, q, t, b, m, k, units) {
 
   for (const [letter, value] of letters_and_values) {
     if (value) {
+      out.push(h("span", { class: "color-gc-text" }, value));
       out.push(
-        `<span class="color-gc-text">${value}</span><span class="color-gc-${letter}">${letter.toUpperCase()}</span>`,
+        h("span", { class: `color-gc-${letter}` }, letter.toUpperCase()),
       );
     }
   }
   if (units) {
-    out.push(`<span class="color-gc-text">${units}</span>`);
+    out.push(h("span", { class: "color-gc-text" }, units));
   }
-  out.push(`<span class="color-gc-end">GC</span>`);
+  out.push(h("span", { class: "color-gc-end" }, "GC"));
 
-  return out.join("");
+  return out;
 }
 
-function colorAll(_fullMatch, content) {
-  const orig = content;
-  const passes = [
-    { regex: regexColorTag, replacer: colorTag },
-    { regex: regexKvp, replacer: colorKvp },
-    { regex: regexScript, replacer: colorScript },
-    { regex: regexGC, replacer: colorGC },
-  ];
-  for (const { regex, replacer } of passes) {
-    content = content.replace(regex, replacer);
-  }
-  const result = fromHtml(content, { fragment: true });
-  return result.children;
+function colorBlock(_fullMatch, content) {
+  return content;
 }
 
 const autocolorPlugin = (_config) => {
   return (ast) => {
     visit(ast, "text", (node, _index, parent) => {
-      findAndReplace(parent, [regexAutocolor, colorAll]);
+      // Docusaurus forces <code> elements with HTML children into full-width code
+      // blocks, which breaks the DOM tree. Disallow coloring in <code> for now.
+      if (regexAutocolor.test(node.value) && parent.tagName != "code") {
+        const stubNode = {
+          type: "root",
+          children: [node],
+        };
+        findAndReplace(stubNode, [
+          [regexAutocolorBlock, colorBlock],
+          [regexColorTag, colorTag],
+          [regexKvp, colorKvp],
+          [regexScript, colorScript],
+          [regexGC, colorGC],
+        ]);
+        parent.children.splice(
+          parent.children.indexOf(node),
+          1,
+          ...stubNode.children,
+        );
+      }
     });
   };
 };
