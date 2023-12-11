@@ -104,7 +104,7 @@ const autocolorPlugin = (_config) => {
     visit(ast, "text", (node, _index, parent) => {
       // Docusaurus forces <code> elements with HTML children into full-width code
       // blocks, which breaks the DOM tree. Disallow coloring in <code> for now.
-      if (regexAutocolor.test(node.value) && parent.tagName != "code") {
+      if (regexAutocolorBlock.test(node.value) && parent.tagName != "code") {
         const stubNode = {
           type: "root",
           children: [node],
