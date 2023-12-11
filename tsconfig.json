@@ -3,14 +3,10 @@
   "extends": "@docusaurus/tsconfig/tsconfig.json",
   "compilerOptions": {
     "baseUrl": ".",
-    /**
-     * Fixes local lint error when importing JS files into TS modules (docusaurus already allows this.)
-     */
+    // Fixes local lint error when importing JS files into TS modules (docusaurus already allows this.)
     "allowJs": true,
-    /**
-     * Allows including an explicit file extension in an import, in case it is being inferred incorrectly.
-     * - Use this when webpack is warning about a caching error.
-     */
+    // Allows including an explicit file extension in an import, in case it is being inferred incorrectly.
+    // - Use this when webpack is warning about a caching error.
     "allowImportingTsExtensions": true
   }
 }
