@@ -6,79 +6,6 @@ a.wikilink-new {
   color: var(--ifm-color-danger);
 }
 
-.color-trust {
-  color: #ff8000;
-}
-.color-user {
-  color: #9b9b9b;
-}
-.color-script {
-  color: #1eff00;
-}
-
-.color-cli {
-  color: #ffffff;
-}
-
-.color-gc-text {
-  color: #cacaca;
-}
-.color-gc-q {
-  color: #ff0000;
-}
-.color-gc-t {
-  color: #ff00ec;
-}
-.color-gc-b {
-  color: #fff404;
-}
-.color-gc-m {
-  color: #1eff00;
-}
-.color-gc-k {
-  color: #00ffff;
-}
-.color-gc-end {
-  color: #9b9b9b;
-}
-
-.color-key {
-  color: #00ffff;
-}
-.color-value {
-  color: #ff00ec;
-}
-
-.color-tag[data-tag="0"] {
-  color: #9b9b9b;
-}
-.color-tag[data-tag="1"] {
-  color: #ffffff;
-}
-.color-tag[data-tag="2"] {
-  color: #1eff00;
-}
-.color-tag[data-tag="3"] {
-  color: #0070dd;
-}
-.color-tag[data-tag="4"] {
-  color: #b035ee;
-}
-.color-tag[data-tag="5"] {
-  color: #ff8000;
-}
-.color-tag[data-tag="6"] {
-  color: #ff8000;
-}
-.color-tag[data-tag="7"] {
-  color: #ff8000;
-}
-.color-tag[data-tag="8"] {
-  color: #ff8000;
-}
-.color-tag[data-tag="9"] {
-  color: #ff8000;
-}
 .color-tag[data-tag="a"] {
   color: #000000;
 }
@@ -157,22 +84,35 @@ a.wikilink-new {
 .color-tag[data-tag="z"] {
   color: #101215;
 }
-.color-tag[data-tag="A"] {
+.color-tag[data-tag="A"],
+.color-tag[data-tag="1"],
+.color-cli {
   color: #ffffff;
 }
-.color-tag[data-tag="B"] {
+.color-tag[data-tag="B"],
+.color-gc-text {
   color: #cacaca;
 }
-.color-tag[data-tag="C"] {
+.color-tag[data-tag="C"],
+.color-tag[data-tag="0"],
+.color-user,
+.color-gc-end {
   color: #9b9b9b;
 }
-.color-tag[data-tag="D"] {
+.color-tag[data-tag="D"],
+.color-gc-q {
   color: #ff0000;
 }
 .color-tag[data-tag="E"] {
   color: #ff8383;
 }
-.color-tag[data-tag="F"] {
+.color-tag[data-tag="F"],
+.color-trust,
+.color-tag[data-tag="5"],
+.color-tag[data-tag="6"],
+.color-tag[data-tag="7"],
+.color-tag[data-tag="8"],
+.color-tag[data-tag="9"] {
   color: #ff8000;
 }
 .color-tag[data-tag="G"] {
@@ -184,25 +124,32 @@ a.wikilink-new {
 .color-tag[data-tag="I"] {
   color: #ffd863;
 }
-.color-tag[data-tag="J"] {
+.color-tag[data-tag="J"],
+.color-gc-b {
   color: #fff404;
 }
 .color-tag[data-tag="K"] {
   color: #f3f998;
 }
-.color-tag[data-tag="L"] {
+.color-tag[data-tag="L"],
+.color-tag[data-tag="2"],
+.color-script,
+.color-gc-m {
   color: #1eff00;
 }
 .color-tag[data-tag="M"] {
   color: #b3ff9b;
 }
-.color-tag[data-tag="N"] {
+.color-tag[data-tag="N"],
+.color-gc-k,
+.color-key {
   color: #00ffff;
 }
 .color-tag[data-tag="O"] {
   color: #8fe6ff;
 }
-.color-tag[data-tag="P"] {
+.color-tag[data-tag="P"],
+.color-tag[data-tag="3"] {
   color: #0070dd;
 }
 .color-tag[data-tag="Q"] {
@@ -214,13 +161,16 @@ a.wikilink-new {
 .color-tag[data-tag="S"] {
   color: #7ab2f4;
 }
-.color-tag[data-tag="T"] {
+.color-tag[data-tag="T"],
+.color-tag[data-tag="4"] {
   color: #b035ee;
 }
 .color-tag[data-tag="U"] {
   color: #e6c4ff;
 }
-.color-tag[data-tag="V"] {
+.color-tag[data-tag="V"],
+.color-gc-t,
+.color-value {
   color: #ff00ec;
 }
 .color-tag[data-tag="W"] {
