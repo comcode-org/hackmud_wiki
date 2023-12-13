@@ -1,6 +1,6 @@
 // @ts-check
 import pluginContentDocsWrapper from "./src/plugins/pluginContentDocsWrapper.ts";
-import autocolorPlugin from "./src/plugins/rehype/autocolor";
+import autocolorPlugin from "./src/plugins/rehype/autocolor.js";
 
 const GITHUB_ORG = "comcode-org";
 const GITHUB_PROJECT = "hackmud_wiki";
