@@ -9,6 +9,7 @@
     "start": "docusaurus start",
     "build": "docusaurus build",
     "test": "jest",
+    "coverage": "jest --coverage",
     "swizzle": "docusaurus swizzle",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
