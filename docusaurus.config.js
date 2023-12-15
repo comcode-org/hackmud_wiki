@@ -119,7 +119,7 @@ const config = {
     },
     footer: {
       copyright:
-        'Licensed by ComCODE with <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a> for creative and educational use.',
+        'Licensed by <a href="https://comcode.org/" target="_blank" rel="noopener">ComCODE</a> with <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a> for creative and educational use.',
     },
   },
 
