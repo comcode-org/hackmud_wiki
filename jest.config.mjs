@@ -1,5 +1,5 @@
 /** @type {import('ts-jest').JestConfigWithTsJest} */
-module.exports = {
+const config = {
   preset: "ts-jest/presets/js-with-ts-esm",
   testEnvironment: "node",
   /**
@@ -15,3 +15,5 @@ module.exports = {
     "<rootDir>/src/**/*(*.)+(spec|test).{[jt]s?(x),mjs}",
   ],
 };
+
+export default config;
