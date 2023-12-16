@@ -17,7 +17,7 @@ Article PRs should be reviewed using the [PR review process here](https://github
 3. Use `describe` to log what code is being tested and use `it` to describe a specification of the module.
 
 ```ts
-/** @file {criticalMathModule.ts} */
+/** @file criticalMathModule.test.ts */
 import { describe, expect, it } from "@jest/globals";
 import { isEven } from "./criticalMathModule";
 
