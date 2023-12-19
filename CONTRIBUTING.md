@@ -8,4 +8,8 @@ This document builds on the [default contributing.md](https://github.com/comcode
 
 ## How to make changes to code
 
+### Creating tests
+
+Test files must be within `/src`, with a file name ending in `.test.<ext>`, where `<ext>` is one of `js` `mjs` `jsx` `ts` `tsx`.
+
 ## How to review a code change

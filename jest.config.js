@@ -2,8 +2,6 @@
 module.exports = {
   preset: "ts-jest/presets/js-with-ts-esm",
   testEnvironment: "node",
-  testMatch: [
-    "**/__tests__/**/*.{[jt]s?(x),mjs}",
-    "**/*(*.)+(spec|test).{[jt]s?(x),mjs}",
-  ],
+  // tests must be within /src, with .spec or .test before file extension
+  testMatch: ["<rootDir>/src/**/*(*.)+(spec|test).{[jt]s?(x),mjs}"],
 };
