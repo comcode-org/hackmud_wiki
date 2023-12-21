@@ -1,34 +1,65 @@
 ---
-title: lock template
+title: ez_40
 ---
 
 ## Description
 
-In-game description of the lock, typically from sys.upgrades { full: true }
+Halperyon Systems' EZ 40. Wait, I can't remember if 1 is prime or not.
 
-### Subheader for stats
+### Stats
 
-stats?
+This upgrade has no additional stats and only spawns at 'kiddie' rarity.
 
 ## Behavior
 
-A less spoilery description of the locks behavior.
+When encountered, the ez_40 will ask for a string on its first parameter, and a digit (number) on its second parameter.
 
-Example outputs when given arguments correctly or incorrectly.
-Example outputs should be iniside code blocks,
+<details>
+<summary>Spoilers for ez_40's parameters</summary>
+```
+Incorrect parameters:
+
+> > user.fakeloc123 \{ ez_40: 1 }
+> > LOCK_ERROR
+> > 1 is not a string.
+
+> > user.fakeloc123 \{ ez_40: "release", ez_prime: "1" }
+> > LOCK_ERROR
+> > "1" is not a number.
+
+Correct parameters:
+
+> > user.fakeloc123 \{ ez_40: "release" }
+> > LOCK_ERROR
+> > Required unlock parameter ez_prime is missing.
+
+> > user.fakeloc123 \{ ez_40: "release", ez_prime: 2 }
+> > LOCK_ERROR
+> > 2 is not the correct prime.
 
 ```
-Success: True
-```
+</details>
 
 ## Solving
 
-The arguments required for solving
-
-### Subheaders that describe individual arguments
-
-Spoilery description of each argument. Maybe a table of answers, maybe how a value is found.
+<details>
+<summary>Spoilers for c002's solutions</summary>
+Possible strings for first parameter: "open", "unlock", "release"
+Possible digits for second parameter: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97
+</details>
 
 ## Example unlock
 
-An example potentional solution written out for the cli
+<details>
+<summary>Spoilers for c002's solutions</summary>
+```
+
+> > user.fakeloc123 \{ ez_40: "release", c002_complement: "purple" }
+> > WARNING: BINMAT security shell inactive. Intelligent defense system offline.
+> > LOCK_UNLOCKED
+> > System <user> breached.
+> > Connection terminated.
+
+```
+</details>
+```
