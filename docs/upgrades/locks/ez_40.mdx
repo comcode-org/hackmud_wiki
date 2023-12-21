@@ -1,0 +1,62 @@
+---
+title: ez_40
+---
+
+## Description
+
+Halperyon Systems' EZ 40. Wait, I can't remember if 1 is prime or not.
+
+### Stats
+
+This upgrade has no additional stats and only spawns at 'kiddie' rarity.
+
+## Behavior
+
+When encountered, the ez_40 will ask for a string on its first parameter, and a digit (number) on its second parameter.
+
+```
+Incorrect parameters:
+
+>>user.fakeloc123 { ez_40: 1 }
+LOCK_ERROR
+1 is not a string.
+
+>>user.fakeloc123 { ez_40: "release", ez_prime: "1" }
+LOCK_ERROR
+"1" is not a number.
+
+Correct parameters:
+
+>>user.fakeloc123 { ez_40: "release" }
+LOCK_ERROR
+Required unlock parameter ez_prime is missing.
+
+>>user.fakeloc123 { ez_40: "release", ez_prime: 2 }
+LOCK_ERROR
+2 is not the correct prime.
+```
+
+## Solving
+
+<details>
+  <summary>Spoilers for ez_40 example unlock</summary>
+
+```
+>> user.fakeloc123 { ez_40: "release", ez_prime: 43 }
+WARNING: BINMAT security shell inactive. Intelligent defense system offline.
+LOCK_UNLOCKED
+System <user> breached.
+Connection terminated.
+```
+
+</details>
+
+<details>
+  <summary>Spoilers for ez_40's solutions</summary>
+
+Possible strings for first parameter: "open", "unlock", "release"
+
+Possible digits for second parameter: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53,
+59, 61, 67, 71, 73, 79, 83, 89, 97
+
+</details>
