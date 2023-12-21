@@ -19,23 +19,23 @@ When encountered, the ez_40 will ask for a string on its first parameter, and a 
 ```
 Incorrect parameters:
 
-> > user.fakeloc123 \{ ez_40: 1 }
-> > LOCK_ERROR
-> > 1 is not a string.
+>> user.fakeloc123 { ez_40: 1 }
+LOCK_ERROR
+1 is not a string.
 
-> > user.fakeloc123 \{ ez_40: "release", ez_prime: "1" }
-> > LOCK_ERROR
-> > "1" is not a number.
+>> user.fakeloc123 { ez_40: "release", ez_prime: "1" }
+LOCK_ERROR
+"1" is not a number.
 
 Correct parameters:
 
-> > user.fakeloc123 \{ ez_40: "release" }
-> > LOCK_ERROR
-> > Required unlock parameter ez_prime is missing.
+>> user.fakeloc123 { ez_40: "release" }
+LOCK_ERROR
+Required unlock parameter ez_prime is missing.
 
-> > user.fakeloc123 \{ ez_40: "release", ez_prime: 2 }
-> > LOCK_ERROR
-> > 2 is not the correct prime.
+>> user.fakeloc123 { ez_40: "release", ez_prime: 2 }
+LOCK_ERROR
+2 is not the correct prime.
 
 ```
 </details>
@@ -54,11 +54,11 @@ Possible digits for second parameter: 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37
 <summary>Spoilers for c002's solutions</summary>
 ```
 
-> > user.fakeloc123 \{ ez_40: "release", c002_complement: "purple" }
-> > WARNING: BINMAT security shell inactive. Intelligent defense system offline.
-> > LOCK_UNLOCKED
-> > System <user> breached.
-> > Connection terminated.
+>> user.fakeloc123 { ez_40: "release", c002_complement: "purple" }
+WARNING: BINMAT security shell inactive. Intelligent defense system offline.
+LOCK_UNLOCKED
+System <user> breached.
+Connection terminated.
 
 ```
 </details>
