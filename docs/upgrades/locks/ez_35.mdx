@@ -1,34 +1,28 @@
 ---
-title: lock template
+title: ez_35
 ---
 
 ## Description
 
-In-game description of the lock, typically from sys.upgrades { full: true }
+Halperyon Systems' EZ 35. A step up from the 21, but no
+t much.
 
-### Subheader for stats
+### Stats
 
-stats?
+ez_35 has no additional stats. The upgrade only spawns at 'noob' rarity.
 
 ## Behavior
 
-A less spoilery description of the locks behavior.
-
-Example outputs when given arguments correctly or incorrectly.
-Example outputs should be iniside code blocks,
-
-```
-Success: True
-```
+When encountered, the lock expects a string as its first parameter, and a digit as its second. Each parameter will return corresponding errors if an incorrect data type is input.
 
 ## Solving
 
-The arguments required for solving
-
-### Subheaders that describe individual arguments
-
-Spoilery description of each argument. Maybe a table of answers, maybe how a value is found.
+<details>
+  <summary>Solving</summary>
+  The first parameter's possible strings are, "open", "unlock", and "release".
+  The second parameter is a single digit, input as a number, ranging from 0 to 9.
+</details>
 
 ## Example unlock
 
-An example potentional solution written out for the cli
+user.fakeloc123 \{ ez_35: "open", digit: 0 }
