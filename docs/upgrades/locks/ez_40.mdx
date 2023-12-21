@@ -17,21 +17,21 @@ When encountered, the ez_40 will ask for a string on its first parameter, and a 
 ```
 Incorrect parameters:
 
-user.fakeloc123 { ez_40: 1 }
+>>user.fakeloc123 { ez_40: 1 }
 LOCK_ERROR
 1 is not a string.
 
-user.fakeloc123 { ez_40: "release", ez_prime: "1" }
+>>user.fakeloc123 { ez_40: "release", ez_prime: "1" }
 LOCK_ERROR
 "1" is not a number.
 
 Correct parameters:
 
-user.fakeloc123 { ez_40: "release" }
+>>user.fakeloc123 { ez_40: "release" }
 LOCK_ERROR
 Required unlock parameter ez_prime is missing.
 
-user.fakeloc123 { ez_40: "release", ez_prime: 2 }
+>>user.fakeloc123 { ez_40: "release", ez_prime: 2 }
 LOCK_ERROR
 2 is not the correct prime.
 ```
