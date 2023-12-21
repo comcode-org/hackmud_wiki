@@ -148,7 +148,7 @@ Generally not applicable. If there are spoiler concerns in documentation or guid
 
 1. Spoilers should be added by following the following example:
 
-```html
+```markdown
 <details>
   <summary>Lorem Ipsum</summary>
 
