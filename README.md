@@ -102,13 +102,13 @@ function(context,args){
 
 #### Disambiguating Parameters, Args, Key:Value Pairs
 
-1. **Arguments** - Informal? The named parameters enclosed in {}
-2. **Args** - 
-1. **Key** - The name half of a key:value pair.
-2. **Value** - The content of a key:value pair.
-3. **Key:Value Pair** - Hackmud? 
-4. **Parameters** - Formal?
-5. **Params**
+1. **Arguments** - Data passed into functions or the command line. Can also refer to key:value pairs.
+1. **Args** - The name of the parameter which is passed into a user script function.
+1. **Key** - The name part of a key:value pair.
+1. **Value** - The data part of a key:value pair.
+1. **Key:Value Pair** - A group of named content.
+1. **Parameters** - The names of data passed into functions.
+1. **Params** - Short version of parameters. Do not use unless a quote of in-game content.
 
 ### Headings
 
