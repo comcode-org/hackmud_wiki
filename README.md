@@ -128,6 +128,7 @@ function(context,args){
 
 #### Upgrades
 
+1. The full list of argument keys are not a spoiler.
 1. Any feature of a lock that can be discovered by providing incorrect arguments is not a spoiler. For example, given the following:
 
    ![image](https://github.com/comcode-org/hackmud_wiki/assets/1775803/5d6bd6b4-c346-4bcd-871c-47bb4da5d0bb)
@@ -135,7 +136,7 @@ function(context,args){
    ![image](https://github.com/comcode-org/hackmud_wiki/assets/1775803/16cd8f43-91e8-4b45-b49c-f0a3f942d639)  
    the fact that `ez_21` takes a `string` which is some kind of unlock command, and that `c003` takes a `string` which is the name of a color, do not need to be obscured.
 
-1. Explicit _complete_ answers to locks are spoilers. The complete list of unlock commands, and the complete list of colors would be spoilers. Where many solutions exist, using _one_ answer as an example is fine, e.g. `c001: "blue"` in an example invocation of `c001`, or a single `magnara` solution.
+1. Explicit complete answers to locks are spoilers. The complete list of unlock commands, and the complete list of colors would be spoilers. Where many solutions exist, using one answer value as an example is fine, e.g. `c001: "blue"` in an example invocation of `c001`, or a single `magnara` value.
 
 #### Lore
 
