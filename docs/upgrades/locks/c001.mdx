@@ -1,0 +1,66 @@
+---
+title: c001
+---
+
+> The CORE 'c' line of locks provides entry level protection for the concerned consumer. The 001 is the first of that line.
+
+## Stats
+
+c001 has no additional stats. The upgrade only spawns at 'kiddie' rarity.
+
+## Behavior
+
+When loaded on a targetted [[loc]], the following text will be displayed when no arguments are provided:
+
+```
+>>user.fakeloc123 {}
+LOCK_ERROR
+Denied access by CORE c001 lock.
+```
+
+When providing any truthy argument (or an empty string `""`), the lock will state that the correct color was not provided, unless the correct color is provided:
+
+```
+>>user.fakeloc123 { c001: "not_a_color" }
+LOCK_ERROR
+not_a_color is not the correct color name.
+```
+
+## Solving
+
+<details>
+<summary>Spoilers for c001's solutions</summary>
+
+### c001
+
+c001 will choose a random color from a list of the following 8 colors, as a string, for its solution:
+
+- green
+- lime
+- yellow
+- orange
+- red
+- purple
+- blue
+- cyan
+
+## color_digit
+
+`color_digit` is the length of the selected color. For example, the color `"lime"` has the `color_digit` value `4`.
+
+</details>
+
+## Example Unlock
+
+<details>
+<summary>Spoilers for c001's solutions</summary>
+
+```
+>>user.loc { c001: "lime", color_digit: 4 }
+WARNING: BINMAT security shell inactive. Intelligent defense system offline.
+LOCK_UNLOCKED
+System <user> breached.
+Connection terminated.
+```
+
+</details>
