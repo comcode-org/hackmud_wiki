@@ -44,6 +44,10 @@ c001 will choose a random color from a list of the following 8 colors, as a stri
 - blue
 - cyan
 
+## color_digit
+
+`color_digit` is the length of the selected color. For example, the color `"lime"` has the `color_digit` value `4`.
+
 </details>
 
 ## Example Unlock
@@ -52,7 +56,7 @@ c001 will choose a random color from a list of the following 8 colors, as a stri
 <summary>Spoilers for c001's solutions</summary>
 
 ```
->>user.loc { c001: "lime" }
+>>user.loc { c001: "lime", color_digit: 4 }
 WARNING: BINMAT security shell inactive. Intelligent defense system offline.
 LOCK_UNLOCKED
 System <user> breached.
