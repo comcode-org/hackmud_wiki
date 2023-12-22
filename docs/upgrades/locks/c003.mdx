@@ -2,19 +2,53 @@
 title: c003
 ---
 
-c003 is one of the very first locks you'll run into in hackmud.
+> c003 from CORE. Additional complexity, additional cost.
 
-## Solutions
+c003 is a tier 1 lock created by the CORE corporation.
+
+## Stats
+
+c003 has no additional stats. The upgrade only spawns at 'kiddie' rarity.
+
+## Behavior
+
+When loaded on a targetted [[loc]], the following text will be displayed when no arguments are provided:
+
+```
+>>user.fakeloc123 {}
+LOCK_ERROR
+Denied access by CORE c003 lock.
+```
+
+When providing any truthy argument (or an empty string `""`), the lock will state that the correct color was not provided, unless the correct color is provided:
+
+```
+>>user.fakeloc123 { c001: "not_a_color" }
+LOCK_ERROR
+"not_a_color" is not the correct color name.
+```
+
+## Solving
+
+c003 requires three arguments to fully solve: (( %Nc003%, %Nc003_triad_1%, and %Nc003_triad_2%. ))
+
+### Example unlock
 
 <details>
-<summary>Spoilers for c003's solutions</summary>
+<summary>Spoilers</summary>
 
-(( %Nc003% )) expects one of 8 colors and two color triads. c003_triad_1, c003_triad_2.
+user.entry_abc123 \{ c003: "red", c003_triad_1: "cyan", c003_triad_2: "lime" }
 
-## Colors
+</details>
 
-Colors are strings.
+### c003
 
+<details>
+<summary>Spoilers</summary>
+
+The (( %Nc003% )) key expects one of eight colors. (( %Nc003% )) is a string.
+
+Possible colors are:
 green
 lime
 blue
@@ -24,9 +58,14 @@ red
 orange
 yellow
 
-## c003_triads
+</details>
 
-The c003_triad_1 and c003_triad_2 are the [color triads](https://en.wikipedia.org/wiki/Color_scheme#Triadic) for the color you are attempting. c003_triad_1 and c003_triad_2 are strings.
+### c003_triads
+
+<details>
+<summary>Spoilers</summary>
+
+The (( %Nc003_triad_1% )) and (( %Nc003_triad_2% )) are the [color triads](https://en.wikipedia.org/wiki/Color_scheme#Triadic) for the color you are attempting. (( %Nc003_triad_1% )) and (( %Nc003_triad_2% )) are strings.
 
 | c003   | c003_triad_1 | c003_triad_2 |
 | :----- | :----------: | -----------: |
@@ -38,13 +77,5 @@ The c003_triad_1 and c003_triad_2 are the [color triads](https://en.wikipedia.or
 | lime   |     red      |         blue |
 | red    |     cyan     |         lime |
 | blue   |     lime     |          red |
-
-# Example unlock
-
-user.entry_abc123 \{ c003: "red", c003_triad_1: "cyan", c003_triad_2: "lime" }
-
-trust.public_sonoso \{ c003: "red", c003_triad_1: "cyan", c003_triad_2: "lime" }
-
-314Q159T265B358M979K323GC
 
 </details>
