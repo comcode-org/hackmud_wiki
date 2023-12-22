@@ -23,7 +23,7 @@ Denied access by CORE c003 lock.
 When providing any truthy argument (or an empty string `""`), the lock will state that the correct color was not provided, unless the correct color is provided:
 
 ```
->>user.fakeloc123 { c001: "not_a_color" }
+>>user.fakeloc123 { c003: "not_a_color" }
 LOCK_ERROR
 "not_a_color" is not the correct color name.
 ```
@@ -37,7 +37,13 @@ c003 requires three arguments to fully solve: (( %Nc003%, %Nc003_triad_1%, and %
 <details>
 <summary>Spoilers</summary>
 
-user.entry_abc123 \{ c003: "red", c003_triad_1: "cyan", c003_triad_2: "lime" }
+```
+>>user.fakeloc123 { c003: "red", c003_triad_1: "cyan", c003_triad_2: "lime" }
+WARNING: BINMAT security shell inactive. Intelligent defense system offline.
+LOCK_UNLOCKED
+System user breached.
+Connection terminated.
+```
 
 </details>
 
@@ -46,7 +52,7 @@ user.entry_abc123 \{ c003: "red", c003_triad_1: "cyan", c003_triad_2: "lime" }
 <details>
 <summary>Spoilers</summary>
 
-The (( %Nc003% )) key expects one of eight colors. (( %Nc003% )) is a string.
+The (( %Nc003% )) argument expects one of eight colors. (( %Nc003% )) is a string.
 
 Possible colors are:
 green
@@ -65,7 +71,7 @@ yellow
 <details>
 <summary>Spoilers</summary>
 
-The (( %Nc003_triad_1% )) and (( %Nc003_triad_2% )) are the [color triads](https://en.wikipedia.org/wiki/Color_scheme#Triadic) for the color you are attempting. (( %Nc003_triad_1% )) and (( %Nc003_triad_2% )) are strings.
+The (( %Nc003_triad_1% )) and (( %Nc003_triad_2% )) arguments are the [color triads](https://en.wikipedia.org/wiki/Color_scheme#Triadic) for the color you are attempting. (( %Nc003_triad_1% )) and (( %Nc003_triad_2% )) are strings.
 
 | c003   | c003_triad_1 | c003_triad_2 |
 | :----- | :----------: | -----------: |
