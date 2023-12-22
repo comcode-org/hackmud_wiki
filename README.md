@@ -130,11 +130,10 @@ function(context,args){
 
 1. The full list of argument keys are not a spoiler.
 1. Any feature of a lock that can be discovered by providing missing or incorrect arguments is not a spoiler. For example, given the following:
-![image](https://github.com/comcode-org/hackmud_wiki/assets/1775803/2b1a826a-9a73-490c-9019-f5649583af0c)
 
-the fact that the EZ_21 lock expects an `EZ_21` key, that the value of `EZ_21` argument should be a string, and that said string is some kind of unlock command do not need to be obscured.
-
-1. Explicit complete answers to locks are spoilers. The complete list of unlock commands, and the complete list of colors would be spoilers. Where many solutions exist, using one answer value as an example is fine, e.g. `c001: "blue"` in an example invocation of `c001`, or a single `magnara` value.
+   ![image](https://github.com/comcode-org/hackmud_wiki/assets/1775803/2b1a826a-9a73-490c-9019-f5649583af0c)  
+   the fact that the EZ_21 lock expects an `EZ_21` key, that the value of `EZ_21` argument should be a string, and that said string is some kind of unlock command do not need to be obscured.
+1. Example full unlock invocations are spoilers. The complete list of unlock commands or for `c003` the complete list of colors would be spoilers.
 
 #### Lore
 
