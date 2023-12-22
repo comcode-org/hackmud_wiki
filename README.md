@@ -100,6 +100,16 @@ function(context,args){
 1. The name hackmud is always lowercase.
 1. Even at the start of a sentence, a word or upgrade that should be lowercase is still lowercase.
 
+#### Disambiguating Parameters, Args, Key:Value Pairs
+
+1. **Arguments** - Informal? The named parameters enclosed in {}
+2. **Args** - 
+1. **Key** - The name half of a key:value pair.
+2. **Value** - The content of a key:value pair.
+3. **Key:Value Pair** - Hackmud? 
+4. **Parameters** - Formal?
+5. **Params**
+
 ### Headings
 
 1. All headings should start at 2 `#`s and increment as needed.
