@@ -133,6 +133,7 @@ function(context,args){
 
    ![image](https://github.com/comcode-org/hackmud_wiki/assets/1775803/2b1a826a-9a73-490c-9019-f5649583af0c)  
    the fact that the EZ_21 lock expects an `EZ_21` key, that the value of the `EZ_21` argument should be a string, and that said string is some kind of unlock command do not need to be obscured.
+
 1. Example full unlock invocations are spoilers. The complete list of unlock commands or for `c003` the complete list of colors would be spoilers.
 
 #### Lore
