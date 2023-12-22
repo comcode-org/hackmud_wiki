@@ -103,12 +103,12 @@ function(context,args){
 #### Disambiguating Parameters, Args, Key:Value Pairs
 
 1. **Arguments** - Data passed into functions or the command line. Can also refer to key:value pairs.
-1. **Args** - The name of the parameter which is passed into a user script function.
+1. **args** - The default name of the second parameter which is passed into a user script function. We do not refer to Arguments as Args or args as shorthand in articles.
 1. **Key** - The name part of a key:value pair.
 1. **Value** - The data part of a key:value pair.
-1. **Key:Value Pair** - A group of named content.
+1. **Key:Value Pair** - A group of named content. Sometimes seen as kvp. We do not use kvp in wiki articles.
 1. **Parameters** - The names of data passed into functions.
-1. **Params** - Short version of parameters. Do not use unless a quote of in-game content.
+1. **Params** - Short version of parameters. We do not refer to Parameters as Params or params as shorthand in articles. Do not use unless a quote of in-game content.
 
 ### Headings
 
