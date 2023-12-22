@@ -13,6 +13,7 @@ c001 has no additional stats. The upgrade only spawns at 'kiddie' rarity.
 When loaded on a targetted [[loc]], the following text will be displayed when no arguments are provided:
 
 ```
+>>user.fakeloc123 {}
 LOCK_ERROR
 Denied access by CORE c001 lock.
 ```
@@ -20,8 +21,9 @@ Denied access by CORE c001 lock.
 When providing any truthy argument (or an empty string `""`), the lock will state that the correct color was not provided, unless the correct color is provided:
 
 ```
+>>user.fakeloc123 { c001: "not_a_color" }
 LOCK_ERROR
-<input> is not the correct color name.
+not_a_color is not the correct color name.
 ```
 
 ## Solving
