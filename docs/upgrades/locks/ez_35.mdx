@@ -46,18 +46,22 @@ Connection terminated.
 <details>
   <summary>Spoilers for ez_35's solutions.</summary>
   The first parameter's possible strings are, "open", "unlock", and "release".
-  When given the correct string, the lock will return an error giving instructions for the second parameter.
   
 ```
->>user.fakeloc123 {}
+>>user.fakeloc123 { }
 LOCK_ERROR
 Denied access by HALPERYON SYSTEMS EZ_35 lock.
+```
 
-> > user.fakeloc123 { ez_35: "release" }
-> > LOCK_ERROR
-> > Required unlock parameter digit is missing.
+When given the correct string, the lock will return an error giving instructions for the second parameter.
 
 ```
+>> user.fakeloc123 { ez_35: "release" }
+LOCK_ERROR
+Required unlock parameter digit is missing.
+
+```
+
 </details>
 
 ## digit
@@ -65,13 +69,12 @@ Denied access by HALPERYON SYSTEMS EZ_35 lock.
 <details>
 <summary>Spoilers for ez_35's solutions.</summary>
 The second parameter is a single digit, input as a number, ranging from 0 to 9.
+
 ```
 
-> > user.fakeloc123 { ez_35: "release", digit: 1 }
-> > Connection terminated
+user.fakeloc123 { ez_35: "release", digit: 1 }
 
 ```
 
 </details>
-
 ```
