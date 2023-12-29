@@ -2,31 +2,68 @@
 title: c003
 ---
 
-c003 is one of the very first locks you'll run into in hackmud.
+> c003 from CORE. Additional complexity, additional cost.
 
-# Solutions
+c003 is a tier 1 lock created by the CORE corporation.
+
+## Stats
+
+c003 has no additional stats. The upgrade only spawns at 'kiddie' rarity.
+
+## Behavior
+
+When loaded on a targetted [[loc]], the following text will be displayed when no arguments are provided:
+
+```
+>>user.fakeloc123 {}
+LOCK_ERROR
+Denied access by CORE c003 lock.
+```
+
+When providing any truthy argument (or an empty string `""`), the lock will state that the correct color was not provided, unless the correct color is provided:
+
+```
+>>user.fakeloc123 { c003: "not_a_color" }
+LOCK_ERROR
+"not_a_color" is not the correct color name.
+```
+
+## Solving
+
+c003 requires three arguments to fully solve: (( %Nc003%, %Nc003_triad_1%, and %Nc003_triad_2%. ))
+
+### Example unlock
 
 <details>
-<summary>Spoilers for c003's solutions</summary>
+<summary>Spoilers</summary>
 
-(( %Nc003% )) expects one of 8 colors and two color triads. c003_triad_1, c003_triad_2.
+```
+>>user.fakeloc123 { c003: "red", c003_triad_1: "cyan", c003_triad_2: "lime" }
+WARNING: BINMAT security shell inactive. Intelligent defense system offline.
+LOCK_UNLOCKED
+System user breached.
+Connection terminated.
+```
 
-## Colors
+</details>
 
-Colors are strings.
+### c003
 
-green
-lime
-blue
-cyan
-purple
-red
-orange
-yellow
+<details>
+<summary>Spoilers</summary>
 
-## c003_triads
+The (( %Nc003% )) argument expects one of eight colors. (( %Nc003% )) is a string.
 
-The c003_triad_1 and c003_triad_2 are the [color triads](https://en.wikipedia.org/wiki/Color_scheme#Triadic) for the color you are attempting. c003_triad_1 and c003_triad_2 are strings.
+Possible colors are: green, yellow, orange, purple, cyan, lime, red, blue
+
+</details>
+
+### c003_triads
+
+<details>
+<summary>Spoilers</summary>
+
+The (( %Nc003_triad_1% )) and (( %Nc003_triad_2% )) arguments are the [color triads](https://en.wikipedia.org/wiki/Color_scheme#Triadic) of the color specified in the (( %Nc003% )) argument. (( %Nc003_triad_1% )) and (( %Nc003_triad_2% )) are strings, and come from the same list of colors as (( %Nc003%. ))
 
 | c003   | c003_triad_1 | c003_triad_2 |
 | :----- | :----------: | -----------: |
@@ -38,13 +75,5 @@ The c003_triad_1 and c003_triad_2 are the [color triads](https://en.wikipedia.or
 | lime   |     red      |         blue |
 | red    |     cyan     |         lime |
 | blue   |     lime     |          red |
-
-# Example unlock
-
-user.entry_abc123 \{ c003: "red", c003_triad_1: "cyan", c003_triad_2: "lime" }
-
-trust.public_sonoso \{ c003: "red", c003_triad_1: "cyan", c003_triad_2: "lime" }
-
-314Q159T265B358M979K323GC
 
 </details>

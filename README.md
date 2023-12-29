@@ -100,6 +100,16 @@ function(context,args){
 1. The name hackmud is always lowercase.
 1. Even at the start of a sentence, a word or upgrade that should be lowercase is still lowercase.
 
+#### Disambiguating Parameters, Args, Key:Value Pairs
+
+1. **Arguments** - Data passed into functions or the command line. Can also refer to key:value pairs.
+1. **args** - The default name of the second parameter which is passed into a user script function. We do not refer to Arguments as Args or args as shorthand in articles.
+1. **Key** - The name part of a key:value pair.
+1. **Value** - The data part of a key:value pair.
+1. **Key:Value Pair** - A group of named content. Sometimes seen as kvp. We do not use kvp in wiki articles.
+1. **Parameters** - The names of data passed into functions.
+1. **Params** - Short version of parameters. We do not refer to Parameters as Params or params as shorthand in articles. Do not use unless a quote of in-game content.
+
 ### Headings
 
 1. All headings should start at 2 `#`s and increment as needed.
@@ -118,14 +128,13 @@ function(context,args){
 
 #### Upgrades
 
-1. Any feature of a lock that can be discovered by providing incorrect arguments is not a spoiler. For example, given the following:
+1. The full list of argument keys are not a spoiler.
+1. Any feature of a lock that can be discovered by providing missing or incorrect arguments is not a spoiler. For example, given the following:
 
-   ![image](https://github.com/comcode-org/hackmud_wiki/assets/1775803/5d6bd6b4-c346-4bcd-871c-47bb4da5d0bb)
+   ![image](https://github.com/comcode-org/hackmud_wiki/assets/1775803/2b1a826a-9a73-490c-9019-f5649583af0c)  
+   the fact that the EZ_21 lock expects an `EZ_21` key, that the value of the `EZ_21` argument should be a string, and that said string is some kind of unlock command do not need to be obscured.
 
-   ![image](https://github.com/comcode-org/hackmud_wiki/assets/1775803/16cd8f43-91e8-4b45-b49c-f0a3f942d639)  
-   the fact that `ez_21` takes a `string` which is some kind of unlock command, and that `c003` takes a `string` which is the name of a color, do not need to be obscured.
-
-1. Explicit _complete_ answers to locks are spoilers. The complete list of unlock commands, and the complete list of colors would be spoilers. Where many solutions exist, using _one_ answer as an example is fine, e.g. `c001: "blue"` in an example invocation of `c001`, or a single `magnara` solution.
+1. Example full unlock invocations are spoilers. The complete list of unlock commands or for `c003` the complete list of colors would be spoilers.
 
 #### Lore
 
