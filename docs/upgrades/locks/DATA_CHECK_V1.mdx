@@ -1,63 +1,99 @@
 ---
-title: lock template
+title: DATA_CHECK_V1
 ---
 
-> In-game description of the lock, typically from sys.upgrades \{ full: true }
+> it is valuable to verify the common elements of trust's truth, and other truths besides
 
-_lock_ is a tier _N_ lock \{created by the _in-game corp_ corporation | exclude if the lock does not announce its manufacturer}.
+DATA_CHECK_V1 is a tier 1 [[lock]].
 
 ## Stats
 
-Unique stats that are included in the lock's statistics. Include the range of rarities that the lock spawns at.
+DATA_CHECK_V1 has one additional stat called 'acc_mod' which can modify what tier the question/answer pool draws from.
+In other words, this stat determines the likelyhood that a DATA_CHECK_V1 will pull from a tier 2 pool rather than a tier 1 pool.
 
 ## Behavior
 
-A less spoilery description of the locks behavior.
-
-Example outputs when given arguments correctly or incorrectly.
-Example outputs should be iniside code blocks,
+DATA_CHECK_V1 expects the answers to three questions concatenated together into a single string with no separator.
+When no arguments, or empty arguments are passed, DATA_CHECK_V1 will return the following lock error:
 
 ```
-Success: True
+user.fakeloc123 { }
+LOCK_ERROR
+Denied access by DATA_CHECK lock.
 ```
+
+Note that the '\_v1' at the end of DATA_CHECK is not included in the argument key.
 
 ## Solving
 
 ### Example unlock
 
 <details>
-  <summary>Spoilers for lock's solutions</summary>
+  <summary>Spoilers for DATA_CHECK_V1's solutions</summary>
 
 ```
->>user.fakeloc123 {}
-An example potential solution, outputted from the CLI, with its success output
+>>user.fakeloc123 { DATA_CHECK:"" }
+"did you know" is a communication pattern common to user ++++++
+safety depends on the use of scripts.++++++
+pet, pest, plague and meme are accurate descriptors of the ++++++
+
+>>user.fakeloc123 { DATA_CHECK:"fran_leeget_levelbunnybat" }
+WARNING: BINMAT security shell inactive. Intelligent defense system of
+fline.
+LOCK_UNLOCKED
 ```
 
 </details>
 
-### Subheader for argument 1 (eg. ez_40)
+### DATA_CHECK
 
 <details>
-<summary>Spoilers</summary>
+<summary>Spoilers for DATA_CHECK_V1's solutions</summary>
 
-Value solutions for the specific argument key. Maybe a table of answers, maybe how a value is found.
+Known questions and answers for DATA_CHECK_V1:
 
-</details>
+- QUESTION: "did you know" is a communication pattern common to user ++++++<br />
+  ANSWER: fran_lee
+- QUESTION: a ++++++ is a household cleaning device with a rudimentary networked sentience<br />
+  ANSWER: robovac
+- QUESTION: according to trust, ++++++ is more than just following directives<br />
+  ANSWER: sentience
+- QUESTION: communications issued by user ++++++ demonstrate structural patterns associated with humor<br />
+  ANSWER: sans_comedy
+- QUESTION: in trust's vLAN, you became one of angie's ++++++<br />
+  ANSWER: angels
+- QUESTION: in trust's vLAN, you became one of mallory's ++++++<br />
+  ANSWER: minions
+- QUESTION: in trust's vLAN, you discovered that mallory and che are ++++++<br />
+  ANSWER: sisters
+- QUESTION: in trust's vLAN, you encountered the will of ++++++, the prover<br />
+  ANSWER: petra
+- QUESTION: in trust's vLAN, you visited faythe's ++++++<br />
+  ANSWER: fountain
+- QUESTION: in trust's vLAN, you were required to hack halperyon.++++++<br />
+  ANSWER: helpdesk
+- QUESTION: pet, pest, plague and meme are accurate descriptors of the ++++++<br />
+  ANSWER: bunnybat
+- QUESTION: safety depends on the use of scripts.++++++<br />
+  ANSWER: get_level
+- QUESTION: service ++++++ provides atmospheric updates via the port epoch environment<br />
+  ANSWER: weathernet
+- QUESTION: this fact checking process is a function of ++++++, the monitor<br />
+  ANSWER: eve
+- QUESTION: trust's vLAN emphasized the importance of the transfer and capture of ++++++<br />
+  ANSWER: resource
+- QUESTION: trust's vLAN presented a version of angie who had lost a friend called ++++++<br />
+  ANSWER: bo
+- QUESTION: user 'on_th3_1ntern3ts' has ++++++ many things<br />
+  ANSWER: heard
+- QUESTION: user ++++++ provides instruction via script<br />
+  ANSWER: teach
+- QUESTION: user ++++++ uses the port epoch environment to request gc<br />
+  ANSWER: outta_juice
+- QUESTION: users gather in channel CAFE to share ++++++<br />
+  ANSWER: poetry
 
-### Subheader for argument 2 (eg. ez_prime)
-
-<details>
-<summary>Spoilers</summary>
-
-Value solutions for the specific argument key. Maybe a table of answers, maybe how a value is found.
-
-</details>
-
-### Subheader for specific additional solving topic
-
-<details>
-<summary>Spoilers</summary>
-
-Spoilery description of an additional solution topic. Maybe how arguments are matched to one another, like c002 & c003. Might be a table of answers or how a value is found.
+The solution will be three answers concatenated with no spaces, as shown in the example above.
+fran_lee, get_level, and bunnybat become \{ DATA_CHECK: "fran_leeget_levelbunnybat" }
 
 </details>
