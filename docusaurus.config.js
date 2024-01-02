@@ -85,6 +85,10 @@ const config = {
               type: "docSidebar",
               sidebarId: "lockSidebar",
             },
+            {
+              type: "docSidebar",
+              sidebarId: "upgradeScriptsSidebar",
+            },
           ],
         },
         {
