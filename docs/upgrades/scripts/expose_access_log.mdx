@@ -2,26 +2,63 @@
 title: expose_access_log
 ---
 
-## Description
+> sys.expose_access_log allows you to view the access log of a compromised system.
 
-In-game description of the lock, typically from `sys.upgrades{full:true}`
+expose_access_log is a tier 1 upgrade.
 
-### Subheader for stats
+## Stats
 
-stats?
+### cooldown
+
+expose_access_log has a 'cooldown' stat, which is listed in seconds. After use, the upgrade will become unusable until the listed time has elapsed.
+
+### count
+
+The 'count' stat determines the upgrade's viewable number of entries in a compromised system's access log.
 
 ## Behavior
 
-A less spoilery description of the locks behavior
+When a player has this upgrade loaded, the upgrade can be executed against a breached system using the following syntax:
 
-## Solving
+```
+>>sys.expose_access_log { target: "user.fakeloc123" }
+```
 
-The arguments required for solving
+If a player attempts to execute this upgrade in an invalid use case, the upgrade will return corresponding errors.
 
-### Subheaders that describe individual arguments
+Examples:
 
-Spoilery description of each argument. Maybe a table of answers, maybe how a value is found.
+- Not in hardline:
 
-## Example unlock
+```
 
-An example potentional solution written out for the cli
+>>sys.expose_access_log { target: "user.fakeloc123" }
+:::TRUST COMMUNICATION::: hardline required - activate with kernel.hardline
+
+```
+
+- Target system not breached:
+
+```
+
+>> sys.expose_access_log { target: "user.fakeloc123" }
+Failure
+Target user.fakeloc123 is not a breached system.
+
+```
+
+- Upgrade on cooldown:
+
+```
+>>sys.expose_access_log { target: "user.fakeloc123" }
+Failure
+sys.expose_access_log is still recalibrating. 12 minutes until ready.
+```
+
+- Not enough GC on system:
+
+```
+>>sys.expose_access_log { target: "user.fakeloc123" }
+Failure
+Your account balance of 0GC is too low to send 50KGC.
+```
