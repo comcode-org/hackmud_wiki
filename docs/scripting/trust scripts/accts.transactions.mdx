@@ -4,28 +4,116 @@ title: accts.transactions
 
 ## Description
 
-In-game description of the script or function
+accts.transactions returns a log of the user's transactions.
 
 ## Syntax
 
-A description of the scripts or functions behavior
+On the Command Line Interface:
+
+```
+accts.transactions
+```
+
+As a subscript:
+
+```
+#hs.accts.transactions()
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### count
+
+The 'count' argument allows a user to specify the number of transactions to be returned.
+
+#### start
+
+The 'start' argument can be used in combination with 'count', or on it's own, to offset the beginning of the list to the desired position.
+
+#### to
+
+A user may filter transactions that are sent to a specific username.
+
+#### from
+
+A user may filter transactions that are sent from a specific username.
+
+#### script
+
+A user may filter transactions by the specific script which sent them.
 
 ### Return
 
-What the function or script returns
-
 #### CLI
 
-return here
+```
+>>accts.transactions
+To see more items, add count:<"all" or number>, start:<number>
+To filter recipients, add to:"<username>"
+To filter senders, add from:"<username>"
+To filter by script, add script:"<scriptname>"
+{
+  time: "231219.1732",
+  amount: "20MGC",
+  sender: "user",
+  recipient: "trust",
+  script: null
+}
+{
+  time: "231219.1732",
+  amount: "20MGC",
+  sender: "trust",
+  recipient: "user",
+  script: "trust.example_script"
+}
+{
+  time: "231216.0626",
+  amount: "10MGC",
+  sender: "user",
+  recipient: "trust",
+  script: null
+}
+{
+  time: "231216.0626",
+  amount: "10MGC",
+  sender: "trust",
+  recipient: "user",
+  script: "trust.example_script"
+}
+```
 
 #### Script
 
-return here
+Same as CLI but without usage information.
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+Using the same transaction log from above:
+
+```
+function(context, args)
+{
+	let transactions = #hs.accts.transactions({count:4,from:"trust"})
+	return transactions
+}
+
+```
+
+Since we have specified that we would like our return to include transactions from trust out of a list of 4 total transactions, this example would filter our list down to the following:
+
+```
+{
+  time: "231219.1732",
+  amount: "20MGC",
+  sender: "trust",
+  recipient: "user",
+  script: "trust.example_script"
+}
+{
+  time: "231216.0626",
+  amount: "10MGC",
+  sender: "trust",
+  recipient: "user",
+  script: "trust.example_script"
+}
+```
