@@ -4,28 +4,52 @@ title: accts.xfer_gc_to
 
 ## Description
 
-In-game description of the script or function
+accts.xfer_gc_to sends GC from the user running the script, to the target specified by the script.
 
 ## Syntax
 
-A description of the scripts or functions behavior
+On the Command Line Interface:
+
+```
+accts.xfer_gc_to { to: "trust", amount: "1M234K567GC" }
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### to (required)
+
+Specifies the target of the transaction.
+
+#### amount (required)
+
+Specifies the amount of GC to be sent. Max transfer limit is 32BGC.
+
+#### memo (optional)
+
+Attaches a memo to the transaction up to 100 characters long.
 
 ### Return
 
-What the function or script returns
-
 #### CLI
 
-return here
+```
+>>accts.xfer_gc_to{to:"trust",amount:"1M234K567GC", memo:"this is a memo"}
+Success
+
+Transferred 1M234K567GC to trust : this is a memo
+```
 
 #### Script
 
-return here
+Same as CLI
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+Caution: While this is a legitimately useful script, it will send the specified amount of the caller's GC to the specified target.
+
+```
+function(context, args)
+{
+	return #ms.accts.xfer_gc_to ({ to: "trust", amount: "1GC", memo: "here's that 1GC i promised you." })
+}
+```
