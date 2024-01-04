@@ -4,28 +4,57 @@ title: sys.specs
 
 ## Description
 
-In-game description of the script or function
+sys.specs returns the user's current specifications.
 
 ## Syntax
 
-A description of the scripts or functions behavior
+On the Command Line Interface:
+
+```
+sys.specs
+```
+
+As a subscript:
+
+```
+#ns.sys.specs()
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+No known parameters.
 
 ### Return
 
-What the function or script returns
-
 #### CLI
 
-return here
+```
+>>sys.specs
+    <ASCII art representation of user-class>
+
+<username> (<user-class>)
+
+tier: <number out of 4>
+
+hardline_count: <number of remaining hardlines>
+next_hardline: <seconds until next hardline refresh>
+
+architect(<score>) scavenger(<score>) executive(<score>) infiltrator(<score>) junkrack(<score>)
+
+channel_count: <number of channels user can be in>
+
+gc_max: 9Q7T199B254M740K991GC
+
+upgrade space
+slots: <current upgrades held>/<max upgrade space>
+loaded: <current upgrades loaded>/<max load space>
+
+script space
+publics: <number of public scripts a user can #up>
+slots: <total number of scripts user can #up>
+chars: <current character limit>
+```
 
 #### Script
 
-return here
-
-## Example
-
-An example use of the function, in code, or script, in client and code
+Same as CLI
