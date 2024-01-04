@@ -8,16 +8,48 @@ sys.status returns the status of the user that runs it.
 
 ## Syntax
 
+On the Command Line Interface:
+```
 sys.status
+```
+
+As a subscript call:
+```
+#fs.sys.status()
+```
 
 ### Parameters
 
-There are no known parameters
+There are no known parameters.
 
 ### Return
 
-It returns status, i need to get an actual output
+In the main terminal window, sys.status returns the following:
 
-## Example
+```
+>>sys.specs
 
-#fs.sys.status()
+<ASCII art representation of current user class>
+
+<username> (<user-class>)
+
+tier: <number out of 4>
+
+hardline_count: <number of hardlines remaining>
+next_hardline: <seconds remaining until next hardline increase>
+
+architect(<score>) scavenger(<score>) executive(<score>) infiltrator(<score>) junkrack(<score>) 
+
+channel_count: <number of channels the user can be in>
+
+gc_max: 9Q7T199B254M740K991GC
+
+upgrade space
+slots: <current upgrades held / max upgrade space>
+loaded: <current upgrades loaded / max load space>
+
+script space
+publics: <number of public scripts a user can #up>
+slots: <number of scripts a user can #up>
+chars: <current character count limit>
+```
