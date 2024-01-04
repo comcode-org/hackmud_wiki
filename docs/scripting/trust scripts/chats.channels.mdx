@@ -4,28 +4,47 @@ title: chats.channels
 
 ## Description
 
-In-game description of the script or function
+chats.channels returns all the channels a user is in currently.
 
 ## Syntax
 
-A description of the scripts or functions behavior
+On the Command Line Interface:
+
+```
+chats.channels
+```
+
+As a subscript:
+
+```
+#ms.chats.channels()
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+No known parameters.
 
 ### Return
 
-What the function or script returns
-
 #### CLI
 
-return here
+```
+>>chats.channels
+0000
+0001
+example_channel
+```
 
 #### Script
 
-return here
+Same as CLI
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ms.chats.channels()
+}
+
+```
