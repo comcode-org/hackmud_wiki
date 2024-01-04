@@ -4,28 +4,52 @@ title: chats.create
 
 ## Description
 
-In-game description of the script or function
+chats.create allows a user to create a custom chat channel. This channel can optionally be password protected. The channel will delete automatically when all users leave.
 
 ## Syntax
 
-A description of the scripts or functions behavior
+On the Command Line Interface:
+
+```
+chats.create { name: "example_channel", password: "examplepass" }
+```
+
+As a subscript:
+
+```
+#fs.chats.create({ name:"example_channel", password:"examplepass" })
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### name (required)
+
+Specifies the name of the channel up to 50 characters long.
+
+#### password (optional)
+
+Specifies the channel password.
 
 ### Return
 
-What the function or script returns
-
 #### CLI
 
-return here
+```
+>>chats.create { name:"example_channel" }
+Success
+
+1555 example_channel <user> :::user joined channel:::
+```
 
 #### Script
 
-return here
+Same as CLI.
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ms.chats.create({ name: "example_channel", password: "examplepass" })
+}
+```
