@@ -8,24 +8,45 @@ accts.xfer_gc_to_caller allows a script to send GC to the caller of the script.
 
 ## Syntax
 
-A description of the scripts or functions behavior
+As a subscript:
+
+```
+#fs.accts.xfer_gc_to_caller({ amount:"1M234K567GC", memo:"this is a memo" })
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### amount (required)
+
+Specifies the amount of GC to send.
+
+#### memo (optional)
+
+Specifies a memo up to 50 characters long.
 
 ### Return
 
-What the function or script returns
-
 #### CLI
 
-return here
+```
+>>accts.xfer_gc_to_caller
+Usage: (in subscript) #fs.accts.xfer_gc_to_caller({ amount:<number or "GC string">, memo:"<optional memo (50/1)>" })
+```
 
 #### Script
 
-return here
+```
+Success
+
+Transferred 1GC to trust
+```
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ms.accts.xfer_gc_to({ to: "trust", amount: "1GC", memo: "this is a memo" })
+}
+
+```
