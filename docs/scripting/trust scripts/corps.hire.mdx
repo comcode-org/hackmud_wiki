@@ -4,28 +4,41 @@ title: corps.hire
 
 ## Description
 
-In-game description of the script or function
+corps.hire allows a player corporation owner or admin to hire another user.
 
 ## Syntax
 
-A description of the scripts or functions behavior
+On the Command Line Interface:
+
+```
+corps.hire { name:"example_user" }
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### name (required)
+
+Specifies the user to be hired.
 
 ### Return
 
-What the function or script returns
-
 #### CLI
 
-return here
+```
+>>corps.hire{name:"example_user"}
+Success
+
+```
 
 #### Script
 
-return here
+Same as CLI.
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ns.corps.hire({ name: "example_user" })
+}
+```
