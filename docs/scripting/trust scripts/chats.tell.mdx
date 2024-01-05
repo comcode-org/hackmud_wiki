@@ -4,28 +4,53 @@ title: chats.tell
 
 ## Description
 
-In-game description of the script or function
+chats.tell allows a user to send a private message to another user.
 
 ## Syntax
 
-A description of the scripts or functions behavior
+On the Command Line Interface:
+
+```
+chats.tell { to: "user", msg: "this is a private message" }
+```
+
+As a subscript:
+
+```
+#fs.chats.tell({ to: "user", msg : "this is a private message" })
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### to (required)
+
+Specifies the user to send a message to.
+
+#### msg (required)
+
+Specifies the private message to be sent.
 
 ### Return
 
-What the function or script returns
-
 #### CLI
 
-return here
+```
+>>chats.tell { to:"user", msg:"this is a private message" }
+Msg Sent
+
+1555 to user :::this is a private message:::
+```
 
 #### Script
 
-return here
+Same as CLI.
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ms.chats.tell({ to: "user", msg: "this is a private message" })
+}
+
+```
