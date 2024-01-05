@@ -4,28 +4,49 @@ title: chats.users
 
 ## Description
 
-In-game description of the script or function
+chats.users allows a user to see which users are present in a specified channel. Users in the channel with recent activity are indicated by an asterisk.
 
 ## Syntax
 
-A description of the scripts or functions behavior
+On the Command Line Interface:
+
+```
+chats.users { channel: "example_channel" }
+```
+
+As a subscript:
+
+```
+#ms.chats.users({ channel: "example_channel" })
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### channel (required)
+
+Specifies the channel to be checked. Note: a user must be in the specified channel in order to see user details of the channel.
 
 ### Return
 
-What the function or script returns
-
 #### CLI
 
-return here
+```
+>>chats.users { channel:"example_channel" }
+*<user>
+*trust
+inactive_user_123
+```
 
 #### Script
 
-return here
+Same as CLI.
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ms.chats.users({ channel: "example_channel" })
+}
+
+```
