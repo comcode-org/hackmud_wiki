@@ -4,28 +4,66 @@ title: corps.offers
 
 ## Description
 
-In-game description of the script or function
+corps.offers allows a user to view hire offers from player corporations.
 
 ## Syntax
 
-A description of the scripts or functions behavior
+On the Command Line Interface:
+
+```
+corps.offers
+```
+
+As a subscript:
+
+```
+#ns.corps.offers()
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### accept
+
+If a player corporation has extended a hire offer, a user may add the 'accept' parameter in order to accept the offer.
 
 ### Return
 
-What the function or script returns
-
 #### CLI
 
-return here
+```
+>>corps.offers
+{
+  offers: [
+    "example_corp"
+  ],
+  msg: "Specify a corporation to accept offer from with { accept:"
+<corporation name>" }"
+}
+```
+
+When accepted:
+
+```
+corps.offers { accept: "example_corp" }
+Success
+```
 
 #### Script
 
-return here
+Same as CLI
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	let myOffers = #ns.corps.offers()
+
+	if (Object.hasOwnProperty(offers)) {
+		return myOffers.offers
+	} else {
+		return "No current offers"
+	}
+}
+
+```
