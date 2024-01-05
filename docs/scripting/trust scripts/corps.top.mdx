@@ -4,28 +4,100 @@ title: corps.top
 
 ## Description
 
-In-game description of the script or function
+corps.top returns the top 10 player corporations by total GC.
 
 ## Syntax
 
-A description of the scripts or functions behavior
+On the Command Line Interface:
+
+```
+corps.top
+```
+
+As a subscript:
+
+```
+#fs.corps.top()
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+No known parameters.
 
 ### Return
 
-What the function or script returns
-
 #### CLI
 
-return here
+```
+{
+  top: [
+    {
+      rank: 1,
+      name: "example_corp",
+      worth: "10GC"
+    },
+    {
+      rank: 2,
+      name: "example_corp_1",
+      worth: "9GC"
+    },
+    {
+      rank: 3,
+      name: "example_corp_2",
+      worth: "8GC"
+    },
+    {
+      rank: 4,
+      name: "example_corp_3",
+      worth: "7GC"
+    },
+    {
+      rank: 5,
+      name: "example_corp_4",
+      worth: "6GC"
+    },
+    {
+      rank: 6,
+      name: "example_corp_5",
+      worth: "5GC"
+    },
+    {
+      rank: 7,
+      name: "example_corp_6",
+      worth: "4GC"
+    },
+    {
+      rank: 8,
+      name: "example_corp_7",
+      worth: "3GC"
+    },
+    {
+      rank: 9,
+      name: "example_corp_8",
+      worth: "2GC"
+    },
+    {
+      rank: 10,
+      name: "example_corp_9",
+      worth: "1GC"
+    }
+  ],
+  active: {
+    name: "example_corp",
+    worth: "10GC"
+  }
+}
+```
 
 #### Script
 
-return here
+Same as CLI.
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function (context, args)
+{
+  return #fs.corps.top()
+}
+```
