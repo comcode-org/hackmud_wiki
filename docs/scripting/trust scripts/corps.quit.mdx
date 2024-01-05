@@ -4,28 +4,46 @@ title: corps.quit
 
 ## Description
 
-In-game description of the script or function
+corps.quit allows a player corporation member remove themselves from the player corporation.
 
 ## Syntax
 
-A description of the scripts or functions behavior
+On the Command Line Interface:
+
+```
+corps.quit { confirm: true }
+```
+
+As a subscript:
+
+```
+#ns.corps.quit({ confirm: true })
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### confirm (required)
+
+Confirms quitting the player corporation.
 
 ### Return
 
-What the function or script returns
-
 #### CLI
 
-return here
+```
+>>corps.quit { confirm: true }
+Success
+```
 
 #### Script
 
-return here
+Same as CLI.
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function (context,args)
+{
+  return #ns.corps.quit({ confirm: true })
+}
+```
