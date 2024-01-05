@@ -4,28 +4,54 @@ title: corps.manage
 
 ## Description
 
-In-game description of the script or function
+corps.manage allows a player corporation owner or admin to manage corp members with actions including promoting members to admin, demoting members from admin, and firing members.
 
 ## Syntax
 
-A description of the scripts or functions behavior
+On the Command Line Interface:
+
+```
+corps.manage { command: "<choice>" }
+```
+
+As a subscript:
+
+```
+#ns.corps.manage({ command: "<choice>" })
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### command (required)
+
+The 'command' key takes several values which will be returned to the screen using corps.manage with no arguments. The possible values include:
+
+- list
+- demote
+- promote
+- fire
 
 ### Return
 
-What the function or script returns
-
 #### CLI
 
-return here
+```
+>>corps.manage {command:"list"}
+{
+  name: "<user>",
+  is_admin: false
+}
+```
 
 #### Script
 
-return here
+Same as CLI.
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context,args)
+{
+  return #ns.corps.manage({ command: "list" })
+}
+```
