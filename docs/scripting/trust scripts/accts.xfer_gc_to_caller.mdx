@@ -8,7 +8,13 @@ accts.xfer_gc_to_caller allows a script to send GC to the caller of the script.
 
 ## Syntax
 
-As a subscript:
+### CLI
+
+```
+Usage: (in subscript) #fs.accts.xfer_gc_to_caller({ amount:<number or "GC string">, memo:"<optional memo (50/1)>" })
+```
+
+### Script
 
 ```
 #fs.accts.xfer_gc_to_caller({ amount:"1M234K567GC", memo:"this is a memo" })
