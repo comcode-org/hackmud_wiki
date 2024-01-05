@@ -4,28 +4,47 @@ title: chats.leave
 
 ## Description
 
-In-game description of the script or function
+chats.leave allows a user to leave a specified channel.
 
 ## Syntax
 
-A description of the scripts or functions behavior
+On the Command Line Interface:
+
+```
+chats.leave { channel: "example_channel" }
+```
+
+As a subscript:
+
+```
+#ms.chats.leave({ channel: "example_channel" })
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### channel (required)
 
 ### Return
 
-What the function or script returns
-
 #### CLI
 
-return here
+```
+>>chats.leave {channel:"example_channel"}
+Success
+
+1613 example_channel <user> :::user left channel:::
+```
 
 #### Script
 
-return here
+Same as CLI.
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ms.chats.leave({ channel: "example_channel" })
+}
+
+```
