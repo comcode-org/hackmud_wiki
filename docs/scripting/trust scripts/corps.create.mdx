@@ -4,28 +4,53 @@ title: corps.create
 
 ## Description
 
-In-game description of the script or function
+corps.create allows a user to create a player corporation for the cost of 1BGC.
 
 ## Syntax
 
-A description of the scripts or functions behavior
+On the Command Line Interface:
+
+```
+corps.create { name: "example_corp", confirm: true }
+```
+
+As a subscript:
+
+```
+#ns.corps.create({ name: "example_corp", confirm: true })
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### name (required)
+
+Specifies the name of the new player corporation.
+
+#### confirm (required)
+
+Confirms creation of new player corporation.
 
 ### Return
 
-What the function or script returns
-
 #### CLI
 
-return here
+```
+>>corps.create {name:"example_corp", confirm:true}
+Success
+
+Transferred 1BGC to trust
+```
 
 #### Script
 
-return here
+Same as CLI.
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ns.corps.create({ name: "example_corp", confirm: true })
+}
+
+```
