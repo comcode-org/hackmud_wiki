@@ -4,28 +4,53 @@ title: chast.send
 
 ## Description
 
-In-game description of the script or function
+chats.send allows a user to send a message to a specified channel.
 
 ## Syntax
 
-A description of the scripts or functions behavior
+On the Command Line Interface:
+
+```
+chats.send { channel: "example_channel", msg: "this is a message" }
+```
+
+As a subscript:
+
+```
+#fs.chats.send({ channel: "example_channel", msg: "this is a message" })
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### channel (required)
+
+Specifies the channel in which to send a message.
+
+#### message (required)
+
+Specifies the message to be sent, up to 1000 characters and 10 lines.
 
 ### Return
 
-What the function or script returns
-
 #### CLI
 
-return here
+```
+>>chats.send { channel:"example_channel", msg:"this is a message" }
+Msg Sent
+
+1621 example_channel kbeeb :::this is a message:::
+```
 
 #### Script
 
-return here
+Same as CLI.
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ms.chats.send({ channel: "example_channel", msg: "this is a message" })
+}
+
+```
