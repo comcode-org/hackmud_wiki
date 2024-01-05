@@ -8,13 +8,13 @@ sys.status returns the status of the user that runs it.
 
 ## Syntax
 
-On the Command Line Interface:
+### CLI
 
 ```
 sys.status
 ```
 
-As a subscript call:
+### Script
 
 ```
 #fs.sys.status()
@@ -26,7 +26,9 @@ There are no known parameters.
 
 ### Return
 
-In the main terminal window, sys.status returns one of the following:
+sys.specs returns a `String`
+
+### CLI
 
 ```
 >>sys.status
@@ -38,4 +40,14 @@ or
 ```
 >>sys.status
 -system is breached-
+```
+
+### Script
+
+```
+{
+  hardline: 0,
+  tutorial: "",
+  breach: false
+}
 ```
