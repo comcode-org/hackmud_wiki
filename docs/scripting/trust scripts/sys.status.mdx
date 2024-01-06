@@ -6,18 +6,52 @@ title: sys.status
 
 sys.status returns the status of the user that runs it.
 
+### Security Level
+
+HIGHSEC
+
 ## Syntax
 
+### CLI
+
+```
 sys.status
+```
+
+### Script
+
+```
+#fs.sys.status()
+```
 
 ### Parameters
 
-There are no known parameters
+There are no known parameters.
 
 ### Return
 
-It returns status, i need to get an actual output
+sys.specs returns a string.
 
-## Example
+### CLI
 
-#fs.sys.status()
+```
+>>sys.status
+-system status nominal-
+```
+
+or
+
+```
+>>sys.status
+-system is breached-
+```
+
+### Script
+
+```
+{
+  hardline: 0,
+  tutorial: "",
+  breach: false
+}
+```
