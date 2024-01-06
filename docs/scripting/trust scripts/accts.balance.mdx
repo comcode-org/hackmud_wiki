@@ -1,0 +1,59 @@
+---
+title: accts.balance
+---
+
+## Description
+
+acctss.balance returns the user's current GC balance
+
+### Security Level
+
+HIGHSEC
+
+## Syntax
+
+### CLI
+
+```
+accts.balance
+```
+
+### Script
+
+```
+#hs.accts.balance()
+```
+
+### Parameters
+
+No known parameters.
+
+### Return
+
+#### CLI
+
+On the CLI accts.balance returns a GC string
+
+```
+>>accts.balance
+1M234K567GC
+```
+
+#### Script
+
+In a script, #hs.accts.balance() returns a number
+
+```
+1234567
+```
+
+## Example
+
+```
+function(context, args)
+{
+	let bal = #hs.accts.balance()
+	return bal
+}
+
+```
