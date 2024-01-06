@@ -1,0 +1,55 @@
+---
+title: corps.quit
+---
+
+## Description
+
+corps.quit allows a player corporation member remove themselves from the player corporation.
+
+### Security level
+
+NULLSEC
+
+## Syntax
+
+### CLI
+
+```
+corps.quit { confirm: true }
+```
+
+### Script
+
+```
+#ns.corps.quit({ confirm: true })
+```
+
+### Parameters
+
+#### confirm (required)
+
+The 'confirm' argument confirms quitting the player corporation.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+```
+>>corps.quit { confirm: true }
+Success
+```
+
+#### Script
+
+Same as CLI.
+
+## Example
+
+```
+function (context,args)
+{
+  return #ns.corps.quit({ confirm: true })
+}
+```
