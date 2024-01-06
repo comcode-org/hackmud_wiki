@@ -8,13 +8,13 @@ chats.tell allows a user to send a private message to another user.
 
 ## Syntax
 
-On the Command Line Interface:
+### CLI
 
 ```
 chats.tell { to: "user", msg: "this is a private message" }
 ```
 
-As a subscript:
+### Script
 
 ```
 #fs.chats.tell({ to: "user", msg : "this is a private message" })
@@ -24,13 +24,15 @@ As a subscript:
 
 #### to (required)
 
-Specifies the user to send a message to.
+The 'to' argument specifies the user to send a message to.
 
 #### msg (required)
 
-Specifies the private message to be sent.
+The 'msg' argument specifies the private message to be sent.
 
 ### Return
+
+Returns an object.
 
 #### CLI
 
