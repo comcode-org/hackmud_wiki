@@ -1,0 +1,61 @@
+---
+title: chats.create
+---
+
+## Description
+
+chats.create allows a user to create a custom chat channel. This channel can optionally be password protected. The channel will delete automatically when all users leave.
+
+### Security level
+
+MIDSEC
+
+## Syntax
+
+### CLI
+
+```
+chats.create { name: "example_channel", password: "examplepass" }
+```
+
+### Script
+
+```
+#fs.chats.create({ name:"example_channel", password:"examplepass" })
+```
+
+### Parameters
+
+#### name (required)
+
+The 'name' argument specifies the name of the channel up to 50 characters long.
+
+#### password (optional)
+
+The 'password' argument specifies the channel password.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+```
+>>chats.create { name:"example_channel" }
+Success
+
+1555 example_channel <user> :::user joined channel:::
+```
+
+#### Script
+
+Same as CLI.
+
+## Example
+
+```
+function(context, args)
+{
+	return #ms.chats.create({ name: "example_channel", password: "examplepass" })
+}
+```
