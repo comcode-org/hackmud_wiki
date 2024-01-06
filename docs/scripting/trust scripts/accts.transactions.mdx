@@ -1,0 +1,123 @@
+---
+title: accts.transactions
+---
+
+## Description
+
+accts.transactions returns a log of the user's transactions.
+
+### Security Level
+
+FULLSEC
+
+## Syntax
+
+### CLI
+
+```
+accts.transactions
+```
+
+### Script
+
+```
+#hs.accts.transactions()
+```
+
+### Parameters
+
+#### count
+
+The 'count' argument allows a user to specify the number of transactions to be returned.
+
+#### start
+
+The 'start' argument offsets the beginning of the list of transactions to the desired position. Can be used in combination with 'count'.
+
+#### to
+
+The 'to' argument filters transactions that are sent to a specific username.
+
+#### from
+
+The 'from' argument filters transactions that are sent from a specific username.
+
+#### script
+
+The 'script' argument filters transactions by the specific script which sent them.
+
+### Return
+
+#### CLI
+
+```
+>>accts.transactions
+To see more items, add count:<"all" or number>, start:<number>
+To filter recipients, add to:"<username>"
+To filter senders, add from:"<username>"
+To filter by script, add script:"<scriptname>"
+{
+  time: "231219.1732",
+  amount: "20MGC",
+  sender: "user",
+  recipient: "trust",
+  script: null
+}
+{
+  time: "231219.1732",
+  amount: "20MGC",
+  sender: "trust",
+  recipient: "user",
+  script: "trust.example_script"
+}
+{
+  time: "231216.0626",
+  amount: "10MGC",
+  sender: "user",
+  recipient: "trust",
+  script: null
+}
+{
+  time: "231216.0626",
+  amount: "10MGC",
+  sender: "trust",
+  recipient: "user",
+  script: "trust.example_script"
+}
+```
+
+#### Script
+
+Same as CLI but without usage information.
+
+## Example
+
+Using the same transaction log from above:
+
+```
+function(context, args)
+{
+	let transactions = #hs.accts.transactions({count:4,from:"trust"})
+	return transactions
+}
+
+```
+
+Since we have specified that we would like our return to include transactions from trust out of a list of 4 total transactions, this example would filter our list down to the following:
+
+```
+{
+  time: "231219.1732",
+  amount: "20MGC",
+  sender: "trust",
+  recipient: "user",
+  script: "trust.example_script"
+}
+{
+  time: "231216.0626",
+  amount: "10MGC",
+  sender: "trust",
+  recipient: "user",
+  script: "trust.example_script"
+}
+```
