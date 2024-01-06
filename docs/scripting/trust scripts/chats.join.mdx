@@ -1,0 +1,58 @@
+---
+title: chats.join
+---
+
+## Description
+
+chats.join allows a user to join a specified channel.
+
+### Security level
+
+MIDSEC
+
+## Syntax
+
+### CLI
+
+```
+chats.join { channel:"example_channel" }
+```
+
+### Script
+
+```
+#ms.chats.join({ channel:"example_channel" })
+```
+
+### Parameters
+
+#### channel (required)
+
+The 'channel' argument specifies which channel to join.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+```
+>>chats.join { channel: "example_channel" }
+Success
+
+1555 example_channel <user> :::user joined channel:::
+```
+
+#### Script
+
+Same as CLI.
+
+## Example
+
+```
+function(context, args)
+{
+	return #ms.chats.join({ channel: "example_channel" })
+}
+
+```
