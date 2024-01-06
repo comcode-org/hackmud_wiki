@@ -1,0 +1,62 @@
+---
+title: chats.send
+---
+
+## Description
+
+chats.send allows a user to send a message to a specified channel.
+
+### Security level
+
+MIDSEC
+
+## Syntax
+
+### CLI
+
+```
+chats.send { channel: "example_channel", msg: "this is a message" }
+```
+
+### Script
+
+```
+#fs.chats.send({ channel: "example_channel", msg: "this is a message" })
+```
+
+### Parameters
+
+#### channel (required)
+
+The 'channel' argument specifies the channel in which to send a message.
+
+#### message (required)
+
+The 'message' argument specifies the message to be sent, up to 1000 characters and 10 lines.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+```
+>>chats.send { channel:"example_channel", msg:"this is a message" }
+Msg Sent
+
+1621 example_channel kbeeb :::this is a message:::
+```
+
+#### Script
+
+Same as CLI.
+
+## Example
+
+```
+function(context, args)
+{
+	return #ms.chats.send({ channel: "example_channel", msg: "this is a message" })
+}
+
+```
