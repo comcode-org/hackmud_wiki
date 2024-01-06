@@ -1,0 +1,56 @@
+---
+title: accts.balance_of_owner
+---
+
+## Description
+
+When called as a subscript in a script that is hosted by one player, it allows the balance of the script owner to be seen by a different user running the script.
+
+### Security Level
+
+FULLSEC
+
+## Syntax
+
+### CLI
+
+```
+accts.balance_of_owner
+```
+
+### Script
+
+```
+#fs.accts.balance_of_owner()
+```
+
+### Parameters
+
+No known parameters.
+
+### Return
+
+#### CLI
+
+```
+>>accts.balance_of_owner
+Usage: (in subscript) #fs.accts.balance_of_owner()
+```
+
+#### Script
+
+accts.balance_of_owner returns a number:
+
+```
+1234567
+```
+
+## Example
+
+```
+function(context, args)
+{
+	let bal_of_owner = #fs.accts.balance_of_owner()
+	return bal_of_owner
+}
+```
