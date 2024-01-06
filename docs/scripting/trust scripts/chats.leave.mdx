@@ -1,0 +1,58 @@
+---
+title: chats.leave
+---
+
+## Description
+
+chats.leave allows a user to leave a specified channel.
+
+### Security level
+
+MIDSEC
+
+## Syntax
+
+### CLI
+
+```
+chats.leave { channel: "example_channel" }
+```
+
+### Script
+
+```
+#ms.chats.leave({ channel: "example_channel" })
+```
+
+### Parameters
+
+#### channel (required)
+
+The 'channel' argument specifies which chat channel to leave.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+```
+>>chats.leave {channel:"example_channel"}
+Success
+
+1613 example_channel <user> :::user left channel:::
+```
+
+#### Script
+
+Same as CLI.
+
+## Example
+
+```
+function(context, args)
+{
+	return #ms.chats.leave({ channel: "example_channel" })
+}
+
+```
