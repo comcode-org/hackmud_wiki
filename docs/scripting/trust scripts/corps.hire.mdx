@@ -1,0 +1,56 @@
+---
+title: corps.hire
+---
+
+## Description
+
+corps.hire allows a player corporation owner or admin to hire another user.
+
+### Security level
+
+NULLSEC
+
+## Syntax
+
+### CLI
+
+```
+corps.hire { name:"example_user" }
+```
+
+### Script
+
+```
+#ns.corps.hire()
+```
+
+### Parameters
+
+#### name (required)
+
+The 'name' argument specifies the user to be hired.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+```
+>>corps.hire{name:"example_user"}
+Success
+
+```
+
+#### Script
+
+Same as CLI.
+
+## Example
+
+```
+function(context, args)
+{
+	return #ns.corps.hire({ name: "example_user" })
+}
+```
