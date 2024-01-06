@@ -1,0 +1,62 @@
+---
+title: chats.tell
+---
+
+## Description
+
+chats.tell allows a user to send a private message to another user.
+
+### Security level
+
+MIDSEC
+
+## Syntax
+
+### CLI
+
+```
+chats.tell { to: "user", msg: "this is a private message" }
+```
+
+### Script
+
+```
+#fs.chats.tell({ to: "user", msg : "this is a private message" })
+```
+
+### Parameters
+
+#### to (required)
+
+The 'to' argument specifies the user to send a message to.
+
+#### msg (required)
+
+The 'msg' argument specifies the private message to be sent.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+```
+>>chats.tell { to:"user", msg:"this is a private message" }
+Msg Sent
+
+1555 to user :::this is a private message:::
+```
+
+#### Script
+
+Same as CLI.
+
+## Example
+
+```
+function(context, args)
+{
+	return #ms.chats.tell({ to: "user", msg: "this is a private message" })
+}
+
+```
