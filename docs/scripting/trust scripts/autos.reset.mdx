@@ -1,0 +1,53 @@
+---
+title: autos.reset
+---
+
+## Description
+
+autos.reset clears out all of a users autocompletes
+
+### Security level
+
+MIDSEC
+
+## Syntax
+
+### CLI
+
+```
+autos.reset
+```
+
+### Script
+
+```
+#ms.autos.reset()
+```
+
+### Parameters
+
+No known parameters.
+
+### Return
+
+#### CLI
+
+```
+Success
+
+-autocompletes reset-
+```
+
+#### Script
+
+Same as CLI.
+
+## Example
+
+```
+function(context, args)
+{
+	return #ms.autos.reset()
+}
+
+```
