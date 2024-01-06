@@ -1,0 +1,88 @@
+---
+title: corps.offers
+---
+
+## Description
+
+corps.offers allows a user to view hire offers from player corporations.
+
+### Security level
+
+NULLSEC
+
+## Syntax
+
+### CLI
+
+```
+corps.offers
+```
+
+### Script
+
+```
+#ns.corps.offers()
+```
+
+### Parameters
+
+#### accept
+
+The 'accept' argument is used to specify which corporation to join. It expects a string.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+If no offers are present:
+
+```
+>>corps.offers
+{
+  ok: true,
+  msg: "You have no open offers.",
+  current_corp: null
+}
+```
+
+If offers are present:
+
+```
+>>corps.offers
+{
+  offers: [
+    "example_corp"
+  ],
+  msg: "Specify a corporation to accept offer from with { accept:"
+<corporation name>" }"
+}
+```
+
+When accepted:
+
+```
+corps.offers { accept: "example_corp" }
+Success
+```
+
+#### Script
+
+Same as CLI
+
+## Example
+
+```
+function(context, args)
+{
+	let myOffers = #ns.corps.offers()
+
+	if (Object.hasOwnProperty(offers)) {
+		return myOffers.offers
+	} else {
+		return "No current offers"
+	}
+}
+
+```
