@@ -1,0 +1,56 @@
+---
+title: chats.channels
+---
+
+## Description
+
+chats.channels returns all the channels a user is in currently.
+
+### Security level
+
+MIDSEC
+
+## Syntax
+
+### CLI
+
+```
+chats.channels
+```
+
+### Script
+
+```
+#ms.chats.channels()
+```
+
+### Parameters
+
+No known parameters.
+
+### Return
+
+Returns an array.
+
+#### CLI
+
+```
+>>chats.channels
+0000
+0001
+example_channel
+```
+
+#### Script
+
+Same as CLI
+
+## Example
+
+```
+function(context, args)
+{
+	return #ms.chats.channels()
+}
+
+```
