@@ -4,6 +4,46 @@ title: kernel.hardline
 
 ## Description
 
+kernel.hardline enters hardline mode and allows connection attempts between systems.
+
+### Security Level
+
+LOWSEC
+
+## Syntax
+
+### CLI
+
+```
+kernel.hardline { confirm: true }
+```
+
+### Script
+
+Note: kernel.hardline can only be called as a subscript by bot_brains.
+
+```
+#ls.kernel.hardline({ confirm: true })
+```
+
+### Parameters
+
+#### dc (optional)
+
+The 'dc' argument disconnects from hardline mode when its value is set to true.
+
+### Return
+
+Returns a Success or Failure object.
+
+#### CLI
+
+---
+
+## title: documentation template
+
+## Description
+
 In-game description of the script or function
 
 ### Security Level
@@ -28,16 +68,26 @@ A list of parameters and their descriptions if applicable
 
 ### Return
 
-What the function or script returns
+Returns a Success or Faliure object.
 
 #### CLI
 
-return here
+```
+>>kernel.hardline
+-activating hardline-
+```
 
 #### Script
 
-return here
+Can only be called as a subscript by bot_brains.
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+In a script named `bot_brain`:
+
+```
+function(context, args)
+{
+	return #ls.kernel.hardline()
+}
+```
