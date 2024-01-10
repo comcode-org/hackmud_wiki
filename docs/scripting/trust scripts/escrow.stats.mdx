@@ -4,40 +4,68 @@ title: escrow.stats
 
 ## Description
 
-In-game description of the script or function
+escrow.stats returns an information object with stats regarding escrow.charge inclusive scripts.
 
 ### Security Level
 
-The security level of the script
+MIDSEC
 
 ## Syntax
 
-A description of the scripts or functions behavior
-
 ### CLI
 
-Example CLI syntax
+```
+escrow.stats
+```
 
 ### Script
 
-Example script syntax
+```
+#ms.escrow.stats
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+No known parameters.
 
 ### Return
 
-What the function or script returns
+Returns an object.
 
 #### CLI
 
-return here
+```
+>>escrow.stats
+{
+  scripts: [
+    "users.smiley_face"
+  ],
+  total: "0GC",
+  outstanding: "0GC",
+  open_escrow_count: 1
+}
+```
 
 #### Script
 
-return here
+```
+{
+  scripts: [
+    "users.smiley_face"
+  ],
+  total: "0GC",
+  outstanding: "0GC",
+  open_escrow_count: 1
+}
+```
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+Using escrow.stats in a script allows access to the objects' individual properties, such as `scripts`.
+
+```
+function(context, args)
+{
+	return #ms.escrow.stats().scripts
+}
+```
