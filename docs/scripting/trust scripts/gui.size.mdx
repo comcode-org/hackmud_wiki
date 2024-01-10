@@ -4,40 +4,53 @@ title: gui.size
 
 ## Description
 
-In-game description of the script or function
+gui.size specifies text size in the terminal window.
 
 ### Security Level
 
-The security level of the script
+FULLSEC
 
 ## Syntax
 
-A description of the scripts or functions behavior
-
 ### CLI
 
-Example CLI syntax
+```
+gui.size { i: 0 }
+```
 
 ### Script
 
-Example script syntax
+Cannot be called as a subscript.
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### i (required)
+
+the 'i' argument specifies the text size, as a number from -20 to 20. The default value is set to 0.
 
 ### Return
 
-What the function or script returns
+Returns a Success or Failure object.
 
 #### CLI
 
-return here
+No arguments or invalid arguments:
+
+```
+>>gui.size
+Failure
+Usage: gui.size { i:<-20 to 20> }
+change your gui size settings. negative numbers reduce size positive increases.
+current size: 0
+```
+
+Valid arguments:
+
+```
+>>gui.size { i: 0 }
+Success
+```
 
 #### Script
 
-return here
-
-## Example
-
-An example use of the function, in code, or script, in client and code
+Cannot be called as a subscript.
