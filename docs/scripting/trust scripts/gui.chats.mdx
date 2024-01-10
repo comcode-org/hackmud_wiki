@@ -1,0 +1,51 @@
+---
+title: gui.chats
+---
+
+## Description
+
+gui.chats dictates the behavior of chat in the main terminal window, and/or, in the chat window.
+
+### Security Level
+
+FULLSEC
+
+## Syntax
+
+### CLI
+
+```
+>>gui.chats { shell:false, chat:true }
+Success
+```
+
+### Script
+
+Cannot be called as a subscript.
+
+### Parameters
+
+One argument is required, either shell, or chat. If no arguments are provided, the script will return a Failure and usage information. The default values are both set to true.
+
+#### shell
+
+The 'shell' argument dictates if chat appears in the main window or not using a boolean (true/false).
+
+#### chat
+
+The 'chat' argument dictates if chat appears in the main window or not using a boolean (true/false).
+
+### Return
+
+Returns a Success or Failure object.
+
+#### CLI
+
+```
+>>gui.chats { shell:true, chat:true }
+Success
+```
+
+#### Script
+
+Cannot be called as a subscript.
