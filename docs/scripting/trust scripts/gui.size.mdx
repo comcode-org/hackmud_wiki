@@ -1,0 +1,56 @@
+---
+title: gui.size
+---
+
+## Description
+
+gui.size specifies text size in the terminal window.
+
+### Security Level
+
+FULLSEC
+
+## Syntax
+
+### CLI
+
+```
+gui.size { i: 0 }
+```
+
+### Script
+
+Cannot be called as a subscript.
+
+### Parameters
+
+#### i (required)
+
+the 'i' argument specifies the text size, as a number from -20 to 20. The default value is set to 0.
+
+### Return
+
+Returns a Success or Failure object.
+
+#### CLI
+
+No arguments or invalid arguments:
+
+```
+>>gui.size
+Failure
+Usage: gui.size { i:<-20 to 20> }
+change your gui size settings. negative numbers reduce size positive increases.
+current size: 0
+```
+
+Valid arguments:
+
+```
+>>gui.size { i: 0 }
+Success
+```
+
+#### Script
+
+Cannot be called as a subscript.
