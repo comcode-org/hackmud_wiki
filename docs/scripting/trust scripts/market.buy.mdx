@@ -4,40 +4,72 @@ title: market.buy
 
 ## Description
 
-In-game description of the script or function
+market.buy is a secure purchase system which uses 8 character alpha-numeric tokens from [[market.buy]] to purchase upgrades from the marketplace.
 
 ### Security Level
 
-The security level of the script
+MIDSEC
 
 ## Syntax
 
-A description of the scripts or functions behavior
+market.buy takes a market token as a string and requires that the value of the 'confirm' parameter be set to true.
 
 ### CLI
 
-Example CLI syntax
+```
+market.buy { i: ""}
+```
 
 ### Script
 
-Example script syntax
+```
+#ms.market.buy({ i:"ebwff5", confirm: true })
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### i (required)
+
+Takes a market token as a string.
+
+#### confirm (required)
+
+Value must be `true` in order to confirm purchase.
 
 ### Return
 
-What the function or script returns
+Returns a Success or Failure object.
 
 #### CLI
 
-return here
+No arguments or invalid arguments:
+
+```
+>>market.buy
+Failure
+invalid token. specify valid token with i:"<token>"
+```
+
+With valid arguments, confirmation, and enough GC to cover the purchase:
+
+```
+>>market.buy { i: "ebwff5", confirm: true }
+Success
+
+Transferred 1KGC to trust : trust
+
+-ez_21- acquired
+```
 
 #### Script
 
-return here
+Same as CLI.
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ms.market.buy({ i: "ebwff5", confirm: true })
+}
+```
