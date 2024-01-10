@@ -175,9 +175,9 @@ Dolor icecream :)
 
 1. When quoting commands they should be formatted like the following: `xena.defender { bank: true, stuff: 123 }`
 
-### Filenames
+### Filenames and folder names
 
-1. [Snakecase](https://en.wikipedia.org/wiki/Snake_case) should be used for filenames.
+1. [Snakecase](https://en.wikipedia.org/wiki/Snake_case) should be used for filenames and folder names.
 
 ### Templates
 
