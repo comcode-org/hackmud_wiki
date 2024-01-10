@@ -1,0 +1,75 @@
+---
+title: escrow.charge
+---
+
+## Description
+
+escrow.charge is a secure transaction system which can be used to sell access to a script.
+
+### Security Level
+
+FULLSEC
+
+## Syntax
+
+### CLI
+
+```
+escrow.charge { cost:"1GC", is_unlim: true }
+```
+
+### Script
+
+```
+#fs.escrow.charge({ cost:"1GC", is_unlim : true })
+```
+
+### Parameters
+
+#### cost (required)
+
+The 'cost' argument specifies a script-runs' escrow cost.
+
+#### is_unlim (required)
+
+The 'is_unlim' argument specifies whether the escrow cost is per-run, or unlimited access for a one-time-cost.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+```
+>>escrow.charge
+Failure
+Use escrow.charge to sell scripts. Place the following into your script:
+var result = #fs.escrow.charge({cost:<num or gc string>, is_unlim:<true false>});
+if (result) return result;
+```
+
+#### Script
+
+Running a script which includes escrow.charge on the user who hosts it will execute the script as normal, bypassing the cost requirement and escrow return. If a script which includes escrow.charge is run by any other user, the script will return a token, represented as a 6 character alpha-numeric string:
+
+```
+Failure
+Running this script costs 1GC each use. Confirm with escrow.confirm { i:"token5" }
+```
+
+## Example
+
+```
+function(context, args)
+{
+	var smiley_face = ":)"
+	var result = #fs.escrow.charge({ cost: 1, is_unlim: false });
+	if( result ) {
+		return smiley_face
+	} else {
+		return result
+	}
+}
+```
+
+If this script is run with no arguments, it will return an escrow token. If the escrow is confirmed, the script will return a smiley face. This script is set to require an escrow confirmation for each run. Changing the 'is_unlim' argument's value to `true` makes this a one-time-fee.
