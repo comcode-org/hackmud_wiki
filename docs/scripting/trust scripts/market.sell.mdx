@@ -4,40 +4,81 @@ title: market.sell
 
 ## Description
 
-In-game description of the script or function
+market.sell lists upgrades for sale on the marketplace.
 
 ### Security Level
 
-The security level of the script
+LOWSEC
 
 ## Syntax
 
-A description of the scripts or functions behavior
-
 ### CLI
 
-Example CLI syntax
+```
+market.sell { i: 0, cost: 1000, description: "smokin' deal" }
+```
 
 ### Script
 
-Example script syntax
+```
+#ls.market.sell({ i: 0, cost: 1000, description: "smokin' deal", no_notify: false })
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+market.sell has 2 required parameters, `cost` and `i`. All other parameters are optional.
+
+#### i (required)
+
+Takes a number and specifies the inventory index of the upgrade to be listed for sale.
+
+#### cost (required)
+
+Takes a number and specifies the asking price of the upgrade to be listed for sale.
+
+#### description
+
+Optional, takes a string and specifies the description field of the upgrade to be listed for sale.
+
+#### count
+
+Optional, takes a number and specifies how many of the same upgrade should be listed as a stack.
+
+#### delist
+
+Optional, takes a market token as a string and specifies an upgrade to be taken off the marketplace.
+
+#### no_notify
+
+Takes a boolean. Default value is set to true.
 
 ### Return
 
-What the function or script returns
+Returns an object.
 
 #### CLI
 
-return here
+```
+>>market.sell {i:55,cost:"1KGC",confirm:true,no_notify:false}
+{
+  ok: true,
+  token: "token5"
+}
+
+Transferred 1KGC to trust
+
+-ez_21- lost
+```
 
 #### Script
 
-return here
+Same as CLI.
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ls.market.sell({ i: 55, cost: "1KGC", description: "smokin' deal", confirm: true, no_notify: false })
+}
+```
