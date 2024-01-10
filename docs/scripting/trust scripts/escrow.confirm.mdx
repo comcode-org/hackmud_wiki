@@ -4,40 +4,62 @@ title: escrow.confirm
 
 ## Description
 
-In-game description of the script or function
+escrow.confirm validates the escrow.charge payment using the token provided.
 
 ### Security Level
 
-The security level of the script
+FULLSEC
 
 ## Syntax
 
-A description of the scripts or functions behavior
-
 ### CLI
 
-Example CLI syntax
+```
+escrow.confirm { i: "token5", confirm: true }
+```
 
 ### Script
 
-Example script syntax
+Cannot be called as a subscript.
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### i (required)
+
+The 'i' argument specifies the token
+
+#### confirm (required)
+
+The 'confirm' argument is a boolean confirmation of the escrow validation.
 
 ### Return
 
-What the function or script returns
+Returns an object.
 
 #### CLI
 
-return here
+```
+>>escrow.confirm
+Failure
+invalid token. specify valid token with i:"<token>"
+```
+
+Valid token, no confirmation:
+
+```
+>>escrow.confirm { i: "token5" }
+Failure
+Confirm escrow account of 1GC for each use of kbeeb.specs with confirm:true
+```
+
+Valid token and confirmation:
+
+```
+>>escrow.confirm { i: "token5", confirm: true }
+Success
+Escrow confirmed. You may now use <users.script>. You will need to reconfirm in 30 days or if the cost changes
+```
 
 #### Script
 
-return here
-
-## Example
-
-An example use of the function, in code, or script, in client and code
+Cannot be called as a subscript.
