@@ -1,0 +1,59 @@
+---
+title: gui.quiet
+---
+
+## Description
+
+gui.quiet prevents a user's chats from appearing in the terminal.
+
+### Security Level
+
+FULLSEC
+
+## Syntax
+
+### CLI
+
+```
+gui.quiet { add: "users" }
+```
+
+### Script
+
+Cannot be called as a subscript.
+
+### Parameters
+
+At least one argument is required. If no arguments are provided, gui.quiet will return a Failure object and usage information.
+
+#### add (optional)
+
+The 'add' argument takes a username as a string. Chats from the username input as a value of the 'add' argument will be muted in the terminal windows.
+
+#### remove (optional)
+
+The 'remove' argument takes a username as a string. Chats from the username input as a value of the 'remove' argument will appear in the terminal windows.
+
+#### list (optional)
+
+The 'list' argument takes a boolean (true/false). If the value is set to true, all muted usernames will be listed.
+
+#### clear (optional)
+
+The 'clear' argument takes a boolean (true/false). If the value is set to true, all previously muted usernames will be unmuted.
+
+### Return
+
+Returns a Success or Failure object.
+
+#### CLI
+
+```
+>>gui.quiet { clear:true }
+Success
+quiet list has been cleared
+```
+
+#### Script
+
+Cannot be called as a subscript.
