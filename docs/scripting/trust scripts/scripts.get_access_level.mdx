@@ -4,40 +4,67 @@ title: scripts.get_access_level
 
 ## Description
 
-In-game description of the script or function
+scripts.get_access_level shows information about a scripts' access level. Possible access level indicators include:
+
+- PUBLIC
+- PRIVATE
+- HIDDEN
+- TRUST
+
+For example, [[loc]]s will appear as PUBLIC HIDDEN. Trust scripts will appear as PUBLIC TRUST. Some scripts may appear as PUBLIC HIDDEN TRUST.
 
 ### Security Level
 
-The security level of the script
+FULLSEC
 
 ## Syntax
 
-A description of the scripts or functions behavior
-
 ### CLI
 
-Example CLI syntax
+```
+scripts.get_access_level { name: "accts.balance" }
+```
 
 ### Script
 
-Example script syntax
+```
+#fs.scripts.get_access_level
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### name (required)
+
+The 'name' argument specifies which scripts' access level shall be checked.
 
 ### Return
 
-What the function or script returns
-
 #### CLI
 
-return here
+On the CLI scripts.get_access_level returns a string.
+
+```
+>>scripts.get_access_level { name:"accts.balance" }
+PUBLIC TRUST
+```
 
 #### Script
 
-return here
+Called as a subscript, scripts.get_access_level returns an object.
+
+```
+{
+  public: true,
+  hidden: false,
+  trust: true
+}
+```
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #fs.scripts.get_access_level({ name: "accts.balance" })
+}
+```
