@@ -1,0 +1,75 @@
+---
+title: market.buy
+---
+
+## Description
+
+market.buy is a secure purchase system which uses 8 character alpha-numeric tokens from [[market.browse]] to purchase upgrades from the marketplace.
+
+### Security Level
+
+MIDSEC
+
+## Syntax
+
+market.buy takes a market token as a string and requires that the value of the 'confirm' parameter be set to true.
+
+### CLI
+
+```
+market.buy { i: ""}
+```
+
+### Script
+
+```
+#ms.market.buy({ i:"ebwff5", confirm: true })
+```
+
+### Parameters
+
+#### i (required)
+
+The 'i' argument takes a market token as a string.
+
+#### confirm (required)
+
+The 'confirm' argument value must be `true` in order to confirm purchase.
+
+### Return
+
+Returns a Success or Failure object.
+
+#### CLI
+
+No arguments or invalid arguments:
+
+```
+>>market.buy
+Failure
+invalid token. specify valid token with i:"<token>"
+```
+
+With valid arguments, confirmation, and enough GC to cover the purchase:
+
+```
+>>market.buy { i: "ebwff5", confirm: true }
+Success
+
+Transferred 1KGC to trust : trust
+
+-ez_21- acquired
+```
+
+#### Script
+
+Same as CLI.
+
+## Example
+
+```
+function(context, args)
+{
+	return #ms.market.buy({ i: "ebwff5", confirm: true })
+}
+```
