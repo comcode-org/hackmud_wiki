@@ -1,0 +1,159 @@
+---
+title: market.browse
+---
+
+## Description
+
+market.browse shows upgrades currently for sale on the marketplace.
+
+### Security Level
+
+FULLSEC
+
+## Syntax
+
+### CLI
+
+```
+market.browse { tier: 1, seller: "trust", rarity: 0 }
+```
+
+### Script
+
+```
+#fs.market.browse({ tier: 1, seller: "trust", rarity: 0 })
+```
+
+### Parameters
+
+At least one argument is required. If no arguments are input, market.browse will return a Failure object and detailed usage information. All arguments are optional. Any parameter that can take a number can also take MongoDB query conditionals, e.g. `chars: { $gte: 2000 }`.
+
+#### tier
+
+The 'tier' argument takes a number and specifies the tier of upgrades to be shown.
+
+#### seller
+
+The 'seller' argument takes a username as a string and specifies the seller, for example to filter upgrades sold by TRUST.
+
+#### listed_before
+
+The 'listed_before" argument takes a Unix timestamp, e.g. `1490286018.35423`.
+
+#### listed_after
+
+The 'listed_after" argument takes a Unix timestamp, e.g. `1490286018.35423`.
+
+#### rarity
+
+The 'rarity' argument takes a number ranging from 0 to 5 and specifies the rarity of upgrades to be shown.
+
+#### cost
+
+The 'cost' argument can take a GC string, a number, or MongoDB query conditionals, e.g. `cost: { $lte: 500000 }`
+
+#### name
+
+The 'name' argument takes a string and specifies the name of upgrades to be shown.
+
+#### type
+
+The 'type' argument takes a string and filters by upgrade type, e.g. `type: "lock"`.
+
+#### class
+
+The 'class' argument takes a string and filters by upgrade class, e.g. `class: "architect"`
+
+#### chars
+
+The 'chars' argument takes a number or MongoDB query conditional, `chars: { $gte: 2000 }`
+
+#### i
+
+The 'i' argument takes a market token as a string and returns detailed information about a market upgrade.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+Once filtered, market.browse will return token codes, represented by 6 character alpha-numeric strings which can be used to purchase upgrades.
+
+```
+>>market.browse { tier: 1, seller: "trust", rarity: 0, name: "ez_21" }
+ajrp0t 1KGC     ez_21
+mp5phf 1KGC     ez_21
+ebwff5 1KGC     ez_21
+m38jg7 1KGC     ez_21
+uu4jjk 1KGC     ez_21
+5n0gfq 1KGC     ez_21
+gublaw 1KGC     ez_21
+8pfh5x 1KGC     ez_21
+```
+
+#### Script
+
+Returning from a script will give more detailed output:
+
+```
+{
+  i: "ajrp0t",
+  name: "ez_21",
+  rarity: 0,
+  cost: 1000
+}
+{
+  i: "mp5phf",
+  name: "ez_21",
+  rarity: 0,
+  cost: 1000
+}
+{
+  i: "ebwff5",
+  name: "ez_21",
+  rarity: 0,
+  cost: 1000
+}
+{
+  i: "m38jg7",
+  name: "ez_21",
+  rarity: 0,
+  cost: 1000
+}
+{
+  i: "uu4jjk",
+  name: "ez_21",
+  rarity: 0,
+  cost: 1000
+}
+{
+  i: "5n0gfq",
+  name: "ez_21",
+  rarity: 0,
+  cost: 1000
+}
+{
+  i: "gublaw",
+  name: "ez_21",
+  rarity: 0,
+  cost: 1000
+}
+{
+  i: "8pfh5x",
+  name: "ez_21",
+  rarity: 0,
+  cost: 1000
+}
+```
+
+## Example
+
+An example use of the function, in code, or script, in client and code
+
+```
+function(context, args)
+{
+	return #fs.market.browse({ tier: 1, seller: "trust", rarity: 0, name: "ez_21" })
+}
+```
