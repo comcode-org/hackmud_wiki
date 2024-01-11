@@ -1,0 +1,71 @@
+---
+title: escrow.stats
+---
+
+## Description
+
+escrow.stats returns an information object with stats regarding escrow.charge inclusive scripts.
+
+### Security Level
+
+MIDSEC
+
+## Syntax
+
+### CLI
+
+```
+escrow.stats
+```
+
+### Script
+
+```
+#ms.escrow.stats()
+```
+
+### Parameters
+
+No known parameters.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+```
+>>escrow.stats
+{
+  scripts: [
+    "users.smiley_face"
+  ],
+  total: "0GC",
+  outstanding: "0GC",
+  open_escrow_count: 1
+}
+```
+
+#### Script
+
+```
+{
+  scripts: [
+    "users.smiley_face"
+  ],
+  total: "0GC",
+  outstanding: "0GC",
+  open_escrow_count: 1
+}
+```
+
+## Example
+
+Using escrow.stats in a script allows access to the objects' individual properties, such as `scripts`.
+
+```
+function(context, args)
+{
+	return #ms.escrow.stats().scripts
+}
+```
