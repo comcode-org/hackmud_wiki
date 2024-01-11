@@ -1,0 +1,84 @@
+---
+title: market.sell
+---
+
+## Description
+
+market.sell lists upgrades for sale on the marketplace.
+
+### Security Level
+
+LOWSEC
+
+## Syntax
+
+### CLI
+
+```
+market.sell { i: 0, cost: 1000, description: "smokin' deal" }
+```
+
+### Script
+
+```
+#ls.market.sell({ i: 0, cost: 1000, description: "smokin' deal", no_notify: false })
+```
+
+### Parameters
+
+market.sell has 2 required parameters, `cost` and `i`. All other parameters are optional.
+
+#### i (required)
+
+The 'i' argument takes a number and specifies the inventory index of the upgrade to be listed for sale.
+
+#### cost (required)
+
+The 'cost' argument takes a number and specifies the asking price of the upgrade to be listed for sale.
+
+#### description (optional)
+
+The 'description' argument takes a string and specifies the description field of the upgrade to be listed for sale.
+
+#### count (optional)
+
+The 'count' argument takes a number and specifies how many of the same upgrade should be listed as a stack.
+
+#### delist (optional)
+
+The 'delist' argument takes a market token as a string and specifies an upgrade to be taken off the marketplace.
+
+#### no_notify (optional)
+
+The 'no_notify" argument takes a boolean. Default value is set to true.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+```
+>>market.sell {i:55,cost:"1KGC",confirm:true,no_notify:false}
+{
+  ok: true,
+  token: "token5"
+}
+
+Transferred 1KGC to trust
+
+-ez_21- lost
+```
+
+#### Script
+
+Same as CLI.
+
+## Example
+
+```
+function(context, args)
+{
+	return #ls.market.sell({ i: 55, cost: "1KGC", description: "smokin' deal", confirm: true, no_notify: false })
+}
+```
