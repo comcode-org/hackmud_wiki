@@ -4,40 +4,60 @@ title: scripts.quine
 
 ## Description
 
-In-game description of the script or function
+scripts.quine outputs the source code of a player-made script.
 
 ### Security Level
 
-The security level of the script
+FULLSEC
 
 ## Syntax
 
-A description of the scripts or functions behavior
-
 ### CLI
 
-Example CLI syntax
+On the CLI, scripts.quine returns a Failure object and usage information.
+
+```
+>>scripts.quine
+Failure
+Use scripts.quine to output the source code of your script. Place the following into your script:
+return #fs.scripts.quine()
+```
 
 ### Script
 
-Example script syntax
+```
+#fs.scripts.quine()
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+No known parameters.
 
 ### Return
 
-What the function or script returns
-
 #### CLI
 
-return here
+On the CLI, scripts.quine returns an object.
 
 #### Script
 
-return here
+Called as a subscript, scripts.quine returns a string.
+
+```
+:)
+function(context, args)
+{
+	let smiley_face = ":)"
+	return [ smiley_face, #fs.scripts.quine() ]
+}
+```
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	let smiley_face = ":)"
+	return [ smiley_face, #fs.scripts.quine() ]
+}
+```
