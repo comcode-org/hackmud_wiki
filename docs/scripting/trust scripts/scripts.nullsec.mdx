@@ -4,40 +4,58 @@ title: scripts.nullsec
 
 ## Description
 
-In-game description of the script or function
+scripts.nullsec lists the nullsec sectors.
 
 ### Security Level
 
-The security level of the script
+nullsec
 
 ## Syntax
 
-A description of the scripts or functions behavior
-
 ### CLI
 
-Example CLI syntax
+```
+scripts.nullsec
+```
 
 ### Script
 
-Example script syntax
+```
+#fs.scripts.nullsec()
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### sector
+
+The 'sector' argument specifies the nullsec sector to be shown.
 
 ### Return
 
-What the function or script returns
+Returns an object.
 
 #### CLI
 
-return here
+No arguments:
+
+```
+>>scripts.nullsec
+specify & join a sector to see a list of the scripts in that sector.
+```
+
+The listed sectors are dynamic and will change over time. Running scripts.nullsec on the CLI will return 4 columns of sector names. Specifiying a sector will return the scripts which are currently in that sector.
 
 #### Script
 
-return here
+The listed sectors are dynamic and will change over time. Calling scripts.nullsec as a subscript will list one column of sector names by default. Specifiying a sector will return the scripts which are currently in that sector.
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+Note: the example sector may not be a valid sector.
+
+```
+function(context, args)
+{
+	return #fs.scripts.nullsec({ sector: "CHOICE_LAMBDA_2" })
+}
+```
