@@ -41,8 +41,7 @@ No arguments:
 
 ```
 >>scripts.midsec
-specify & join a sector to see a list of the scripts in that s
-ector.
+specify & join a sector to see a list of the scripts in that sector.
 ```
 
 The listed sectors are dynamic and will change over time. Running scripts.midsec on the CLI will return 4 columns of sector names. Specifiying a sector will return the scripts which are currently in that sector.
@@ -58,6 +57,6 @@ Note: the example sector may not be a valid sector.
 ```
 function(context, args)
 {
-	return #fs.scripts.midsec({ sector: "CHAOS_LAMBDA_1" })
+	return #fs.scripts.midsec({ sector: "KIN_THETA_7" })
 }
 ```
