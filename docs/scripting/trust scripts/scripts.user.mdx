@@ -4,40 +4,56 @@ title: scripts.user
 
 ## Description
 
-In-game description of the script or function
+scripts.user lists the player-made scripts that are currently hosted (`#up`) on a system.
 
 ### Security Level
 
-The security level of the script
+MIDSEC
 
 ## Syntax
 
-A description of the scripts or functions behavior
-
 ### CLI
 
-Example CLI syntax
+```
+scripts.user
+```
 
 ### Script
 
-Example script syntax
+```
+#ms.scripts.user()
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+No known parameters.
 
 ### Return
 
-What the function or script returns
+Returns an array.
 
 #### CLI
 
-return here
+On the CLI, the array of script names will be formatted in 2 columns.
+
+```
+users.example_script_1 users.example_script_2
+```
 
 #### Script
 
-return here
+Called as a subscript, the array of script names will be formatted in a single column by default.
+
+```
+users.example_script_1
+users.example_script_2
+```
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ms.scripts.user()
+}
+```
