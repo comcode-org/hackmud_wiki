@@ -4,40 +4,65 @@ title: scripts.sys
 
 ## Description
 
-In-game description of the script or function
+scripts.sys lists the available system scripts that can currently be accessed, based on upgrades loaded.
 
 ### Security Level
 
-The security level of the script
+HIGHSEC
 
 ## Syntax
 
-A description of the scripts or functions behavior
-
 ### CLI
 
-Example CLI syntax
+```
+scripts.sys
+```
 
 ### Script
 
-Example script syntax
+```
+#hs.scripts.sys()
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+No known parameters.
 
 ### Return
 
-What the function or script returns
+Returns an array.
 
 #### CLI
 
-return here
+On the CLI, scripts.sys returns strings formatted in columns.
+
+```
+>>scripts.sys
+sys.expose_access_log   sys.expose_upgrades  
+sys.expose_balance      sys.write_log        
+sys.expose_transactions sys.xfer_upgrade_from
+sys.expose_upgrade_log
+```
 
 #### Script
 
-return here
+Returns the array of strings as a single column by default.
+
+```
+sys.expose_access_log
+sys.expose_balance
+sys.expose_upgrades
+sys.expose_transactions
+sys.expose_upgrade_log
+sys.write_log
+sys.xfer_upgrade_from
+```
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #hs.scripts.sys()
+}
+```
