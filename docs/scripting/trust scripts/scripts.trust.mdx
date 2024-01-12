@@ -1,0 +1,85 @@
+---
+title: scripts.trust
+---
+
+## Description
+
+scripts.trust lists the TRUST scripts.
+
+### Security Level
+
+FULLSEC
+
+## Syntax
+
+### CLI
+
+```
+scripts.trust
+```
+
+### Script
+
+```
+#fs.scripts.trust()
+```
+
+### Parameters
+
+No known parameters.
+
+### Return
+
+Returns an array.
+
+#### CLI
+
+On the CLI, scripts.trust returns the array of strings formatted in 2 columns.
+
+```
+>>scripts.trust
+accts.balance              market.stats
+accts.balance_of_owner     scripts.fullsec
+accts.transactions         scripts.get_access_level
+accts.xfer_gc_to           scripts.get_level
+accts.xfer_gc_to_caller    scripts.highsec
+autos.reset                scripts.lowsec
+chats.channels             scripts.midsec
+chats.create               scripts.nullsec
+chats.join                 scripts.quine
+chats.leave                scripts.sys
+chats.send                 scripts.trust
+chats.tell                 scripts.user
+chats.users                sys.access_log
+corps.create               sys.breach
+corps.hire                 sys.cull
+corps.manage               sys.init
+corps.offers               sys.loc
+corps.quit                 sys.manage
+corps.top                  sys.specs
+escrow.charge              sys.status
+escrow.confirm             sys.upgrade_log
+escrow.stats               sys.upgrades
+gui.chats                  sys.upgrades_of_owner
+gui.quiet                  sys.xfer_upgrade_to
+gui.size                   sys.xfer_upgrade_to_caller
+gui.vfx                    trust.me
+gui.vol                    users.active
+kernel.hardline            users.config
+market.browse              users.inspect
+market.buy                 users.last_action
+market.sell                users.top
+```
+
+#### Script
+
+Called as a subscript, scripts.trust returns the array of strings in a single column by default.
+
+## Example
+
+```
+function(context, args)
+{
+	return #fs.scripts.trust()
+}
+```
