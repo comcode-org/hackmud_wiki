@@ -1,0 +1,68 @@
+---
+title: scripts.sys
+---
+
+## Description
+
+scripts.sys lists the available system scripts that can currently be accessed, based on upgrades loaded.
+
+### Security Level
+
+HIGHSEC
+
+## Syntax
+
+### CLI
+
+```
+scripts.sys
+```
+
+### Script
+
+```
+#hs.scripts.sys()
+```
+
+### Parameters
+
+No known parameters.
+
+### Return
+
+Returns an array.
+
+#### CLI
+
+On the CLI, scripts.sys returns strings formatted in columns.
+
+```
+>>scripts.sys
+sys.expose_access_log   sys.expose_upgrades
+sys.expose_balance      sys.write_log
+sys.expose_transactions sys.xfer_upgrade_from
+sys.expose_upgrade_log
+```
+
+#### Script
+
+Returns the array of strings as a single column by default.
+
+```
+sys.expose_access_log
+sys.expose_balance
+sys.expose_upgrades
+sys.expose_transactions
+sys.expose_upgrade_log
+sys.write_log
+sys.xfer_upgrade_from
+```
+
+## Example
+
+```
+function(context, args)
+{
+	return #hs.scripts.sys()
+}
+```
