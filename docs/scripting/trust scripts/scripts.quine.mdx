@@ -1,0 +1,63 @@
+---
+title: scripts.quine
+---
+
+## Description
+
+scripts.quine outputs the source code of a player-made script.
+
+### Security Level
+
+FULLSEC
+
+## Syntax
+
+### CLI
+
+On the CLI, scripts.quine returns a Failure object and usage information.
+
+```
+>>scripts.quine
+Failure
+Use scripts.quine to output the source code of your script. Place the following into your script:
+return #fs.scripts.quine()
+```
+
+### Script
+
+```
+#fs.scripts.quine()
+```
+
+### Parameters
+
+No known parameters.
+
+### Return
+
+#### CLI
+
+On the CLI, scripts.quine returns an object.
+
+#### Script
+
+Called as a subscript, scripts.quine returns a string.
+
+```
+:)
+function(context, args)
+{
+	let smiley_face = ":)"
+	return [ smiley_face, #fs.scripts.quine() ]
+}
+```
+
+## Example
+
+```
+function(context, args)
+{
+	let smiley_face = ":)"
+	return [ smiley_face, #fs.scripts.quine() ]
+}
+```
