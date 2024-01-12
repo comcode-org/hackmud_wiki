@@ -1,0 +1,59 @@
+---
+title: scripts.get_level
+---
+
+## Description
+
+scripts.get_level shows a scripts security level.
+
+### Security Level
+
+FULLSEC
+
+## Syntax
+
+### CLI
+
+```
+scripts.get_level { name: "accts.balance" }
+```
+
+### Script
+
+```
+#fs.scripts.get_level({ name: "accts.balance" })
+```
+
+### Parameters
+
+#### name (required)
+
+The 'name' argument specifies which scripts' security level shall be checked.
+
+### Return
+
+#### CLI
+
+On the CLI, scripts.get_level returns a string.
+
+```
+>>scripts.get_level { name: "accts.balance" }
+HIGHSEC
+```
+
+#### Script
+
+Called as a subscript, scripts.get_level returns a number.
+
+```
+3
+```
+
+## Example
+
+```
+function(context, args)
+{
+	return #fs.scripts.get_level({ name: "accts.balance" })
+}
+```
