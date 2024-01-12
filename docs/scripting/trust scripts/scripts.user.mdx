@@ -1,0 +1,59 @@
+---
+title: scripts.user
+---
+
+## Description
+
+scripts.user lists the player-made scripts that are currently hosted (`#up`) on a system.
+
+### Security Level
+
+MIDSEC
+
+## Syntax
+
+### CLI
+
+```
+scripts.user
+```
+
+### Script
+
+```
+#ms.scripts.user()
+```
+
+### Parameters
+
+No known parameters.
+
+### Return
+
+Returns an array.
+
+#### CLI
+
+On the CLI, the array of script names will be formatted in 2 columns.
+
+```
+users.example_script_1 users.example_script_2
+```
+
+#### Script
+
+Called as a subscript, the array of script names will be formatted in a single column by default.
+
+```
+users.example_script_1
+users.example_script_2
+```
+
+## Example
+
+```
+function(context, args)
+{
+	return #ms.scripts.user()
+}
+```
