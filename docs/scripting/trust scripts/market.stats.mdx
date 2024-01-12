@@ -1,0 +1,58 @@
+---
+title: market.stats
+---
+
+## Description
+
+market.stats returns an object containing statistical information about items listed and sold on the market, as well as GC earned from marketplace sales.
+
+### Security Level
+
+MIDSEC
+
+## Syntax
+
+### CLI
+
+```
+market.stats
+```
+
+### Script
+
+```
+#ms.market.stats()
+```
+
+### Parameters
+
+No known parameters.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+```
+>>market.stats
+{
+  total: "0GC",
+  outstanding: "0GC",
+  listed: 1,
+  sold: 0
+}
+```
+
+#### Script
+
+Same as CLI.
+
+## Example
+
+```
+function(context, args)
+{
+	return #ms.market.stats()
+}
+```
