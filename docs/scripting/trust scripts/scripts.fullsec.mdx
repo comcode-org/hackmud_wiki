@@ -1,0 +1,61 @@
+---
+title: scripts.fullsec
+---
+
+## Description
+
+scripts.fullsec lists the FULLSEC sectors.
+
+### Security Level
+
+FULLSEC
+
+## Syntax
+
+### CLI
+
+```
+scripts.fullsec
+```
+
+### Script
+
+```
+#fs.scripts.fullsec()
+```
+
+### Parameters
+
+#### sector
+
+The 'sector' argument specifies the fullsec sector to be shown.
+
+### Return
+
+Returns an array.
+
+#### CLI
+
+No arguments:
+
+```
+>>scripts.fullsec
+specify & join a sector to see a list of the scripts in that sector.
+```
+
+The listed sectors are dynamic and will change over time. Running scripts.fullsec on the CLI will return 4 columns of sector names. Specifiying a sector will return the scripts which are currently in that sector.
+
+#### Script
+
+The listed sectors are dynamic and will change over time. Calling scripts.fullsec as a subscript will list one column of sector names by default. Specifiying a sector will return the scripts which are currently in that sector.
+
+## Example
+
+Note: the example sector may not be a valid sector.
+
+```
+function(context, args)
+{
+	return #fs.scripts.fullsec({ sector: "VOID_LAMBDA_2" })
+}
+```
