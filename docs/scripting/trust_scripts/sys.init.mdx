@@ -2,40 +2,65 @@
 title: sys.init
 ---
 
-> In-game description of the script or function
+> sys.init initializes a system, or upgrades its tier once it is initialized.
 
 ### Security Level
 
-The security level of the script
+FULLSEC
 
 ## Syntax
 
-A description of the scripts or functions behavior
-
 ### CLI
 
-Example CLI syntax
+```
+sys.init { confirm: true }
+```
 
 ### Script
 
-Example script syntax
+```
+#fs.sys.init({ confirm: true })
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### confirm (required)
+
+The 'confirm' parameter allows execution of sys.init.
 
 ### Return
 
-What the function or script returns
+Returns a Success or Faliure object.
 
 #### CLI
 
-return here
+No parameters or invalid parameters:
+
+```
+>>sys.init
+Initializing a system costs 1MGC. Once your system is initialized, it can be upgraded.
+Tier 1 systems can hold 20MGC.
+To initialize your system use {confirm: true}
+```
+
+Correct parameters:
+
+```
+>>sys.init{ confirm: true }
+Success
+
+Transferred 1MGC to trust
+```
 
 #### Script
 
-return here
+Same as CLI.
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ns.sys.init({ confirm: true })
+}
+```
