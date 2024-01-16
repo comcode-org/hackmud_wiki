@@ -2,40 +2,76 @@
 title: sys.breach
 ---
 
-> In-game description of the script or function
+> breaches sys
 
 ### Security Level
 
-The security level of the script
+NULLSEC
 
 ## Syntax
 
-A description of the scripts or functions behavior
-
 ### CLI
 
-Example CLI syntax
+```
+sys.breach { confirm: true }
+```
 
 ### Script
 
-Example script syntax
+```
+#ls.sys.breach({ confirm: true })
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### confirm (required)
+
+The 'confirm' parameter allows execution of sys.breach.
 
 ### Return
 
-What the function or script returns
+Returns an object.
 
 #### CLI
 
-return here
+No parameters or invalid parameters:
+
+```
+>>sys.breach
+Usage: sys.breach {confirm: true}
+breaches sys
+```
+
+With confirm parameter:
+
+```
+>>sys.breach{confirm:true}
+Success
+
+System has been breached.
+```
+
+On uninitialized system:
+
+```
+>>sys.breach{confirm:true}
+Failure
+sys not initialized
+```
 
 #### Script
 
-return here
+```
+Success
+
+System has been breached.
+```
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ns.sys.breach({ confirm: true })
+}
+```
