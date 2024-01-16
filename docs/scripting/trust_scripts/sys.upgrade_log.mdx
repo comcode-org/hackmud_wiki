@@ -2,42 +2,87 @@
 title: documentation template
 ---
 
-## Description
-
-In-game description of the script or function
+> sys.upgrade_log displays information about upgrades which have been sent and recieved.
 
 ### Security Level
 
-The security level of the script
+HIGHSEC
 
 ## Syntax
 
-A description of the scripts or functions behavior
-
 ### CLI
 
-Example CLI syntax
+```
+sys.upgrade_log
+```
 
 ### Script
 
-Example script syntax
+```
+sys.upgrade_log()
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### user
+
+The 'user' argument filters sent and recieved upgrades by user.
+
+#### run_id
+
+#### count
+
+The 'count' argument specifies the number of upgrade logs to be displayed.
+
+#### start
+
+The 'start' offsets the start of the upgrade log list to be displayed.
 
 ### Return
 
-What the function or script returns
+Returns an object.
 
 #### CLI
 
-return here
+```
+>>sys.upgrade_log
+To filter list, add user:"<username>" or run_id:"run_id"
+Get a range with count:<count> and start:<offset>
+
+240111.0326 l0g_wr1t3r (595adab7bed7371f1642be38) acquired from users
+240110.0440 ez_21 (659e1acd9ce45b4d9711e379) listed on market
+240110.0419 ez_21 (659e1acd9ce45b4d9711e379) bought from market
+```
 
 #### Script
 
-return here
+```
+>>specs
+{
+  t: "2024-01-11T03:26:28.258Z",
+  u: "xena",
+  r: "659f5fe33c341063bc3e04d6",
+  msg: "l0g_wr1t3r (595adab7bed7371f1642be38) acquired from users"
+}
+{
+  t: "2024-01-10T04:40:00.051Z",
+  u: "users",
+  r: "659e1f9e3c341063a13e04a4",
+  msg: "ez_21 (659e1acd9ce45b4d9711e379) listed on market"
+}
+{
+  t: "2024-01-10T04:19:25.631Z",
+  u: "users",
+  r: "659e1acd3c341063ab3e02a3",
+  msg: "ez_21 (659e1acd9ce45b4d9711e379) bought from market"
+}
+```
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ms.sys.upgrade_log()
+}
+```
