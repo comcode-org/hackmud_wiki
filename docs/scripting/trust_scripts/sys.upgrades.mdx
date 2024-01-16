@@ -6,36 +6,106 @@ title: sys.upgrades
 
 ### Security Level
 
-The security level of the script
+HIGHSEC
 
 ## Syntax
 
-A description of the scripts or functions behavior
-
 ### CLI
 
-Example CLI syntax
+```
+sys.upgrades
+```
 
 ### Script
 
-Example script syntax
+```
+#hs.scripts.upgrades()
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### filter
+
+The 'filter' parameter takes an object which can specify the properties 'loaded' and 'chars'.
+
+- loaded
+
+Takes a boolean, specifies whether to display loaded upgrades with true, or unloaded upgrades with false.
+
+- chars
+
+Takes MongoDB query compatibles, e.g. `chars: { "$gte" : 2000 }`
+
+#### full
+
+The 'full' parameter takes a boolean. If the value is set to `true` sys.upgrades will display the full details object of each upgrade.
+
+#### i
+
+The 'i' parameter takes either a number or an array of numbers.
 
 ### Return
 
-What the function or script returns
+Returns an object.
 
 #### CLI
 
-return here
+No parameters or invalid parameters:
+
+```
+>>sys.upgrades
+To filter list, add filter:<filter object>; e.g. filter:{loaded:true, chars:{"$gte":2000}}
+full:true for upgrade details
+i:<index or array> to pre-filter on index(es)
+
+000 tier_3 chat         channel_count_v3
+001 tier_3 script_space char_count_v3
+002 tier_3 script_space public_script_v3
+003 tier_3 script_space script_slot_v3
+```
 
 #### Script
 
-return here
+```
+{
+  i: 0,
+  loaded: true,
+  tier: 3,
+  rarity: 2,
+  name: "channel_count_v3",
+  type: "chat"
+}
+{
+  i: 1,
+  loaded: true,
+  tier: 3,
+  rarity: 1,
+  name: "char_count_v3",
+  type: "script_space"
+}
+{
+  i: 2,
+  loaded: true,
+  tier: 3,
+  rarity: 1,
+  name: "public_script_v3",
+  type: "script_space"
+}
+{
+  i: 3,
+  loaded: true,
+  tier: 3,
+  rarity: 1,
+  name: "script_slot_v3",
+  type: "script_space"
+}
+```
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #hs.sys.upgrades({ filter: { loaded: true }})
+}
+```
