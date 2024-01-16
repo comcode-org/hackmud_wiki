@@ -2,40 +2,74 @@
 title: sys.cull
 ---
 
-> In-game description of the script or function
+> destroys upgrade at i
 
 ### Security Level
 
-The security level of the script
+LOWSEC
 
 ## Syntax
 
-A description of the scripts or functions behavior
+Index values are input as a number, or array of numbers with no leading 0s.
 
 ### CLI
 
-Example CLI syntax
+Single upgrade:
+
+```
+sys.cull { i: 0 }
+```
+
+Multiple upgrades:
+
+```
+sys.cull { i: [ 0, 1, 2 ], confirm: true }
+```
 
 ### Script
 
-Example script syntax
+```
+#ls.sys.cull({ i: [ 0, 1, 2 ], confirm: true })
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### i (required)
+
+The 'i' parameter specifies the upgrade(s) to be culled.
 
 ### Return
 
-What the function or script returns
+Returns an object.
 
 #### CLI
 
-return here
+No parameters or invalid parameters
+
+```
+>>sys.cull
+Usage: sys.cull { i:<upgrade index or array> }
+destroys upgrade at i
+```
+
+Correct parameters:
+
+```
+>>sys.cull { i:244, confirm: true }
+Success
+
+-expose_access_log_v1- destroyed
+```
 
 #### Script
 
-return here
+Same as CLI.
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ls.sys.cull({ i: 55, confirm: true })
+}
+```
