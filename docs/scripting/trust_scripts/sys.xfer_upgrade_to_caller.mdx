@@ -2,40 +2,62 @@
 title: sys.xfer_upgrade_to_caller
 ---
 
-> In-game description of the script or function
+> accts.xfer_upgrade_to_caller allows a script to send upgrades to the caller of the script.
 
 ### Security Level
 
-The security level of the script
+FULLSEC
 
 ## Syntax
 
-A description of the scripts or functions behavior
-
 ### CLI
 
-Example CLI syntax
+```
+sys.xfer_upgrade_to_caller
+```
 
 ### Script
 
-Example script syntax
+Single upgrade:
+
+```
+#fs.sys.xfer_upgrade_to_caller({ to: "user", i: 0 })
+```
+
+Multiple upgrades:
+
+#fs.sys.xfer_upgrade_to_caller({ to: "user", i: [ 0, 1, 2 ] })
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### i (required)
+
+Takes a number or array of numbers and specifies which upgrades shall be sent.
 
 ### Return
 
-What the function or script returns
+Returns a Success or Failure object.
 
 #### CLI
 
-return here
+```
+>>sys.xfer_upgrade_to_caller
+Usage: (in subscript) #fs.sys.xfer_upgrade_to_caller({ i:<upgrade index or array>, sn:<upgrade SN or array>, memo:"<optional memo (50/1)>" })
+```
 
 #### Script
 
-return here
+```
+Success
+
+-k3y_v2- lost to trust
+```
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ls.sys.xfer_upgrade_to_caller({ i: 44 })
+}
+```
