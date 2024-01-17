@@ -2,40 +2,86 @@
 title: users.inspect
 ---
 
-> In-game description of the script or function
+> users.inspect displays the profile of a specified user.
 
 ### Security Level
 
-The security level of the script
+HIGHSEC
 
 ## Syntax
 
-A description of the scripts or functions behavior
-
 ### CLI
 
-Example CLI syntax
+```
+users.inspect { name: "seanmakesgames" }
+```
 
 ### Script
 
-Example script syntax
+```
+#hs.users.inspect({ name: "seanmakesgames" })
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### name (required)
+
+Takes a string and specifies the user to inspect.
 
 ### Return
 
-What the function or script returns
+Returns an object.
 
 #### CLI
 
-return here
+```
+>>users.inspect {name:"seanmakesgames"}
+
+                  packbot seanmakesgames [iwin]
+                  he/him
+
+   ██████████     I don't make the game
+                  I just play it really well.
+
+
+
+User for 3357 days 141107.0305
+
+This is a main user
+
+-badges- details with badge_info: true
+
+  ▂   █▀▀▀◣   |/     /
+ ◢▂◣  █▀▀▀◤  / ,)   <,\
+◢◤ ◥◣ ████◤ (___) T▂T▂_
+```
 
 #### Script
 
-return here
+```
+{
+  username: "seanmakesgames",
+  avatar: "                \n                \n                \n                \n   ██████████   \n                \n                \n                ",
+  pronouns: "he/him",
+  user_age: "2014-11-07T03:05:29.789Z",
+  bio: "I don't make the game\nI just play it really well.",
+  title: "packbot",
+  corp: "iwin",
+  is_main: true,
+  badges: [
+    "  ▂  \n ◢▂◣ \n◢◤ ◥◣",
+    "█▀▀▀◣\n█▀▀▀◤\n████◤",
+    "  |/ \n / ,)\n(___)",
+    "   / \n  <,\\\nT▂T▂_"
+  ]
+}
+```
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ns.users.inspect({ name: "seanmakesgames" })
+}
+```
