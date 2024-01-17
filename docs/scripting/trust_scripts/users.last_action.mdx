@@ -2,40 +2,60 @@
 title: users.last_action
 ---
 
-> In-game description of the script or function
+> users.last_action displays a timestamp from a specified user's most recent action.
 
 ### Security Level
 
-The security level of the script
+FULLSEC
 
 ## Syntax
 
-A description of the scripts or functions behavior
-
 ### CLI
 
-Example CLI syntax
+```
+users.last_action { name: "trust" }
+```
 
 ### Script
 
-Example script syntax
+```
+#fs.users.last_action({ name: "trust" })
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### name (required)
+
+The 'name' argument takes a string and specifies which user's last action shall be checked.
 
 ### Return
 
-What the function or script returns
+Returns an object.
 
 #### CLI
 
-return here
+```
+>>users.last_action {name: "trust" }
+{
+  n: "trust",
+  t: "2024-01-16T21:43:11.439Z"
+}
+```
 
 #### Script
 
-return here
+```
+{
+  n: "trust",
+  t: "2024-01-16T21:43:11.439Z"
+}
+```
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ns.users.last_action({ name: "trust" })
+}
+```
