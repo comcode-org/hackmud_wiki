@@ -2,40 +2,50 @@
 title: sys.loc
 ---
 
-> In-game description of the script or function
+> sys.loc displays a system's [[loc]].
 
 ### Security Level
 
-The security level of the script
+LOWSEC
 
 ## Syntax
 
-A description of the scripts or functions behavior
-
 ### CLI
 
-Example CLI syntax
+```
+sys.loc
+```
 
 ### Script
 
-Example script syntax
+```
+#ls.sys.loc()
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+No known parameters.
 
 ### Return
 
-What the function or script returns
+Returns a string.
 
 #### CLI
 
-return here
+```
+>>sys.loc
+users.fakeloc123
+```
 
 #### Script
 
-return here
+Same as CLI.
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ns.sys.loc()
+}
+```
