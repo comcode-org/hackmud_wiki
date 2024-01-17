@@ -2,40 +2,69 @@
 title: sys.manage
 ---
 
-> In-game description of the script or function
+> sys.manage allows loading, unloading or reordering upgrades.
 
 ### Security Level
 
-The security level of the script
+MIDSEC
 
 ## Syntax
 
-A description of the scripts or functions behavior
-
 ### CLI
 
-Example CLI syntax
+```
+sys.manage
+```
 
 ### Script
 
-Example script syntax
+```
+#ms.sys.manage()
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### unload
+
+The 'unload' argument takes an upgrade index as a number, or an array of numbers with no leading 0s.
+
+#### load
+
+The 'load' argument takes an upgrade index as a number, or an array of numbers with no leading 0s.
+
+#### reorder
+
+The 'reorder' argument takes reorder pairs as objects, or arrays.
+
+```
+sys.manage { reorder: { from: 0, to: 1 } }
+```
+
+```
+sys.manage { reorder: [ [ 0, 1 ], [ 2, 3 ] ] }
+```
 
 ### Return
 
-What the function or script returns
+Returns an object.
 
 #### CLI
 
-return here
+```
+>>sys.manage { reorder: { from: 0, to: 1 } }
+000 tier_3 script_space char_count_v3
+001 tier_3 chat         channel_count_v3
+```
 
 #### Script
 
-return here
+Same as CLI.
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ms.sys.manage({ reorder: [ [ 1, 0 ] ] }) 
+}
+```
