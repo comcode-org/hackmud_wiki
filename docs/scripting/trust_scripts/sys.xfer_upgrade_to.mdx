@@ -2,40 +2,70 @@
 title: sys.xfer_upgrade_to
 ---
 
-> In-game description of the script or function
+> Sends upgrade(s) to a specified user.
 
 ### Security Level
 
-The security level of the script
+LOWSEC
 
 ## Syntax
 
-A description of the scripts or functions behavior
-
 ### CLI
 
-Example CLI syntax
+Single upgrade:
+
+```
+sys.xfer_upgrade_to { to: "user", i: 0 }
+```
+
+Multiple upgrades:
+
+```
+sys.xfer_upgrade_to { to: "user", i: [ 0, 1, 2 ] }
+```
 
 ### Script
 
-Example script syntax
+```
+#ls.sys.xfer_upgrade_to({ to: "user", i: [ 0, 1, 2 ] })
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### to (required)
+
+The 'to' argument takes a username as a string and specifies the username where upgrades shall be sent.
+
+#### i (required)
+
+The 'i' argument takes a number or array of numbers and specifies the upgrade index(es) to be sent.
 
 ### Return
 
-What the function or script returns
+Returns a Success or Failure object.
 
 #### CLI
 
-return here
+```
+>>sys.xfer_upgrade_to { to: "trust", i: 44 }
+Success
+
+-k3y_v2- lost to trust
+```
 
 #### Script
 
-return here
+```
+Success
+
+-k3y_v2- lost to trust
+```
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```
+function(context, args)
+{
+	return #ls.sys.xfer_upgrade_to({ to: "trust", i: 44 })
+}
+```
