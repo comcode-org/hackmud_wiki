@@ -1,0 +1,75 @@
+---
+title: sys.cull
+---
+
+sys.cull allows a user to destroy an upgrade specified by the `i` argument.
+
+### Security Level
+
+LOWSEC
+
+## Syntax
+
+Index values are input as a number, or array of numbers with no leading 0s.
+
+### CLI
+
+Single upgrade:
+
+```
+sys.cull { i: 0 }
+```
+
+Multiple upgrades:
+
+```
+sys.cull { i: [ 0, 1, 2 ], confirm: true }
+```
+
+### Script
+
+```
+#ls.sys.cull({ i: [ 0, 1, 2 ], confirm: true })
+```
+
+### Parameters
+
+#### i (required)
+
+The 'i' parameter specifies the upgrade(s) to be culled.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+No parameters or invalid parameters
+
+```
+>>sys.cull
+Usage: sys.cull { i:<upgrade index or array> }
+destroys upgrade at i
+```
+
+Correct parameters:
+
+```
+>>sys.cull { i:244, confirm: true }
+Success
+
+-expose_access_log_v1- destroyed
+```
+
+#### Script
+
+Same as CLI.
+
+## Example
+
+```
+function(context, args)
+{
+	return #ls.sys.cull({ i: 55, confirm: true })
+}
+```
