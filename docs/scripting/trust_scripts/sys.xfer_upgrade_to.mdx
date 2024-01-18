@@ -1,0 +1,71 @@
+---
+title: sys.xfer_upgrade_to
+---
+
+Sends upgrade(s) to a specified user.
+
+### Security Level
+
+LOWSEC
+
+## Syntax
+
+### CLI
+
+Single upgrade:
+
+```
+sys.xfer_upgrade_to { to: "user", i: 0 }
+```
+
+Multiple upgrades:
+
+```
+sys.xfer_upgrade_to { to: "user", i: [ 0, 1, 2 ] }
+```
+
+### Script
+
+```
+#ls.sys.xfer_upgrade_to({ to: "user", i: [ 0, 1, 2 ] })
+```
+
+### Parameters
+
+#### to (required)
+
+The 'to' argument takes a username as a string and specifies the username where upgrades shall be sent.
+
+#### i (required)
+
+The 'i' argument takes a number or array of numbers and specifies the upgrade index(es) to be sent.
+
+### Return
+
+Returns a Success or Failure object.
+
+#### CLI
+
+```
+>>sys.xfer_upgrade_to { to: "trust", i: 44 }
+Success
+
+-k3y_v2- lost to trust
+```
+
+#### Script
+
+```
+Success
+
+-k3y_v2- lost to trust
+```
+
+## Example
+
+```
+function(context, args)
+{
+	return #ls.sys.xfer_upgrade_to({ to: "trust", i: 44 })
+}
+```
