@@ -1,0 +1,118 @@
+---
+title: sys.access_log
+---
+
+> sys.access_log displays information about connection attempts from other systems, including lock state and breach state rotation.
+
+### Security Level
+
+LOWSEC
+
+## Syntax
+
+### CLI
+
+```
+sys.access_log
+```
+
+### Script
+
+```
+#ls.sys.access_log()
+```
+
+### Parameters
+
+#### user
+
+The 'user' argument filters access logs to be displayed by username.
+
+#### run_id
+
+The 'run_id' argument filters access logs to be displayed by specific run ID's.
+
+#### count
+
+The 'count' argument specifies the number of access logs to be displayed.
+
+#### start
+
+The 'start' argument offsets the start of the access logs to be displayed.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+```
+>>sys.access_log
+To filter list, add user:"<username>" or run_id:"run_id"
+Get a range with count:<count> and start:<offset>
+
+240116.2216 Lock rotation. Breach state reset.
+240116.2114 Lock rotation. Breach state reset.
+240116.2012 Lock rotation. Breach state reset.
+240116.1910 Lock rotation. Breach state reset.
+240116.1808 Lock rotation. Breach state reset.
+240116.1706 Lock rotation. Breach state reset.
+240116.1604 Lock rotation. Breach state reset.
+240116.1502 Lock rotation. Breach state reset.
+240116.1400 Lock rotation. Breach state reset.
+240116.1258 Lock rotation. Breach state reset.
+```
+
+#### Script
+
+```
+{
+  t: "2024-01-16T22:16:11.779Z",
+  msg: "Lock rotation. Breach state reset."
+}
+{
+  t: "2024-01-16T21:14:12.241Z",
+  msg: "Lock rotation. Breach state reset."
+}
+{
+  t: "2024-01-16T20:12:13.533Z",
+  msg: "Lock rotation. Breach state reset."
+}
+{
+  t: "2024-01-16T19:10:13.539Z",
+  msg: "Lock rotation. Breach state reset."
+}
+{
+  t: "2024-01-16T18:08:11.942Z",
+  msg: "Lock rotation. Breach state reset."
+}
+{
+  t: "2024-01-16T17:06:11.892Z",
+  msg: "Lock rotation. Breach state reset."
+}
+{
+  t: "2024-01-16T16:04:11.735Z",
+  msg: "Lock rotation. Breach state reset."
+}
+{
+  t: "2024-01-16T15:02:12.372Z",
+  msg: "Lock rotation. Breach state reset."
+}
+{
+  t: "2024-01-16T14:00:15.624Z",
+  msg: "Lock rotation. Breach state reset."
+}
+{
+  t: "2024-01-16T12:58:12.237Z",
+  msg: "Lock rotation. Breach state reset."
+}
+```
+
+## Example
+
+```
+function(context, args)
+{
+	return #ls.sys.access_log()
+}
+```
