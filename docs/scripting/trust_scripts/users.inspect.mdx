@@ -1,0 +1,87 @@
+---
+title: users.inspect
+---
+
+users.inspect displays the profile of a specified user.
+
+### Security Level
+
+HIGHSEC
+
+## Syntax
+
+### CLI
+
+```
+users.inspect { name: "seanmakesgames" }
+```
+
+### Script
+
+```
+#hs.users.inspect({ name: "seanmakesgames" })
+```
+
+### Parameters
+
+#### name (required)
+
+The 'name' argument takes a string and specifies the user to inspect.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+```
+>>users.inspect { name: "seanmakesgames" }
+
+                  packbot seanmakesgames [iwin]
+                  he/him
+
+   ██████████     I don't make the game
+                  I just play it really well.
+
+
+
+User for 3357 days 141107.0305
+
+This is a main user
+
+-badges- details with badge_info: true
+
+  ▂   █▀▀▀◣   |/     /
+ ◢▂◣  █▀▀▀◤  / ,)   <,\
+◢◤ ◥◣ ████◤ (___) T▂T▂_
+```
+
+#### Script
+
+```
+{
+  username: "seanmakesgames",
+  avatar: "                \n                \n                \n                \n   ██████████   \n                \n                \n                ",
+  pronouns: "he/him",
+  user_age: "2014-11-07T03:05:29.789Z",
+  bio: "I don't make the game\nI just play it really well.",
+  title: "packbot",
+  corp: "iwin",
+  is_main: true,
+  badges: [
+    "  ▂  \n ◢▂◣ \n◢◤ ◥◣",
+    "█▀▀▀◣\n█▀▀▀◤\n████◤",
+    "  |/ \n / ,)\n(___)",
+    "   / \n  <,\\\nT▂T▂_"
+  ]
+}
+```
+
+## Example
+
+```
+function(context, args)
+{
+	return #ns.users.inspect({ name: "seanmakesgames" })
+}
+```
