@@ -1,0 +1,54 @@
+---
+title: users.active
+---
+
+Displays the number of currently active users.
+
+### Security Level
+
+FULLSEC
+
+## Syntax
+
+### CLI
+
+```
+users.active
+```
+
+### Script
+
+```
+#fs.users.active()
+```
+
+### Parameters
+
+No known parameters.
+
+### Return
+
+Returns a number.
+
+#### CLI
+
+```
+>>users.active
+current users: 293
+
+```
+
+#### Script
+
+```
+293
+```
+
+## Example
+
+```
+function(context, args)
+{
+	return typeof(#fs.users.active())
+}
+```
