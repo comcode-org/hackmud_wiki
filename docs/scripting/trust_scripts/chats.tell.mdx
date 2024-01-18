@@ -19,7 +19,7 @@ chats.tell { to: "user", msg: "this is a private message" }
 ### Script
 
 ```
-#fs.chats.tell({ to: "user", msg : "this is a private message" })
+#fs.chats.tell({ to: "user", msg: "this is a private message" })
 ```
 
 ### Parameters
@@ -39,7 +39,7 @@ Returns an object.
 #### CLI
 
 ```
->>chats.tell { to:"user", msg:"this is a private message" }
+>>chats.tell { to: "user", msg: "this is a private message" }
 Msg Sent
 
 1555 to user :::this is a private message:::
@@ -56,5 +56,4 @@ function(context, args)
 {
 	return #ms.chats.tell({ to: "user", msg: "this is a private message" })
 }
-
 ```
