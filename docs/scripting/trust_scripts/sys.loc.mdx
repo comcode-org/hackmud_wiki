@@ -1,0 +1,51 @@
+---
+title: sys.loc
+---
+
+sys.loc displays a system's [[loc]].
+
+### Security Level
+
+LOWSEC
+
+## Syntax
+
+### CLI
+
+```
+sys.loc
+```
+
+### Script
+
+```
+#ls.sys.loc()
+```
+
+### Parameters
+
+No known parameters.
+
+### Return
+
+Returns a string.
+
+#### CLI
+
+```
+>>sys.loc
+user.fakeloc123
+```
+
+#### Script
+
+Same as CLI.
+
+## Example
+
+```
+function(context, args)
+{
+	return #ns.sys.loc()
+}
+```
