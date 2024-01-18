@@ -1,0 +1,77 @@
+---
+title: sys.breach
+---
+
+sys.breach breaches the caller's system.
+
+### Security Level
+
+NULLSEC
+
+## Syntax
+
+### CLI
+
+```
+sys.breach { confirm: true }
+```
+
+### Script
+
+```
+#ls.sys.breach({ confirm: true })
+```
+
+### Parameters
+
+#### confirm (required)
+
+The 'confirm' parameter allows execution of sys.breach.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+No parameters or invalid parameters:
+
+```
+>>sys.breach
+Usage: sys.breach {confirm: true}
+breaches sys
+```
+
+With confirm parameter:
+
+```
+>>sys.breach{confirm:true}
+Success
+
+System has been breached.
+```
+
+On uninitialized system:
+
+```
+>>sys.breach{confirm:true}
+Failure
+sys not initialized
+```
+
+#### Script
+
+```
+Success
+
+System has been breached.
+```
+
+## Example
+
+```
+function(context, args)
+{
+	return #ns.sys.breach({ confirm: true })
+}
+```
