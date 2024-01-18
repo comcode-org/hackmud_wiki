@@ -1,0 +1,139 @@
+---
+title: users.config
+---
+
+users.config provides user profile customization.
+
+### Security Level
+
+NULLSEC
+
+## Syntax
+
+### CLI
+
+```
+users.config { list: true }
+```
+
+### Script
+
+```
+#ns.users.config({ list: true })
+```
+
+### Parameters
+
+#### list
+
+The 'list' argument displays the possible parameters and syntax.
+
+#### avatar
+
+The 'avatar' argument takes a string from a list of possible avatars.
+
+#### user_age
+
+The 'user_age' takes a boolean and toggles displaying user age in the YYMMDD.HHMM format.
+
+#### account_age
+
+The 'account_age' argument takes a boolean and toggles displaying account age in the YYMMDD.HHMM format.
+
+#### bio
+
+The 'bio' argument takes a string.
+
+#### title
+
+The 'title' argument takes a string from a list of possible titles.
+
+#### pronouns
+
+The 'pronouns' argument takes a string.
+
+#### corp
+
+The 'corp' argument takes a boolean and toggles displaying corp membership.
+
+#### is_main
+
+The 'is_main' argument takes a boolean and toggles displaying that this user is a main user.
+
+#### alt_of
+
+The 'alt_of' argument takes a boolean and toggles displaying name of main user this is an alt of.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+No parameters or invalid parameters:
+
+```
+>>users.inspect
+Failure
+Usage: users.inspect { name:<username> }
+Requires connection to user (hardline or channel)
+```
+
+list: true
+
+```
+>>users.config { list: true }
+avatar: <none>
+  available avatars: fullblock
+
+user_age: false
+  hiding user age of 2099 days 180418.0624
+
+account_age: false
+  hiding account age of 2634 days 161030.0726
+  account age overrides user age
+
+bio: <none>
+
+title: <none>
+  available titles: bot ind madam misc mr ms mx pr princess sir
+user
+
+pronouns: "sentience/sentience"
+
+corp: false
+  hiding user's corp membership
+
+is_main: false
+  hiding that this is a main user
+
+alt_of: <none>
+  name of main user which this user is an alt of
+
+```
+
+### Script
+
+```
+{
+  avatar: null,
+  user_age: false,
+  account_age: false,
+  bio: null,
+  title: null,
+  pronouns: "sentience/sentience",
+  corp: false,
+  is_main: false,
+  alt_of: null,
+  badges: []
+}
+```
+
+## Example
+
+```
+function(context, args)
+{
+	return #ns.users.config({ list: true })
+}
+```
