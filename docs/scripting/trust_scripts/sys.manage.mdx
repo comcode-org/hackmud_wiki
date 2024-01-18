@@ -1,0 +1,70 @@
+---
+title: sys.manage
+---
+
+sys.manage allows loading, unloading or reordering upgrades.
+
+### Security Level
+
+MIDSEC
+
+## Syntax
+
+### CLI
+
+```
+sys.manage
+```
+
+### Script
+
+```
+#ms.sys.manage()
+```
+
+### Parameters
+
+#### unload
+
+The 'unload' argument takes an upgrade index as a number, or an array of numbers with no leading 0s.
+
+#### load
+
+The 'load' argument takes an upgrade index as a number, or an array of numbers with no leading 0s.
+
+#### reorder
+
+The 'reorder' argument takes reorder pairs as objects, or arrays.
+
+```
+sys.manage { reorder: { from: 0, to: 1 } }
+```
+
+```
+sys.manage { reorder: [ [ 0, 1 ], [ 2, 3 ] ] }
+```
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+```
+>>sys.manage { reorder: { from: 0, to: 1 } }
+000 tier_3 script_space char_count_v3
+001 tier_3 chat         channel_count_v3
+```
+
+#### Script
+
+Same as CLI.
+
+## Example
+
+```
+function(context, args)
+{
+	return #ms.sys.manage({ reorder: [ [ 1, 0 ] ] })
+}
+```
