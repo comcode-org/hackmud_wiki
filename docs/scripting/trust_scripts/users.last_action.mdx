@@ -1,0 +1,61 @@
+---
+title: users.last_action
+---
+
+users.last_action displays a timestamp from a specified user's most recent action.
+
+### Security Level
+
+FULLSEC
+
+## Syntax
+
+### CLI
+
+```
+users.last_action { name: "trust" }
+```
+
+### Script
+
+```
+#fs.users.last_action({ name: "trust" })
+```
+
+### Parameters
+
+#### name (required)
+
+The 'name' argument takes a string and specifies which user's last action shall be checked.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+```
+>>users.last_action { name: "trust" }
+{
+  n: "trust",
+  t: "2024-01-16T21:43:11.439Z"
+}
+```
+
+#### Script
+
+```
+{
+  n: "trust",
+  t: "2024-01-16T21:43:11.439Z"
+}
+```
+
+## Example
+
+```
+function(context, args)
+{
+	return #ns.users.last_action({ name: "trust" })
+}
+```
