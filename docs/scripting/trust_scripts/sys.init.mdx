@@ -1,0 +1,66 @@
+---
+title: sys.init
+---
+
+sys.init initializes a system, or upgrades its tier once it is initialized.
+
+### Security Level
+
+FULLSEC
+
+## Syntax
+
+### CLI
+
+```
+sys.init { confirm: true }
+```
+
+### Script
+
+```
+#fs.sys.init({ confirm: true })
+```
+
+### Parameters
+
+#### confirm (required)
+
+The 'confirm' parameter allows execution of sys.init.
+
+### Return
+
+Returns a Success or Faliure object.
+
+#### CLI
+
+No parameters or invalid parameters:
+
+```
+>>sys.init
+Initializing a system costs 1MGC. Once your system is initialized, it can be upgraded.
+Tier 1 systems can hold 20MGC.
+To initialize your system use {confirm: true}
+```
+
+Correct parameters:
+
+```
+>>sys.init{ confirm: true }
+Success
+
+Transferred 1MGC to trust
+```
+
+#### Script
+
+Same as CLI.
+
+## Example
+
+```
+function(context, args)
+{
+	return #ns.sys.init({ confirm: true })
+}
+```
