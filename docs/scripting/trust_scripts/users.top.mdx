@@ -1,0 +1,110 @@
+---
+title: users.top
+---
+
+Displays top 10 users by GC.
+
+### Security Level
+
+FULLSEC
+
+## Syntax
+
+### CLI
+
+```
+users.top
+```
+
+### Script
+
+```
+#fs.users.top()
+```
+
+### Parameters
+
+No known parameters.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+```
+{
+  "rank": 1,
+  "name": "example_user_1",
+  "last_activity": "158 days ago",
+  "balance": "17T876B314M817K101GC"
+}
+{
+  "rank": 2,
+  "name": "example_user_2",
+  "last_activity": "21 days ago",
+  "balance": "14T997B444M976K744GC"
+}
+{
+  "rank": 3,
+  "name": "example_user_3",
+  "last_activity": "55 days ago",
+  "balance": "5T869B814M866K170GC"
+}
+{
+  "rank": 4,
+  "name": "example_user_4",
+  "last_activity": "55 days ago",
+  "balance": "5T828B148M464K124GC"
+}
+{
+  "rank": 5,
+  "name": "example_user_5",
+  "last_activity": "0 days ago",
+  "balance": "4T351B741M209K788GC"
+}
+{
+  "rank": 6,
+  "name": "example_user_6",
+  "last_activity": "0 days ago",
+  "balance": "4T575B780M203K681GC"
+}
+{
+  "rank": 7,
+  "name": "example_user_7",
+  "last_activity": "55 days ago",
+  "balance": "4T512B798M84K670GC"
+}
+{
+  "rank": 8,
+  "name": "example_user_8",
+  "last_activity": "0 days ago",
+  "balance": "4T945B485M906K649GC"
+}
+{
+  "rank": 9,
+  "name": "example_user_9",
+  "last_activity": "0 days ago",
+  "balance": "4T206B874M936K628GC"
+}
+{
+  "rank": 10,
+  "name": "example_user_10",
+  "last_activity": "0 days ago",
+  "balance": "4T246B848M230K498GC"
+}
+
+```
+
+#### Script
+
+Same as CLI.
+
+## Example
+
+```
+function(context, args)
+{
+	return #fs.users.top()
+}
+```
