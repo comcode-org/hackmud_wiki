@@ -2,24 +2,38 @@
 title: channel_count_v1
 ---
 
-> In-game description of the upgrade, typically from sys.upgrades \{ full: true }
+> channel_count allows you to connect to more chat channels.
 
-_upgrade_ is a tier _N_ upgrade.
+channel_count_v1 is a tier 1 upgrade. Spawns at 'noob', 'kiddie', and 'h4x0r' rarities.
 
 ## Stats
 
-Unique stats that are included in the upgrades's statistics. Include the range of rarities that the lock spawns at.
+### count
 
-### Stat 1
-
-Detailed information about stat.
+The 'count' stat displays the number of additional channels gained by loading a channel_count_v1.
 
 ## Behavior
 
-A less spoilery description of the upgrade's behavior.
-
-Example outputs, etc...
+Users are able to join 5 chat channels by default. The current max [[channel_count]] is displayed by running [[sys.specs]]. Upon attempting to join a channel after reaching the allowed maximum, an error will display to the screen.
 
 ```
-Success: True
+>>chats.join { channel:"0001" }
+Success
+
+>>chats.join { channel:"0001" }
+Success
+
+>>chats.join { channel:"0002" }
+Success
+
+>>chats.join { channel:"0003" }
+Success
+
+>>chats.join { channel:"0004" }
+Success
+
+>>chats.join { channel:"0004" }
+Failure
 ```
+
+Channels that are currently inhabited by a user are displayed by running [[chats.channels]].
