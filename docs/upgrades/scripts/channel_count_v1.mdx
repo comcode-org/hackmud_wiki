@@ -2,24 +2,28 @@
 title: channel_count_v1.mdx
 ---
 
-> In-game description of the upgrade, typically from sys.upgrades \{ full: true }
+> channel_count allows you to connect to more chat channels.
 
-_upgrade_ is a tier _N_ upgrade.
+channel_count_v1 is a tier 1 upgrade.
 
 ## Stats
 
-Unique stats that are included in the upgrades's statistics. Include the range of rarities that the lock spawns at.
+### count
 
-### Stat 1
-
-Detailed information about stat.
+The 'count' stat displays how many additional channels a user can join when this upgrade is equipped.
 
 ## Behavior
 
-A less spoilery description of the upgrade's behavior.
-
-Example outputs, etc...
+channel_count_v1 increases the number of chat channels a user can join. A user is able to join 2 channels by default.
 
 ```
-Success: True
+>>chats.join {channel:"6667"}
+Success
+
+>>chats.join {channel:"6668"}
+Success
+
+>>chats.join {channel:"6669"}
+Failure
+you cannot join any more channels
 ```
