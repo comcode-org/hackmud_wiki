@@ -1,0 +1,39 @@
+---
+title: channel_count_v1
+---
+
+> channel_count allows you to connect to more chat channels.
+
+channel_count_v1 is a tier 1 upgrade. Spawns at 'noob', 'kiddie', and 'h4x0r' rarities.
+
+## Stats
+
+### count
+
+The 'count' stat displays the number of additional channels gained by loading a channel_count_v1.
+
+## Behavior
+
+Users are able to join 5 chat channels by default. The current max [[channel_count]] is displayed by running [[sys.specs]]. Upon attempting to join a channel after reaching the allowed maximum, an error will display to the screen.
+
+```
+>>chats.join { channel:"0001" }
+Success
+
+>>chats.join { channel:"0001" }
+Success
+
+>>chats.join { channel:"0002" }
+Success
+
+>>chats.join { channel:"0003" }
+Success
+
+>>chats.join { channel:"0004" }
+Success
+
+>>chats.join { channel:"0004" }
+Failure
+```
+
+Channels that are currently inhabited by a user are displayed by running [[chats.channels]].
