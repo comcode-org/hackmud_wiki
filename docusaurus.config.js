@@ -87,7 +87,15 @@ const config = {
             },
             {
               type: "docSidebar",
-              sidebarId: "upgradeScriptsSidebar",
+              sidebarId: "upgradeArchitectSidebar",
+            },
+            {
+              type: "docSidebar",
+              sidebarId: "upgradeInfiltratorSidebar",
+            },
+            {
+              type: "docSidebar",
+              sidebarId: "upgradeExecutiveSidebar",
             },
           ],
         },
