@@ -2,24 +2,30 @@
 title: log_writer_v1
 ---
 
-> In-game description of the upgrade, typically from sys.upgrades \{ full: true }
+> sys.write_log allows you to write a log to a compromised system.
 
-_upgrade_ is a tier _N_ upgrade.
+log_writer_v1 is a tier 1 upgrade. It spawns at 'noob', 'kiddie' and 'h4x0r' rarities.
 
 ## Stats
 
-Unique stats that are included in the upgrades's statistics. Include the range of rarities that the lock spawns at.
+### Cooldown
 
-### Stat 1
-
-Detailed information about stat.
+The 'cooldown' stat, which is displayed in seconds, determines how much time must pass after use before the log_writer_v1 can be executed again.
 
 ## Behavior
 
-A less spoilery description of the upgrade's behavior.
-
-Example outputs, etc...
+Once an log_writer_v1 upgrade has been loaded, [[sys.write_log]] can be run against a breached system for a cost of 500KGC, which allows the breacher to leave a message in the target's [[access_log]]. The amount of [[GC]] required is displayed upon execution attempt. If the specific log_writer_v1 upgrade is on cooldown, an error containing the remaining cooldown time will be displayed upon execution attempt. For syntax information see [[sys.write_log]].
 
 ```
-Success: True
+>>sys.write_log { target: "user.fakeloc123", msg: "you got hacked" }
+Success
+
+Transferred 500KGC to trust
+```
+
+A message left in logs:
+
+```
+240130.1829 you got hacked
+240130.1829 sys.write_log execution from user.fakeloc234
 ```
