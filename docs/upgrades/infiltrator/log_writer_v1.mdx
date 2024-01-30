@@ -14,7 +14,7 @@ The 'cooldown' stat, which is displayed in seconds, determines how much time mus
 
 ## Behavior
 
-Once an log_writer_v1 upgrade has been loaded, [[sys.write_log]] can be run against a breached system for a cost of 500KGC, which allows the breacher to leave a message in the target's [[access_log]]. The amount of [[GC]] required is displayed upon execution attempt. If the specific log_writer_v1 upgrade is on cooldown, an error containing the remaining cooldown time will be displayed upon execution attempt. For syntax information see [[sys.write_log]].
+Once a log_writer_v1 upgrade has been loaded, [[sys.write_log]] can be run against a breached system for a cost of 500KGC, which allows the breacher to leave a message in the target's [[access_log]]. The amount of [[GC]] required is displayed upon execution attempt. If the specific log_writer_v1 upgrade is on cooldown, an error containing the remaining cooldown time will be displayed upon execution attempt. For syntax information see [[sys.write_log]].
 
 ```
 >>sys.write_log { target: "user.fakeloc123", msg: "you got hacked" }
