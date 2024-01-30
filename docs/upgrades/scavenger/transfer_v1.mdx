@@ -19,6 +19,7 @@ Displays the maximum amount of money which can be transferred out.
 ## Behavior
 
 Once transfer_v1 has been loaded, [[sys.xfer_gc_from]] can be used to target a breached system.
+If the target system does not have enough GC to transfer the full amount, the script will return an error.
 If the upgrade is on cooldown, an error containing the remaining cooldown time will be displayed upon execution attempt.
 [[sys.xfer_gc_from]] can be executed using the following syntax:
 
@@ -34,7 +35,7 @@ Examples:
 
 ```
 
->>sys.xfer_gc_from { target: "user.fakeloc123", amount: "10K000GC" }
+>>sys.xfer_gc_from { target: "user.fakeloc123", amount: "10KGC" }
 :::TRUST COMMUNICATION::: hardline required - activate with kernel.hardline
 
 ```
@@ -43,7 +44,7 @@ Examples:
 
 ```
 
->> sys.xfer_gc_from { target: "user.fakeloc123", amount: "10M500KGC" }
+>>sys.xfer_gc_from { target: "user.fakeloc123", amount: "10M500KGC" }
 Failure
 Target user.fakeloc123 is not a breached system.
 
@@ -55,4 +56,20 @@ Target user.fakeloc123 is not a breached system.
 >>sys.xfer_gc_from { target: "user.fakeloc123", amount: "100B100MGC" }
 Failure
 sys.xfer_gc_from is still recalibrating. 12 minutes until ready.
+```
+
+- Amount is higher than the maximum allowed by upgrade:
+
+```
+>>sys.xfer_gc_from { target: "user.fakeloc123", amount: "10TGC" }
+Failure
+You can't transfer more than 10MGC
+```
+
+- Target has unsufficient funds:
+
+```
+>>sys.xfer_gc_from { target: "user.fakeloc123", amount: "10KGC" }
+Failure
+Target user account balance is too low to take 10KGC.
 ```
