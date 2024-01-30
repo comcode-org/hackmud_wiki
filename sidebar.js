@@ -24,7 +24,7 @@ const sidebars = {
       collapsible: false,
       link: {
         type: "generated-index",
-        title: "Scripts",
+        title: "Architect Upgrades",
         description:
           "This is an auto-generated list of all the architect upgrades.",
         slug: "upgrades/architect",
@@ -39,7 +39,7 @@ const sidebars = {
       collapsible: false,
       link: {
         type: "generated-index",
-        title: "Scripts",
+        title: "Infiltrator Upgrades",
         description:
           "This is an auto-generated list of all the infiltrator upgrades.",
         slug: "upgrades/infiltrator",
@@ -54,7 +54,7 @@ const sidebars = {
       collapsible: false,
       link: {
         type: "generated-index",
-        title: "Scripts",
+        title: "Scavenger Upgrades",
         description:
           "This is an auto-generated list of all the scavenger upgrades.",
         slug: "upgrades/scavenger",
@@ -69,7 +69,7 @@ const sidebars = {
       collapsible: false,
       link: {
         type: "generated-index",
-        title: "Scripts",
+        title: "Executive Upgrades",
         description:
           "This is an auto-generated list of all the executive upgrades.",
         slug: "upgrades/executive",
