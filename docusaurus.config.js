@@ -95,6 +95,10 @@ const config = {
             },
             {
               type: "docSidebar",
+              sidebarId: "upgradeScavengerSidebar",
+            },
+            {
+              type: "docSidebar",
               sidebarId: "upgradeExecutiveSidebar",
             },
           ],

@@ -1,0 +1,58 @@
+---
+title: transfer_v1
+---
+
+> sys.xfer_gc_from allows you to transfer money out of a compromised system.
+
+transfer_v1 is a tier 2 upgrade. It spawns at 'kiddie', 'h4x0r' and 'h4rdc0r3' rarities.
+
+## Stats
+
+### cooldown
+
+Displays the amount of time in seconds before the script may be used again after it has been used.
+
+### amount
+
+Displays the maximum amount of money which can be transferred out.
+
+## Behavior
+
+Once transfer_v1 has been loaded, [[sys.xfer_gc_from]] can be used to target a breached system.
+If the upgrade is on cooldown, an error containing the remaining cooldown time will be displayed upon execution attempt.
+[[sys.xfer_gc_from]] can be executed using the following syntax:
+
+```
+sys.xfer_gc_from { target: "user.fakeloc123", amount: "<desired amount (up to max) as GC string>" }
+```
+
+If a player attempts to execute this upgrade in an invalid use case, the upgrade will return corresponding errors.
+
+Examples:
+
+- Not in hardline:
+
+```
+
+>>sys.xfer_gc_from { target: "user.fakeloc123", amount: "10K000GC" }
+:::TRUST COMMUNICATION::: hardline required - activate with kernel.hardline
+
+```
+
+- Target system not breached:
+
+```
+
+>> sys.xfer_gc_from { target: "user.fakeloc123", amount: "10M500KGC" }
+Failure
+Target user.fakeloc123 is not a breached system.
+
+```
+
+- Upgrade on cooldown:
+
+```
+>>sys.xfer_gc_from { target: "user.fakeloc123", amount: "100B100MGC" }
+Failure
+sys.xfer_gc_from is still recalibrating. 12 minutes until ready.
+```
