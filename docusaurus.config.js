@@ -101,6 +101,10 @@ const config = {
               type: "docSidebar",
               sidebarId: "upgradeExecutiveSidebar",
             },
+            {
+              type: "docSidebar",
+              sidebarId: "upgradeOtherSidebar",
+            },
           ],
         },
         {
