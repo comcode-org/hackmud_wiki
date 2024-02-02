@@ -131,6 +131,16 @@ const config = {
             },
           ],
         },
+        {
+          type: "dropdown",
+          label: "Guides",
+          items: [
+            {
+              type: "docSidebar",
+              sidebarId: "newPlayersSidebar",
+            },
+          ],
+        },
       ],
     },
     footer: {
