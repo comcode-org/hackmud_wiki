@@ -1,5 +1,6 @@
 # protected files and paths need to be added to this section as they are created
-LICENSE              @comcode-org/reviewers
-CODEOWNERS           @comcode-org/reviewers
+.devcontainer        @comcode-org/reviewers
 .github              @comcode-org/reviewers
+CODEOWNERS           @comcode-org/reviewers
+LICENSE              @comcode-org/reviewers
 pnpm-lock.yaml       @comcode-org/reviewers
