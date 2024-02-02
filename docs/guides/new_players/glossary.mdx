@@ -1,0 +1,214 @@
+---
+title: Glossary
+---
+
+A list of terminology, [jargon](#jargon-file) and slang important to hackmud.
+
+### array
+
+A data type storing an ordered list. In JavaScript, represented by a comma-separated list of values wrapped in `[]`.
+
+### Big-o Notation
+
+A way to describe asymptotic behavior of algorithms.  
+See https://en.wikipedia.org/wiki/Big_O_notation.
+
+### binmat
+
+Hackmud card game discovered through the `mallory_saves_fighting` event. See [[binmat]] for more detailed information.
+
+### bot brain
+
+An upgrade ([[cron_bot]]) that runs scripts periodically on idle users, charging GC each run.
+
+### call
+
+The execution of a script or other function (as a noun), or to execute a script or other function (as a verb).
+
+### corp
+
+Equivalent to a clan or guild in other games. Corps come with an exclusive chat channel.
+
+### corp rotation
+
+A period every approximately 4 hours when NPC corps change their values (similar to lock rotations), pick up new NPCs, and shift sectors.
+
+### corpsquat
+
+To claim a desireable username by making a corp with the same name. This effectively reserves the username until you can free up (or purchase) a user slot.
+
+### crack / cracking / cracker
+
+To hack NPCs. Cracker: a script for cracking.
+
+### falsey
+
+In JS, any value that, if present in an `if()` statement, causes the if body to not be entered. In JS, the following are the only falsey values: `0` (and `-0`), `NaN`, `""` (the empty string), `null`, `undefined`, `false`. See also: [truthy](#truthy).
+
+### farm / farming
+
+The (usually automated) process of scraping NPCs and cracking them.
+
+### golf / golfing
+
+The act of making a script shorter. Useful in Hackmud because of [[char_count:limits on character count]].
+
+### implementation detail
+
+Typically something in a script that is true, but purely by coincidence rather than because it is specified that way.
+
+### init
+
+To initialize your system with sys.init. Typically this means the first init (from uninit to t1), but can mean any init.
+
+### Jargon File
+
+A reference to a [specific file](https://en.wikipedia.org/wiki/Jargon_File) which covers [programming specific jargon and terminology](http://catb.org/~esr/jargon/).
+
+### loc
+
+Short for sys.loc (location): The address of your system. They are assigned when you init to t1. Anyone with your loc can hack you at any time. Your loc is a script, just like any other.
+
+### loc rotation
+
+Bulk changing of locs in the MUD. This is an incredibly rare event, occuring only after major sandbox breaks. Do not expect your loc to ever change.
+
+### lock
+
+An upgrade that defends your system. Common examples are [[ez_21]], [[ez_35]], etc.
+
+### lock rotation
+
+A process that happens approximately every hour for most users, where your locks are re-evaluated. This is the only time that changes to our lockstack are noticed. Even with no changes, the answers for your locks are re-randomized every lock rotation.
+
+### lockstack
+
+The locks equipped on your user.
+
+### MITM
+
+"Man-in-the-Middle". Previously, one of the most common ways to set up an OOG bot. Version 2.0 changed client/server communication in such a way that this is no longer technically feasible or compatible with the rules.
+
+### NCND
+
+Neither confirm nor deny.
+
+### NPC
+
+"Non-Player Character"; users that are part of the game itself.
+
+### NPC corp
+
+NPCs that represent in-game entities like lockmakers, caterers, etc. NPC corps have one or more scripts for Farming locs from. Note: These are not technically corps.
+
+### object
+
+In _hackmud_, usually refers to a key-value data type in JavaScript. Often represented in the format (( \{ key: "value" } )), such as when calling a script from command line, or when defining an object literal inside a script.
+
+### OOG / OOG bot
+
+"Out-of-game". Bots that automate on top of the client, typically using AHK, robotjs, or similar.
+
+### PC
+
+"Player Character"; a player in the game. More commonly used as an abbreviation for "Price check".
+
+### poke
+
+A partial breach attempt, usually to see what locks are present or view the w4rn message.
+
+### pop / popping
+
+When an NPC is hacked and transfers all its GC and upgrades to you before deleting itself. All t1 and t2 NPCs are supposed to pop. Some t3 NPCs pop, some do not.
+
+### quest / NPC quest / n00b quest
+
+One of several scripts that lead you to t1 NPC corps.
+
+### rotation
+
+See [lock rotation](#lock-rotation), [loc rotation](#loc-rotation), [corp rotation](#corp-rotation).
+
+### run / top-level run
+
+The overall execution of a script run on he command line or by a [[cron_bot]] or similar. One top-level call might call many subscripts (or scriptors).
+
+### sandbox
+
+The fair playing field within the game. Its borders are determined by the rules.
+
+### scrape / scraping / scraper
+
+Calling NPC corp scripts (typically of a specific tier, i.e. t1 scraping) and collecting locs in them, for later cracking. Scraper: a script for scraping.
+
+### scriptor
+
+A script passed into another script on the command line as an argument, of the form \{ argname: #s.script.name \}. Scriptors are exposed in scripts as an object containing name (a string) and call (a function).
+
+### sean-
+
+A prefix used to indicate that something is provided by or part of the game itself, even if not necessarily created solely by Sean. Common-ish examples: seanscript, seanbug, seanuser.
+
+### sector
+
+All public and not hidden scripts are assigned to a sector. Sectors can be listed with scripts.fullsec, scripts.highsec, ... To view the scripts in a sector, you must join that sector's channel, e\.g. if you want to see the scripts in FORM_ALPHA_0, you must join the chat channel FORM_ALPHA_0. After joining that sector's chat channel, you can view the scripts in it with (( scripts.\<seclevel> \{ sector: "\<sectorname>\" } )).
+
+### sentience
+
+See [PC](#pc).
+
+### shift
+
+The process that assigns a script to a sector. Shifting a script takes 15 minutes, and is required with any sec level change of a public script, or when first making a script public.
+
+### stuck NPCs
+
+Some NPCs can get stuck by malfunctioning crackers (typically by calling them after they pop or solving the last lock within the last 1000ms of your script run). Rather than popping, the NPC persists, possibly partially deleted.
+
+### subscript
+
+A way of calling a script inside another script. The format is `#Xs.script.name(args)`, where `X` is the sec level (`f`, `h`, `m`, `l`, `n`, or `4`, `3`, `2`, `1`, `0`).
+
+### t0
+
+See [uninit](#uninit).
+
+### t1 / t2 / t3 / t4
+
+Shorthand for tier 1 through tier 4. Used for upgrade tiers, init tiers, and NPCs.
+
+### truthworth
+
+A meme originating from the sripts user. Trustworthy. Sometimes used jokingly.
+
+### truthy
+
+In JS, any value that, if present in an `if()` statement, causes the if body to be entered. Everything that isn't falsey is truthy. See also: [falsey](#falsey).
+
+### typosquat
+
+Scripts, usually scams, with very similar names to trust scripts. Users with names similar to trust users (such as kernal, sus, sripts) are typically employed, though things like upgrades.manage are arguably typosquats as well.
+
+### uninit
+
+A user that has not yet initialized their system.
+
+### opsec
+
+Short for Operational Security, a series of methods involved in hiding information on how you operate.
+
+### scropotrable
+
+"scriptorable". meme derived from a typo made by user dtr.
+
+### duck-typed / duck-typing
+
+An informal description of a language, meaning that it (at least usually) doesn't use strong typing but instead relies on, for example, anything that has an x and y property being essentially a 2D point. If it looks like a duck, and quacks like a duck, it must be a duck. JS is (mostly) duck-typed.
+
+### usnack/usnax
+
+A reference to a high tier game mechanic. Generally low-tier upgrades which are high in demand.
+
+### glam
+
+Upgrade type that has no actual function (beyond being shiny). Typically distributed as trophies during events.
