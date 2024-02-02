@@ -11,7 +11,7 @@ A data type storing an ordered list. In JavaScript, represented by a comma-separ
 ### Big-o Notation
 
 A way to describe asymptotic behavior of algorithms.  
-See: https://en.wikipedia.org/wiki/Big_O_notation
+See https://en.wikipedia.org/wiki/Big_O_notation.
 
 ### binmat
 
@@ -75,15 +75,15 @@ Bulk changing of locs in the MUD. This is an incredibly rare event, occuring onl
 
 ### lock
 
-An upgrade that defends your system. Common examples are ez_21, ez_35, etc.
+An upgrade that defends your system. Common examples are [[ez_21]], [[ez_35]], etc.
 
 ### lock rotation
 
-A process that happens, approximately every hour for most users, where your locks are re-evaluated. This is the only time that changes to our lockstack are noticed. Even with no changes, every lock rotation, the answers for your locks are re-randomized
+A process that happens, approximately every hour for most users, where your locks are re-evaluated. This is the only time that changes to our lockstack are noticed. Even with no changes, every lock rotation, the answers for your locks are re-randomized.
 
-### Lockstack
+### lockstack
 
-The locks equipped on your user
+The locks equipped on your user.
 
 ### MITM
 
@@ -95,11 +95,11 @@ Neither confirm nor deny.
 
 ### NPC
 
-"Non-Player Character"; users that are part of the game itself
+"Non-Player Character"; users that are part of the game itself.
 
-### NPC Corp
+### NPC corp
 
-NPCs that represent in-game entities like lockmakers, caterers, etc. NPC corps have one or more scripts for Farming locs from. Note: These are not technically Corps.
+NPCs that represent in-game entities like lockmakers, caterers, etc. NPC corps have one or more scripts for Farming locs from. Note: These are not technically corps.
 
 ### object
 
@@ -121,17 +121,17 @@ A partial breach attempt, usually to see what locks are present or view the w4rn
 
 When an NPC is hacked and transfers all its GC and upgrades to you before deleting itself. All t1 and t2 NPCs are supposed to pop. Some t3 NPCs pop, some do not.
 
-### quest / NPC Quest / n00b quest
+### quest / NPC quest / n00b quest
 
-One of several scripts that lead you to t1 scripts from NPC corps. The current known quests are in the channel topic of n00b_tips
+One of several scripts that lead you to t1 NPC corps.
 
 ### rotation
 
-See Lock Rotation, Loc Rotation, Corp Rotation
+See [lock rotation](#lock-rotation), [loc rotation](#loc-rotation), [corp rotation](#corp-rotation).
 
 ### run / top-level run
 
-The overall execution of a script run on he command line or by a cron_bot or similar. One top-level call might call many subscripts (or scriptors)
+The overall execution of a script run on he command line or by a [[cron_bot]] or similar. One top-level call might call many subscripts (or scriptors).
 
 ### sandbox
 
@@ -139,23 +139,23 @@ The fair playing field within the game. Its borders are determined by the rules.
 
 ### scrape / scraping / scraper
 
-Calling NPC corp scripts (typically of a specific tier, i.e. t1 scraping) and collecting locs in them, for later cracking. Scraper: a script for scraping
+Calling NPC corp scripts (typically of a specific tier, i.e. t1 scraping) and collecting locs in them, for later cracking. Scraper: a script for scraping.
 
 ### scriptor
 
 A script passed into another script on the command line as an argument, of the form \{ argname: #s.script.name \}. Scriptors are exposed in scripts as an object containing name (a string) and call (a function).
 
-### sean
+### sean-
 
-A prefix used to indicate that something is provided by or part of the game itself. Common-ish examples: seanscript, seanbug, seanuser
+A prefix used to indicate that something is provided by or part of the game itself, even if not necessarily created solely by Sean. Common-ish examples: seanscript, seanbug, seanuser.
 
 ### sector
 
-All public and not hidden scripts are assigned to a sector. Sectors can be listed with scripts.fullsec, scripts.highsec, ... To view the scripts in a sector, you must join that sector's channel, e\.g. if you want to see the scripts in FORM_ALPHA_0, you must join the chat channel FORM_ALPHA_0. After joining that sector's chat channel, you can view the scripts in it with (( scripts.\<seclevel> \{ sector: "\<sectorname>\" } ))
+All public and not hidden scripts are assigned to a sector. Sectors can be listed with scripts.fullsec, scripts.highsec, ... To view the scripts in a sector, you must join that sector's channel, e\.g. if you want to see the scripts in FORM_ALPHA_0, you must join the chat channel FORM_ALPHA_0. After joining that sector's chat channel, you can view the scripts in it with (( scripts.\<seclevel> \{ sector: "\<sectorname>\" } )).
 
 ### sentience
 
-See PC
+See [PC](#pc).
 
 ### shift
 
@@ -167,11 +167,11 @@ Some NPCs can get stuck by malfunctioning crackers (typically by calling them af
 
 ### subscript
 
-A way of calling a script inside another script. The format is #Xs.script.name(args), where X is the sec level (f, h, m, l, n, or 4, 3, 2, 1, 0).
+A way of calling a script inside another script. The format is `#Xs.script.name(args)`, where `X` is the sec level (`f`, `h`, `m`, `l`, `n`, or `4`, `3`, `2`, `1`, `0`).
 
 ### t0
 
-See [uninit](#uninit)
+See [uninit](#uninit).
 
 ### t1 / t2 / t3 / t4
 
@@ -179,11 +179,11 @@ Shorthand for tier 1 through tier 4. Used for upgrade tiers, init tiers, and NPC
 
 ### truthworth
 
-A meme originating from the sripts user. Trustworthy. Sometimes used jokingly
+A meme originating from the sripts user. Trustworthy. Sometimes used jokingly.
 
 ### truthy
 
-In JS, any value that, if present in an `if()` statement, causes the if body to be entered. Everything that isn't falsey is truthy. See also [falsey](#falsey)
+In JS, any value that, if present in an `if()` statement, causes the if body to be entered. Everything that isn't falsey is truthy. See also: [falsey](#falsey).
 
 ### typosquat
 
