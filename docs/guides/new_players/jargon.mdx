@@ -1,5 +1,5 @@
 ---
-title: Jargon
+title: Glossary
 ---
 
 Jargon is a list of all terminologies used.
@@ -216,6 +216,7 @@ One of several scripts that lead you to t1 scripts from NPC corps. The current k
 ### rotation
 
 ```
+
 See Lock Rotation, Loc Rotation, Corp Rotation
 
 ```
@@ -223,6 +224,7 @@ See Lock Rotation, Loc Rotation, Corp Rotation
 ### run / top-level run
 
 ```
+
 The overall execution of a script run on he command line or by a cron_bot or similar. One top-level call might call many subscripts (or scriptors)
 
 ```
@@ -230,6 +232,7 @@ The overall execution of a script run on he command line or by a cron_bot or sim
 ### sandbox
 
 ```
+
 The fair playing field within the game. Its borders are determined by the rules.
 
 ```
@@ -237,6 +240,7 @@ The fair playing field within the game. Its borders are determined by the rules.
 ### scrape / scraping / scraper
 
 ```
+
 Calling NPC corp scripts (typically of a specific tier, i.e. t1 scraping) and collecting locs in them, for later cracking. Scraper: a script for scraping
 
 ```
@@ -244,13 +248,15 @@ Calling NPC corp scripts (typically of a specific tier, i.e. t1 scraping) and co
 ### scriptor
 
 ```
-A script passed into another script on the command line as an argument, of the form {argname:#s.script.name}. Scriptors are exposed in scripts as an object containing name (a string) and call (a function).
+
+A script passed into another script on the command line as an argument, of the form \{ argname: #s.script.name \}. Scriptors are exposed in scripts as an object containing name (a string) and call (a function).
 
 ```
 
 ### sean
 
 ```
+
 A prefix used to indicate that something is provided by or part of the game itself. Common-ish examples: seanscript, seanbug, seanuser
 
 ```
@@ -258,13 +264,15 @@ A prefix used to indicate that something is provided by or part of the game itse
 ### sector
 
 ```
-All public and not hidden scripts are assigned to a sector. Sectors can be listed with scripts.fullsec, scripts.highsec, ... To view the scripts in a sector, you must join that sector's channel, e.g. if you want to see the scripts in FORM_ALPHA_0, you must join the chat channel FORM_ALPHA_0. After joining that sector's chat channel, you can view the scripts in it with scripts.<seclevel> {sector:"<that sector>"}
+
+All public and not hidden scripts are assigned to a sector. Sectors can be listed with scripts.fullsec, scripts.highsec, ... To view the scripts in a sector, you must join that sector's channel, e.g. if you want to see the scripts in FORM_ALPHA_0, you must join the chat channel FORM_ALPHA_0. After joining that sector's chat channel, you can view the scripts in it with (( scripts.replace_with_seclevel \{sector:"replace_with_sectorname"\} ))
 
 ```
 
 ### sentience
 
 ```
+
 See PC
 
 ```
@@ -272,6 +280,7 @@ See PC
 ### shift
 
 ```
+
 The process that assigns a script to a sector. Shifting a script takes 15 minutes, and is required with any sec level change of a public script, or when first making a script public.
 
 ```
@@ -279,6 +288,7 @@ The process that assigns a script to a sector. Shifting a script takes 15 minute
 ### stuck NPCs
 
 ```
+
 Some NPCs can get stuck by malfunctioning crackers (typically by calling them after they pop or solving the last lock within the last 1000ms of your script run). Rather than popping, the NPC persists, possibly partially deleted.
 
 ```
@@ -286,6 +296,7 @@ Some NPCs can get stuck by malfunctioning crackers (typically by calling them af
 ### subscript
 
 ```
+
 A way of calling a script inside another script. The format is #Xs.script.name(args), where X is the sec level (f, h, m, l, n, or 4, 3, 2, 1, 0).
 
 ```
@@ -293,6 +304,7 @@ A way of calling a script inside another script. The format is #Xs.script.name(a
 ### t0
 
 ```
+
 See uninit
 
 ```
@@ -300,6 +312,7 @@ See uninit
 ### t1 / t2 / t3 / t4
 
 ```
+
 Shorthand for tier 1 through tier 4. Used for upgrade tiers, init tiers, and NPCs.
 
 ```
@@ -307,6 +320,7 @@ Shorthand for tier 1 through tier 4. Used for upgrade tiers, init tiers, and NPC
 ### truthworth
 
 ```
+
 A meme originating from the sripts user. Trustworthy. Sometimes used jokingly
 
 ```
@@ -314,6 +328,7 @@ A meme originating from the sripts user. Trustworthy. Sometimes used jokingly
 ### truthy
 
 ```
+
 In JS, any value that, if present in an if() statement, causes the if body to be entered. Everything that isn't falsey is truthy. See also falsey
 
 ```
@@ -321,6 +336,7 @@ In JS, any value that, if present in an if() statement, causes the if body to be
 ### typosquat
 
 ```
+
 Scripts, usually scams, with very similar names to trust scripts. Users with names similar to trust users (such as kernal, sus, sripts) are typically employed, though things like upgrades.manage are arguably typosquats as well.
 
 ```
@@ -328,6 +344,7 @@ Scripts, usually scams, with very similar names to trust scripts. Users with nam
 ### uninit
 
 ```
+
 A user that has not yet initialized their system.
 
 ```
@@ -335,6 +352,7 @@ A user that has not yet initialized their system.
 ### opsec
 
 ```
+
 Short for Operational Security, a series of methods involved in hiding information on how you operate.
 
 ```
@@ -342,6 +360,7 @@ Short for Operational Security, a series of methods involved in hiding informati
 ### scropotrable
 
 ```
+
 "scriptorable". meme derived from a typo made by user dtr. http://i.imgur.com/Qd4noFn.png
 
 ```
@@ -349,6 +368,7 @@ Short for Operational Security, a series of methods involved in hiding informati
 ### duck-typed / duck-typing
 
 ```
+
 An informal description of a language, meaning that it (at least usually) doesn't use strong typing but instead relies on, for example, anything that has an x and y property being essentially a 2D point. If it looks like a duck, and quacks like a duck, it must be a duck. JS is (mostly) duck-typed.
 
 ```
@@ -356,6 +376,7 @@ An informal description of a language, meaning that it (at least usually) doesn'
 ### usnack/usnax
 
 ```
+
 A reference to a high tier game mechanic. Generally low-tier upgrades which are high in demand.
 
 ```
@@ -363,6 +384,9 @@ A reference to a high tier game mechanic. Generally low-tier upgrades which are 
 ### glam
 
 ```
+
 Upgrade type that has no actual function (beyond being shiny). Typically distributed as trophies during events.
+
+```
 
 ```
