@@ -6,6 +6,7 @@
   "license": "CC-BY-NC-SA-4.0",
   "private": true,
   "scripts": {
+    "dev": "pnpm start",
     "start": "docusaurus start",
     "build": "docusaurus build",
     "test": "jest",
