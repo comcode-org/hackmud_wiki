@@ -94,10 +94,10 @@ function(context,args){
 
 1.  Articles should be written using American English.
 
-#### Capitalization
+#### Name Conventions
 
 1. When referring to upgrades do not capitalize them as proper nouns.
-1. The name hackmud is always lowercase.
+1. The name hackmud is always lowercase and italic.
 1. Even at the start of a sentence, a word or upgrade that should be lowercase is still lowercase.
 
 #### Disambiguating Parameters, Args, Key:Value Pairs
