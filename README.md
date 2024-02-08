@@ -94,10 +94,10 @@ function(context,args){
 
 1.  Articles should be written using American English.
 
-#### Name Conventions
+#### Capitialization
 
 1. When referring to upgrades do not capitalize them as proper nouns.
-1. The name hackmud is always lowercase and italic.
+1. The name hackmud is always lowercase.
 1. Even at the start of a sentence, a word or upgrade that should be lowercase is still lowercase.
 
 #### Disambiguating Parameters, Args, Key:Value Pairs
@@ -118,6 +118,11 @@ function(context,args){
 1. Exceptions to heading capitalization are upgrades, corporations, and entities. Those should follow in-game styling and capitalization.
 1. If a section of an article is empty or needs information filled in, the pull request should be created as a draft with a comment requesting the help needed.
 1. Headings should never contain links.
+
+### Italicization
+
+1. Any instance of the name of a video game should be in italics. For instance: "_hackmud_"
+2. Only official edition names should be italicized. For instance: "_hackmud_" or "_binmat_".
 
 ### Linking
 
