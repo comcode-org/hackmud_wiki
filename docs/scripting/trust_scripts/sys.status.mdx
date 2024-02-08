@@ -59,9 +59,6 @@ or
 ```
 function(context, args)
 {
-	let myStatus = #hs.sys.status()
-
-  if(myStatus.breach) return "WE ARE BREACHED"
-  else return "we are not breached!"
+  return #hs.sys.status()
 }
 ```
