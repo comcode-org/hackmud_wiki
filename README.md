@@ -94,7 +94,7 @@ function(context,args){
 
 1.  Articles should be written using American English.
 
-#### Capitialization
+#### Capitalization
 
 1. When referring to upgrades do not capitalize them as proper nouns.
 1. The name hackmud is always lowercase.
@@ -122,7 +122,7 @@ function(context,args){
 ### Italicization
 
 1. Any instance of the name of a video game should be in italics. For instance: "_hackmud_"
-2. Only official edition names should be italicized. For instance: "_hackmud_" or "_binmat_".
+1. Only official edition names should be italicized. For instance: "_hackmud_" or "_binmat_".
 
 ### Linking
 
