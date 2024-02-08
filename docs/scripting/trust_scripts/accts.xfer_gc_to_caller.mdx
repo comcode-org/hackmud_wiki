@@ -46,7 +46,7 @@ Usage: (in subscript) #fs.accts.xfer_gc_to_caller({ amount:<number or "GC string
 ```
 Success
 
-Transferred 1GC to trust
+Received 1GC from user
 ```
 
 ## Example
@@ -54,7 +54,7 @@ Transferred 1GC to trust
 ```
 function(context, args)
 {
-	return #ms.accts.xfer_gc_to({ to: "trust", amount: "1GC", memo: "this is a memo" })
+	return #fs.accts.xfer_gc_to_caller({ amount: "1GC", memo: "this is a memo" })
 }
 
 ```
