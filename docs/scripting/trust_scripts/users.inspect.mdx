@@ -28,11 +28,15 @@ users.inspect { name: "seanmakesgames" }
 
 The 'name' argument takes a string and specifies the user to inspect.
 
+#### badge_info (optional)
+
+When provided against a user's profile who has badges, more information about their badges (if any) is provided. In a subscript, the 'badges' array becomes an array of objects instead of an array of badge strings.
+
 ### Return
 
 Returns an object.
 
-#### CLI
+#### CLI (without badge_info:true)
 
 ```
 >>users.inspect { name: "seanmakesgames" }
@@ -56,7 +60,46 @@ This is a main user
 ◢◤ ◥◣ ████◤ (___) T▂T▂_
 ```
 
-#### Script
+#### CLI (with badge_info:true)
+
+```
+>>users.inspect {name:"seanmakesgames",badge_info:true}
+
+                  packbot seanmakesgames [iwin]
+                  he/him
+
+   ██████████     I don't make the game
+                  I just play it really well.
+
+
+
+User for 3380 days 141107.0305
+
+This is a main user
+
+-badges-
+
+  ▂    alpha
+ ◢▂◣   i knew her as alice.
+◢◤ ◥◣
+
+
+█▀▀▀◣  beta
+█▀▀▀◤  i know where the bodies are buried.
+████◤
+
+
+  |/   garbage_collector_v1
+ / ,)  oom.gibsun used more than 268435456 bytes
+(___)  of memory and was terminated.
+
+
+   /   builder
+  <,\  a contributor to the mud we all make with.
+T▂T▂_
+```
+
+#### Script (without badge_info:true)
 
 ```
 {
@@ -73,6 +116,44 @@ This is a main user
     "█▀▀▀◣\n█▀▀▀◤\n████◤",
     "  |/ \n / ,)\n(___)",
     "   / \n  <,\\\nT▂T▂_"
+  ]
+}
+```
+
+#### Script (with badge_info:true)
+
+```
+{
+  username: "seanmakesgames",
+  avatar: "                \n                \n                \n                \n   ██████████   \n                \n                \n
+     ",
+  pronouns: "he/him",
+  user_age: "2014-11-07T03:05:29.789Z",
+  bio: "I don't make the game\nI just play it really well.",
+  title: "packbot",
+  corp: "iwin",
+  is_main: true,
+  badges: [
+    {
+      description: "i knew her as alice.",
+      badge: "  ▂  \n ◢▂◣ \n◢◤ ◥◣",
+      name: "alpha"
+    },
+    {
+      description: "i know where the bodies are buried.",
+      badge: "█▀▀▀◣\n█▀▀▀◤\n████◤",
+      name: "beta"
+    },
+    {
+      description: "oom.gibsun used more than 268435456 bytes\nof memory and was terminated.",
+      badge: "  |/ \n / ,)\n(___)",
+      name: "garbage_collector_v1"
+    },
+    {
+      description: "a contributor to the mud we all make with.",
+      badge: "   / \n  <,\\\nT▂T▂_",
+      name: "builder"
+    }
   ]
 }
 ```
