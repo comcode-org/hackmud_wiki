@@ -9,7 +9,7 @@ Returns array of logged strings from [[scripts.lib().log()]]
 ## Syntax
 
 ```js
-return #fs.scripts.lib().get_log()
+return #fs.scripts.lib().get_log();
 ```
 
 ### Parameters
@@ -27,9 +27,9 @@ Returns an array of strings. In the example below, returns:
 ## Example
 
 ```js
-function(context,args){
-  let l = #fs.scripts.lib()
-  l.log('hello world')
-  return l.get_log()
+function( context, args ) {
+  let l = #fs.scripts.lib();
+  l.log('hello world');
+  return l.get_log();
 }
 ```
