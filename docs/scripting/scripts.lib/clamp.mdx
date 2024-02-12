@@ -1,0 +1,44 @@
+---
+title: scripts.lib().clamp()
+---
+
+### Description
+
+A function that constrains a value within a specified range, ensuring that a value stays within a minimum and maximimum value (inclusive).
+
+### Syntax
+
+```js
+return #fs.scripts.lib().clamp(0, 5, 10);
+```
+
+### Parameters
+
+#### Value
+
+The value to be constrained.
+
+#### Min
+
+The minimum number the value should be constrained to.
+
+#### Max
+
+The maximimum number the value should be constrained to.
+
+### Return
+
+Returns a number.
+
+```
+5
+```
+
+## Example
+
+```js
+function( context, args ) {
+  let l = #fs.scripts.lib();
+  return l.clamp( 0, 5, 10 );
+}
+```
