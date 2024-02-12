@@ -1,0 +1,37 @@
+---
+title: scripts.lib().not_impl()
+---
+
+> Returns a Failure object with error message: "Not Implemented".
+
+## Syntax
+
+```js
+return scripts.lib().not_impl();
+```
+
+### Parameters
+
+No known parameters.
+
+### Return
+
+```js
+Failure
+Not Implemented.
+```
+
+Same as:
+
+```js
+{ok:false,msg:"Not Implemented."}
+```
+
+## Example
+
+```js
+function(context,args){
+  var l = #fs.scripts.lib();
+  return l.not_impl();
+}
+```
