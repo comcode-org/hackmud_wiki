@@ -8,28 +8,33 @@ A function that returns a random number between two parameters.
 
 ## Syntax
 
-    scripts.lib().rand_int(1,4)
+```js
+scripts.lib().rand_int(1, 4);
+```
 
 ### Parameters
 
 #### min
 
-The minimum number to generate
+The minimum number to generate.
 
 #### max
 
-The maximum number to generate
+The maximum number to generate.
 
 ### Return
 
-Returns a number between the min and max
+Returns a number between the min and max:
+
+```
 3
+```
 
 ## Example
 
-```
+```js
 function(context,args){
   var l = #fs.scripts.lib()
-  return l.rand_int(1,4)
+  return l.rand_int(1, 4)
 }
 ```
