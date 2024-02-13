@@ -4,26 +4,33 @@ title: scripts.lib().sample()
 
 ### Description
 
+Sample randomly selects one element from an array to return.
+
 ## Syntax
 
-A description of the scripts or functions behavior
+```js
+return #fs.scripts.lib().sample(arr)
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### Array
+
+The array to be sampled.
 
 ### Return
 
-What the function or script returns
+Returns the data type of the element sampled.
 
-#### CLI
-
-return here
-
-#### Script
-
-return here
+```
+"banana"
+```
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```js
+function(context, args) {
+	let arr = ['apple', 'banana', 'strawberry'];
+	return #fs.scripts.lib().sample(arr);
+}
+```
