@@ -2,40 +2,44 @@
 title: scripts.lib().lerp()
 ---
 
-> In-game description of the script or function
+### Description
 
-### Security Level
-
-The security level of the script
+LERP stands for Linear Interpolation; a mathematical function in which a value interpolates between 'start' and 'end' values.
+Formula: start + (end - start) \* t
 
 ## Syntax
 
-A description of the scripts or functions behavior
-
-### CLI
-
-Example CLI syntax
-
-### Script
-
-Example script syntax
+```js
+return #fs.scripts.lib().lerp(5, 0, 10) // Result will be 10
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### Start
+
+The starting value.
+
+#### End
+
+The ending value.
+
+#### t
+
+The interpolation factor, usually between 0 and 1. If t is 0 the result is equal to Start. When the value is 1, the result is equal to End. Values between 0 and 1 will interpolate between Start and End.
 
 ### Return
 
-What the function or script returns
+Returns a number.
 
-#### CLI
-
-return here
-
-#### Script
-
-return here
+```
+10
+```
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```js
+function ( context, args ) {
+  let l = #fs.scripts.lib();
+  return l.lerp( 5, 0, 10 );
+}
+```
