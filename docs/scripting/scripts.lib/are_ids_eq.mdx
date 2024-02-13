@@ -1,31 +1,42 @@
 ---
-title: scripts.lib().are_ids_eq
+title: scripts.lib().are_ids_eq()
 ---
 
 ### Description
 
-In-game description of the script or function
+Compares two strings and evaluates if they are equal. Useful for comparing MongoDB Object IDs.
 
 ## Syntax
 
-A description of the scripts or functions behavior
+```js
+return #fs.scripts.lib().are_ids_eq("65c982ee9edd1f997c9806ac", "65c982ee9edd1f997c9806a0")
+```
 
 ### Parameters
 
-A list of parameters and their descriptions if applicable
+#### id1
+
+The first string value.
+
+#### id2
+
+The second string value.
 
 ### Return
 
-What the function or script returns
+Returns a boolean.
 
-#### CLI
-
-return here
-
-#### Script
-
-return here
+```
+False
+```
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+```js
+function(context, args) {
+  let l = #fs.scripts.lib();
+  let id1 = "65c982ee9edd1f997c9806ac"
+  let id2 = "65c982ee9edd1f997c9806a0"
+  return l.are_ids_eq(id1, id2)
+}
+```
