@@ -27,8 +27,8 @@ Returns an array of strings. In the example below, returns:
 ## Example
 
 ```js
-function( context, args ) {
-  let l = #fs.scripts.lib();
+function(context, args) {
+  const l = #fs.scripts.lib();
   l.log('hello world');
   return l.get_log();
 }
