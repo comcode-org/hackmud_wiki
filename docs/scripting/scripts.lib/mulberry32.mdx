@@ -4,12 +4,12 @@ title: scripts.lib().mulberry32()
 
 ## Description
 
-A function that takes a string and turns it into a hash code based on the mulberry32 algorithm.
+A function that takes a number and turns it into a hash code based on the mulberry32 algorithm.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().mulbery32("i_am_a_string_to_be_hashed")
+#fs.scripts.lib().mulbery32(1337)
 ```
 
 ### Parameters
@@ -18,14 +18,14 @@ No known parameters.
 
 ### Return
 
-Returns a string.
+Returns a number.
 
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_string = "i_am_a_string_to_be_hashed"
-  return l.mulberry32(my_string)
+  const my_number = 1337
+  return l.mulberry32(my_number)
 }
 ```
