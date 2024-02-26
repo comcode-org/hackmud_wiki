@@ -4,10 +4,12 @@ title: scripts.lib().xmur3()
 
 ## Description
 
+A function that takes a string and turns it into a hash code based on the xmur3 algorithm.
+
 ## Syntax
 
 ```js
-
+#fs.scripts.lib().xmur3("i_am_a_string_to_be_hashed")
 ```
 
 ### Parameters
@@ -16,11 +18,14 @@ No known parameters.
 
 ### Return
 
+Returns a string.
+
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  return l.//something
+  const my_string = "i_am_a_string_to_be_hashed"
+  return l.xmur3(my_string)
 }
 ```
