@@ -4,10 +4,15 @@ title: scripts.lib().id_to_str()
 
 ## Description
 
-
+Function that converts a MongoDB ObjectID to its string representation.
 
 ## Syntax
 
+```js
+#fs.scripts.lib().id_to_str(i)
+```
+
+- where "i" is a MongoDB ObjectID.
 
 ### Parameters
 
@@ -15,18 +20,10 @@ No known parameters.
 
 ### Return
 
-## CLI
+Returns a string.
 
 ```
-Success // placeholder
-```
-
-## Script
-
-```
-{
-  ok: true // placeholder
-}
+65d576dd9edd1f997cbe7129
 ```
 
 ## Example
@@ -34,6 +31,7 @@ Success // placeholder
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  return l.id_to_str(//placeholder);
+  const dat = #db.f({ my_db_article: { $exists: true } }).first()
+  return l.id_to_str(dat._id);
 }
 ```
