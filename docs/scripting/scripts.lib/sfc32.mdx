@@ -1,0 +1,48 @@
+---
+title: scripts.lib().sfc32()
+---
+
+## Description
+
+A function that takes 4 seed parameters and turns it into a hash code based on the sfc32 algorithm.
+
+## Syntax
+
+```js
+#fs.scripts.lib().sfc32(1, 2, 3, 4)
+```
+
+### Parameters
+
+# a
+
+First seed number.
+
+# b
+
+Second seed number.
+
+# c
+
+Third seed number.
+
+# d
+
+Fourth seed number.
+
+### Return
+
+Returns a number.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  const seed_1 = 3554674
+  const seed_2 = 4865874
+  const seed_3 = 4242356
+  const seed_4 = 9674544
+  return l.sfc32(seed_1, seed_2, seed_3, seed_4)
+}
+```
