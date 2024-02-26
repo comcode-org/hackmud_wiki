@@ -40,3 +40,12 @@ function(context, args) {
   return l.are_ids_eq(id1, id2);
 }
 ```
+
+```js
+function(context, args) {
+  let l = #fs.scripts.lib();
+  let id1 = { $oid: "65c982ee9edd1f997c9806ac" };
+  let id2 = { $oid: "65c982ee9edd1f997c9806a0" };
+  return l.are_ids_eq(id1, id2);
+}
+```
