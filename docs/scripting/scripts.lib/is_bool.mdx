@@ -4,13 +4,15 @@ title: scripts.lib().is_bool()
 
 ## Description
 
-
+A function to test whether the input is a boolean.
 
 ## Syntax
 
 ```js
-
+#fs.scripts.lib().is_bool(i)
 ```
+
+Where "i" is the input to be tested.
 
 ### Parameters
 
@@ -18,13 +20,14 @@ No known parameters.
 
 ### Return
 
+Returns a boolean.
 
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  //
-  //return l...
+  const my_test_input = true
+  return l.is_bool(my_test_input)
 }
 ```
