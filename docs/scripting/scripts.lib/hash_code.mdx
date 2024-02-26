@@ -4,10 +4,12 @@ title: scripts.lib().hash_code()
 
 ## Description
 
+A function which creates a hash code out of an input string.
+
 ## Syntax
 
 ```js
-
+#fs.scripts.lib().hash_code("i_am_a_string_to_be_hashed")
 ```
 
 ### Parameters
@@ -16,11 +18,14 @@ No known parameters.
 
 ### Return
 
+Returns a string.
+
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  return l.//something
+  const my_string
+  return l.hash_code(my_string)
 }
 ```
