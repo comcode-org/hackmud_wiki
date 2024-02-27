@@ -1,26 +1,37 @@
 ---
-title: scripts.lib().is_obj()
+title: scripts.lib().add_time()
 ---
 
 ## Description
 
+A function that adds a specified number of milliseconds to a given `Date()` object.
+
 ## Syntax
 
 ```js
-
+#fs.scripts.lib().add_time(Date, number)
 ```
 
 ### Parameters
 
-No known parameters.
+# date
+
+A date object.
+
+# number
+
+The number of milliseconds to add.
 
 ### Return
+
+Returns a new `Date()` object.
 
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  return l.//something
+  const my_date = new Date()
+  return l.add_time(my_date, 1000)
 }
 ```
