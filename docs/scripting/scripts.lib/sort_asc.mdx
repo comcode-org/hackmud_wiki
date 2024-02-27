@@ -4,23 +4,31 @@ title: scripts.lib().sort_asc()
 
 ## Description
 
+A function that takes an array of numbers and sorts them in ascending order.
+
 ## Syntax
 
 ```js
-
+#fs.scripts.lib().sort_asc(array)
 ```
 
 ### Parameters
 
-No known parameters.
+# array
+
+An array of numbers to be sorted in ascending order.
 
 ### Return
+
+Returns an array.
 
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  return l.//something
+  const my_array = [2001, 1337, 7, 3006, 42];
+
+  return l.sort_asc(my_array);
 }
 ```
