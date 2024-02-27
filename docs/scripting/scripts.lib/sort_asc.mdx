@@ -9,7 +9,7 @@ Arguments for `.sort()` that sort an array of strings in ascending order. This i
 ## Syntax
 
 ```js
-#fs.scripts.lib().sort_asc(array)
+array.sort(#fs.scripts.lib().sort_asc)
 ```
 
 ### Parameters
@@ -27,7 +27,7 @@ Returns an array.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_array = [2001, 1337, 7, 3006, 42];
+  const my_array = ["bananas", "apples", "oranges"];
 
   return my_array.sort(l.sort_asc)
 }
