@@ -9,7 +9,7 @@ Takes a number and turns it into a formatted GC string.
 ## Syntax
 
 ```js
-#fs.scripts.lib().to_gc_str(100000000)
+#fs.scripts.lib().to_gc_str(100200300)
 ```
 
 ### Parameters
@@ -18,11 +18,18 @@ Takes a number as its parameter.
 
 ### Return
 
+Returns a GC string.
+
+```js
+100M200K300GC
+```
+
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  return l.//something
+  const my_gc_number = 100200300
+  return l.to_gc_str(my_gc_number)
 }
 ```
