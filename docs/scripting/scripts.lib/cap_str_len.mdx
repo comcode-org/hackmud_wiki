@@ -4,23 +4,34 @@ title: scripts.lib().cap_str_len()
 
 ## Description
 
+A function to shorten or cap a string to a specified length.
+
 ## Syntax
 
 ```js
-
+#fs.scripts.lib().cap_str_len(str, length)
 ```
 
 ### Parameters
 
-No known parameters.
+# str
+
+The string to be length capped.
+
+# length
+
+The numerical length the string should be shorted or capped to.
 
 ### Return
+
+Returns a string.
 
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  return l.//something
+  const my_string = "I am a string whose length will be capped."
+  return l.cap_str_len(my_string, 13)
 }
 ```
