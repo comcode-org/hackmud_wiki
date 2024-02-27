@@ -4,23 +4,41 @@ title: scripts.lib().pick()
 
 ## Description
 
+A function that takes an object and creates a new object containing only the specified keys from the original object.
+
 ## Syntax
 
 ```js
-
+#fs.scripts.lib().pick(obj, keys)
 ```
 
 ### Parameters
 
-No known parameters.
+# obj
+
+The original object.
+
+# keys
+
+The keys from the original object that we should create the new object with.
 
 ### Return
+
+Returns an object.
 
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  return l.//something
+  const my_obj = {
+    vehicles: ["train", "plane", "automobile"],
+    places: ["diner", "hotel", "concert venue"],
+    payment_types: ["GC", "bits", "I.O.U."],
+    favorite_food: ["key", "char_count_v1", "lime"];
+  };
+  const keys_to_pick = [payment_types, favorite_food];
+
+  return l.pick(keys_to_pick);
 }
 ```
