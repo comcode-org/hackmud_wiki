@@ -4,23 +4,39 @@ title: scripts.lib().select_one()
 
 ## Description
 
+A function that selects the first element of a given array that satisfies the condition of a specified function.
+
 ## Syntax
 
 ```js
-
+#fs.scripts.lib().select_one(array, func)
 ```
 
 ### Parameters
 
-No known parameters.
+# array
+
+The array of elements to be evaluated.
+
+# func
+
+The function to execute on each element. This function should return a boolean.
 
 ### Return
+
+Returns the first element in the array that satisfies the condition specified by the function.
 
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  return l.//something
+  const my_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  function is_even (index, value) {
+    return value % 2 === 0;
+  }
+
+  return l.select_one(my_array, is_even);
 }
 ```
