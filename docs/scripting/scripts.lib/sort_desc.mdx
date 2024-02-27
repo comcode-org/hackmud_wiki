@@ -1,0 +1,34 @@
+---
+title: scripts.lib().sort_desc()
+---
+
+## Description
+
+A function that takes an array of numbers and sorts them in descending order.
+
+## Syntax
+
+```js
+#fs.scripts.lib().sort_asc(array)
+```
+
+### Parameters
+
+# array
+
+An array of numbers to be sorted in descending order.
+
+### Return
+
+Returns an array.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  const my_array = [2001, 1337, 7, 3006, 42];
+
+  return l.sort_desc(my_array);
+}
+```
