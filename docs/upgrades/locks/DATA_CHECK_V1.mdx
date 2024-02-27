@@ -14,7 +14,8 @@ In other words, this stat determines the likelyhood that a DATA_CHECK_V1 will pu
 ## Behavior
 
 DATA_CHECK_V1 expects the answers to three questions concatenated together into a single string with no separator.
-When no arguments, or empty arguments are passed, DATA_CHECK_V1 will return the following lock error:
+
+When no arguments are passed into DATA_CHECK_V1, the lock will return the following error:
 
 ```
 user.fakeloc123 { }
@@ -23,6 +24,17 @@ Denied access by DATA_CHECK lock.
 ```
 
 Note that the '\_v1' at the end of DATA_CHECK is not included in the argument key.
+
+Providing any incorrect value to the DATA_CHECK key will provide 3 questions to answer:
+
+```
+>>user.fakeloc123 { DATA_CHECK:"" }
+a ++++++ is a household cleaning device with a rudimentary networked sentience
+safety depends on the use of scripts.++++++
+pet, pest, plague and meme are accurate descriptors of the ++++++
+```
+
+All 3 questions must be answered in the order received, concatenated together in lowercase, with no separators between each answer.
 
 ## Solving
 
@@ -33,19 +45,18 @@ Note that the '\_v1' at the end of DATA_CHECK is not included in the argument ke
 
 ```
 >>user.fakeloc123 { DATA_CHECK:"" }
-"did you know" is a communication pattern common to user ++++++
+a ++++++ is a household cleaning device with a rudimentary networked sentience
 safety depends on the use of scripts.++++++
 pet, pest, plague and meme are accurate descriptors of the ++++++
 
->>user.fakeloc123 { DATA_CHECK:"fran_leeget_levelbunnybat" }
-WARNING: BINMAT security shell inactive. Intelligent defense system of
-fline.
+>>user.fakeloc123 { DATA_CHECK:"robovacget_levelbunnybat" }
+WARNING: BINMAT security shell inactive. Intelligent defense system offline.
 LOCK_UNLOCKED
 ```
 
 </details>
 
-### DATA_CHECK
+### DATA_CHECK Solutions
 
 <details>
 <summary>Spoilers for DATA_CHECK_V1's solutions</summary>
@@ -93,7 +104,8 @@ Known questions and answers for DATA_CHECK_V1:
 - QUESTION: users gather in channel CAFE to share ++++++<br />
   ANSWER: poetry
 
-The solution will be three answers concatenated with no spaces, as shown in the example above.
-fran_lee, get_level, and bunnybat become \{ DATA_CHECK: "fran_leeget_levelbunnybat" }
+The solution will be all three answers in the order received; concatenated together in all lowercase, with no spaces or other separation; as shown in the example below:
+
+robovac, get_level, and bunnybat become \{ DATA_CHECK: "robovacget_levelbunnybat" }
 
 </details>
