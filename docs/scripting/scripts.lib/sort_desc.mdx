@@ -4,19 +4,19 @@ title: scripts.lib().sort_desc()
 
 ## Description
 
-A function that takes an array of numbers and sorts them in descending order.
+Arguments for `.sort()` that sort an array of strings in descending order. This is intended for use with alphabetical strings. Numbers will sort by string precedence.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().sort_asc(array)
+array.sort(#fs.scripts.lib().sort_desc)
 ```
 
 ### Parameters
 
 # array
 
-An array of numbers to be sorted in descending order.
+An array of strings to be sorted in descending order.
 
 ### Return
 
@@ -27,8 +27,8 @@ Returns an array.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_array = [2001, 1337, 7, 3006, 42];
+  const my_array = ["bananas", "apples", "oranges"];
 
-  return l.sort_desc(my_array);
+  return my_array.sort(l.sort_desc);
 }
 ```
