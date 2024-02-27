@@ -12,7 +12,7 @@ CON_TELL has no additional stats. The upgrade only spawns at 'kiddie' rarity.
 
 ## Behavior
 
-CON_TELL has no user input available. The lock is triggered on a breach attempt and sends chats.tells to the targeted user.
+CON_TELL does not take in any user input, and will be immediately activated upon encountering it. The lock sends a chats.tell message to the targeted user, then allows the attacker to proceed to the next lock. Every subsequent call will send another chats.tell message to the targeted user.
 
 ## Solving
 
