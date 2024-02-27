@@ -9,20 +9,23 @@ Takes a numerical seed and generates a random number based on the LCG RNG.
 ## Syntax
 
 ```js
-
+#fs.scripts.lib().LCG(12345)
 ```
 
 ### Parameters
 
-No known parameters.
+Takes a number as its parameter.
 
 ### Return
+
+Returns a number.
 
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  return l.//something
+  my_seed = 12345
+  return l.LCG(my_seed)
 }
 ```
