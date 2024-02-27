@@ -1,0 +1,32 @@
+---
+title: scripts.lib().num_sort_desc()
+---
+
+## Description
+
+Arguments for `.sort()` that sort an array of numbers in descending order.
+
+## Syntax
+
+```js
+array.sort(#fs.scripts.lib().num_sort_desc);
+```
+
+### Parameters
+
+No known parameters.
+
+### Return
+
+Returns an array.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  const my_array = [3006, 2001, 7, 42, 38];
+
+  return my_array.sort(l.num_sort_desc);
+}
+```
