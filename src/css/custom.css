@@ -9,6 +9,15 @@
 body {
   font-family: "whiterabbit-webfont";
 }
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "whiterabbit-webfont";
+}
+
 /**
  * WIKILINK CLASSES
  */
