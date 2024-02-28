@@ -4,23 +4,30 @@ title: scripts.lib().get_user_from_script()
 
 ## Description
 
+A function that extracts the user name of a script owner based on the script name.
+
 ## Syntax
 
 ```js
-
+#fs.scripts.lib().get_user_from_script(scriptname)
 ```
 
 ### Parameters
 
-No known parameters.
+# scriptname
+
+The string representation of a script name, e.g. "scripts.trust"
 
 ### Return
+
+Returns a string.
 
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  return l.//something
+  const scriptname = "scripts.trust"
+  return l.get_user_from_script(scriptname)
 }
 ```
