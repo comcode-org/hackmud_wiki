@@ -4,23 +4,30 @@ title: scripts.lib().is_script()
 
 ## Description
 
+A function that checks if the input is a valid script.
+
 ## Syntax
 
 ```js
-
+#fs.scripts.lib().is_script(scriptname)
 ```
 
 ### Parameters
 
-No known parameters.
+# scriptname
+
+The string representation of a scriptname, e.g. "scripts.trust"
 
 ### Return
+
+Returns a string
 
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  return l.//something
+  const scriptname = "scripts.trust"
+  return l.is_script(scriptname)
 }
 ```
