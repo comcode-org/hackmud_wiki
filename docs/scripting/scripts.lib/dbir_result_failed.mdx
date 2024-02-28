@@ -4,23 +4,34 @@ title: scripts.lib().dbir_result_failed()
 
 ## Description
 
+A function that takes a number and the result of a MongoDB insertion (array) and returns a boolean to check if the insertion was successful or not. (true indicates a Failure)
+
 ## Syntax
 
 ```js
-
+#fs.scripts.lib().dbir_result_failed(result, num)
 ```
 
 ### Parameters
 
-No known parameters.
+# result
+
+The result of a MongoDB insertion. (array)
+
+# num
+
+The number of inserted documents. If no number is passed, the parameter will default to 1.
 
 ### Return
+
+Returns a boolean.
 
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  return l.//something
+  const update = #db.i({ my_db_article: "is awesome"});
+  return l.dbir_result_failed(update, 1);
 }
 ```
