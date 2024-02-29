@@ -2,14 +2,12 @@
 title: scripts.lib().is_arr()
 ---
 
-## Description
-
 A function to test whether the input is an array.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().is_arr(i)
+#fs.scripts.lib().is_arr(i);
 ```
 
 Where "i" is the input to be tested.
@@ -27,7 +25,8 @@ Returns a boolean.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_test_input = ["apples", "bananas", "oranges"]
-  return l.is_arr(my_test_input)
+  const my_test_input = ["apples", "bananas", "oranges"];
+
+  return l.is_arr(my_test_input);
 }
 ```
