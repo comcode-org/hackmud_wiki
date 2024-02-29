@@ -2,14 +2,12 @@
 title: scripts.lib().max_val_index()
 ---
 
-## Description
-
-A function that finds the maximimum value in an array and returns both the maximimum value, and its index in the array.
+## A function that finds the maximimum value in an array and returns both the maximimum value, and its index in the array.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().max_val_index(array)
+#fs.scripts.lib().max_val_index(array);
 ```
 
 ### Parameters
@@ -27,7 +25,8 @@ Returns an array.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_array = [2001, 3006, 1337, 42, 7]
-  return l.max_val_index(my_array)
+  const my_array = [2001, 3006, 1337, 42, 7];
+
+  return l.max_val_index(my_array);
 }
 ```
