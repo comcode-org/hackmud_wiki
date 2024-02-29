@@ -2,14 +2,12 @@
 title: scripts.lib().is_num()
 ---
 
-## Description
-
 A function to test whether the input is a number.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().is_num(i)
+#fs.scripts.lib().is_num(i);
 ```
 
 Where "i" is the input to be tested.
@@ -27,7 +25,8 @@ Returns a boolean.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_test_input = 1337
-  return l.is_num(my_test_input)
+  const my_test_input = 1337;
+
+  return l.is_num(my_test_input);
 }
 ```
