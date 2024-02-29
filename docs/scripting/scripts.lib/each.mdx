@@ -2,14 +2,12 @@
 title: scripts.lib().each()
 ---
 
-## Description
-
 A helper function that allows execution of a specified function for each element of an array.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().each(array, func)
+#fs.scripts.lib().each(array, func);
 ```
 
 ### Parameters
@@ -37,7 +35,7 @@ function(context, args) {
 			  const output = [];
 			  output.push(index);
 			  return output;
-			}
+			};
 
 			return l.each(my_array, my_func);
 }
