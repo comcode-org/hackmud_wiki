@@ -2,17 +2,17 @@
 title: scripts.lib().to_game_timestr()
 ---
 
-## Description
-
 Takes a JavaScript `new Date()` object and converts it into a time string in the `YYMMDD.HHSS` format.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().to_game_timestr(new Date())
+#fs.scripts.lib().to_game_timestr(date);
 ```
 
 ### Parameters
+
+# date
 
 Takes a JavaScript `new Date()` object as its parameter.
 
@@ -29,7 +29,8 @@ Returns a string.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const current_time_and_date = new Date()
-  return l.to_game_timestr(current_time_and_date)
+  const current_time_and_date = new Date();
+
+  return l.to_game_timestr(current_time_and_date);
 }
 ```
