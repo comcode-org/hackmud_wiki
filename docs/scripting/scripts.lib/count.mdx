@@ -2,12 +2,12 @@
 title: scripts.lib().count()
 ---
 
-## A function that counts the number of elements in a given array that satisfy the condition of a specified function.
+A function that counts the number of elements in a given array that satisfy the condition of a specified function.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().count(array, func)
+#fs.scripts.lib().count(array, func);
 ```
 
 ### Parameters
@@ -33,7 +33,7 @@ function(context, args) {
 
   function is_even(index, value) {
     return value % 2 === 0;
-  }
+  };
 
   return l.count(my_array, is_even);
 }
