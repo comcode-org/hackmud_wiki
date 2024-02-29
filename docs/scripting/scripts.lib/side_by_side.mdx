@@ -2,25 +2,36 @@
 title: scripts.lib().side_by_side()
 ---
 
-## Description
+## A function that takes 2 strings and formats them to display side-by-side.
 
 ## Syntax
 
 ```js
-
+#fs.scripts.lib().side_by_side(str1, str2);
 ```
 
 ### Parameters
 
-No known parameters.
+# str1
+
+The string that will appear on the left side.
+
+# str2
+
+The string that will display on the right side.
 
 ### Return
+
+Returns a string.
 
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  return l.//something
+  const left_side = "Line 1 left\nLine 2 left";
+  const right_side = "Line 1 right\nLine 2 right";
+
+  return l.side_by_side(left_side, right_side);
 }
 ```
