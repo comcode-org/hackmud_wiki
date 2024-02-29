@@ -1,0 +1,34 @@
+---
+title: scripts.lib().is_bool()
+---
+
+A function to test whether the input is a boolean.
+
+## Syntax
+
+```js
+#fs.scripts.lib().is_bool(value);
+```
+
+Where "value" is the variable to be tested.
+
+### Parameters
+
+#### value
+
+The variable to test whether it's a boolean or not.
+
+### Return
+
+Returns true if the variable is a boolean, false otherwise.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  const my_test_input = true;
+
+  return l.is_bool(my_test_input);
+}
+```
