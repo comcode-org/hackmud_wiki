@@ -2,21 +2,21 @@
 title: scripts.lib().dump()
 ---
 
-## Description
-
 A function that tests whether the input is a string, and returns the string representation of the input.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().dump(i)
+#fs.scripts.lib().dump(i);
 ```
 
 Where "i" is the input to be tested.
 
 ### Parameters
 
-No known parameters.
+# i
+
+The input to be evaluated.
 
 ### Return
 
@@ -27,7 +27,8 @@ Returns a boolean, and the string representation of the input value.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_test_input = "I am a string, and will return true."
-  return l.dump(my_test_input)
+  const my_test_input = "I am a string, and will return true.";
+
+  return l.dump(my_test_input);
 }
 ```
