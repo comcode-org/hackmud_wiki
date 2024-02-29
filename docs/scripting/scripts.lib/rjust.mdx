@@ -2,14 +2,12 @@
 title: scripts.lib().rjust()
 ---
 
-## Description
-
-A function that right-justifies a string within a given width by padding it with a specified character, or space by default.
+## A function that right-justifies a string within a given width by padding it with a specified character, or space by default.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().rjust(string, width, character)
+#fs.scripts.lib().rjust(string, width, character);
 ```
 
 ### Parameters
@@ -35,7 +33,7 @@ Returns a string.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_string = "hello"
+  const my_string = "hello";
   const padding = "-";
 
   return l.rjust(padding, 10, my_string);
