@@ -2,14 +2,12 @@
 title: scripts.lib().is_int()
 ---
 
-## Description
-
 A function to test whether the input is an integer.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().is_int(i)
+#fs.scripts.lib().is_int(i);
 ```
 
 Where "i" is the input to be tested.
@@ -27,7 +25,8 @@ Returns a boolean.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_test_input = -1
-  return l.is_int(my_test_input)
+  const my_test_input = -1;
+
+  return l.is_int(my_test_input);
 }
 ```
