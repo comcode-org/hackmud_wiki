@@ -2,25 +2,34 @@
 title: scripts.lib().is_func()
 ---
 
-## Description
+Checks whether input is a function.
 
 ## Syntax
 
 ```js
-
+#fs.scripts.lib().is_func(func)
 ```
 
 ### Parameters
 
-No known parameters.
+# func
+
+The input to be evaluated.
 
 ### Return
+
+Returns a boolean
 
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  return l.//something
+  function my_func () {
+    return "I am a function";
+  };
+  let func = my_func;
+
+  return l.is_func(my_func);
 }
 ```
