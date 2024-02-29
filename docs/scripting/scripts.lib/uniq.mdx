@@ -2,14 +2,12 @@
 title: scripts.lib().uniq()
 ---
 
-## Description
-
-A function that deduplicates elements from an array, while preserving the order of the remaining elements.
+## A function that deduplicates elements from an array, while preserving the order of the remaining elements.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().uniq(array)
+#fs.scripts.lib().uniq(array);
 ```
 
 ### Parameters
@@ -28,6 +26,7 @@ Returns an array.
 function(context, args) {
   const l = #fs.scripts.lib();
   const my_array = ["apples", "bananas", "oranges", "apples", "limes", "oranges"];
+
   return l.uniq(my_array);
 }
 ```
