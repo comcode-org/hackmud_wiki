@@ -2,7 +2,7 @@
 title: scripts.lib().is_not_today()
 ---
 
-## A function that checks if a specified date is not today's date.
+## A function that checks if a specified date is in the past.
 
 ## Syntax
 
@@ -23,8 +23,15 @@ A JavaScript `Date` object.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const date = new Date();
+	const past_date = new Date('1970-01-01');
 
-  return l.is_not_today(date);
+	if(l.is_not_today(past_date)) {
+		// evaluates as true
+		return "This date is in the past"
+
+	} else if(l.is_not_today(new Date())){
+		// evaluates as false
+		return "Today's date, try again tomorrow."
+  }
 }
 ```
