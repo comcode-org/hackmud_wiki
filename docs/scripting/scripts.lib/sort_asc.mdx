@@ -2,9 +2,7 @@
 title: scripts.lib().sort_asc()
 ---
 
-## Description
-
-Arguments for `.sort()` that sort an array of strings in ascending order. This is intended for use with alphabetical strings. Numbers will sort by string precedence.
+## Arguments for `.sort()` that sort an array of strings in ascending order. This is intended for use with alphabetical strings. Numbers will sort by string precedence.
 
 ## Syntax
 
@@ -29,6 +27,6 @@ function(context, args) {
   const l = #fs.scripts.lib();
   const my_array = ["bananas", "apples", "oranges"];
 
-  return my_array.sort(l.sort_asc)
+  return my_array.sort(l.sort_asc);
 }
 ```
