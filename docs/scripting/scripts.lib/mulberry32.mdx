@@ -2,8 +2,6 @@
 title: scripts.lib().mulberry32()
 ---
 
-## Description
-
 A function that gets a random number from a numerical seed based on the mulberry32 RNG.
 
 ## Syntax
@@ -14,7 +12,9 @@ A function that gets a random number from a numerical seed based on the mulberry
 
 ### Parameters
 
-Takes a number as its parameter.
+# num
+
+The number to serve as the seed for RNG.
 
 ### Return
 
@@ -25,7 +25,8 @@ Returns a number.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_number = 1337
-  return l.mulberry32(my_number)
+  const my_number = 1337;
+
+  return l.mulberry32(my_number);
 }
 ```
