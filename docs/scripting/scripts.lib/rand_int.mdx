@@ -2,13 +2,13 @@
 title: scripts.lib().rand_int()
 ---
 
-## Description
-
 A function that returns a random number (integer) between two integer parameters.
 
 ## Syntax
 
-    scripts.lib().rand_int(1,4)
+```js
+scripts.lib().rand_int(1, 4);
+```
 
 ### Parameters
 
@@ -22,14 +22,16 @@ The maximum number to generate (exclusive). The maximum number the function will
 
 ### Return
 
-Returns a number (integer) between the min (inclusive) and max (exclusive)
+Returns a number (integer) between the min (inclusive) and max (exclusive)  
 3
 
 ## Example
 
-```
-function(context,args){
-  var l = #fs.scripts.lib()
-  return l.rand_int(1,4)
+This example chooses a number between 0 and 99 and returns it. The function could be used for picking a number for a guessing game.
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  return l.rand_int(0, 100);
 }
 ```
