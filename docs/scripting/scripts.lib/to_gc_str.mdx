@@ -2,19 +2,19 @@
 title: scripts.lib().to_gc_str()
 ---
 
-## Description
-
 Takes a number and turns it into a formatted GC string.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().to_gc_str(100200300)
+#fs.scripts.lib().to_gc_str(num)
 ```
 
 ### Parameters
 
-Takes a number as its parameter.
+# num
+
+The number to turn into a formatted GC string
 
 ### Return
 
@@ -29,7 +29,8 @@ Returns a GC string.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_gc_number = 100200300
-  return l.to_gc_str(my_gc_number)
+  const my_gc_number = 100200300;
+
+  return l.to_gc_str(my_gc_number);
 }
 ```
