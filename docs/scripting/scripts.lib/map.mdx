@@ -2,9 +2,7 @@
 title: scripts.lib().map()
 ---
 
-## Description
-
-A function that iterates over a given array and executes a specified function on each element, and then returns an array of the results.
+## A function that iterates over a given array and executes a specified function on each element, and then returns an array of the results.
 
 ## Syntax
 
@@ -31,12 +29,12 @@ Returns an array.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+  const my_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
   function square(index, value) {
     return value * value;
   }
 
-  return l.map(my_array, square)
+  return l.map(my_array, square);
 }
 ```
