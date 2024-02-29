@@ -2,14 +2,12 @@
 title: scripts.lib().is_obj()
 ---
 
-## Description
-
 A function to test whether the input is an object.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().is_obj(i)
+#fs.scripts.lib().is_obj(i);
 ```
 
 Where "i" is the input to be tested.
@@ -27,7 +25,8 @@ Returns a boolean.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_test_input = { i_am: "an object" }
-  return l.is_obj(my_test_input)
+  const my_test_input = { i_am: "an object" };
+
+  return l.is_obj(my_test_input);
 }
 ```
