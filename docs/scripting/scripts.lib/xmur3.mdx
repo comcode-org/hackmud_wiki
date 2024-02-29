@@ -2,30 +2,32 @@
 title: scripts.lib().xmur3()
 ---
 
-## Description
-
 A function that takes a string and turns it into a random number based on the xmur3 algorithm.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().xmur3("i_am_a_string_to_be_hashed")
+#fs.scripts.lib().xmur3(str);
 ```
 
 ### Parameters
 
-No known parameters.
+# str
+
+The string that will serve as the seed for RNG.
 
 ### Return
 
-Returns a string.
+Returns a number.
 
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_string = "i_am_a_string_to_be_hashed"
-  return l.xmur3(my_string)
+  const my_string = "i_am_a_string_to_be_hashed";
+  const rng = l.xmur3(my_string);
+
+  return rng;
 }
 ```
