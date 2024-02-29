@@ -2,17 +2,19 @@
 title: scripts.lib().is_not_today()
 ---
 
-## A function that checks if a specified date is not todays date.
+## A function that checks if a specified date is not today's date.
 
 ## Syntax
 
 ```js
-
+#fs.scripts.lib().is_not_today(date);
 ```
 
 ### Parameters
 
-No known parameters.
+# date
+
+A JavaScript `Date` object.
 
 ### Return
 
@@ -21,6 +23,8 @@ No known parameters.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  return l.//something
+  const date = new Date();
+
+  return l.is_not_today(date);
 }
 ```
