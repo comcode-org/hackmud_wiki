@@ -2,19 +2,19 @@
 title: scripts.lib().LCG()
 ---
 
-## Description
-
 Takes a numerical seed and generates a random number based on the LCG RNG.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().LCG(12345)
+#fs.scripts.lib().LCG(seed)
 ```
 
 ### Parameters
 
-Takes a number as its parameter.
+# seed
+
+The number to serve as the seed for RNG.
 
 ### Return
 
@@ -25,7 +25,8 @@ Returns a number.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  my_seed = 12345
-  return l.LCG(my_seed)
+  my_seed = 12345;
+
+  return l.LCG(my_seed);
 }
 ```
