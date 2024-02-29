@@ -2,14 +2,12 @@
 title: scripts.lib().is_str()
 ---
 
-## Description
-
 A function to test whether input is a string.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().is_str(i)
+#fs.scripts.lib().is_str(i);
 ```
 
 Where "i" is the input to be tested.
@@ -27,7 +25,8 @@ Returns a boolean.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_test_input = "I am a string."
-  return l.is_str(my_test_input)
+  const my_test_input = "I am a string.";
+
+  return l.is_str(my_test_input);
 }
 ```
