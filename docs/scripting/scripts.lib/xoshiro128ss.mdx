@@ -2,14 +2,12 @@
 title: scripts.lib().xoshiro128ss()
 ---
 
-## Description
-
 A function that gets a random number from 4 numerical seeds based on the xoshiro128ss RNG.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().xoshiro128ss(1, 2, 3, 4)
+#fs.scripts.lib().xoshiro128ss(1, 2, 3, 4);
 ```
 
 ### Parameters
@@ -39,10 +37,11 @@ Returns a number.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const seed_1 = 35484
-  const seed_2 = 97456
-  const seed_3 = 35241
-  const seed_4 = 85746
-  return l.xoshiro128ss(seed_1, seed_2, seed_3, seed_4)
+  const seed_1 = 35484;
+  const seed_2 = 97456;
+  const seed_3 = 35241;
+  const seed_4 = 85746;
+
+  return l.xoshiro128ss(seed_1, seed_2, seed_3, seed_4);
 }
 ```
