@@ -2,14 +2,12 @@
 title: scripts.lib().is_neg()
 ---
 
-## Description
-
 A function to test whether the input is a number, and if so, if it has a negative value.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().is_neg(i)
+#fs.scripts.lib().is_neg(i);
 ```
 
 Where "i" is the input to be tested.
@@ -27,7 +25,8 @@ Returns a boolean.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_test_input = -1
-  return l.is_neg(my_test_input)
+  const my_test_input = -1;
+
+  return l.is_neg(my_test_input);
 }
 ```
