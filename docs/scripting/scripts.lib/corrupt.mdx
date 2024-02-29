@@ -2,14 +2,12 @@
 title: scripts.lib().corrupt()
 ---
 
-## Description
-
 Applies corruption throughout a given string, in the specified frequency.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().corrupt(str, corruption)
+#fs.scripts.lib().corrupt(str, corruption);
 ```
 
 ### Parameters
@@ -31,7 +29,8 @@ Returns a string.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_string = "I am a string to be corrupted."
-  return l.corrupt(my_string, 1.5)
+  const my_string = "I am a string to be corrupted.";
+
+  return l.corrupt(my_string, 1.5);
 }
 ```
