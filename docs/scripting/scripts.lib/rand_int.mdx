@@ -4,7 +4,7 @@ title: scripts.lib().rand_int()
 
 ## Description
 
-A function that returns a random number between two parameters.
+A function that returns a random number (integer) between two integer parameters.
 
 ## Syntax
 
@@ -16,19 +16,18 @@ scripts.lib().rand_int(1, 4);
 
 #### Min
 
-The minimum number to generate. (inclusive)
+The minimum number to generate (inclusive). This minimum number may show up in the returned random number.
 
 #### Max
 
-A number which is one greater than the maximum number to generate. (exclusive)
+The maximum number to generate (exclusive). The maximum number the function will generate will be one less than this number.
 
 ### Return
 
-Returns a random number between the min and max:
-
-```
+Returns a number (integer) between the min (inclusive) and max (exclusive)
 3
-```
+
+````
 
 ## Example
 
@@ -37,4 +36,4 @@ function(context, args) {
   const l = #fs.scripts.lib();
   return l.rand_int(1, 4);
 }
-```
+````
