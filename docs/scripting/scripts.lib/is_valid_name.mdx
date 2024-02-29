@@ -2,21 +2,21 @@
 title: scripts.lib().is_valid_name()
 ---
 
-## Description
-
 A function to test whether the input is a valid hackmud username.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().is_valid_name(i)
+#fs.scripts.lib().is_valid_name(i);
 ```
 
 Where "i" is the input to be tested.
 
 ### Parameters
 
-No known parameters.
+# i
+
+The input to be evaluated.
 
 ### Return
 
@@ -27,7 +27,8 @@ Returns a boolean.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_test_input = "yrollam"
-  return l.is_valid_name(my_test_input)
+  const my_test_input = "yrollam";
+
+  return l.is_valid_name(my_test_input);
 }
 ```
