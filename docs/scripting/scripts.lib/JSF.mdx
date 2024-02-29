@@ -2,14 +2,12 @@
 title: scripts.lib().JSF()
 ---
 
-## Description
-
 A function that gets a random number from a numerical seed based on the JSF RNG.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().JSF(12345)
+#fs.scripts.lib().JSF(seed);
 ```
 
 ### Parameters
@@ -20,14 +18,15 @@ Numerical seed for the RNG.
 
 ### Return
 
-Returns a number
+Returns a number.
 
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_seed = 1234
-  return l.JSF(my_seed)
+  const my_seed = 1234;
+
+  return l.JSF(my_seed);
 }
 ```
