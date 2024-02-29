@@ -2,14 +2,12 @@
 title: scripts.lib().dbu_result_failed()
 ---
 
-## Description
-
-A function that takes a number and the result of a MongoDB operation (array) and returns a boolean to check if the operation was successful or not. (true indicates a Failure)
+## A function that takes a number and the result of a MongoDB operation (array) and returns a boolean to check if the operation was successful or not. (true indicates a Failure)
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().dbu_result_failed(result, num)
+#fs.scripts.lib().dbu_result_failed(result, num);
 ```
 
 ### Parameters
@@ -32,6 +30,7 @@ Returns a boolean.
 function(context, args) {
   const l = #fs.scripts.lib();
   const update = #db.u({ my_db_article: { $exists:true }}, { $set: { new_property: 123 } });
+
   return l.dbu_result_failed(update, 1);
 }
 ```
