@@ -2,19 +2,19 @@
 title: scripts.lib().hash_code()
 ---
 
-## Description
-
 A function which creates a hash code out of an input string.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().hash_code("i_am_a_string_to_be_hashed")
+#fs.scripts.lib().hash_code(str)
 ```
 
 ### Parameters
 
-Takes a string as its parameter.
+# str
+
+The string to be hashed.
 
 ### Return
 
@@ -25,7 +25,8 @@ Returns a string.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_string
-  return l.hash_code(my_string)
+  const my_string;
+
+  return l.hash_code(my_string);
 }
 ```
