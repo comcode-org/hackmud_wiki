@@ -2,21 +2,21 @@
 title: scripts.lib().clone()
 ---
 
-## Description
-
 A function that checks if the input object is defined, and if so, clones the object and returns the result of the operation. If the object is not defined, clone will return "undefined".
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().clone(i)
+#fs.scripts.lib().clone(i);
 ```
 
 Where "i" is the object to be cloned.
 
 ### Parameters
 
-No known parameters.
+# i
+
+The input to be evaluated.
 
 ### Return
 
@@ -29,7 +29,8 @@ function(context, args) {
   const l = #fs.scripts.lib();
   const my_obj = {
     property: "value"
-  }
-  return l.clone(my_obj)
+  };
+
+  return l.clone(my_obj);
 }
 ```
