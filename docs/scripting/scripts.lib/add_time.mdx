@@ -2,14 +2,12 @@
 title: scripts.lib().add_time()
 ---
 
-## Description
-
-A function that adds a specified number of milliseconds to a given `Date()` object.
+## A function that adds a specified number of milliseconds to a given `Date()` object.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().add_time(Date, number)
+#fs.scripts.lib().add_time(Date, number);
 ```
 
 ### Parameters
@@ -31,7 +29,8 @@ Returns a new `Date()` object.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_date = new Date()
-  return l.add_time(my_date, 1000)
+  const my_date = new Date();
+
+  return l.add_time(my_date, 1000);
 }
 ```
