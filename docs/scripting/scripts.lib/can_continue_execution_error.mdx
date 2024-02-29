@@ -2,25 +2,39 @@
 title: scripts.lib().can_continue_execution_error()
 ---
 
-## Description
+## A function that checks if there is enough time remaining for execution based on a specified number of milliseconds. If not enough time remains, the function returns an error.
 
 ## Syntax
 
 ```js
-
+#fs.scripts.lib().can_continue_execution_error(remain_threshold);
 ```
 
 ### Parameters
 
-No known parameters.
+# remain_threshold
+
+A number in milliseconds.
 
 ### Return
+
+If there is not enough time remaining the function returns an object. Otherwise, it will return `null`.
 
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  return l.//something
+
+  const timeout_error = l.can_continue_execution_error(1000);
+
+  if (timeout_error) {
+
+    return timeout_error.msg;
+
+  } else {
+    // Proceed with execution
+    return "I have executed with no timeout error!";
+  }
 }
 ```
