@@ -2,14 +2,12 @@
 title: scripts.lib().get_scriptname_from_script()
 ---
 
-## Description
-
-A function that extracts the scriptname of a script based on the full formatted script name.
+## A function that extracts the scriptname of a script based on the full formatted script name.
 
 ## Syntax
 
 ```js
-#fs.scripts.lib().get_scriptname_from_script(scriptname)
+#fs.scripts.lib().get_scriptname_from_script(scriptname);
 ```
 
 ### Parameters
@@ -27,7 +25,8 @@ Returns a string.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const scriptname = "scripts.trust"
-  return l.get_scriptname_from_script(scriptname)
+  const scriptname = "scripts.trust";
+
+  return l.get_scriptname_from_script(scriptname);
 }
 ```
