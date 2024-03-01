@@ -1,0 +1,33 @@
+---
+title: scripts.lib().get_log()
+---
+
+Returns array of logged strings from [[scripts.lib().log()]]
+
+## Syntax
+
+```js
+return #fs.scripts.lib().get_log();
+```
+
+### Parameters
+
+There are no known parameters.
+
+### Return
+
+Returns an array of strings. In the example below, returns:
+
+```
+"hello world"
+```
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  l.log('hello world');
+  return l.get_log();
+}
+```
