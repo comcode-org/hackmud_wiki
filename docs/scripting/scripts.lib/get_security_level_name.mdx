@@ -1,0 +1,31 @@
+---
+title: scripts.lib().get_security_level_name()
+---
+
+A function that takes a number between 0 and 4 (inclusive) and returns the associated security level name.
+
+## Syntax
+
+```js
+#fs.scripts.lib().get_security_level_name(level);
+```
+
+### Parameters
+
+# level
+
+A numerical representation of a security level. (0 - 4 inclusive)
+
+### Return
+
+Returns a string.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+
+  return l.get_security_level_name(4);
+}
+```
