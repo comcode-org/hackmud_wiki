@@ -1,0 +1,29 @@
+---
+title: scripts.lib().date()
+---
+
+A safe internal `Date()` constructor.
+
+## Syntax
+
+```js
+#fs.scripts.lib().date();
+```
+
+### Parameters
+
+Same as JavaScript's `Date()` constructor.
+
+### Return
+
+Returns a `Date` object.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+
+  return l.date();
+}
+```
