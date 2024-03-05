@@ -1,0 +1,34 @@
+---
+title: scripts.lib().sample()
+---
+
+Sample randomly selects one element from an array to return.
+
+## Syntax
+
+```js
+return #fs.scripts.lib().sample(arr);
+```
+
+### Parameters
+
+#### Array
+
+The array to be sampled.
+
+### Return
+
+Returns the data type of the element sampled.
+
+```
+"banana"
+```
+
+## Example
+
+```js
+function(context, args) {
+  let arr = ["apple", "banana", "strawberry"];
+  return #fs.scripts.lib().sample(arr);
+}
+```
