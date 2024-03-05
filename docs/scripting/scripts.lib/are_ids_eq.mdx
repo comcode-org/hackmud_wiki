@@ -1,0 +1,49 @@
+---
+title: scripts.lib().are_ids_eq()
+---
+
+Compares two strings or ObjectIDs and evaluates if they are equal. Useful for comparing MongoDB documents by IDs.
+
+## Syntax
+
+```js
+return #fs.scripts.lib().are_ids_eq(id1, id2);
+```
+
+### Parameters
+
+#### id1
+
+The first string or ObjectID value.
+
+#### id2
+
+The second string or ObjectID value.
+
+### Return
+
+Returns a boolean.
+
+```
+False
+```
+
+## Example
+
+```js
+function(context, args) {
+  let l = #fs.scripts.lib();
+  let id1 = "65c982ee9edd1f997c9806ac";
+  let id2 = "65c982ee9edd1f997c9806a0";
+  return l.are_ids_eq(id1, id2);
+}
+```
+
+```js
+function(context, args) {
+  let l = #fs.scripts.lib();
+  let id1 = { $oid: "65c982ee9edd1f997c9806ac" };
+  let id2 = { $oid: "65c982ee9edd1f997c9806a0" };
+  return l.are_ids_eq(id1, id2);
+}
+```
