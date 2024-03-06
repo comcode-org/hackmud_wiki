@@ -2,7 +2,7 @@
 title: scripts.lib().clone()
 ---
 
-A function that checks if the input object is defined, and if so, clones the object and returns the result of the operation. If the object is not defined, clone will return "undefined".
+A function that returns a clone of a value. Any type of value may be cloned, including `undefined`.
 
 ## Syntax
 
@@ -10,17 +10,17 @@ A function that checks if the input object is defined, and if so, clones the obj
 #fs.scripts.lib().clone(i);
 ```
 
-Where "i" is the object to be cloned.
+Where "i" is the value to be cloned.
 
 ### Parameters
 
 # i
 
-The input to be evaluated.
+The input to be cloned.
 
 ### Return
 
-Returns the structure of the input object.
+Returns a clone of the input value. This value may be modified separately from the original.
 
 ## Example
 
