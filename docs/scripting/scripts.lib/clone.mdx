@@ -1,0 +1,34 @@
+---
+title: scripts.lib().clone()
+---
+
+A function that returns a clone of a value. Any type of value may be cloned, including `undefined`.
+
+## Syntax
+
+```js
+#fs.scripts.lib().clone(i);
+```
+
+### Parameters
+
+#### i
+
+The input to be cloned.
+
+### Return
+
+Returns a duplicated copy of the input value. If the input is an object, the return value will have the same keys with cloned values for the keys. The returned value may be modified separately from the original.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  const my_obj = {
+    property: "value"
+  };
+
+  return l.clone(my_obj);
+}
+```
