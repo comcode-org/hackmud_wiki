@@ -1,0 +1,32 @@
+---
+title: scripts.lib().is_def()
+---
+
+A function to test whether the input type is defined.
+
+## Syntax
+
+```js
+#fs.scripts.lib().is_def(i);
+```
+
+### Parameters
+
+#### i
+
+The input to be evaluated.
+
+### Return
+
+Returns a boolean.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  const my_obj = {};
+
+  return l.is_def(my_obj.undefined_prop);
+}
+```
