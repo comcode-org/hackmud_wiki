@@ -1,0 +1,37 @@
+---
+title: scripts.lib().merge()
+---
+
+A function that merges the properties of two objects into one object.
+
+## Syntax
+
+```js
+#fs.scripts.lib().merge(obj1, obj2);
+```
+
+### Parameters
+
+#### obj1
+
+The object which will be merged into.
+
+#### obj2
+
+The object to be merged into the other.
+
+### Return
+
+Returns the new combined object with merged properties.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  const obj_1 = { prop_1: "value_1" };
+  const obj_2 = { prop_2: "value_2" };
+
+  return l.merge(obj_1, obj_2);
+}
+```
