@@ -1,0 +1,35 @@
+---
+title: scripts.lib().get_values()
+---
+
+A function that extracts the values from all properties of an object.
+
+## Syntax
+
+```js
+#fs.scripts.lib().get_values(obj);
+```
+
+### Parameters
+
+#### obj
+
+The object from which to extract properties.
+
+### Return
+
+Returns an array.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  const my_obj = {
+    prop_1: "value_1",
+    prop_2: "value_2"
+  };
+
+  return l.get_values(my_obj);
+}
+```
