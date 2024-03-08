@@ -1,0 +1,36 @@
+---
+title: .create_rand_string()
+---
+
+A function that generates a string of random characters.
+
+## Syntax
+
+```js
+#fs.scripts.lib().create_rand_string(count, rand);
+```
+
+### Parameters
+
+#### count
+
+The number of characters that the random string should contain.
+
+#### rand (optional)
+
+A random number generator function.
+
+### Return
+
+Returns a string.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  const rand = l.xmur3("seed");
+
+  return l.create_rand_string(7, rand);
+}
+```
