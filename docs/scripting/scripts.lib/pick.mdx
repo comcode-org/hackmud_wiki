@@ -1,5 +1,5 @@
 ---
-title: scripts.lib().pick()
+title: .pick()
 ---
 
 A function that takes an object and creates a new object containing only the specified keys from the original object.
@@ -12,11 +12,11 @@ A function that takes an object and creates a new object containing only the spe
 
 ### Parameters
 
-# obj
+#### obj
 
 The original object.
 
-# keys
+#### keys
 
 The keys from the original object that we should create the new object with.
 
@@ -37,6 +37,6 @@ function(context, args) {
   };
   const keys_to_pick = [payment_types, favorite_food];
 
-  return l.pick(keys_to_pick);
+  return l.pick(my_obj, keys_to_pick);
 }
 ```
