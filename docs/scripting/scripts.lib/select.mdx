@@ -1,0 +1,40 @@
+---
+title: scripts.lib().select()
+---
+
+The select function behaves similarly to `filter` in JavaScript. The function iterates over an array and applies a specified function to the array. Each element of the array that is evaluated as `true` by the specified function will be returned.
+
+## Syntax
+
+```js
+#fs.scripts.lib(array, func);
+```
+
+### Parameters
+
+#### array
+
+The array to be selected from.
+
+#### func
+
+The function that should be applied. This function should return a boolean.
+
+### Return
+
+Returns an array.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  const my_array = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+  function is_even (index, value) {
+    return value % 2 === 0;
+  };
+
+  return l.select(my_array, is_even);
+}
+```
