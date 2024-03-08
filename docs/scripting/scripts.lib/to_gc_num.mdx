@@ -1,0 +1,32 @@
+---
+title: scripts.lib().to_gc_num()
+---
+
+Takes a GC string and turns it into a number.
+
+## Syntax
+
+```js
+#fs.scripts.lib().to_gc_num(gc_string)
+```
+
+### Parameters
+
+#### gc_string
+
+The formatted GC string to be turned into a number.
+
+### Return
+
+Returns a number.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  const my_gc_string = "100M200K300GC";
+
+  return l.to_gc_num(my_gc_string);
+}
+```
