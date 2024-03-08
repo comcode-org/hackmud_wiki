@@ -1,0 +1,32 @@
+---
+title: .shuffle()
+---
+
+A function that takes an array and shuffles the elements into a random order.
+
+## Syntax
+
+```js
+#fs.scripts.lib().shuffle(array);
+```
+
+### Parameters
+
+#### array
+
+The array to be shuffled.
+
+### Return
+
+Returns an array.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  const my_array = ["apples", "bananas", "oranges"];
+
+  return l.shuffle(my_array);
+}
+```
