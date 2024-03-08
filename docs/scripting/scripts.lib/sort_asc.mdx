@@ -1,0 +1,32 @@
+---
+title: .sort_asc
+---
+
+Arguments for `.sort()` that sort an array of strings in ascending order. This is intended for use with alphabetical strings. Numbers will sort by string precedence.
+
+## Syntax
+
+```js
+array.sort(#fs.scripts.lib().sort_asc);
+```
+
+### Parameters
+
+#### array
+
+An array of strings to be sorted in ascending order.
+
+### Return
+
+Returns an array.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  const my_array = ["bananas", "apples", "oranges"];
+
+  return my_array.sort(l.sort_asc);
+}
+```
