@@ -1,0 +1,42 @@
+---
+title: .each()
+---
+
+A helper function that allows execution of a specified function for each element of an array.
+
+## Syntax
+
+```js
+#fs.scripts.lib().each(array, func);
+```
+
+### Parameters
+
+#### array
+
+The array to be iterated over, and its elements to have a function executed on.
+
+#### func
+
+The function to excute on each element of the array.
+
+### Return
+
+Returns an array.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+			const my_array = [1, 2, 3, 4, 5];
+
+			function my_func (index) {
+			  const output = [];
+			  output.push(index);
+			  return output;
+			};
+
+			return l.each(my_array, my_func);
+}
+```
