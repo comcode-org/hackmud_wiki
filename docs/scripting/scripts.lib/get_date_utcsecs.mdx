@@ -1,0 +1,29 @@
+---
+title: .get_date_utcsecs()
+---
+
+A safe internal invocation of `new Date().getTime()`
+
+## Syntax
+
+```js
+#fs.scripts.lib().get_date_utcsecs();
+```
+
+### Parameters
+
+No known parameters.
+
+### Return
+
+Returns a `Date` object with current date and time.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+
+  return l.get_date_utcsecs();
+}
+```
