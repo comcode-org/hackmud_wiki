@@ -1,0 +1,31 @@
+---
+title: .caller_is_owner()
+---
+
+A function that checks whether the caller of the script being called is the owner of that script by comparing the scriptname to the caller from the [[context]] object.
+
+## Syntax
+
+```js
+#fs.scripts.lib().caller_is_owner(context);
+```
+
+### Parameters
+
+#### context
+
+The [[context]] object.
+
+### Return
+
+Returns a boolean.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+
+  return l.caller_is_owner(context);
+}
+```
