@@ -1,0 +1,32 @@
+---
+title: .u_sort_num_array_desc()
+---
+
+A function that deduplicates an array of numbers and sorts the deduplicated array in descending order.
+
+## Syntax
+
+```js
+#fs.scripts.lib().u_sort_num_array_desc(array);
+```
+
+### Parameters
+
+#### array
+
+The array of numbers to be deduplicated and sorted in descending order.
+
+### Return
+
+Returns an array.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  const my_array = [3, 5, 7, 1337, 1337, 1337, 10151060];
+
+  return l.u_sort_num_array_desc(my_array);
+}
+```
