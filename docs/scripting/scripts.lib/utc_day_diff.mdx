@@ -1,0 +1,37 @@
+---
+title: .utc_day_diff()
+---
+
+A function that calculates the difference in days from 2 `Date` objects.
+
+## Syntax
+
+```js
+#fs.scripts.lib().utc_day_diff(date_1, date_2);
+```
+
+### Parameters
+
+#### date_1
+
+The first UTC timestamp.
+
+#### date_2
+
+The second UTC timestamp.
+
+### Return
+
+Returns a number of days.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  const date_1 = new Date();
+  const date_2 = new Date('1970-01-01');
+
+  return l.utc_day_diff(date_1, date_2);
+}
+```
