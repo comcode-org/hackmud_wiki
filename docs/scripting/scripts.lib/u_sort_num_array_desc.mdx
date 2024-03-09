@@ -1,5 +1,5 @@
 ---
-title: scripts.lib().u_sort_num_array_desc()
+title: .u_sort_num_array_desc()
 ---
 
 A function that deduplicates an array of numbers and sorts the deduplicated array in descending order.
@@ -12,7 +12,7 @@ A function that deduplicates an array of numbers and sorts the deduplicated arra
 
 ### Parameters
 
-# array
+#### array
 
 The array of numbers to be deduplicated and sorted in descending order.
 
@@ -25,7 +25,7 @@ Returns an array.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_array = [1337, 1337, 1337, 10151060];
+  const my_array = [3, 5, 7, 1337, 1337, 1337, 10151060];
 
   return l.u_sort_num_array_desc(my_array);
 }
