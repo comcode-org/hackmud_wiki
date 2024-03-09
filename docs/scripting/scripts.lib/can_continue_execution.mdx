@@ -1,0 +1,31 @@
+---
+title: .can_continue_execution()
+---
+
+A function that checks whether a specified number of milliseconds are available for execution.
+
+## Syntax
+
+```js
+#fs.scripts.lib().can_continue_execution(remain_threshold);
+```
+
+### Parameters
+
+#### remain_threshold
+
+A number in milliseconds. Player scripts must execute in under 5000 milliseconds or they will time out.
+
+### Return
+
+Returns a boolean.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+
+  return l.can_continue_execution(4000);
+}
+```
