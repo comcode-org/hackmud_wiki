@@ -1,0 +1,98 @@
+---
+title: "#db.f(..)"
+---
+
+Retrieves documents from the database.
+
+Similar to a [MongoDB db.collection.find()](https://www.mongodb.com/docs/manual/reference/method/db.collection.find/), with some syntax restrictions
+
+## Syntax
+
+```js
+#db.f(query, projection).cursor_method()
+```
+
+## Arguments
+
+### query
+
+Selection filter for documents in the script owner's database. An empty query ( `{}` ) selects all documents.
+
+Various [MongoDB query operators](https://www.mongodb.com/docs/manual/reference/operator/query/) can be used for conditional matching and other advanced querying functionality.
+
+### projection
+
+Optional argument to specify what key-value pairs to return from documents which match the query filter.
+
+#### cursor_method
+
+The method to use on the returned cursor ("the data")
+
+## Projections
+
+The projection parameter determines which fields are returned in the matching documents. The projection parameter consists of an object with the following syntax:
+
+`{ <key1>: <value>, <key2>: <value> ... }`
+
+| Projection Parameter | Description                                                                                                                    |
+| -------------------- | ------------------------------------------------------------------------------------------------------------------------------ |
+| key: [1 / true]      | Includes the key-value pair in the document return                                                                             |
+| key: [0 / false]     | Excludes the key-value pair from the document return                                                                           |
+| "key.$": [1 / true]  | If the key's value is an array, returns the first query-matching element on that array                                         |
+| key: [array]         | If the key's value is an array, uses array projection operators ($elemMatch, $slice) to specify the array elements to include. |
+
+## Cursor Methods
+
+Once data has been retrieved with a #db.f(..) command, a cursor is returned referencing the documents retrieved from the query. Multiple **cursor methods** can be ran against the cursor.
+
+:::warning
+
+Many cursor methods will **close** the cursor upon usage. This prevents its further usage. Cursor closure can be prevented by using an '\_and_keep_open' variant of the cursor method.
+
+**If any cursors are left open at the end of a script run, a :::TRUST COMMUNICATION::: will be thrown.**
+:::
+
+The following cursor methods are available:
+
+| Method         | Description                                                                                                                                                                             |
+| -------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| first()        | Returns the first matching document from the query. Closes the cursor. _first_and_keep_open()_ will leave the cursor open                                                               |
+| array()        | Returns all matching documents from the query, as an array. Closes the cursor. _array_and_keep_open()_ will leave the cursor open                                                       |
+| count()        | Returns the number of matching documents. Closes the cursor. _count_and_keep_open()_ will leave the cursor open                                                                         |
+| each(function) | Applies a Javascript function to every matching document. The function's first argument will contain the document. Closes the cursor. _each_and_keep_open()_ will leave the cursor open |
+| distinct(key)  | Returns an array of all unique values found for matching keys from the query. Closes the cursor. _distinct_and_keep_open()_ will leave the cursor open                                  |
+| sort(..)       | Sorts the returned documents according to [MongoDB's sort syntax](https://www.mongodb.com/docs/manual/reference/method/cursor.sort/). Can be chained into other methods                 |
+| skip(num)      | skips the first _num_ documents in the query result. Can be chained into other methods                                                                                                  |
+| limit(num)     | Limits the number of returned documents to _num_. Can be chained into other methods                                                                                                     |
+| close()        | Closes the cursor                                                                                                                                                                       |
+
+## Example
+
+```js
+function(context, args) {
+  /*
+  where the database already contains documents:
+  #db.i(
+    {type:"my_data", my_key:"foo"},
+    {type:"my_data", my_key:"bar"}
+  )
+  */
+  let data = #db.f({type:"my_data"}).first();
+  return data; // {type:"my_data", my_key:"foo"}
+}
+```
+
+```js
+function(context, args) {
+  /*
+  where the database already contains documents:
+  #db.i(
+    {type:"my_data", my_key:"foo"},
+    {type:"my_data", my_key:"bar"}
+  )
+  */
+  let data = #db.f({type:{$exists:true} }).array();
+
+  return data; // [{type:"my_data", my_key:"foo"}, {type:"my_data", my_key:"bar"}]
+}
+```

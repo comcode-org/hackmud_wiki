@@ -1,0 +1,73 @@
+---
+title: "#db.us(..)"
+---
+
+Updates documents in the database, if they exist. Inserts the document if it does not exist
+
+Similar to a [MongoDB db.collection.update()](https://www.mongodb.com/docs/manual/reference/method/db.collection.update/) with upserting enabled
+
+## Syntax
+
+```js
+#db.us(query, update)
+```
+
+## Arguments
+
+### query
+
+Selection filter for documents in the script owner's database. An empty query ( `{}` ) selects all documents.
+
+Various [MongoDB query operators](https://www.mongodb.com/docs/manual/reference/operator/query/) can be used for conditional matching and other advanced querying functionality.
+
+If no match is found, this query will be used as the basis for a new document, ready for insertion.
+
+### update
+
+Can be either a document object (in which case all matches will be replaced by the new document), _or_ an "update document" containing [MongoDB update operators](https://www.mongodb.com/docs/manual/reference/operator/update/).
+
+Update operators can be used to set new individual values, increment integer values atomically, pop and push to arrays, and more. For a comprehensive list, please see MongoDB's update operator documentation above.
+
+The conditions of the update will be applied to the new document alongside its insertion, if an upsert is to be performed
+
+## Return Data
+
+An object is returned upon updating documents with this function, providing extra details about whether it succeeded:
+
+| Key       | Information                                                                      |
+| --------- | -------------------------------------------------------------------------------- |
+| n         | Number of documents matched in the query                                         |
+| nModified | Number of documents modified, after evaluating all update expressions            |
+| upserted  | If an upsertion occurred, provides an index integer                              |
+| ok        | If the operation succeeded, == 1                                                 |
+| opTime    | Object that contains a property 't' -- time of deletion operation in millieconds |
+
+## Example
+
+```js
+function(context, args) {
+  /*
+  where the database already contains documents:
+  #db.i(
+    {type:"my_data", my_key:"foo"},
+  )
+  */
+  #db.us({type:"my_other_data"}, { $set:{my_key:"foo"} })
+
+  return #db.f({my_key:"foo"}).array() // [{type:"my_data", my_key:"foo"}, {type:"my_other_data", my_key:"foo"}]
+}
+```
+
+```js
+function(context, args) {
+  /*
+  where the database already contains documents:
+  #db.i(
+    {type:"my_data", my_key:"foo"},
+  )
+  */
+  #db.us({type:"my_data"}, { $set:{my_key:"bar"} })
+
+  return #db.f({type:"my_data"}).array() // [{type:"my_data", my_key:"bar"}]
+}
+```

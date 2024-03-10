@@ -1,0 +1,44 @@
+---
+title: "#db.ObjectId()"
+---
+
+Generates a MongoDB ObjectId.
+
+export const Highlight = ({ children, color }) => (
+  <span
+    style={{
+      color: color,
+    }}
+  >
+    {children}
+  </span>
+);
+
+[MongoDB ObjectIds](https://www.mongodb.com/docs/manual/reference/method/ObjectId/) are a 12-byte, unique value primarily used for marking unique documents in the db. #db.ObjectId() can be used to generate arbitrary, unique ObjectIds.
+
+## Syntax
+
+```js
+#db.ObjectId()
+```
+
+## Breakdown
+
+ObjectIds convey a variety of information, consisting of:
+
+- A <Highlight color="red">4-byte timestamp</Highlight>, measured in seconds since the Unix epoch. This timestamp marks the time the ObjectId was generated
+- A 5-byte value denoting the <Highlight color="green">worker ID</Highlight> the ObjectId was generated on (static across hackmud's workers), as well as the <Highlight color="orange">thread ID</Highlight> it was generated on
+- A <Highlight color="purple">3-byte incrementing counter</Highlight>
+
+<Highlight color="red">65eaa465</Highlight>
+<Highlight color="green">7b97fd</Highlight>
+<Highlight color="yellow">26dd</Highlight>
+<Highlight color="purple">0c5305</Highlight>
+
+## Example
+
+```js
+function(context, args) {
+  return #db.ObjectId() // {"$oid":"65eaa4657b97fd26dd0c5305"}
+}
+```

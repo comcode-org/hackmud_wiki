@@ -1,0 +1,54 @@
+---
+title: "#db.i(..)"
+---
+
+Add new document(s) to the database.
+
+Similar to a [MongoDB db.collection.insert()](https://www.mongodb.com/docs/manual/reference/method/db.collection.insert/), with some syntax restrictions
+
+## Syntax
+
+```js
+#db.i(documents)
+```
+
+## Arguments
+
+### documents
+
+An object (or list of objects, one per argument) representing documents to be inserted
+
+## \_id
+
+If not specified, #db.i(..) will add an _\_id_ key-value pair to your document on insertion, containing an [ObjectId](db.objectid). This is to ensure that there is at least 1 unique property to each document
+
+If an \_id is included in the inserted document, that \_id will be used. This has unique advantages in hackmud, because the \_id field is _indexed_ in user database collections, resulting in significantly faster querying times from other database functions.
+
+:::warning
+
+If a document is inserted containing an \_id that already exists in the user's database, a :::TRUST COMMUNICATION::: will be raised:
+
+`:::TRUST COMMUNICATION::: E11000 duplicate key error collection: hackmud*production.[user] index: \_id* dup key: { : [id value] } (11000)`
+
+Any other documents inserted alongside the errant document will still be inserted.
+:::
+
+## Return Data
+
+An object is returned upon inserting one or many documents into the database, providing extra details about whether it succeeded:
+
+| Key    | Information                                                                       |
+| ------ | --------------------------------------------------------------------------------- |
+| n      | Number of documents inserted                                                      |
+| ok     | If the operation succeeded, == 1                                                  |
+| opTime | Object that contains a property 't' -- time of insertion operation in millieconds |
+
+Other values are returned, but provide no additional usable data due to undefined conversions
+
+## Example
+
+```js
+function(context, args) {
+  return #db.i({type:"my_data", my_key:"foo"},{type:"my_data", my_key:"bar"})
+}
+```
