@@ -133,6 +133,10 @@ const config = {
               type: "docSidebar",
               sidebarId: "trustScriptsSidebar",
             },
+			{
+              type: "docSidebar",
+              sidebarId: "databaseSidebar",
+            },
           ],
         },
         {

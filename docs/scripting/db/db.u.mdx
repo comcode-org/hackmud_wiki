@@ -1,0 +1,55 @@
+---
+title: "#db.u(..)"
+---
+
+Updates documents in the database.
+
+Similar to a [MongoDB db.collection.update()](https://www.mongodb.com/docs/manual/reference/method/db.collection.update/), with some syntax restrictions
+
+## Syntax
+
+```js
+#db.u(<query>, <update>)
+```
+
+## Arguments
+
+### query
+
+Selection filter for documents in the script owner's database. An empty query ( `{}` ) selects all documents.
+
+Various [MongoDB query operators](https://www.mongodb.com/docs/manual/reference/operator/query/) can be used for conditional matching and other advanced querying functionality.
+
+### update
+
+Can be either a document object (in which case all matches will be replaced by the new document), _or_ an "update document" containing [MongoDB update operators](https://www.mongodb.com/docs/manual/reference/operator/update/).
+
+Update operators can be used to set new individual values, increment integer values atomically, pop and push to arrays, and more. For a comprehensive list, please see MongoDB's update operator documentation above.
+
+## Return Data
+
+An object is returned upon updating documents with this function, providing extra details about whether it succeeded:
+
+| Key       | Information                                                                      |
+| --------- | -------------------------------------------------------------------------------- |
+| n         | Number of documents matched in the query                                         |
+| nModified | Number of documents modified, after evaluating all update expressions            |
+| ok        | If the operation succeeded, == 1                                                 |
+| opTime    | Object that contains a property 't' -- time of deletion operation in millieconds |
+
+## Example
+
+```js
+function(context, args) {
+  /*
+  where the database already contains documents:
+  #db.i(
+    {type:"my_data", my_key:"foo"},
+    {type:"my_data", my_key:"bar"}
+  )
+  */
+  #db.u({type:"my_data"}, { $set:{a_new_key:11} })
+
+  return #db.f({type:"my_data"}).first() // {type:"my_data", my_key:"foo", a_new_key:11}
+}
+```

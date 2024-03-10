@@ -1,0 +1,53 @@
+---
+title: "#db.r(..)"
+---
+
+Removes document(s) from the database.
+
+Similar to a [MongoDB db.collection.remove()](https://www.mongodb.com/docs/manual/reference/method/db.collection.remove/), with some syntax restrictions
+
+## Syntax
+
+```js
+#db.r(<query>)
+```
+
+## Arguments
+
+### query
+
+Selection filter for documents in the script owner's database.
+
+:::danger
+
+All documents matched will be deleted, without confirmation. **An empty query ( `{}` ) will delete every document in the user's database!**
+:::
+
+## Return Data
+
+An object is returned upon deleting documents with this function, providing extra details about whether it succeeded:
+
+| Key    | Information                                                                      |
+| ------ | -------------------------------------------------------------------------------- |
+| n      | Number of documents deleted                                                      |
+| ok     | If the operation succeeded, == 1                                                 |
+| opTime | Object that contains a property 't' -- time of deletion operation in millieconds |
+
+Other values are returned, but provide no additional usable data due to undefined conversions
+
+## Example
+
+```js
+function(context, args) {
+  /*
+  where the database already contains documents:
+  #db.i(
+    {type:"my_data", my_key:"foo"},
+    {type:"my_data", my_key:"bar"}
+  )
+  */
+  #db.r({type:"my_data"})
+
+  return #db.f({type:"my_data"}).first() // null
+}
+```
