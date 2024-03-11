@@ -8,6 +8,7 @@
 
 body {
   font-family: "whiterabbit-webfont";
+  color: #7ab2f4;
 }
 
 h1,
@@ -16,6 +17,14 @@ h3,
 h4,
 h5 {
   font-family: "whiterabbit-webfont";
+  color: #ffffff;
+}
+
+a {
+  color: #385a6c;
+}
+a:visited {
+  color: #8c0069;
 }
 
 /**
@@ -24,6 +33,17 @@ h5 {
 /*.wikilink {}*/
 a.wikilink-new {
   color: var(--ifm-color-danger);
+}
+
+.main-wrapper {
+  background-color: #101215;
+  background-image: repeating-linear-gradient(
+    #0e0e0e,
+    #0e0e0e 2px,
+    #101215 2px,
+    #101215 4px
+  );
+  background-size: 100% 4px;
 }
 
 .color-tag[data-tag="a"] {
