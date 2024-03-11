@@ -96,7 +96,22 @@ function colorGC(_fullMatch, q, t, b, m, k, units) {
 }
 
 function colorBlock(_fullMatch, content) {
-  return content;
+  const stubNode = {
+    type: "root",
+    children: [
+      {
+        type: "text",
+        value: content,
+      },
+    ],
+  };
+  findAndReplace(stubNode, [
+    [regexColorTag, colorTag],
+    [regexKvp, colorKvp],
+    [regexScript, colorScript],
+    [regexGC, colorGC],
+  ]);
+  return stubNode.children;
 }
 
 const autocolorPlugin = (_config) => {
@@ -109,13 +124,7 @@ const autocolorPlugin = (_config) => {
           type: "root",
           children: [node],
         };
-        findAndReplace(stubNode, [
-          [regexAutocolorBlock, colorBlock],
-          [regexColorTag, colorTag],
-          [regexKvp, colorKvp],
-          [regexScript, colorScript],
-          [regexGC, colorGC],
-        ]);
+        findAndReplace(stubNode, [regexAutocolorBlock, colorBlock]);
         parent.children.splice(
           parent.children.indexOf(node),
           1,
