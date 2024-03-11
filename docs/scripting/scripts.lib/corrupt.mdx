@@ -1,0 +1,36 @@
+---
+title: .corrupt()
+---
+
+Applies corruption throughout a given string, in the specified frequency.
+
+## Syntax
+
+```js
+#fs.scripts.lib().corrupt(str, corruption);
+```
+
+### Parameters
+
+#### str
+
+The string to be corrupted.
+
+#### corruption
+
+The frequency at which to corrupt the string.
+
+### Return
+
+Returns a string.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  const my_string = "I am a string to be corrupted.";
+
+  return l.corrupt(my_string, 1.5);
+}
+```
