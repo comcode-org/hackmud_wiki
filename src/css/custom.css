@@ -20,10 +20,10 @@ h5 {
   color: #ffffff;
 }
 
-a {
+a.wikilink {
   color: #385a6c;
 }
-a:visited {
+a.wikilink:visited {
   color: #8c0069;
 }
 
