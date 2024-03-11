@@ -2,7 +2,7 @@
 title: accts.xfer_gc_to_caller
 ---
 
-accts.xfer_gc_to_caller allows a script to send GC to the caller of the script.
+accts.xfer_gc_to_caller allows a script to send GC to the caller of the script. accts.xfer_gc_to_caller (and accts.xfer_gc_to) has a ratelimit of 5 transactions to the same recipient in 20 seconds, excluding the user `trust`
 
 ### Security level
 
@@ -26,7 +26,7 @@ accts.xfer_gc_to_caller
 
 #### amount (required)
 
-The 'amount' argument specifies the amount of GC to send.
+The 'amount' argument specifies the amount of GC to send. Max transfer limit in a single accts.xfer_gc_to_caller execution is 32BGC.
 
 #### memo (optional)
 

@@ -26,11 +26,11 @@ accts.xfer_gc_to { to: "trust", amount: "1M234K567GC" }
 
 #### to (required)
 
-The 'to' argument specifies the target of the transaction.
+The 'to' argument specifies the target of the transaction. accts.xfer_gc_to (and accts.xfer_gc_to_caller) have a ratelimit of 5 transactions to the same recipient in 20 seconds, excluding the user `trust`
 
 #### amount (required)
 
-The 'amount' argument specifies the amount of GC to be sent. Max transfer limit is 32BGC.
+The 'amount' argument specifies the amount of GC to be sent. Max transfer limit in a single accts.xfer_gc_to execution is 32BGC.
 
 #### memo (optional)
 
