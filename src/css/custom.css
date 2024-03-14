@@ -6,37 +6,55 @@
     url("../../assets/whiterabbit-webfont.woff2") format("woff2");
 }
 
-body {
-  font-family: "whiterabbit-webfont";
-  color: #7ab2f4;
+html[data-theme="dark"] {
+  --ifm-color-primary: #7ab2f4;
+  --ifm-color-primary-dark: #589ef1;
+  --ifm-color-primary-darker: #4795f0;
+  --ifm-color-primary-darkest: #1b7bec;
+  --ifm-color-primary-light: #9cc6f7;
+  --ifm-color-primary-lighter: #adcff8;
+  --ifm-color-primary-lightest: #dfedfc;
+  --ifm-background-color: #101215;
+
+  --ifm-color-info-contrast-background: rgb(25 60 71 / 50%);
+  --ifm-color-warning-contrast-background: rgb(77 56 0 / 50%);
+  --ifm-color-danger-contrast-background: rgb(75 17 19 / 50%);
+
+  --ifm-font-family-base: "whiterabbit-webfont";
+  --ifm-navbar-background-color: var(--ifm-background-color);
+  --ifm-footer-background-color: var(--ifm-background-color);
+  --ifm-dropdown-background-color: var(--ifm-background-color);
+  --ifm-card-background-color: var(--ifm-background-color);
+
+  --ifm-heading-color: var(--ifm-color-primary-lighter);
+  --ifm-color-content: var(--ifm-color-primary);
+  --ifm-link-color: var(--ifm-color-primary-lightest);
+  --ifm-menu-color: var(--ifm-color-primary);
+  --ifm-toc-link-color: var(--ifm-color-primary);
+
+  --ifm-breadcrumb-border-radius: 0;
+  --ifm-global-radius: 0;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
-  font-family: "whiterabbit-webfont";
-  color: #ffffff;
+.menu__link,
+.menu__list-item-collapsible,
+.dropdown__link {
+  border-radius: 0;
 }
 
-a.wikilink {
-  color: #385a6c;
-}
-a.wikilink:visited {
-  color: #8c0069;
+.pagination-nav__link--next .pagination-nav__label::after {
+  content: " →";
 }
 
-/**
- * WIKILINK CLASSES
- */
-/*.wikilink {}*/
+.pagination-nav__link--prev .pagination-nav__label::before {
+  content: "← ";
+}
+
 a.wikilink-new {
   color: var(--ifm-color-danger);
 }
 
 .main-wrapper {
-  background-color: #101215;
   background-image: repeating-linear-gradient(
     #0e0e0e,
     #0e0e0e 2px,
