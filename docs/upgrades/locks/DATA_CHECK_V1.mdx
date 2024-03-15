@@ -18,7 +18,7 @@ DATA_CHECK_V1 expects the answers to three questions concatenated together into 
 When no arguments are passed into DATA_CHECK_V1, the lock will return the following error:
 
 ```
-user.fakeloc123 { }
+user.loc { }
 LOCK_ERROR
 Denied access by DATA_CHECK lock.
 ```
@@ -28,7 +28,7 @@ Note that the '\_v1' at the end of DATA_CHECK is not included in the argument ke
 Providing any incorrect value to the DATA_CHECK key will provide 3 questions to answer:
 
 ```
->>user.fakeloc123 { DATA_CHECK:"" }
+>>user.loc { DATA_CHECK:"" }
 a ++++++ is a household cleaning device with a rudimentary networked sentience
 safety depends on the use of scripts.++++++
 pet, pest, plague and meme are accurate descriptors of the ++++++
@@ -44,12 +44,12 @@ All 3 questions must be answered in the order received, concatenated together in
   <summary>Spoilers for DATA_CHECK_V1's solutions</summary>
 
 ```
->>user.fakeloc123 { DATA_CHECK:"" }
+>>user.loc { DATA_CHECK:"" }
 a ++++++ is a household cleaning device with a rudimentary networked sentience
 safety depends on the use of scripts.++++++
 pet, pest, plague and meme are accurate descriptors of the ++++++
 
->>user.fakeloc123 { DATA_CHECK:"robovacget_levelbunnybat" }
+>>user.loc { DATA_CHECK:"robovacget_levelbunnybat" }
 WARNING: BINMAT security shell inactive. Intelligent defense system offline.
 LOCK_UNLOCKED
 ```

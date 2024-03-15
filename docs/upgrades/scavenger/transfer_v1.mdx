@@ -24,7 +24,7 @@ If the upgrade is on cooldown, an error containing the remaining cooldown time w
 [[sys.xfer_gc_from]] can be executed using the following syntax:
 
 ```
-sys.xfer_gc_from { target: "user.fakeloc123", amount: "<desired amount (up to max) as GC string>" }
+sys.xfer_gc_from { target: "user.loc", amount: "<desired amount (up to max) as GC string>" }
 ```
 
 If a player attempts to execute this upgrade in an invalid use case, the upgrade will return corresponding errors.
@@ -35,7 +35,7 @@ Examples:
 
 ```
 
->>sys.xfer_gc_from { target: "user.fakeloc123", amount: "10KGC" }
+>>sys.xfer_gc_from { target: "user.loc", amount: "10KGC" }
 :::TRUST COMMUNICATION::: hardline required - activate with kernel.hardline
 
 ```
@@ -44,16 +44,16 @@ Examples:
 
 ```
 
->>sys.xfer_gc_from { target: "user.fakeloc123", amount: "10M500KGC" }
+>>sys.xfer_gc_from { target: "user.loc", amount: "10M500KGC" }
 Failure
-Target user.fakeloc123 is not a breached system.
+Target user.loc is not a breached system.
 
 ```
 
 - Upgrade on cooldown:
 
 ```
->>sys.xfer_gc_from { target: "user.fakeloc123", amount: "100B100MGC" }
+>>sys.xfer_gc_from { target: "user.loc", amount: "100B100MGC" }
 Failure
 sys.xfer_gc_from is still recalibrating. 12 minutes until ready.
 ```
@@ -61,7 +61,7 @@ sys.xfer_gc_from is still recalibrating. 12 minutes until ready.
 - Amount is higher than the maximum allowed by upgrade:
 
 ```
->>sys.xfer_gc_from { target: "user.fakeloc123", amount: "10TGC" }
+>>sys.xfer_gc_from { target: "user.loc", amount: "10TGC" }
 Failure
 You can't transfer more than 10MGC
 ```
@@ -69,7 +69,7 @@ You can't transfer more than 10MGC
 - Target has unsufficient funds:
 
 ```
->>sys.xfer_gc_from { target: "user.fakeloc123", amount: "10KGC" }
+>>sys.xfer_gc_from { target: "user.loc", amount: "10KGC" }
 Failure
 Target user account balance is too low to take 10KGC.
 ```
