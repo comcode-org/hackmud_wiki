@@ -14,12 +14,12 @@ ez_35 has no additional stats. The upgrade only spawns at 'noob' rarity.
 
 When encountered, the lock expects a string as its first parameter, and a digit as its second. Each parameter will return corresponding errors if an incorrect data type is input.
 
-```
-Incorrect parameters:
+### Incorrect Parameters
 
->>user.loc { ez_35: 1 }
+```
+>>user.loc { ez_35: true }
 LOCK_ERROR
-1 is not a string.
+true is not a string.
 
 >>user.loc { ez_35: "release", digit: "1" }
 LOCK_ERROR
