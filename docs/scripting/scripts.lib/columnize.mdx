@@ -1,0 +1,42 @@
+---
+title: .columnize()
+---
+
+A function that will format an array of strings into columns based on the width of the client that is displaying them.
+
+## Syntax
+
+```js
+#fs.scripts.lib().columnize(array);
+```
+
+### Parameters
+
+#### array
+
+The array of strings to be columnized.
+
+### Return
+
+Returns a string
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  const my_array = [
+    "Dog",
+    "Cat",
+    "Elephant",
+    "Lion",
+    "Tiger",
+    "Giraffe",
+    "Monkey",
+    "Zebra",
+    "Kangaroo"
+];
+
+  return l.columnize(my_array);
+}
+```
