@@ -33,7 +33,7 @@ Otherwise, it will return `null`.
 function(context, args) {
   const l = #fs.scripts.lib();
 
-  const timeout_error = l.can_continue_execution_error(1000);
+  const timeout_error = l.can_continue_execution_error(1000, "my_script_name");
 
   if (timeout_error) {
 
