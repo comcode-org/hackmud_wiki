@@ -1,0 +1,32 @@
+---
+title: .utc_days_ago_str()
+---
+
+A function that calculates the time elapsed in days from a past `Date` object to the current date.
+
+## Syntax
+
+```js
+#fs.scripts.lib().utc_days_ago_str(date);
+```
+
+### Parameters
+
+#### date
+
+The `Date` object to be compared.
+
+### Return
+
+Returns the number of elapsed days as a string (`"[x] days"`).
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  const date = new Date('1970-01-01');
+
+  return l.utc_days_ago_str(date);
+}
+```
