@@ -32,41 +32,23 @@ Returns an array.
 
 #### CLI
 
-On the CLI, scripts.trust returns the array of strings formatted in 2 columns.
+On the CLI, scripts.trust returns the array of strings formatted in columns.
 
 ```
 >>scripts.trust
-accts.balance              market.stats
-accts.balance_of_owner     scripts.fullsec
-accts.transactions         scripts.get_access_level
-accts.xfer_gc_to           scripts.get_level
-accts.xfer_gc_to_caller    scripts.highsec
-autos.reset                scripts.lowsec
-chats.channels             scripts.midsec
-chats.create               scripts.nullsec
-chats.join                 scripts.quine
-chats.leave                scripts.sys
-chats.send                 scripts.trust
-chats.tell                 scripts.user
-chats.users                sys.access_log
-corps.create               sys.breach
-corps.hire                 sys.cull
-corps.manage               sys.init
-corps.offers               sys.loc
-corps.quit                 sys.manage
-corps.top                  sys.specs
-escrow.charge              sys.status
-escrow.confirm             sys.upgrade_log
-escrow.stats               sys.upgrades
-gui.chats                  sys.upgrades_of_owner
-gui.quiet                  sys.xfer_upgrade_to
-gui.size                   sys.xfer_upgrade_to_caller
-gui.vfx                    trust.me
-gui.vol                    users.active
-kernel.hardline            users.config
-market.browse              users.inspect
-market.buy                 users.last_action
-market.sell                users.top
+accts.balance              corps.create               gui.vol                    scripts.quine              sys.upgrades              
+accts.balance_of_owner     corps.hire                 kernel.hardline            scripts.sys                sys.upgrades_of_owner     
+accts.transactions         corps.manage               market.browse              scripts.trust              sys.xfer_upgrade_to       
+accts.xfer_gc_to           corps.offers               market.buy                 scripts.user               sys.xfer_upgrade_to_caller
+accts.xfer_gc_to_caller    corps.quit                 market.sell                sys.access_log             trust.me                  
+autos.reset                corps.top                  market.stats               sys.breach                 users.active              
+chats.channels             escrow.charge              scripts.fullsec            sys.cull                   users.config              
+chats.create               escrow.confirm             scripts.get_access_level   sys.init                   users.inspect             
+chats.join                 escrow.stats               scripts.get_level          sys.loc                    users.last_action         
+chats.leave                gui.chats                  scripts.highsec            sys.manage                 users.top                 
+chats.send                 gui.quiet                  scripts.lowsec             sys.specs                  
+chats.tell                 gui.size                   scripts.midsec             sys.status                 
+chats.users                gui.vfx                    scripts.nullsec            sys.upgrade_log            
 ```
 
 #### Script
