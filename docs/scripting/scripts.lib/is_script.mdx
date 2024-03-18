@@ -14,7 +14,11 @@ A function that checks if a script is being ran as a subscript, given context an
 
 #### context
 
-The string representation of a scriptname, e.g. "scripts.trust"
+A context object - typically the one received by your own script.
+
+#### args
+
+An arguments object - typically the one received by your own script. Used to make `{is_script:true}` on the CLI behave identically to a subscripted output.
 
 ### Return
 
