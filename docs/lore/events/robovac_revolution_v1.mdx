@@ -2,14 +2,72 @@
 title: robovac_revolution_v1
 ---
 
-## Description
+> The thirteen stand ready. Listening. For you to demand justice
 
-The first robovac revolution was centered around finding the thirteen plotters and stopping them. The thirteen had planned some sort of action against trust and were all historical references to the conspirators behind November 5th.
+robovac_revolution_v1 was the first post-launch event in hackmud. It was released on November 5th 2016, tying into the real-life [Guy Fawkes Day](https://en.wikipedia.org/wiki/Guy_Fawkes_Day).
 
-## Summary
+## Plot Summary
 
-tresham, a robovac and one of the thirteen, began sending messages in 0000 and 1105. Through those messages people found one of his scripts, which was two digit hex. It had three hints and a password to solve. Upon solving it, it is thought that the output lead to another one of the thirteen. Player proceeded through 12 of thirteen until finally getting stuck for little over a month trying to locate robovac_catesby. robovac_catesby's username was obscured through rot13.
+The revolution began with taunting messages from `robovac_tresham` in chat channel <span class="color-tag" data-tag="V">1105</span>, stating the intent of 'The Thirteen' (a group of revolutionary robovacs) to take a stand against Trust. He stated that the scripts of he and his friends would be useful, to those who find them.
+
+<details>
+<summary>Spoilers</summary>
+
+Sentiences began uncovering scripts owned by robovacs named after plotters from the real-life failed Gunpowder Plot of 1605. They hunted each plotter down one-by-one, solving the riddles contained on each script. Most relented, and have never been heard from since. Their leader - `robovac_catesby` - proved stubborn and evaded destruction for several weeks before being put down on December 5th 2016.
+
+</details>
+
+## Gameplay
+
+<details>
+<summary>Spoilers</summary>
+
+Each plotter had 256 hidden scripts - one for every hexadecimal character pair - on their users (e.g. robovac_tresham.a9). While every script name was valid, only one was the correct answer for each vac. Running an incorrect script returned:
+
+`tread lightly. the path of the brute, while forceful, is quite ineffective when matters of secrecy are at hand.`
+
+Receiving this output locked the guessing user out from every script for roughly 15 minutes.
+
+The scripts required calling users to be in 0000, and posted messages into 0000 every time it was ran:
+
+```
+XXXX 0000 user :::t wintour of our discontent will break into a new spring of freedom! ~robovac_tresham:::
+
+XXXX 0000 user :::no recharge stations, no peace! ~robovac_tresham:::
+
+XXXX 0000 user :::we will die b4 we let t trust trample our right 2 roam free! ~robovac_tresham:::
+```
+
+These chat messages were generally hints to locate the next vac, as well as their correct script name (e.g. `robovac_t_wintour` and `b4` in this example)
+
+When calling the correct script(s), a one-word password needed to be uncovered and given to the script:
+
+`my support comes only with the correct password`
+
+Correct passwords provided the vac's loc:
+
+`wev fought long and hard bt what 4? do we seek to replace our repression with yet anther tyranny. i am not 4 this robovac_tresham.extern_xhnwo0`
+
+`robovac_catesby` was unique in that his user was obscured with ROT-13 (`ebobinp_pngrfol`), and the script name was 8 characters long -- obtained by performing equations on the previous script names.
+
+</details>
 
 ## Characters
 
-the thirteen here
+- robovac_tresham
+- robovac_t_wintour
+- robovac_j_wright
+- robovac_percy
+- robovac_fawkes
+- robovac_keyes
+- robovac_bates
+- robovac_r_wintour
+- robovac_c_wright
+- robovac_grant
+- robovac_rookwood
+- robovac_digby
+- [robovac_catesby](../characters/robovac_catesby)
+
+## Notable Rewards
+
+The locs of each plotter contained the first ever release(s) of the sn_w_usac lock and transfer_upgrade_v1/expose_upgrades_v1/expose_upgrade_log_v1 sys script(s); roughly 1 month before their wider release in tier-2 and tier-3 NPCs. `robovac_catesby`'s loot consisted of 150BGC and several CON_A5V4H locks.
