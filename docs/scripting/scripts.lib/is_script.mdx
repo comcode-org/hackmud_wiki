@@ -27,6 +27,6 @@ function(context, args) {
   const l = #fs.scripts.lib();
   const scriptname = "scripts.trust";
 
-  return l.is_script(scriptname);
+  return l.is_script(context, arg) ? "this was called with is_script or was called as a subscript" : "etc";
 }
 ```
