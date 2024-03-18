@@ -1,0 +1,48 @@
+---
+title: .can_continue_execution_error()
+---
+
+A function wrapping [.can_continue_execution()](can_continue_execution) that checks if there is enough time remaining for execution based on a specified number of milliseconds. If not enough time remains, the function returns a user-friendly error message.
+
+## Syntax
+
+```js
+#fs.scripts.lib().can_continue_execution_error(remain_threshold, name);
+```
+
+### Parameters
+
+#### remain_threshold
+
+A number in milliseconds.
+
+#### name
+
+The name of a script / function to return if execution cannot continue.
+
+### Return
+
+If there is not enough time remaining the function returns an object:
+
+`{ok: false, msg: name + " could not continue executing because " + remain_threshold + "ms are not available for execution."}`
+
+Otherwise, it will return `null`.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+
+  const timeout_error = l.can_continue_execution_error(1000, "my_script_name");
+
+  if (timeout_error) {
+
+    return timeout_error.msg;
+
+  } else {
+    // Proceed with execution
+    return "I have executed with no timeout error!";
+  }
+}
+```
