@@ -14,24 +14,24 @@ This upgrade has no additional stats and only spawns at 'kiddie' rarity.
 
 When encountered, the ez_40 will ask for a string on its first parameter, and a digit (number) on its second parameter.
 
+### Incorrect Parameters
+
 ```
-Incorrect parameters:
-
->>user.fakeloc123 { ez_40: 1 }
+>>user.loc { ez_40: true }
 LOCK_ERROR
-1 is not a string.
+true is not a string.
 
->>user.fakeloc123 { ez_40: "release", ez_prime: "1" }
+>>user.loc { ez_40: "release", ez_prime: "1" }
 LOCK_ERROR
 "1" is not a number.
 
 Correct parameters:
 
->>user.fakeloc123 { ez_40: "release" }
+>>user.loc { ez_40: "release" }
 LOCK_ERROR
 Required unlock parameter ez_prime is missing.
 
->>user.fakeloc123 { ez_40: "release", ez_prime: 2 }
+>>user.loc { ez_40: "release", ez_prime: 2 }
 LOCK_ERROR
 2 is not the correct prime.
 ```
@@ -44,7 +44,7 @@ LOCK_ERROR
   <summary>Spoilers for ez_40 example unlock</summary>
 
 ```
->>user.fakeloc123 { ez_40: "release", ez_prime: 43 }
+>>user.loc { ez_40: "release", ez_prime: 43 }
 WARNING: BINMAT security shell inactive. Intelligent defense system offline.
 LOCK_UNLOCKED
 System <user> breached.

@@ -14,14 +14,14 @@ ez_35 has no additional stats. The upgrade only spawns at 'noob' rarity.
 
 When encountered, the lock expects a string as its first parameter, and a digit as its second. Each parameter will return corresponding errors if an incorrect data type is input.
 
+### Incorrect Parameters
+
 ```
-Incorrect parameters:
-
->>user.fakeloc123 { ez_35: 1 }
+>>user.loc { ez_35: true }
 LOCK_ERROR
-1 is not a string.
+true is not a string.
 
->>user.fakeloc123 { ez_35: "release", digit: "1" }
+>>user.loc { ez_35: "release", digit: "1" }
 LOCK_ERROR
 "1" is not a number.
 ```
@@ -33,7 +33,7 @@ LOCK_ERROR
 <details>
 <summary>Spoilers for ez_35's solutions</summary>
 ```
->>user.fakeloc123 { ez_35: "open", digit: 0 }
+>>user.loc { ez_35: "open", digit: 0 }
 WARNING: BINMAT security shell inactive. Intelligent defense system offline.
 LOCK_UNLOCKED
 System <user> breached.
@@ -48,7 +48,7 @@ Connection terminated.
   The first parameter's possible strings are, "open", "unlock", and "release".
   
 ```
->>user.fakeloc123 { }
+>>user.loc { }
 LOCK_ERROR
 Denied access by HALPERYON SYSTEMS EZ_35 lock.
 ```
@@ -56,7 +56,7 @@ Denied access by HALPERYON SYSTEMS EZ_35 lock.
 When given the correct string, the lock will return an error giving instructions for the second parameter.
 
 ```
->>user.fakeloc123 { ez_35: "release" }
+>>user.loc { ez_35: "release" }
 LOCK_ERROR
 Required unlock parameter digit is missing.
 
@@ -71,7 +71,7 @@ Required unlock parameter digit is missing.
   The second parameter is a single digit, input as a number, ranging from 0 to 9.
 
 ```
-user.fakeloc123 { ez_35: "release", digit: 1 }
+user.loc { ez_35: "release", digit: 1 }
 ```
 
 </details>

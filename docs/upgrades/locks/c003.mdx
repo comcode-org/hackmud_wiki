@@ -15,7 +15,7 @@ c003 has no additional stats. The upgrade only spawns at 'kiddie' rarity.
 When loaded on a targetted [[loc]], the following text will be displayed when no arguments are provided:
 
 ```
->>user.fakeloc123 {}
+>>user.loc {}
 LOCK_ERROR
 Denied access by CORE c003 lock.
 ```
@@ -23,7 +23,7 @@ Denied access by CORE c003 lock.
 When providing any truthy argument (or an empty string `""`), the lock will state that the correct color was not provided, unless the correct color is provided:
 
 ```
->>user.fakeloc123 { c003: "not_a_color" }
+>>user.loc { c003: "not_a_color" }
 LOCK_ERROR
 "not_a_color" is not the correct color name.
 ```
@@ -38,10 +38,10 @@ c003 requires three arguments to fully solve: (( %Nc003%, %Nc003_triad_1%, and %
 <summary>Spoilers</summary>
 
 ```
->>user.fakeloc123 { c003: "red", c003_triad_1: "cyan", c003_triad_2: "lime" }
+>>user.loc { c003: "red", c003_triad_1: "cyan", c003_triad_2: "lime" }
 WARNING: BINMAT security shell inactive. Intelligent defense system offline.
 LOCK_UNLOCKED
-System user breached.
+System <user> breached.
 Connection terminated.
 ```
 
