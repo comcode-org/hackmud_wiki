@@ -30,6 +30,6 @@ Returns a boolean.
 function(context, args) {
   const l = #fs.scripts.lib();
 
-  return l.is_script(context, arg) ? "this was called with is_script or was called as a subscript" : "etc";
+  return l.is_script(context, arg) ? "this was called with is_script:true or was called as a subscript" : "neither";
 }
 ```
