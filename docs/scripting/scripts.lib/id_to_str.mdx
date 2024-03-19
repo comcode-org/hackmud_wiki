@@ -29,7 +29,7 @@ Returns a string.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const dat = #db.f({ my_db_article: { $exists: true } }).first()
+  const dat = #db.f({ my_db_article: { $exists: true } }).first();
   return l.id_to_str(dat._id);
 }
 ```
