@@ -2,7 +2,8 @@
 title: .dump()
 ---
 
-A function that tests whether the input is a string, and returns the string representation of the input.
+A function that formats the input for debugging output.
+If the input is a string, the function surrounds it with `"`. Otherwise, the function converts it to a string by calling `toString()`.
 
 ## Syntax
 
@@ -18,14 +19,14 @@ The input to be evaluated.
 
 ### Return
 
-Returns a boolean, and the string representation of the input value.
+Returns a string representation of the input value.
 
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const my_test_input = "I am a string, and will return true.";
+  const my_test_input = "This is a string!";
 
   return l.dump(my_test_input);
 }
