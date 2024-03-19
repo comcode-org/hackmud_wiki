@@ -1,0 +1,35 @@
+---
+title: .is_script()
+---
+
+A function that checks if a script is being ran as a subscript, given context and args parameters. Useful for differentiating behavior in a script between calls on the CLI vs in subscripts
+
+## Syntax
+
+```js
+#fs.scripts.lib().is_script(context, args);
+```
+
+### Parameters
+
+#### context
+
+A context object - typically the one received by your own script.
+
+#### args
+
+An arguments object - typically the one received by your own script. Used to make `{is_script:true}` on the CLI behave identically to a subscripted output.
+
+### Return
+
+Returns a boolean.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+
+  return l.is_script(context, arg) ? "this was called with is_script:true or was called as a subscript" : "neither";
+}
+```
