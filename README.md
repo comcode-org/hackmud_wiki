@@ -4,6 +4,8 @@
 
 ## Setting up a local environment
 
+this is a test change
+
 ### Prerequisites
 
 - [pnpm](https://pnpm.io/installation)
