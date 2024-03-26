@@ -11,7 +11,7 @@ const config = {
   // Metadata
   title: "hackmud Wiki",
   tagline: "Knowledge repository for the video game hackmud",
-  //favicon: 'img/favicon.ico',
+  favicon: "favicon.ico",
 
   // Deployment details
   url: `https://wiki.hackmud.com`,
