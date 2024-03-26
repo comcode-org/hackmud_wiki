@@ -4,7 +4,7 @@
 
 ## Setting up a local environment
 
-### Prerequisites
+###   Prerequisites
 
 - [pnpm](https://pnpm.io/installation)
 
