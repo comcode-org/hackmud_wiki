@@ -47,19 +47,19 @@ Players can obtain NPC locs from solving the puzzles in public scripts which end
 When a public script - ((weyland.public)) for example - is called without any arguments, it will display a default welcome message. Below is that welcome message for ((weyland.public)).
 
 ```
-888       888 8888888888 Y88b   d88P 888             d8888 888b    888 8888888b.  
-888   o   888 888         Y88b d88P  888            d88888 8888b   888 888  "Y88b 
-888  d8b  888 888          Y88o88P   888           d88P888 88888b  888 888    888 
-888 d888b 888 8888888       Y888P    888          d88P 888 888Y88b 888 888    888 
-888d88888b888 888            888     888         d88P  888 888 Y88b888 888    888 
-88888P Y88888 888            888     888        d88P   888 888  Y88888 888    888 
-8888P   Y8888 888            888     888       d8888888888 888   Y8888 888  .d88P 
-888P     Y888 8888888888     888     88888888 d88P     888 888    Y888 8888888P"  
+888       888 8888888888 Y88b   d88P 888             d8888 888b    888 8888888b.
+888   o   888 888         Y88b d88P  888            d88888 8888b   888 888  "Y88b
+888  d8b  888 888          Y88o88P   888           d88P888 88888b  888 888    888
+888 d888b 888 8888888       Y888P    888          d88P 888 888Y88b 888 888    888
+888d88888b888 888            888     888         d88P  888 888 Y88b888 888    888
+88888P Y88888 888            888     888        d88P   888 888  Y88888 888    888
+8888P   Y8888 888            888     888       d8888888888 888   Y8888 888  .d88P
+888P     Y888 8888888888     888     88888888 d88P     888 888    Y888 8888888P"
 
 
 
 Welcome to Weyland Yutanihama's public information script. Please refrain from engaging in criminal activity.
-latest | what_we_do | 
+latest | what_we_do |
 ```
 
 Going off of what Trust has said in the vLAN about trying to call scripts with empty arguments (like so: {}), if we do that with ((weyland.public)), we get the following output:
@@ -67,7 +67,7 @@ Going off of what Trust has said in the vLAN about trying to call scripts with e
 ```
 >>weyland.public {}
 Please specify a command with navigation:"<command name>"
-Public commands are "what_we_do" "latest" 
+Public commands are "what_we_do" "latest"
 -- access directory with navigation:"list"
 ```
 
@@ -85,12 +85,14 @@ Take note of the "strategy". Next, run one of the two other available commands, 
 >>weyland.public {navigation:"list"}
 No password specified.
 ```
+
 Here, it states that a password is required. This is where that "strategy" is used. The keys that can be used for specifying the password are: "((%Npassword%))", "((%Npass%))" and "((%Np%))." If we try and use one of those to specify the password, which in this case is the strategy from above, "bethebest", we get this:
 
 ```
 >>weyland.public {navigation:"list", password:"bethebest"}
 Authenticated. Please specify a project to get a member list.
 ```
+
 The aforementioned member list is where a player would obtain NPC locs. To access it, we need to specify a project. For that, run the final command that hasn't been executed yet, "latest".
 
 ```
@@ -109,7 +111,9 @@ Weyland Yutanihama is pleased to announce that the initial launch of the ls_rite
 'We've got the bad guys on the run!' -- bus_and_parks when being asked about new developments on omegabyte_03.23_final_final progress.
 ...
 ```
+
 The output of "latest" gives us the projects that we can specify. Those are "ls_rites" and "omegabyte_03.23_final_final". Specifying those when accessing "list" with the password, we obtain T1 NPC locs.
+
 ```
 >>weyland.public {navigation:"list", password:"bethebest", project:"ls_rites"}
 anon_ddttl_crrieo.entry_prdv9q
@@ -128,4 +132,5 @@ derelict_jrttl_pwy4it.external_6a4k0l
 uknown_jrstg_v229c9.external_ronl35
 abndnd_ddttl_3nrp1s.p_s47ih5
 ```
+
 </details>
