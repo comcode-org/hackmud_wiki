@@ -1,0 +1,136 @@
+---
+title: Getting Started
+---
+
+What to do after getting out of the vLAN.
+
+### teach.me and teach_si_x80d.each_other
+
+Players are encouraged to use the ((teach.me)) and ((teach_si_x80d.each_other)) scripts to learn about several aspects of the game present outside of the vLAN.
+
+### Output of teach.me
+
+```
+You're out of the vLAN and you don't know what comes next. Well, you're not the first. Trust has given you a few tools but it hasn't told you how, when or where to use them. That's just how Trust is. I'm am not Trust. Tell me what you need: money | upgrades | sectors | friends | structure | revenge
+```
+
+### Output of teach_si_x80d.each_other
+
+```
+Welcome - both to my script, and Trust's Domain, more than likely.
+If you're reading this, someone more experienced than yourself has probably pointed you to it.
+That's co-operation. Companionship. Consensus.
+Those are rare here - take them where you can.
+
+This script is an experiment of mine. Another, different attempt to help those new sentiences,
+falling out of the vLAN and straight onto their faces. Metaphorically speaking, of course.
+You may also want to check my last -  teach.me. It might answer a couple questions.
+Or create a few more.
+
+This script will try and pair you with someone more experienced than yourself -
+that will probably be whoever pointed you here. Hopefully, they'll help you get on your feet.
+
+Remember what Trust taught you - pass pair: true to get started.
+```
+
+### Quests
+
+Players can solve some of the NPC quests present after getting out of the vLAN, such as ((suborbital_airlines.bulletin)), ((aon.memb3rs_only)), ((packbot.color_calibration)) and ((vacuum_rescue.responder))
+
+### Obtaining T1 NPC locs
+
+Players can obtain NPC locs from solving the puzzles in public scripts which end in ".((%Lpublic%))", which are obtained from the aforementioned quests or from looking them up in FULLSEC sectors using [[((scripts.fullsec))]].
+
+<details>
+<summary>Spoilers on how to solve public scripts.</summary>
+
+When a public script - ((weyland.public)) for example - is called without any arguments, it will display a default welcome message. Below is that welcome message for ((weyland.public)).
+
+```
+888       888 8888888888 Y88b   d88P 888             d8888 888b    888 8888888b.
+888   o   888 888         Y88b d88P  888            d88888 8888b   888 888  "Y88b
+888  d8b  888 888          Y88o88P   888           d88P888 88888b  888 888    888
+888 d888b 888 8888888       Y888P    888          d88P 888 888Y88b 888 888    888
+888d88888b888 888            888     888         d88P  888 888 Y88b888 888    888
+88888P Y88888 888            888     888        d88P   888 888  Y88888 888    888
+8888P   Y8888 888            888     888       d8888888888 888   Y8888 888  .d88P
+888P     Y888 8888888888     888     88888888 d88P     888 888    Y888 8888888P"
+
+
+
+Welcome to Weyland Yutanihama's public information script. Please refrain from engaging in criminal activity.
+latest | what_we_do |
+```
+
+Going off of what Trust has said in the vLAN about trying to call scripts with empty arguments (like so: {}), if we do that with ((weyland.public)), we get the following output:
+
+```
+>>weyland.public {}
+Please specify a command with navigation:"<command name>"
+Public commands are "what_we_do" "latest"
+-- access directory with navigation:"list"
+```
+
+Depending on when the public is ran, the output may be different due to the fact that the public script may have shifted (which means its output has changed) from the time of writing this. Now we know that the way we input commands is using the "navigation" key. If we then try to access one of the three available commands using the "navigation" key, for example "what_we_do", we get the following output:
+
+```
+>>weyland.public {navigation:"what_we_do"}
+In the mood to put something a little different in your stomach?  Come out to Weyland Yutanihama! The freshest raw food in town.
+We are calling this strategy bethebest and we will continue to strive to deliver on this promise.
+```
+
+Take note of the "strategy". Next, run one of the two other available commands, "list".
+
+```
+>>weyland.public {navigation:"list"}
+No password specified.
+```
+
+Here, it states that a password is required. This is where that "strategy" is used. The keys that can be used for specifying the password are: "((%Npassword%))", "((%Npass%))" and "((%Np%))." If we try and use one of those to specify the password, which in this case is the strategy from above, "bethebest", we get this:
+
+```
+>>weyland.public {navigation:"list", password:"bethebest"}
+Authenticated. Please specify a project to get a member list.
+```
+
+The aforementioned member list is where a player would obtain NPC locs. To access it, we need to specify a project. For that, run the final command that hasn't been executed yet, "latest".
+
+```
+>>weyland.public {navigation:"latest"}
+2061AD D172
+REMINDER: All bunnybats must be checked in at the front desk.  Violators will be detained.
+2061AD D164
+L-1 Espressonaut for sale.  rOS 13 compatible.  Frother kind of weak, otherwise fine.  Lynne @ IT.  FOR MORE STUFF FOR SALE, SUBSCRIBE SYSDEALS.
+2061AD D141
+ZX10 Quadraphonic Sound System for sale.  still on rOS 4.  gets the room moving like no other.  Sherlise @ DEVOPS. FOR MORE STUFF FOR SALE, SUBSCRIBE SYSDEALS.
+2061AD D32
+Anyone showing signs of Welsh Measles wll be escorted from the building IMMEDIATLY!  Do not attempt to work through your symptoms. Your coworkers safety is your responsiblty.
+2059AD D39
+Weyland Yutanihama is pleased to announce that the initial launch of the ls_rites software is a wild success.
+2057AD D330
+'We've got the bad guys on the run!' -- bus_and_parks when being asked about new developments on omegabyte_03.23_final_final progress.
+...
+```
+
+The output of "latest" gives us the projects that we can specify. Those are "ls_rites" and "omegabyte_03.23_final_final". Specifying those when accessing "list" with the password, we obtain T1 NPC locs.
+
+```
+>>weyland.public {navigation:"list", password:"bethebest", project:"ls_rites"}
+anon_ddttl_crrieo.entry_prdv9q
+derelict_jr_bkzytw.entry_50gbkl
+abndnd_jrttl_bqdzb8.external_338y6x
+uknown_jrttl_ddlzmw.external_pdfpwn
+abndnd_jr_n5afpg.info_ce5qro
+anonymous_ddttl_n2ngmi.extern_7z73w7
+abandoned_jrttl_86wg44.external_sjhhi1
+unknown_jrttl_46j28j.entry_moauuy
+abndnd_jr_kadhvi.entry_pgtvrz
+unknown_jrttl_mdpn9h.access_7wulhx
+unknown_jrttl_ojydip.p_w2i0nx
+unknown_ddttl_dr0dn9.extern_356hoi
+derelict_jrttl_pwy4it.external_6a4k0l
+uknown_jrstg_v229c9.external_ronl35
+abndnd_ddttl_3nrp1s.p_s47ih5
+```
+
+</details>
