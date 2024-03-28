@@ -139,6 +139,10 @@ const config = {
               type: "docSidebar",
               sidebarId: "databaseSidebar",
             },
+            {
+              type: "docSidebar",
+              sidebarID: "miscSidebar"
+            }
           ],
         },
         {
