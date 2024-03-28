@@ -141,8 +141,8 @@ const config = {
             },
             {
               type: "docSidebar",
-              sidebarID: "miscSidebar"
-            }
+              sidebarID: "miscSidebar",
+            },
           ],
         },
         {
