@@ -1,5 +1,5 @@
 ---
-title: hackmud color codes
+title: color codes
 ---
 
 It is possible to color hackmud text using built-in color codes.
@@ -12,7 +12,7 @@ The identifier is placed before the text, inside the backticks.
 An example:
 
 ```
-\`<ID>text\`
+`<ID>text`
 ```
 
 ## Colors
@@ -81,3 +81,28 @@ An example:
 | X                       | ((%X#FF0070%))  |
 | Y                       | ((%Y#FF6A98%))  |
 | Z                       | ((%Z#0C112B%))  |
+
+## In-game colors
+
+In-game, there are certain strings that are automatically highlighted by the client.
+They are detailed below, with a description and the color identifier.
+
+| String                                                                                                               | Description and identifier                                                                                                                                                                                                                     |
+| -------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| ((%Sstandard text))                                                                                                  | The default string color. Uses color ((%SS)).                                                                                                                                                                                                  |
+| ((%Cscript)).((%2name))                                                                                              | Script name highlighting. The script author uses color ((%CC)). The script name uses color ((%22)).                                                                                                                                            |
+| ((%5trust)).((%2scripts))                                                                                            | See above, but for Trust scripts. ((%AA)) trust script's author is highlighted with color ((%55)).                                                                                                                                             |
+| ((%B9))((%DQ))((%B7))((%TT))((%B199))((%JB))((%B254))((%LM))((%B740))((%NK))((%B991))((%CGC))                        | GC string highlighting. The numbers use color ((%BB)), the "GC" at the end uses color ((%CC)). The following colors match to the following denominations: ((%NN)) -> 1KGC, ((%LL)) -> 1MGC, ((%JJ)) -> 1BGC, ((%TT)) -> 1TGC, ((%DD)) -> 1QGC. |
+| ((%HVOID_LAMBDA_2))                                                                                                  | Sectors are automatically highlighted with the leading axiom's color (detailed below).                                                                                                                                                         |
+| ((%qDATA))                                                                                                           | The axiom DATA uses the color ((%qq)).                                                                                                                                                                                                         |
+| ((%MKIN))                                                                                                            | The axiom KIN uses the color ((%MM)).                                                                                                                                                                                                          |
+| ((%lFORM))                                                                                                           | The axiom FORM uses the color ((%ll)).                                                                                                                                                                                                         |
+| ((%HVOID))                                                                                                           | The axiom VOID uses the color ((%HH)).                                                                                                                                                                                                         |
+| ((%DCHAOS))                                                                                                          | The axiom CHAOS uses the color ((%DD)).                                                                                                                                                                                                        |
+| ((%SCHOICE))                                                                                                         | The axiom CHOICE uses the color ((%SS)).                                                                                                                                                                                                       |
+| ((%QLAW))                                                                                                            | The axiom LAW uses the color ((%qq)).                                                                                                                                                                                                          |
+| ((%YWILD))                                                                                                           | The axiom WILD uses the color ((%YY)).                                                                                                                                                                                                         |
+| {((%Nkey)): ((%Vvalue))}                                                                                             | Object keys use the color ((%NN)), values use the color ((%VV)).                                                                                                                                                                               |
+| ((%D:::TRUST COMMUNICATION:::))                                                                                      | Trust communications use the color ((%DD)).                                                                                                                                                                                                    |
+| ((%C@))((%Juser)), ((%C@))((%Kuser)), ((%C@))((%Muser)), ((%C@))((%Wuser)), ((%C@))((%Luser)), and ((%C@))((%Buser)) | Usernames can use six different colors. The @ uses color ((%CC)), and the name itself can take on any of the colors JKMWLB.                                                                                                                    |
+| ((%A3019))((%BAD)) ((%CD))((%L123))                                                                                  | This date format has four elements. The year is highlighted with color ((%AA)), the day with color ((%LL)). "AD" is colored with color ((%BB)), and "D" is colored with color ((%CC)).                                                         |
