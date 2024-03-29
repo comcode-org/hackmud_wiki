@@ -167,7 +167,7 @@ const sidebars = {
   miscSidebar: [
     {
       type: "category",
-      label: "Miscellaneous",
+      label: "Syntax",
       collapsible: false,
       link: {
         type: "generated-index",
