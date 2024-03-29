@@ -141,7 +141,7 @@ const config = {
             },
             {
               type: "docSidebar",
-              sidebarId: "miscSidebar",
+              sidebarId: "syntaxSidebar",
             },
           ],
         },
