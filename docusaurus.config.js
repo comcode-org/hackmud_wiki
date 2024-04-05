@@ -156,7 +156,7 @@ const config = {
             {
               type: "docSidebar",
               sidebarId: "advancedSidebar",
-            }
+            },
           ],
         },
       ],

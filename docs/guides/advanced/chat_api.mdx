@@ -8,7 +8,6 @@ The hackmud Chat API allows you to read and send chat messages from outside of t
 
 The API is accessed by sending HTTP requests. The hostname of all the chat API endpoints is www.hackmud.com. You must use ((%1HTTPS%)) in all requests. You must send the header ((%1Content-Type: application/json%)) in all requests. All requests are made with the ((%1POST%)) method. Timestamps in the API are floating-point seconds-based UNIX timestamps.
 
-
 ## Authentication
 
 To authenticate with the API, you must first run ((%0chat_pass%)) in the hackmud client. This will give you a 5 character alphanumeric chat password, which you can exchange for a chat token. The chat password is only valid for 5 minutes, but the chat token you exchange it for is valid for 45 days (unless the user revokes it earlier by running ((%0chat_revoke_tokens%))).
@@ -49,23 +48,11 @@ If your token is valid, you'll get a response like this:
   "ok": true,
   "users": {
     "bo": {
-        "c00lest_kats": [
-            "angie",
-            "bo",
-            "che",
-            "eve"
-        ],
-        "faythes_fountain": [
-            "angie",
-            "bo",
-            "che",
-            "faythe"
-        ]
+      "c00lest_kats": ["angie", "bo", "che", "eve"],
+      "faythes_fountain": ["angie", "bo", "che", "faythe"]
     },
     "mallory": {
-      "minions": [
-        "mallory"
-      ]
+      "minions": ["mallory"]
     }
   }
 }
@@ -136,10 +123,11 @@ The ((%Nchats%)) object has an array for each of the usernames you specified in 
 ## Understanding message objects
 
 A message object is guaranteed to have the following properties:
- - ((%Nid%)) - Unique ID of the chat message
- - ((%Nt%)) - Timestamp of when the message was sent
- - ((%Nfrom_user%)) - Sender of the chat message
- - ((%Nmsg%)) - Content of the chat message
+
+- ((%Nid%)) - Unique ID of the chat message
+- ((%Nt%)) - Timestamp of when the message was sent
+- ((%Nfrom_user%)) - Sender of the chat message
+- ((%Nmsg%)) - Content of the chat message
 
 The rest of the properties depend on the kind of the message. If the message was sent to a channel (i.e. it's not a tell), it will have a ((%Nchannel%)) property. If the message is a join or leave message, it will have ((is_join: true)) or ((is_leave: true)) respectively. You can use these conditional properties to deduce the type of message that was received.
 
