@@ -1,0 +1,178 @@
+---
+title: Using the Chat API
+---
+
+The hackmud Chat API allows you to read and send chat messages from outside of the game. This is a very powerful way to interface with the game, and it's useful for monitoring messages, triggering out-of-game actions from in-game scripts, and more.
+
+## Sending requests
+
+The API is accessed by sending HTTP requests. The hostname of all the chat API endpoints is www.hackmud.com. You must use ((%1HTTPS%)) in all requests. You must send the header ((%1Content-Type: application/json%)) in all requests. All requests are made with the ((%1POST%)) method. Timestamps in the API are floating-point seconds-based UNIX timestamps.
+
+
+## Authentication
+
+To authenticate with the API, you must first run ((%0chat_pass%)) in the hackmud client. This will give you a 5 character alphanumeric chat password, which you can exchange for a chat token. The chat password is only valid for 5 minutes, but the chat token you exchange it for is valid for 45 days (unless the user revokes it earlier by running ((%0chat_revoke_tokens%))).
+
+To exchange the chat password for a chat token, you need to send the following payload to <span class="color-tag" data-tag="1">/mobile/get_token.json</span>:
+
+```json
+{
+  "pass": "<password from chat_pass>"
+}
+```
+
+If your chat password is valid, you will get a response like this:
+
+```json
+{
+  "ok": true,
+  "chat_token": "<chat token>"
+}
+```
+
+In future requests to the API, you will need to supply this chat token in the request payload.
+
+## Retrieving account data
+
+A chat token is account-scoped, not user-scoped. This means that you can access all the users tied to your Steam account with just one chat token. You can also retrieve your userlist, the list of joined channels for each user, and the list of users for each channel via the API. Send the following payload to <span class="color-tag" data-tag="1">/mobile/account_data.json</span>:
+
+```json
+{
+  "chat_token": "<chat token>"
+}
+```
+
+If your token is valid, you'll get a response like this:
+
+```json
+{
+  "ok": true,
+  "users": {
+    "bo": {
+        "c00lest_kats": [
+            "angie",
+            "bo",
+            "che",
+            "eve"
+        ],
+        "faythes_fountain": [
+            "angie",
+            "bo",
+            "che",
+            "faythe"
+        ]
+    },
+    "mallory": {
+      "minions": [
+        "mallory"
+      ]
+    }
+  }
+}
+```
+
+In the ((%Nusers%)) object, all of your users are present as keys. Their values are an object, which contains all the channels your user is in as keys. The value of those are all the users who are in that channel. This information is analogous to what ((chats.channels)) and ((chats.users)) provide in-game.
+
+## Reading messages
+
+To read messages, send the following payload to <span class="color-tag" data-tag="1">/mobile/chats.json</span>:
+
+```json
+{
+  "chat_token": "<chat token>",
+  "usernames": [<users you want to read messages as>],
+  "before": <timestamp>,
+  "after": <timestamp>
+}
+```
+
+You must specify either ((%Nbefore%)) or ((%Nafter%)). This endpoint may not be used to retrieve historical data, as it is capped to only return messages from the last 10 minutes. You may only call this endpoint once every 2 seconds.
+
+You will receive a response like this:
+
+```json
+{
+    "ok": true,
+    "chats": {
+        "<username>": [
+            {
+                "id": "3598b8a024e394b691559a8c",
+                "t": 1515984653.345,
+                "from_user": "sans_comedy",
+                "msg": "user joined channel",
+                "is_join": true,
+                "channel": "0000"
+            },
+            {
+                "id": "5a5c170f7b97fd4315e14842",
+                "t": 1515984655.629,
+                "from_user": "sans_comedy",
+                "msg": "its petra-fying",
+                "channel": "0000"
+            },
+            {
+                "id": "8393b5e73a021ac084090aad",
+                "t": 1515984657.234,
+                "from_user": "sans_comedy",
+                "msg": "user left channel",
+                "is_leave": true,
+                "channel": "0000"
+            },
+            {
+                "id": "8393b5e73a021ac084090aad",
+                "t": 1515984660.132,
+                "from_user": "trust",
+                "msg": "psst, this is a tell"
+            },
+            ...
+        ],
+        "<username>": []
+    }
+}
+```
+
+The ((%Nchats%)) object has an array for each of the usernames you specified in the request. These arrays contain message objects. Note that you will also receive the messages that you sent.
+
+## Understanding message objects
+
+A message object is guaranteed to have the following properties:
+ - ((%Nid%)) - Unique ID of the chat message
+ - ((%Nt%)) - Timestamp of when the message was sent
+ - ((%Nfrom_user%)) - Sender of the chat message
+ - ((%Nmsg%)) - Content of the chat message
+
+The rest of the properties depend on the kind of the message. If the message was sent to a channel (i.e. it's not a tell), it will have a ((%Nchannel%)) property. If the message is a join or leave message, it will have ((is_join: true)) or ((is_leave: true)) respectively. You can use these conditional properties to deduce the type of message that was received.
+
+## Sending messages
+
+To send a message to a channel, send the following payload to <span class="color-tag" data-tag="1">/mobile/create_chat.json</span>:
+
+```json
+{
+  "chat_token": "<chat token>",
+  "username": "<sender username>",
+  "channel": "<channel name>",
+  "msg": "<message>"
+}
+```
+
+To send a tell to a user, send the following payload instead:
+
+```json
+{
+  "chat_token": "<chat token>",
+  "username": "<sender username>",
+  "tell": "<target username>",
+  "msg": "<message>"
+}
+```
+
+In both cases, you will receive a response like so:
+
+```json
+{
+  "ok": true
+}
+```
+
+NOTE: The in-game chat message limitations (max. 1000 character or 10 lines) apply to messages sent from the chat API as well.
