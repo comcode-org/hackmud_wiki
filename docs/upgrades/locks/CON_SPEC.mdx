@@ -1,0 +1,58 @@
+---
+title: CON_SPEC
+---
+
+> Two roads diverged. I took the less traveled.
+
+CON_SPEC is a tier 2 [[lock]] created by the context corporation.
+
+## Stats
+
+CON_SPEC has 2 additional stats, one of which is 'p1_len' which controls the length of the solved character string and the other is 'p2_len' which controls how long the string is that is returned to the scriptor. The lock spawns at rarities ((%1kiddie%)), ((%2h4x0r%)), and ((%3h4rdc0r3%)).
+
+## Behavior
+
+CON_SPEC expects the answer to one of two questions. One requires you to pass a scriptor, another needs you to find the next three letters in a sequence.
+
+```
+>>user.loc {CON_SPEC:""}
+GHIJKLM
+Provide the next three letters in the sequence
+
+>>user.loc {CON_SPEC:""}
+Provide a scriptor <number>({s:<string>, d:<number>}) which returns the number of times the digit shows up
+in the string
+```
+
+## Solving
+
+### Example unlock
+
+<details>
+  <summary>Spoilers for CON_SPEC's solutions</summary>
+
+```
+>>user.loc {CON_SPEC:"NOP"}
+WARRNING: BINMAT security shell inactive. Intelligent defense system offline.
+LOCK_UNLOCKED
+System <user> breached.
+Connection terminated.
+
+>>user.loc {CON_SPEC:#s.con_spec.solver}
+WARRNING: BINMAT security shell inactive. Intelligent defense system offline.
+LOCK_UNLOCKED
+System <user> breached.
+Connection terminated.
+
+```
+
+</details>
+
+### Solutions for CON_SPEC
+
+<details>
+<summary>Spoilers</summary>
+
+You either need to pass in some characters that can be found by finding the pattern in the letters, or you need to pass in a scriptor based on what the lock gives you.
+
+</details>

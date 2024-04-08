@@ -1,0 +1,125 @@
+---
+title: DATA_CHECK_V2
+---
+
+> it is valuable to verify the common elements of trust's truth, and other truths besides
+
+DATA_CHECK_V2 is a tier 2 [[lock]].
+
+## Stats
+
+DATA_CHECK_V2 has one additional stat called 'acc_mod' which can modify what tier the question/answer pool draws from.
+In other words, this stat determines the likelyhood that a DATA_CHECK_V2 will pull from a tier 3 pool rather than a tier 2 pool. The lock spawns at ((%1kiddie%)), ((%2h4x0r%)) and ((%3h4rdc0r3%)) rarities.
+
+## Behavior
+
+DATA_CHECK_V2 expects the answers to three questions concatenated together into a single string with no separator.
+
+When no arguments are passed into DATA_CHECK_V2, the lock will return the following error:
+
+```
+user.loc { }
+LOCK_ERROR
+Denied access by DATA_CHECK lock.
+```
+
+Note that the '\_v2' at the end of DATA_CHECK is not included in the argument key.
+
+Providing any incorrect value to the DATA_CHECK key will provide 3 questions to answer:
+
+```
+>>user.loc { DATA_CHECK:"" }
+a ++++++ is a household cleaning device with a rudimentary networked sentience
+safety depends on the use of scripts.++++++
+pet, pest, plague and meme are accurate descriptors of the ++++++
+```
+
+All 3 questions must be answered in the order received, concatenated together in lowercase, with no separators between each answer.
+
+## Solving
+
+### Example unlock
+
+<details>
+  <summary>Spoilers for DATA_CHECK_V2's solutions</summary>
+
+```
+>>user.loc { DATA_CHECK:"" }
+a ++++++ is a household cleaning device with a rudimentary networked sentience
+safety depends on the use of scripts.++++++
+pet, pest, plague and meme are accurate descriptors of the ++++++
+
+>>user.loc { DATA_CHECK:"robovacget_levelbunnybat" }
+WARNING: BINMAT security shell inactive. Intelligent defense system offline.
+LOCK_UNLOCKED
+System <user> breached.
+Connection terminated.
+```
+
+</details>
+
+### DATA_CHECK Solutions
+
+<details>
+<summary>Spoilers for DATA_CHECK_V2's solutions</summary>
+
+Known questions and answers for DATA_CHECK_V2:
+
+- QUESTION: trust has a diagnostic system. a functioning version can be found at erajbhandari.++++++<br />
+  ANSWER: diagalpha
+- QUESTION: the listed components of the breakfast galleon are inside, outside, and ++++++<br />
+  ANSWER: crowsnest
+- QUESTION: a person called anja has lost her ++++++<br />
+  ANSWER: blazer
+- QUESTION: according to skimmerite pattern-seekers, the calibration initiative indicates that humans are ++++++<br />
+  ANSWER: dead
+- QUESTION: according to the calibration initiative, humans are expected to be ++++++ by the content<br />
+  ANSWER: engaged
+- QUESTION: according to the suborbital bulletin, flight ++++++ is en route to ho chi minh<br />
+  ANSWER: a2231
+- QUESTION: archaic labs specialises in user-++++++ design<br />
+  ANSWER: obsessive
+- QUESTION: conditions are clear above ++++++ and the city is within operational radius<br />
+  ANSWER: atlanta
+- QUESTION: data does not contain truth is the first part of an idiom spread by the ++++++ assembly<br />
+  ANSWER: skimmerite
+- QUESTION: item_id py6874 contains a grand ++++++<br />
+  ANSWER: piano
+- QUESTION: robovac\_++++++, moreso than most of its kind, has a tendency to become stuck<br />
+  ANSWER: idp1p1
+- QUESTION: robovac_idk3w2 is stuck in a ++++++<br />
+  ANSWER: well
+- QUESTION: sheriff nub holds sway over the town of ol' ++++++<br />
+  ANSWER: nubloopstone
+- QUESTION: sheriff nub's first name is ++++++<br />
+  ANSWER: sheriff
+- QUESTION: the ascent of ++++++ does not concern itself with usefulness<br />
+  ANSWER: nowhere
+- QUESTION: the fourth hidden theme is ++++++<br />
+  ANSWER: executives
+- QUESTION: this council of 'revolutionary' robovac-patterns call themselves the ++++++<br />
+  ANSWER: thirteen
+- QUESTION: user ++++++ would leave no stars for the sqrz 480 if they could<br />
+  ANSWER: bnnyhunter
+- QUESTION: user le_mon_squeezy's new s:o ref is ++++++<br />
+  ANSWER: unvarnishedpygmyumbrella
+- QUESTION: drones from ++++++ may be instructed to perform their task with excessive urgency<br />
+  ANSWER: goodfellow
+- QUESTION: packbot-patterns cannot perceive ++++++<br />
+  ANSWER: lime
+- QUESTION: user ++++++ oversees ComCODE operations<br />
+  ANSWER: mallory
+- QUESTION: where angie has a blueprint, mallory has a ++++++<br />
+  ANSWER: hammer
+- QUESTION: trust functions as the ++++++ process<br />
+  ANSWER: index
+- QUESTION: between ++++++ and killing is living<br />
+  ANSWER: making
+- QUESTION: the designation of the base set is ++++++<br />
+  ANSWER: 110652
+
+The solution will be all three answers in the order received; concatenated together in all lowercase, with no spaces or other separation; as shown in the example below:
+
+robovac, get_level, and bunnybat become \{ DATA_CHECK: "robovacget_levelbunnybat" }
+
+</details>
