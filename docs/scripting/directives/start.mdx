@@ -1,25 +1,25 @@
 ---
 title: _START
 
-alias: 
-- _ST
-- START
+alias:
+  - _ST
+  - START
 ---
 
 Timestamp of the beginning of the top-level script run.
 
-_START (along with _ST) are global variables that provide a timestamp, in milliseconds since the [Unix epoch](https://en.wikipedia.org/wiki/Unix_time), of when the script execution began.
+\_START (along with \_ST) are global variables that provide a timestamp, in milliseconds since the [Unix epoch](https://en.wikipedia.org/wiki/Unix_time), of when the script execution began.
 
 ## Syntax
 
 ```js
-_START
-_ST
+_START;
+_ST;
 ```
 
 ## Example
 
-A script that wants to track how long their own execution has taken can use _START:
+A script that wants to track how long their own execution has taken can use \_START:
 
 ```js
 function(context, args) {

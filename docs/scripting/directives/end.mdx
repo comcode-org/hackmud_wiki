@@ -6,17 +6,17 @@ alias: END
 
 Timestamp of the latest possible end of the top-level script execution.
 
-_END is a global variable that provides a timestamp, in milliseconds since the [Unix epoch](https://en.wikipedia.org/wiki/Unix_time), of when the script execution is guaranteed to end due to a timeout. This number is effectively [[_START]] + [[_TIMEOUT]].
+\_END is a global variable that provides a timestamp, in milliseconds since the [Unix epoch](https://en.wikipedia.org/wiki/Unix_time), of when the script execution is guaranteed to end due to a timeout. This number is effectively [[_START]] + [[_TIMEOUT]].
 
 ## Syntax
 
 ```js
-_END
+_END;
 ```
 
 ## Example
 
-A script that wants to check how close it is to timing out can use _END instead of _START + _TIMEOUT or [((scripts.lib))](../scripts_lib)'s [[can_continue_execution]]:
+A script that wants to check how close it is to timing out can use \_END instead of \_START + \_TIMEOUT or [((scripts.lib))](../scripts_lib)'s [[can_continue_execution]]:
 
 ```js
 function(context, args) {

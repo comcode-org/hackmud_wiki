@@ -1,25 +1,25 @@
 ---
 title: "_RUN_ID"
 
-alias: 
-- RunID
-- RUN_ID
-- RUNID
+alias:
+  - RunID
+  - RUN_ID
+  - RUNID
 ---
 
 ID of the top-level script execution.
 
-_RUN_ID is a global variable that contains a MongoDB [[ObjectId]] generated at the beginning of the top-level script run. This ID is used for [[sys.access_log:((sys.access_log))]] and other game functions, but is also accessible to users at any security level through this variable.
+\_RUN_ID is a global variable that contains a MongoDB [[ObjectId]] generated at the beginning of the top-level script run. This ID is used for [[sys.access_log:((sys.access_log))]] and other game functions, but is also accessible to users at any security level through this variable.
 
 ## Syntax
 
 ```js
-_RUN_ID
+_RUN_ID;
 ```
 
 ## Example
 
-A script that wants to check the Run ID of the current top-level script execution can do so with _RUN_ID:
+A script that wants to check the Run ID of the current top-level script execution can do so with \_RUN_ID:
 
 ```js
 function(context, args) {
