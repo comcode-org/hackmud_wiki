@@ -1,8 +1,9 @@
 ---
 title: scripts.get_access_level
+description: "Gets the access level of a script"
 ---
 
-scripts.get_access_level shows information about a scripts' access level. Possible access level indicators include:
+((scripts.get_access_level)) shows information about a script's access level. Possible access level indicators include:
 
 - PUBLIC
 - PRIVATE
@@ -33,13 +34,13 @@ scripts.get_access_level { name: "accts.balance" }
 
 #### name (required)
 
-The 'name' argument specifies which scripts' access level shall be checked.
+The '((%Nname%))' argument specifies which scripts' access level shall be checked.
 
 ### Return
 
 #### CLI
 
-On the CLI scripts.get_access_level returns a string.
+On the CLI ((scripts.get_access_level)) returns a string.
 
 ```
 >>scripts.get_access_level { name: "accts.balance" }
@@ -48,7 +49,7 @@ PUBLIC TRUST
 
 #### Script
 
-Called as a subscript, scripts.get_access_level returns an object.
+Called as a subscript, ((scripts.get_access_level)) returns an object.
 
 ```
 {

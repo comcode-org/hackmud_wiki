@@ -1,12 +1,13 @@
 ---
 title: scripts.midsec
+description: "Lists MIDSEC sectors and scripts"
 ---
 
-scripts.midsec lists the MIDSEC sectors.
+((scripts.midsec)) lists the MIDSEC sectors.
 
 ### Security Level
 
-midsec
+MIDSEC
 
 ## Syntax
 
@@ -26,7 +27,7 @@ scripts.midsec
 
 #### sector
 
-The 'sector' argument specifies the MIDSEC sector to be shown.
+The '((%Nsector%))' argument specifies the MIDSEC sector to be shown.
 
 ### Return
 
@@ -41,15 +42,17 @@ No arguments:
 specify & join a sector to see a list of the scripts in that sector.
 ```
 
-The listed sectors are dynamic and will change over time. Running scripts.midsec on the CLI will return 4 columns of sector names. Specifiying a sector will return the scripts which are currently in that sector.
+The listed sectors are dynamic and will change over time. Running ((scripts.midsec)) on the CLI will return 4 columns of sector names. Specifiying a sector will return the scripts which are currently in that sector.
 
 #### Script
 
-The listed sectors are dynamic and will change over time. Calling scripts.midsec as a subscript will list one column of sector names by default. Specifiying a sector will return the scripts which are currently in that sector.
+The listed sectors are dynamic and will change over time. Calling ((scripts.midsec)) as a subscript will list one column of sector names by default. Specifiying a sector will return the scripts which are currently in that sector.
 
 ## Example
 
-Note: the example sector may not be a valid sector.
+:::note
+The example sector may not be a valid sector.
+:::
 
 ```js
 function(context, args)

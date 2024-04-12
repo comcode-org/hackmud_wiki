@@ -1,8 +1,9 @@
 ---
 title: gui.chats
+description: "Dictates the behavior of chat in the main terminal/chat window"
 ---
 
-gui.chats dictates the behavior of chat in the main terminal window, and/or, in the chat window.
+((gui.chats)) dictates the behavior of chat in the main terminal window, and/or, in the chat window.
 
 ### Security Level
 
@@ -23,19 +24,19 @@ Cannot be called as a subscript.
 
 ### Parameters
 
-One argument is required, either shell, or chat. If no arguments are provided, the script will return a Failure and usage information. The default values are both set to true.
+One argument is required, either ((%Nshell%)) or ((%Nchat%)). If no arguments are provided, the script will return a ((%DFailure%)) and usage information. The default values are both set to ((%Vtrue%)).
 
 #### shell
 
-The 'shell' argument dictates if chat appears in the main window or not using a boolean (true/false).
+The '((%Nshell%))' argument dictates if chat appears in the main window or not using a boolean (((%Vtrue%))/((%Vfalse%))).
 
 #### chat
 
-The 'chat' argument dictates if chat appears in the main window or not using a boolean (true/false).
+The '((%Nchat%))' argument dictates if chat appears in the main window or not using a boolean (((%Vtrue%))/((%Vfalse%))).
 
 ### Return
 
-Returns a Success or Failure object.
+Returns a ((%LSuccess%)) or ((%DFailure%)) object.
 
 #### CLI
 

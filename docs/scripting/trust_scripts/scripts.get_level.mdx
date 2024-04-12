@@ -1,8 +1,9 @@
 ---
 title: scripts.get_level
+description: "Gets the security level of a script"
 ---
 
-scripts.get_level shows a scripts security level.
+((scripts.get_level)) shows a script's security level.
 
 ### Security Level
 
@@ -26,13 +27,13 @@ scripts.get_level { name: "accts.balance" }
 
 #### name (required)
 
-The 'name' argument specifies which scripts' security level shall be checked.
+The '((%Nname%))' argument specifies which scripts' security level shall be checked.
 
 ### Return
 
 #### CLI
 
-On the CLI, scripts.get_level returns a string.
+On the CLI, ((scripts.get_level)) returns a string.
 
 ```
 >>scripts.get_level { name: "accts.balance" }
@@ -41,7 +42,7 @@ HIGHSEC
 
 #### Script
 
-Called as a subscript, scripts.get_level returns a number.
+Called as a subscript, ((scripts.get_level)) returns a number.
 
 ```
 3

@@ -1,8 +1,9 @@
 ---
 title: sys.manage
+description: "Loads, unloads or reorders upgrades"
 ---
 
-sys.manage allows loading, unloading or reordering upgrades.
+((sys.manage)) allows loading, unloading or reordering upgrades.
 
 ### Security Level
 
@@ -26,15 +27,15 @@ sys.manage
 
 #### unload
 
-The 'unload' argument takes an upgrade index as a number, or an array of numbers with no leading 0s.
+The '((%Nunload%))' argument takes an upgrade index as a number, or an array of numbers with no leading 0s.
 
 #### load
 
-The 'load' argument takes an upgrade index as a number, or an array of numbers with no leading 0s.
+The '((%Nload%))' argument takes an upgrade index as a number, or an array of numbers with no leading 0s.
 
 #### reorder
 
-The 'reorder' argument takes reorder pairs as objects, or arrays.
+The '((%Nreorder%))' argument takes reorder pairs as objects, or arrays.
 
 ```
 sys.manage { reorder: { from: 0, to: 1 } }

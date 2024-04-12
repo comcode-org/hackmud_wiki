@@ -1,8 +1,9 @@
 ---
 title: sys.init
+description: "Initializes a system, or upgrades its tier"
 ---
 
-sys.init initializes a system, or upgrades its tier once it is initialized.
+((sys.init)) initializes a system, or upgrades its tier once it is initialized.
 
 ### Security Level
 
@@ -18,19 +19,17 @@ sys.init { confirm: true }
 
 ### Script
 
-```
-#fs.sys.init({ confirm: true })
-```
+Cannot be called as a subscript.
 
 ### Parameters
 
 #### confirm (required)
 
-The 'confirm' parameter allows execution of sys.init.
+The '((%Nconfirm%))' parameter confirms system initialization.
 
 ### Return
 
-Returns a Success or Faliure object.
+Returns a ((%LSuccess%)) or ((%DFaliure%)) object.
 
 #### CLI
 

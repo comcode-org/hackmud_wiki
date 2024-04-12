@@ -1,8 +1,9 @@
 ---
 title: scripts.sys
+description: "Lists the caller's accessible system scripts"
 ---
 
-scripts.sys lists the available system scripts that can currently be accessed, based on upgrades loaded.
+((scripts.sys)) lists the available system scripts that can currently be accessed, based on upgrades loaded.
 
 ### Security Level
 
@@ -32,7 +33,7 @@ Returns an array.
 
 #### CLI
 
-On the CLI, scripts.sys returns strings formatted in columns.
+On the CLI, ((scripts.sys)) returns strings formatted in columns.
 
 ```
 >>scripts.sys
@@ -44,7 +45,7 @@ sys.expose_upgrade_log
 
 #### Script
 
-Returns the array of strings as a single column by default.
+Returns an array of strings.
 
 ```
 sys.expose_access_log
