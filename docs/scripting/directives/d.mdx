@@ -1,0 +1,58 @@
+---
+title: "#D"
+---
+
+Debugging output function.
+
+#D - or 'Debug' - is a function that will take any content you input to it and add it to a debug log. At the end of the script run - if you are the script owner - all of the debug logs will be returned instead of the regular output. This output will be returned even if the script hits an uncaught error or ((%D:::TRUST COMMUNICATION:::%))
+
+:::info
+
+#D will suppress regular script output for the script owner.
+
+Only the script owner sees the output of #D - it is not a substitute for `return`ing regular output for any other user.
+:::
+
+## Syntax
+
+```js
+#D(input)
+```
+
+## Arguments
+
+### input
+
+The input to be added to the debug log output. If this value is not a string, #D will attempt to turn it into a string. #D will also return its input as an output.
+
+## Example
+
+This script uses #D to debug the flow of the script run
+
+```js
+function(context, args) {
+  #D("started")
+
+  let x = 2
+  #D(x)
+  let y = 3
+  #D(y)
+
+  return #D(x + y)
+}
+```
+
+Anybody who is not the script owner will see the following output:
+
+```
+5
+```
+
+The script owner will see the following output:
+
+```
+started
+2
+3
+5
+```

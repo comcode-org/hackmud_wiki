@@ -1,0 +1,38 @@
+---
+title: "#G"
+---
+
+Global object that persists across a top-level script execution.
+
+#G - or 'Global' - is a global object unique for every script. It starts empty `{}` and can have any properties added to it over time that the script owner desires. If the script is called multiple times in a single top-level script execution, the contents of #G will persist.
+
+Each script only sees its own #G object and cannot interact with other #G's.
+
+## Syntax
+
+```js
+#G // {}
+#G.foo = "bar"
+#G // {foo:"bar"}
+```
+
+## Arguments
+
+#G behaves like any other JavaScript object. The [builtins which apply to JS objects](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object) similarly apply to #G
+
+## Example
+
+This script wants to cache a [[db.f:database lookup]] that is reused when called multiple times. It is written like so:
+
+```js
+function(context, args) {
+  if(!#G.data){
+    #G.data = #db.f({type:"my_data"}).first()
+  }
+
+  if(#G.data.foo == "bar") return "baz"
+  else return "quz"
+}
+```
+
+When first called in a top level script run, the script will spend time performing a database lookup with [[db.f:#db.f]], then in subsequent calls the lookup will be skipped, saving precious runtime.

@@ -1,0 +1,44 @@
+---
+title: DEEP_FREEZE()
+---
+
+Recursive Object.freeze.
+
+DEEP_FREEZE is a global function accessible to all hackmud scripts. DEEP_FREEZE performs a recursive [Object.freeze](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/freeze) on a given JavaScript object. Frozen objects are unable to be written to or modified in any way. This function returns the same object that was passed in.
+
+## Syntax
+
+```js
+DEEP_FREEZE(object);
+```
+
+## Arguments
+
+### object
+
+The object to freeze.
+
+## Example
+
+Let ((user.deepfreeze)) be a hypothetical user script, using DEEP_FREEZE to return an object that cannot be tampered with.
+
+```js
+function(context, args) {
+  let obj = {}
+
+  obj.foo = "bar"
+  obj.baz = {quz:"quux"}
+
+  return DEEP_FREEZE(obj)
+}
+```
+
+When subscripting ((user.deepfreeze)), the object returned is immutable.
+
+```js
+function(context, args) {
+  let obj = #fs.user.deepfreeze()
+
+  obj.baz = true // :::TRUST COMMUNICATION::: TypeError: "baz" is read-only
+}
+```
