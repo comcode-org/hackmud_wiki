@@ -1,0 +1,48 @@
+---
+title: "#FMCL"
+---
+
+Prevents execution of a script more than once per script run.
+
+#FMCL - or 'Function Multi-Call Lock' - is a function that returns `false` when first encountered in a top-level script execution, then `true` when encountered subsequent times. It is used by [[escrow.charge:((escrow.charge))]], for example, to ensure it is only called once per script run.
+
+## Syntax
+
+```js
+#FMCL // false
+#FMCL // true
+#FMCL // true
+// ...
+```
+
+## Arguments
+
+#FMCL takes no arguments
+
+## Example
+
+The script ((user.fmcl_test)) contains the following code:
+
+```js
+function(context, args) {
+  if(#FMCL) return "Bruteforcing detected"
+  else{
+    if(args && args.password == "password1") return "You win!"
+    else return "What is my `Npassword`?"
+  }
+}
+```
+
+If a person attempts to subscript ((user.fmcl_test)) to try and bruteforce the password, their first attempt will be processed, but further attempts will be rejected:
+
+```js
+function(context, args) {
+  return [
+    #fs.user.fmcl_test({password:"12345"}),
+    #fs.user.fmcl_test({password:"letmein"}),
+    #fs.user.fmcl_test({password:"password1"}),
+  ]
+
+  // ["What is my `Npassword`?","Bruteforcing detected","Bruteforcing detected"]
+}
+```

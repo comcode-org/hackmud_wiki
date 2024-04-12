@@ -141,6 +141,10 @@ const config = {
             },
             {
               type: "docSidebar",
+              sidebarId: "directivesSidebar",
+            },
+            {
+              type: "docSidebar",
               sidebarId: "syntaxSidebar",
             },
           ],

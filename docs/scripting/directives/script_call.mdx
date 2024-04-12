@@ -1,0 +1,62 @@
+---
+title: "#Xs.user.script(...)"
+---
+
+Call another user's script.
+
+'Subscripts' are used to interact with other user scripts by hardcoding a call to them in your own script. This is distinct from scriptors, which are provided on the command line by the user.
+
+## Syntax
+
+```js
+#Xs.user.script(args)
+```
+
+Where `Xs` is the security level of the script you wish to call the subscript at.
+
+| Letter | Number | Security Level |
+| ------ | ------ | -------------- |
+|  #fs   |  #4s   |    FULLSEC     |
+|  #hs   |  #3s   |    HIGHSEC     |
+|  #ms   |  #2s   |    MIDSEC      |
+|  #ls   |  #1s   |    LOWSEC      |
+|  #ns   |  #0s   |    NULLSEC     |
+
+## Arguments
+
+### args
+
+An object containing the arguments to call the subscript with.
+
+## Example
+
+The script ((user.my_script)) returns the user's upgrades by calling [[sys.upgrades:((sys.upgrades))]]
+
+```js
+function(context, args) {
+  return #hs.sys.upgrades(args)
+}
+```
+
+This script is HIGHSEC due to the [[sys.upgrades:((sys.upgrades))]] call, and thus is subscripted with a subscript call, at HIGHSEC or lower.
+
+
+```js
+function(context, args) {
+  return #hs.user.my_script({full:true})
+}
+```
+
+((sys.upgrades)) will return its subscripted ((full: true)) output, due to the arguments passed to ((user.my_script)) being given directly to ((sys.upgrades)) in the subscript chain.
+
+If the top-level script attempts to call ((user.my_script)) at a higher seclevel (like FULLSEC), an error is returned:
+
+```js
+function(context, args) {
+  return #fs.user.my_script({full:true})
+}
+```
+
+```
+{ok:false, msg:"Security level guarantee failed: subscript user.my_script 3 < user.top_level_script required 4"}
+```

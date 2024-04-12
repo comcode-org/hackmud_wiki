@@ -1,0 +1,39 @@
+---
+title: _TIMEOUT
+
+alias: 
+- _TO
+- TIMEOUT
+---
+
+How long, in milliseconds, a script may run for before timing out.
+
+_TIMEOUT (along with _TO) are global variables that provide the length of time, in milliseconds, that a top-level script execution is allowed to run for before being terminated. It is currently `5000`.
+
+## Syntax
+
+```js
+_TIMEOUT
+_TO
+```
+
+## Example
+
+A script that wants to check how close it is to timing out can use _TIMEOUT along with [[_START]], [[_END]], [Date.now()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/now) or [((scripts.lib))](../scripts_lib)'s [[can_continue_execution]]:
+
+```js
+function(context, args) {
+  // allow for at least 500ms of runtime
+  let bail_after_ms = (_TIMEOUT - 500)
+
+  // do stuff
+
+  if((Date.now() - _START) > bail_after_ms){
+    return "Less than 500ms left! Bailing!"
+  }
+
+  // do more stuff
+
+  return "Script completed without timing out"
+}
+```
