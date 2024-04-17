@@ -56,6 +56,13 @@ Failure
 Running this script costs 1GC each use. Confirm with escrow.confirm { i:"token5" }
 ```
 
+:::warning
+If escrow.charge is called more than once within a single script run, it will return
+```
+{ ok: "false", msg: "escrow.charge has already been called in this script run." }
+```
+after the first run.
+
 ## Example
 
 ```js
