@@ -1,8 +1,9 @@
 ---
 title: sys.upgrades
+description: "Displays the user's system upgrades"
 ---
 
-sys.upgrades displays information about the upgrades present on the system.
+((sys.upgrades)) displays information about the upgrades present on the system.
 
 ### Security Level
 
@@ -26,23 +27,15 @@ sys.upgrades
 
 #### filter
 
-The 'filter' parameter takes an object which can specify the properties 'loaded' and 'chars'.
-
-- loaded
-
-Takes a boolean, specifies whether to display loaded upgrades with true, or unloaded upgrades with false.
-
-- chars
-
-Takes MongoDB query compatibles, e.g. `chars: { "$gte" : 2000 }`
+The '((%Nfilter%))' parameter takes an object which can specify properties of the upgrade(s). Can take discrete values or MongoDB compatible queries, e.g. `chars: { "$gte" : 2000 }`
 
 #### full
 
-The 'full' parameter takes a boolean. If the value is set to `true` sys.upgrades will display the full details object of each upgrade.
+The '((%Nfull%))' parameter takes a boolean. If the value is set to ((%Vtrue%)), ((sys.upgrades)) will display the full details object of each upgrade.
 
 #### i
 
-The 'i' parameter takes either a number or an array of numbers.
+The '((%Ni%))' parameter takes either a number or an array of numbers.
 
 ### Return
 

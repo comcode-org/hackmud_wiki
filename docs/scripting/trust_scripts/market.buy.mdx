@@ -1,8 +1,9 @@
 ---
 title: market.buy
+description: "Purchases upgrades listed on the market"
 ---
 
-market.buy is a secure purchase system which uses 8 character alpha-numeric tokens from [[market.browse]] to purchase upgrades from the marketplace.
+((market.buy)) is a secure purchase system which uses 8 character alpha-numeric tokens from [[market.browse:((market.browse))]] to purchase upgrades from the marketplace.
 
 ### Security Level
 
@@ -10,7 +11,7 @@ MIDSEC
 
 ## Syntax
 
-market.buy takes a market token as a string and requires that the value of the 'confirm' parameter be set to true.
+((market.buy)) takes a market token as a string and requires that the value of the '((%Nconfirm%))' parameter be set to ((%Vtrue%)).
 
 ### CLI
 
@@ -28,15 +29,15 @@ market.buy { i: "token5" }
 
 #### i (required)
 
-The 'i' argument takes a market token as a string.
+The '((%Ni%))' argument takes a market token as a string.
 
 #### confirm (required)
 
-The 'confirm' argument value must be `true` in order to confirm purchase.
+The '((%Nconfirm%))' argument value must be ((%Vtrue%)) in order to confirm purchase.
 
 ### Return
 
-Returns a Success or Failure object.
+Returns a ((%LSuccess%)) or ((%DFailure%)) object.
 
 #### CLI
 
@@ -48,7 +49,7 @@ Failure
 invalid token. specify valid token with i:"<token>"
 ```
 
-With valid arguments, confirmation, and enough GC to cover the purchase:
+With valid arguments, confirmation, and enough ((%CGC%)) to cover the purchase:
 
 ```
 >>market.buy { i: "ebwff5", confirm: true }

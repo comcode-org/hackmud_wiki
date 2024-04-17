@@ -1,8 +1,9 @@
 ---
 title: sys.xfer_upgrade_to_caller
+description: "Sends upgrades from the script owner to the caller"
 ---
 
-accts.xfer_upgrade_to_caller allows a script to send upgrades to the caller of the script.
+((accts.xfer_upgrade_to_caller)) allows a script to send upgrades to the caller of the script.
 
 ### Security Level
 
@@ -32,13 +33,23 @@ Multiple upgrades:
 
 ### Parameters
 
-#### i (required)
+Requires one of '((%Ni%))' or '((%Nsn%))'.
 
-The 'i' argument takes a number or array of numbers and specifies which upgrades shall be sent.
+#### i
+
+The '((%Ni%))' argument takes a number or array of numbers and specifies which upgrade indexes shall be sent.
+
+#### sn
+
+The '((%Nsn%))' argument takes a serial number string, or array of serial numbers, to specify which serial numbers shall be sent (if they exist on the user).
+
+#### memo (optional)
+
+The '((%Nmemo%))' argument allows for an optional memo, up to 50 characters, alongside the upgrade transfer
 
 ### Return
 
-Returns a Success or Failure object.
+Returns a ((%LSuccess%)) or ((%DFailure%)) object.
 
 #### CLI
 

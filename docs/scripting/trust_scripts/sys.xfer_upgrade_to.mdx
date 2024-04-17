@@ -1,8 +1,9 @@
 ---
 title: sys.xfer_upgrade_to
+description: "Sends upgrade(s) to a specified user"
 ---
 
-Sends upgrade(s) to a specified user.
+((sys.xfer_upgrade_to)) sends upgrade(s) to a specified user.
 
 ### Security Level
 
@@ -32,17 +33,27 @@ sys.xfer_upgrade_to { to: "user", i: [ 0, 1, 2 ] }
 
 ### Parameters
 
+Requires '((%Nto%))' and one of '((%Ni%))' or '((%Nsn%))'.
+
 #### to (required)
 
-The 'to' argument takes a username as a string and specifies the username where upgrades shall be sent.
+The '((%Nto%))' argument takes a username as a string and specifies the username where upgrades shall be sent.
 
-#### i (required)
+#### i
 
-The 'i' argument takes a number or array of numbers and specifies the upgrade index(es) to be sent.
+The '((%Ni%))' argument takes a number or array of numbers and specifies which upgrade indexes shall be sent.
+
+#### sn
+
+The '((%Nsn%))' argument takes a serial number string, or array of serial numbers, to specify which serial numbers shall be sent (if they exist on the user).
+
+#### memo (optional)
+
+The '((%Nmemo%))' argument allows for an optional memo, up to 50 characters, alongside the upgrade transfer
 
 ### Return
 
-Returns a Success or Failure object.
+Returns a ((%LSuccess%)) or ((%DFailure%)) object.
 
 #### CLI
 

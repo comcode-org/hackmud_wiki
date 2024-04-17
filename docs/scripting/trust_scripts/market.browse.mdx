@@ -1,8 +1,9 @@
 ---
 title: market.browse
+description: "Shows upgrades currently for sale on the market"
 ---
 
-market.browse shows upgrades currently for sale on the marketplace.
+((market.browse)) shows upgrades currently for sale on the marketplace.
 
 ### Security Level
 
@@ -24,51 +25,51 @@ market.browse { tier: 1, seller: "trust", rarity: 0 }
 
 ### Parameters
 
-At least one argument is required. If no arguments are input, market.browse will return a Failure object and detailed usage information. All arguments are optional. Any parameter that can take a number can also take MongoDB query conditionals, e.g. `chars: { $gte: 2000 }`.
+At least one argument is required. If no arguments are input, ((market.browse)) will return a ((%DFailure%)) object and detailed usage information. All arguments are optional. Any parameter that can take a number can also take MongoDB query conditionals, e.g. `chars: { $gte: 2000 }`.
 
 #### tier
 
-The 'tier' argument takes a number and specifies the tier of upgrades to be shown.
+The '((%Ntier%))' argument takes a number and specifies the tier of upgrades to be shown.
 
 #### seller
 
-The 'seller' argument takes a username as a string and specifies the seller, for example to filter upgrades sold by TRUST.
+The '((%Nseller%))' argument takes a username as a string and specifies the seller, for example to filter upgrades sold by TRUST.
 
 #### listed_before
 
-The 'listed_before" argument takes a Unix timestamp, e.g. `1490286018.35423`.
+The '((%Nlisted_before%))" argument takes a Unix timestamp, e.g. `1490286018.35423`.
 
 #### listed_after
 
-The 'listed_after" argument takes a Unix timestamp, e.g. `1490286018.35423`.
+The '((%Nlisted_after%))" argument takes a Unix timestamp, e.g. `1490286018.35423`.
 
 #### rarity
 
-The 'rarity' argument takes a number ranging from 0 to 5 and specifies the rarity of upgrades to be shown.
+The '((%Nrarity%))' argument takes a number ranging from 0 to 5 and specifies the rarity of upgrades to be shown.
 
 #### cost
 
-The 'cost' argument can take a GC string, a number, or MongoDB query conditionals, e.g. `cost: { $lte: 500000 }`
+The '((%Ncost%))' argument can take a GC string, a number, or MongoDB query conditionals, e.g. `cost: { $lte: 500000 }`
 
 #### name
 
-The 'name' argument takes a string and specifies the name of upgrades to be shown.
+The '((%Nname%))' argument takes a string and specifies the name of upgrades to be shown.
 
 #### type
 
-The 'type' argument takes a string and filters by upgrade type, e.g. `type: "lock"`.
+The '((%Ntype%))' argument takes a string and filters by upgrade type, e.g. ((type: "lock")).
 
 #### class
 
-The 'class' argument takes a string and filters by upgrade class, e.g. `class: "architect"`
+The '((%Nclass%))' argument takes a string and filters by upgrade class, e.g. ((class: "architect")).
 
 #### chars
 
-The 'chars' argument takes a number or MongoDB query conditional, `chars: { $gte: 2000 }`
+The '((%Nchars%))' argument takes a number or MongoDB query conditional, `chars: { $gte: 2000 }`
 
 #### i
 
-The 'i' argument takes a market token as a string and returns detailed information about a market upgrade.
+The '((%Ni%))' argument takes a market token as a string and returns detailed information about a market upgrade.
 
 ### Return
 
@@ -76,7 +77,7 @@ Returns an object.
 
 #### CLI
 
-Once filtered, market.browse will return token codes, represented by 6 character alpha-numeric strings which can be used to purchase upgrades.
+Once filtered, ((market.browse)) will return token codes, represented by 6 character alpha-numeric strings which can be used to purchase upgrades.
 
 ```
 >>market.browse { tier: 1, seller: "trust", rarity: 0, name: "ez_21" }
@@ -147,7 +148,7 @@ Returning from a script will give more detailed output:
 
 ## Example
 
-An example use of the function, in code, or script, in client and code
+This script returns all market listings for tier-1 upgrades named [[ez_21]], being sold by ((%Ctrust%))
 
 ```js
 function(context, args)

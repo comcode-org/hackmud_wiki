@@ -1,8 +1,9 @@
 ---
 title: escrow.charge
+description: "Consensually charges a caller GC to use a script"
 ---
 
-escrow.charge is a secure transaction system which can be used to sell access to a script.
+((escrow.charge)) is a secure transaction system which can be used to sell access to a script.
 
 ### Security Level
 
@@ -26,11 +27,11 @@ escrow.charge { cost: "1GC", is_unlim: true }
 
 #### cost (required)
 
-The 'cost' argument specifies a script-runs' escrow cost.
+The '((%Ncost%))' argument specifies a script-runs' escrow cost.
 
 #### is_unlim (required)
 
-The 'is_unlim' argument specifies whether the escrow cost is per-run, or unlimited access for a one-time-cost.
+The '((%Nis_unlim%))' argument specifies whether the escrow cost is per-run, or unlimited access for a one-time-cost.
 
 ### Return
 
@@ -48,7 +49,7 @@ if (result) return result;
 
 #### Script
 
-Running a script which includes escrow.charge on the user who hosts it will execute the script as normal, bypassing the cost requirement and escrow return. If a script which includes escrow.charge is run by any other user, the script will return a token, represented as a 6 character alpha-numeric string:
+Running a script which includes ((escrow.charge)) on the user who hosts it will execute the script as normal, bypassing the cost requirement and escrow return. If a script which includes ((escrow.charge)) is run by any other user, the script will return a token, represented as a 6 character alpha-numeric string:
 
 ```
 Failure
@@ -70,4 +71,4 @@ function(context, args)
 }
 ```
 
-If this script is run with no arguments, it will return an escrow token. If the escrow is confirmed, the script will return a smiley face. This script is set to require an escrow confirmation for each run. Changing the 'is_unlim' argument's value to `true` makes this a one-time-fee.
+If this script is run with no arguments, it will return an escrow token. If the escrow is confirmed, the script will return a smiley face. This script is set to require an escrow confirmation for each run. Changing the '((%Nis_unlim%))' argument's value to ((%Vtrue%)) makes this a one-time-fee.

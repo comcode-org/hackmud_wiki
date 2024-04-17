@@ -1,8 +1,9 @@
 ---
 title: gui.quiet
+description: "Quietens a user's chats in the terminal"
 ---
 
-gui.quiet prevents a user's chats from appearing in the terminal.
+((gui.quiet)) prevents a user's chats from appearing in the terminal.
 
 ### Security Level
 
@@ -22,23 +23,23 @@ Cannot be called as a subscript.
 
 ### Parameters
 
-At least one argument is required. If no arguments are provided, gui.quiet will return a Failure object and usage information.
+At least one argument is required. If no arguments are provided, ((gui.quiet)) will return a ((%DFailure%)) object and usage information.
 
 #### add (optional)
 
-The 'add' argument takes a username as a string. Chats from the username input as a value of the 'add' argument will be muted in the terminal windows.
+The '((%Nadd%))' argument takes a username as a string. Chats from the username input as a value of the '((%Nadd%))' argument will be muted in the terminal windows.
 
 #### remove (optional)
 
-The 'remove' argument takes a username as a string. Chats from the username input as a value of the 'remove' argument will appear in the terminal windows.
+The '((%Nremove%))' argument takes a username as a string. Chats from the username input as a value of the '((%Nremove%))' argument will appear in the terminal windows.
 
 #### list (optional)
 
-The 'list' argument takes a boolean (true/false). If the value is set to true, all muted usernames will be listed.
+The '((%Nlist%))' argument takes a boolean (true/false). If the value is set to true, all muted usernames will be listed.
 
 #### clear (optional)
 
-The 'clear' argument takes a boolean (true/false). If the value is set to true, all previously muted usernames will be unmuted.
+The '((%Nclear%))' argument takes a boolean (true/false). If the value is set to true, all previously muted usernames will be unmuted.
 
 ### Return
 

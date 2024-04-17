@@ -1,8 +1,9 @@
 ---
 title: users.config
+description: "Customizes a user's users.inspect profile"
 ---
 
-users.config provides user profile customization.
+((users.config)) provides user profile customization, for display in [[users.inspect:((users.inspect))]].
 
 ### Security Level
 
@@ -26,43 +27,43 @@ users.config { list: true }
 
 #### list
 
-The 'list' argument displays the possible parameters and syntax.
+The '((%Nlist%))' argument displays the possible parameters and syntax.
 
 #### avatar
 
-The 'avatar' argument takes a string from a list of possible avatars.
+The '((%Navatar%))' argument takes a string from a list of possible avatars.
 
 #### user_age
 
-The 'user_age' takes a boolean and toggles displaying user age in the YYMMDD.HHMM format.
+The '((%Nuser_age%))' takes a boolean and toggles displaying user age in the YYMMDD.HHMM format.
 
 #### account_age
 
-The 'account_age' argument takes a boolean and toggles displaying account age in the YYMMDD.HHMM format.
+The '((%Naccount_age%))' argument takes a boolean and toggles displaying account age in the YYMMDD.HHMM format.
 
 #### bio
 
-The 'bio' argument takes a string.
+The '((%Nbio%))' argument takes a string.
 
 #### title
 
-The 'title' argument takes a string from a list of possible titles.
+The '((%Ntitle%))' argument takes a string from a list of possible titles.
 
 #### pronouns
 
-The 'pronouns' argument takes a string.
+The '((%Npronouns%))' argument takes a string.
 
 #### corp
 
-The 'corp' argument takes a boolean and toggles displaying corp membership.
+The '((%Ncorp%))' argument takes a boolean and toggles displaying corp membership.
 
 #### is_main
 
-The 'is_main' argument takes a boolean and toggles displaying that this user is a main user.
+The '((%Nis_main%))' argument takes a boolean and toggles displaying that this user is a main user.
 
 #### alt_of
 
-The 'alt_of' argument takes a boolean and toggles displaying name of main user this is an alt of.
+The '((%Nalt_of%))' argument takes a string specifying which main user this is an alt of. The named user must have ((%Nis_main%)) set to ((%Vtrue%)).
 
 ### Return
 
@@ -79,7 +80,7 @@ Usage: users.inspect { name:<username> }
 Requires connection to user (hardline or channel)
 ```
 
-list: true
+((list: true))
 
 ```
 >>users.config { list: true }
