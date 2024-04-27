@@ -157,6 +157,10 @@ const config = {
               type: "docSidebar",
               sidebarId: "newPlayersSidebar",
             },
+            {
+              type: "docSidebar",
+              sidebarId: "advancedSidebar",
+            },
           ],
         },
       ],
