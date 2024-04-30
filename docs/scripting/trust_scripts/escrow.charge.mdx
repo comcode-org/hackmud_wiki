@@ -71,12 +71,12 @@ after the first run.
 ```js
 function(context, args)
 {
-	var smiley_face = ":)"
+	var smiley_face = ":)";
 	var result = #fs.escrow.charge({ cost: 1, is_unlim: false });
 	if( result ) {
-		return smiley_face
+		return result;
 	} else {
-		return result
+		return smiley_face;
 	}
 }
 ```
