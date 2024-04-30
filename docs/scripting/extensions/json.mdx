@@ -1,0 +1,21 @@
+---
+title: JSON
+description: JSON extensions
+---
+
+The functions [`JSON.stringify`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/stringify) and [`JSON.parse`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse) are extended as follows:
+
+An additional argument is inserted in the second position, turning the signatures into:
+
+```
+JSON.stringify(value, [, error[, replacer[, space]]])
+JSON.parse(text, [, error[, reviver]])
+```
+
+The `error` argument behaves as follows:
+If an object is passed and an error occurs, the function sets `error.ok` to `false` and `error.msg` to the error message, then returns `null`.
+
+For `JSON.stringify`, only `TypeError`s are caught. If a different error occurs, it is thrown as normal.
+
+
+The original `JSON.stringify` and `JSON.parse` functions are available under `JSON.ostringify` and `JSON.parse` respectively.
