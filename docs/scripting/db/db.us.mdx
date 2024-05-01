@@ -34,13 +34,13 @@ The conditions of the update will be applied to the new document alongside its i
 
 An object is returned upon updating documents with this function, providing extra details about whether it succeeded:
 
-| Key       | Information                                                                      |
-| --------- | -------------------------------------------------------------------------------- |
-| n         | Number of documents matched in the query                                         |
-| nModified | Number of documents modified, after evaluating all update expressions            |
-| upserted  | If an upsertion occurred, provides an index integer                              |
-| ok        | If the operation succeeded, == 1                                                 |
-| opTime    | Object that contains a property 't' -- time of deletion operation in millieconds |
+| Key       | Information                                                             |
+| --------- | ----------------------------------------------------------------------- |
+| n         | Number of documents matched in the query                                |
+| nModified | Number of documents modified, after evaluating all update expressions   |
+| upserted  | If an upsertion occurred, provides an index integer                     |
+| ok        | If the operation succeeded, == 1                                        |
+| opTime    | Object that contains a property 't' -- time of operation in millieconds |
 
 ## Example
 

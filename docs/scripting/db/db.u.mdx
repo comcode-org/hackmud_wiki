@@ -30,12 +30,12 @@ Update operators can be used to set new individual values, increment integer val
 
 An object is returned upon updating documents with this function, providing extra details about whether it succeeded:
 
-| Key       | Information                                                                      |
-| --------- | -------------------------------------------------------------------------------- |
-| n         | Number of documents matched in the query                                         |
-| nModified | Number of documents modified, after evaluating all update expressions            |
-| ok        | If the operation succeeded, == 1                                                 |
-| opTime    | Object that contains a property 't' -- time of deletion operation in millieconds |
+| Key       | Information                                                                    |
+| --------- | ------------------------------------------------------------------------------ |
+| n         | Number of documents matched in the query                                       |
+| nModified | Number of documents modified, after evaluating all update expressions          |
+| ok        | If the operation succeeded, == 1                                               |
+| opTime    | Object that contains a property 't' -- time of update operation in millieconds |
 
 ## Example
 
