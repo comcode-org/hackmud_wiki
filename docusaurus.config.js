@@ -47,6 +47,7 @@ const config = {
         rehypePlugins: [autocolorPlugin],
       },
     ],
+    ["@docusaurus/plugin-sitemap", {}],
   ],
 
   // Installed themes
