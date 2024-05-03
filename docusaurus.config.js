@@ -162,6 +162,10 @@ const config = {
               type: "docSidebar",
               sidebarId: "advancedSidebar",
             },
+            {
+              type: "docSidebar",
+              sidebarId: "miscGuidesSidebar",
+            },
           ],
         },
       ],
