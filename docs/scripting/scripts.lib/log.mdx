@@ -7,16 +7,18 @@ Pushes strings into an array that can be returned later for logging/debugging.
 ## Syntax
 
 ```js
-return #fs.scripts.lib().log();
+#fs.scripts.lib().log(logging_data);
 ```
 
 ### Parameters
 
-There are no known parameters.
+#### logging_data
+
+Data you wish to log to the logging array. Can be of any data type.
 
 ### Return
 
-Does not return. In order to return the logged array, use [[scripts.lib().get_log()]]
+Does not return. In order to return the logged array, use [[.get_log()]]
 
 ## Example
 
