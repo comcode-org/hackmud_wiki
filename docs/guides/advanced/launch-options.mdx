@@ -1,0 +1,27 @@
+---
+title: Launch Options
+---
+
+You can add various Launch Options to hackmud in Steam to alter the behaviour of the game.
+
+- `-screen-fullscreen 0` / `-screen-fullscreen 1` - Turn fullscreen mode off/on.
+- `-screen-height X` - Specify window/screen height in pixels.
+- `-screen-width X` - Specify window/screen width in pixels.
+- `-monitor N` - Specify which display to use. (`N` is a 1-based index: 1st display is `1`, 2nd display is `2`, so on)
+- `-window-mode borderless` (Windows) / `-popupwindow` (Windows, Linux) - Force borderless fullscreen mode to be used.
+- `-force-d3d11` / `-force-d3d12` / `-force-glcore` / `-force-metal` / `-force-vulkan` - Force a specific graphics API to be used.
+- `-force-low-power-device` - Force a low power GPU profile to be used. (macOS only)
+- `-force-glcoreXY` - Force a specific version of OpenGL to be used (accepted `XY` values: 32, 33, 40, 41, 42, 43, 44, 45)
+- `-force-wayland` - Force the experimental Wayland support to be used. (Linux only)
+
+For example, to run hackmud in a 720p window, use these launch options: `-screen-fullscreen 0 -screen-width 1280 -screen-height 720`.
+
+To specify launch options:
+
+1. Open Steam
+2. Go to your Library
+3. Right-click on `hackmud`
+4. Click on `Properties...`
+5. Click on `General`
+
+You will see a textbox with a label that says `LAUNCH OPTIONS`. You need to type your launch options in here.
