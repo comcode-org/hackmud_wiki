@@ -2,7 +2,7 @@
 title: .mulberry32()
 ---
 
-A function that gets a random number from a numerical seed based on the mulberry32 RNG.
+A function that returns a PRNG function from a numerical seed based on the mulberry32 algorithm.
 
 ## Syntax
 
@@ -18,7 +18,7 @@ The number to serve as the seed for RNG.
 
 ### Return
 
-Returns a number.
+Returns a function.
 
 ## Example
 
@@ -26,7 +26,8 @@ Returns a number.
 function(context, args) {
   const l = #fs.scripts.lib();
   const my_number = 1337;
+  const rng = l.mulberry32(my_number);
 
-  return l.mulberry32(my_number);
+  return rng();
 }
 ```
