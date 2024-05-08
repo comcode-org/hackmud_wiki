@@ -2,7 +2,7 @@
 title: .create_rand_string()
 ---
 
-A function that generates a string of random characters.
+A function that generates a string of random lowercase alphanumeric characters.
 
 ## Syntax
 
@@ -18,7 +18,7 @@ The number of characters that the random string should contain.
 
 #### rand (optional)
 
-A random number generator function.
+A random number generator function. Defaults to Math.random.
 
 ### Return
 
@@ -29,8 +29,7 @@ Returns a string.
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  const rand = l.xmur3("seed");
 
-  return l.create_rand_string(7, rand);
+  return l.create_rand_string(7);
 }
 ```
