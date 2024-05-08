@@ -2,7 +2,7 @@
 title: .LCG()
 ---
 
-Takes a numerical seed and generates a random number based on the LCG RNG.
+Takes a numerical seed and returns a function that generates PRNG based on the LCG algorithm.
 
 ## Syntax
 
@@ -18,15 +18,16 @@ The number to serve as the seed for RNG.
 
 ### Return
 
-Returns a number.
+Returns a function.
 
 ## Example
 
 ```js
 function(context, args) {
   const l = #fs.scripts.lib();
-  my_seed = 12345;
+  const my_seed = 12345;
+  const rng = l.LCG(my_seed);
 
-  return l.LCG(my_seed);
+  return rng();
 }
 ```
