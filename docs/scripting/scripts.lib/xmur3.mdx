@@ -2,7 +2,7 @@
 title: .xmur3()
 ---
 
-A function that takes a string and turns it into a random number based on the xmur3 algorithm.
+A function that takes a string and returns a function that creates a numerical value based on the xmur3 algorithm. The returned function can be called multiple times to produce multiple seeds. Intended to be used with [JSF](https://wiki.hackmud.com/scripting/scripts.lib/JSF), [LCG](https://wiki.hackmud.com/scripting/scripts.lib/LCG), [mulberry32](https://wiki.hackmud.com/scripting/scripts.lib/mulberry32), [sfc32](https://wiki.hackmud.com/scripting/scripts.lib/sfc32), and [xoshiro128ss](https://wiki.hackmud.com/scripting/scripts.lib/xoshiro128ss).
 
 ## Syntax
 
@@ -18,7 +18,7 @@ The string that will serve as the seed for RNG.
 
 ### Return
 
-Returns a number.
+Returns a function that generates numerical seeds.
 
 ## Example
 
@@ -26,8 +26,8 @@ Returns a number.
 function(context, args) {
   const l = #fs.scripts.lib();
   const my_string = "i_am_a_string_to_be_hashed";
-  const rng = l.xmur3(my_string);
+  const seed = l.xmur3(my_string);
 
-  return rng;
+  return seed();
 }
 ```
