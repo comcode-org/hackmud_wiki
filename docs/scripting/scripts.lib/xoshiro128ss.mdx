@@ -2,7 +2,7 @@
 title: .xoshiro128ss()
 ---
 
-A function that gets a random number from 4 numerical seeds based on the xoshiro128ss RNG.
+A function that returns a PRNG function from 4 numerical seeds based on the xoshiro128ss RNG.
 
 ## Syntax
 
@@ -30,7 +30,7 @@ Fourth seed number.
 
 ### Return
 
-Returns a number.
+Returns a function.
 
 ## Example
 
@@ -41,7 +41,8 @@ function(context, args) {
   const seed_2 = 97456;
   const seed_3 = 35241;
   const seed_4 = 85746;
+  const rng = l.xoshiro128ss(seed_1, seed_2, seed_3, seed_4);
 
-  return l.xoshiro128ss(seed_1, seed_2, seed_3, seed_4);
+  return rng()
 }
 ```
