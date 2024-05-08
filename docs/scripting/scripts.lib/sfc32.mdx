@@ -2,7 +2,7 @@
 title: .sfc32()
 ---
 
-A function that takes 4 seed parameters and gets a random number based on the sfc32 RNG.
+A function that takes 4 seed parameters and returns a PRNG function based on the sfc32 algorithm.
 
 ## Syntax
 
@@ -41,7 +41,8 @@ function(context, args) {
   const seed_2 = 4865874;
   const seed_3 = 4242356;
   const seed_4 = 9674544;
+  const rng = l.sfc32(seed_1, seed_2, seed_3, seed_4);
 
-  return l.sfc32(seed_1, seed_2, seed_3, seed_4);
+  return rng();
 }
 ```
