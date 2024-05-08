@@ -2,7 +2,7 @@
 title: .JSF()
 ---
 
-A function that gets a random number from a numerical seed based on the JSF RNG.
+A function that takes a numerical seed and returns a function that can be used to generate prng based on the JSF algorithm.
 
 ## Syntax
 
@@ -18,7 +18,7 @@ Numerical seed for the RNG.
 
 ### Return
 
-Returns a number.
+Returns a function.
 
 ## Example
 
@@ -26,7 +26,8 @@ Returns a number.
 function(context, args) {
   const l = #fs.scripts.lib();
   const my_seed = 1234;
+  const rng = l.JSF(my_seed);
 
-  return l.JSF(my_seed);
+  return rng();
 }
 ```
