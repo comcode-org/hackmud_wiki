@@ -87,7 +87,38 @@ To filter by script, add script:"<scriptname>"
 
 #### Script
 
-Same as CLI but without usage information.
+Called as a subscript, ((accts.transactions)) returns an array of objects. '((%Ntime%))' is a JavaScript `Date` object.
+
+```js
+{
+  time: "2023-12-19T17:32:35.651Z",
+  amount: 20000000,
+  sender: "user",
+  recipient: "trust",
+  script: null
+}
+{
+  time: "2023-12-19T17:32:34.158Z",
+  amount: 20000000,
+  sender: "trust",
+  recipient: "user",
+  script: "trust.example_script"
+}
+{
+  time: "2023-12-16T06:26:52.131Z",
+  amount: 10000000,
+  sender: "user",
+  recipient: "trust",
+  script: null
+}
+{
+  time: "2023-12-16T06:26:51.912Z",
+  amount: 10000000,
+  sender: "trust",
+  recipient: "user",
+  script: "trust.example_script"
+}
+```
 
 ## Example
 
@@ -105,15 +136,15 @@ Since we have specified that we would like our return to include transactions fr
 
 ```js
 {
-  time: "231219.1732",
-  amount: "20MGC",
+  time: "2023-12-19T17:32:34.158Z",
+  amount: 20000000,
   sender: "trust",
   recipient: "user",
   script: "trust.example_script"
 }
 {
-  time: "231216.0626",
-  amount: "10MGC",
+  time: "2023-12-16T06:26:51.912Z",
+  amount: 10000000,
   sender: "trust",
   recipient: "user",
   script: "trust.example_script"
