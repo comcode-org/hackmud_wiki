@@ -1,0 +1,99 @@
+---
+title: acct_nt
+---
+
+> Balancing a transaction roster is an important task for any enterprising businessperson.
+
+acct_nt is a tier 2 [[lock]] created by the #FUTUREtech corporation.
+
+## Stats
+
+acct_nt has a unique stat called "acct_nt_min" which controls the minimum amount of transactions that it will pick for its range. The lock spawns at rarities ((%1kiddie%)), ((%2h4x0r%)), and ((%3h4rdc0r3%)).
+
+## Behavior
+
+If acct_nt's minimum transactions is not met, it will provide error info:
+
+```
+>>> user.loc {acct_nt:""}
+Sigh. No. Your acct situation is not worth my time
+```
+
+If this check passes instead, the lock will return the following info:
+
+```
+>>>user.loc {acct_nt:""}
+What was the net GC between 240423.1042 and 240425.2107
+```
+
+## Solving
+
+### Example unlock
+
+<details>
+  <summary>Spoilers for acct_nt's solutions</summary>
+
+```
+>>user.loc {acct_nt:"2B520MGC"}
+WARNING: BINMAT security shell inactive. Intelligent defense system offline.
+LOCK_UNLOCKED
+System beta breached.
+Connection terminated.
+```
+
+</details>
+
+### acct_nt
+
+<details>
+<summary>Spoilers for acct_nt's solutions </summary>
+
+Depending on the mode acct_nt is in, "large deposit", "net", "total earned/total spent (with/without memos)", a different approach may be required. A check of [[accts.transactions]] is needed to find the correct answer. Since acct_nt is only minute precise, it may be needed to add/subtract transaction amounts in order to get a correct solve.
+
+</details>
+
+### Mode: large deposit
+
+<details>
+<summary>Spoilers for acct_nt's solutions </summary>
+
+Find the deposit that acct_nt asks for and provide it as the acct_nt argument. It may be a bit off from the timestamp.
+
+</details>
+
+### Mode: net
+
+<details>
+<summary>Spoilers for acct_nt's solutions </summary>
+
+Look at the timestamps that acct_nt gives you, and add up all the transactions from the starting timestamp to the end. The actual starting and ending timestamps may be a bit off from what acct_nt gives you.
+
+</details>
+
+### Mode: total earned
+
+<details>
+<summary>Spoilers for acct_nt's solutions </summary>
+
+Look at the timestamps that acct_nt gives you, and add up all the transactions where you gained money from the starting timestamp to the end. The actual starting and ending timestamps may be a bit off from what acct_nt gives you.
+
+</details>
+
+### Mode: total spent
+
+<details>
+<summary>Spoilers for acct_nt's solutions </summary>
+
+Look at the timestamps that acct_nt gives you, and add up all the transactions where you lost money from the starting timestamp to the end. The actual starting and ending timestamps may be a bit off from what acct_nt gives you.
+
+</details>
+
+### Mode: with/without memos
+
+<details>
+<summary>Spoilers for acct_nt's solutions </summary>
+
+With or without memos indicates whether or not if you should consider transactions with memos. If it says with memos, make sure the transactions have memos before adding them, otherwise ignore them.
+Memos are a little message that can be sent with a transaction. It displays as memo: "message here" in [[accts.transactions]].
+
+</details>
