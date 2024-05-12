@@ -1,0 +1,134 @@
+---
+title: How to Report Issues
+---
+
+*hackmud* is an incredibly complex system and simulation. Often times it's hard to reason about and tell the difference between what is intended and what is not intended in interactions with the game. This lack of understanding and grayness can be extremely fun and rewarding. It can also be incredibly frustrating. This article clarifies different categories of issues, how to report them, and what to expect in the response.
+
+
+## Sandbox Breaks
+
+### How to Identify
+
+The sandbox is the set of features, gameplay and activities which are "in the game." This definition is a moving target and a fuzzy boundary. Some edges are very clear and others are determined on a case-by-case basis.
+
+[The rules](https://hackmud.com/forums/general_discussion/rules) generally cover the conduct and "out-of-game" definition of this sandbox.
+
+Examples in this space include:
+* "Can I use MITM to modify game network traffic?"
+* "Player x is telling everyone that I'm using a custom client and cheating, and it's not true"
+
+These cases of "outside the sandbox" should be reported as [Conduct Issues](#conduct-issues) and not sandbox issues.
+
+Technical exploits and loopholes in expected design and architecture are fair game for reporting as a sandbox break. When in doubt, report it as a sandbox break.
+
+Some examples of sandbox breaks:
+* "I can send negative GC amounts to other people and it takes money from them"
+* "I can get items from the market for free"
+* "When I get this error it shows me a server IP address"
+* "Sending a specific message to another player deletes their scripts"
+* "I can reset the cooldown on my upgrade by sending it to another user"
+* "I can bypass rate limiting"
+* "I can steal all of risk's GC"
+* "I can eval arbitrary js code and call private game methods"
+* "I can make Math.max send another players GC to me"
+
+### How to Report
+
+Send an email to <sandbox@hackmud.com>:
+* Include as concise of a description as possible.
+* Include sample steps and/or reproduction steps to help us understand the issue and recreate it in our development environment.
+
+Do not share or exploit sandbox breaks, as that is against the rules and will result in disciplinary action.
+
+#### Expected Response
+
+Properly reporting a sandbox break may earn you a "break_badge_xxx" or a "break_report" badge.
+
+For initial response, you will likely get a "thanks for reporting" or more detailed follow up questions about reproducing the issue, depending on our immediate time availability.
+
+You will be asked to validate that the issue is fixed once the fix is deployed.
+
+If you were not the first person to report the break or if your issue is decided not to be fixed, you'll receive a "break_report" badge.
+
+Breaks are often worked on by more than one person. Only the reporter will receive badge-related credit.
+
+Disclosure of breaks is at the discretion of the parties involved. Exploiting breaks is against the rules, and if your disclosure "makes more work for us" then that is also against the rules. Use your best judgement.
+
+Some breaks can be downgraded to game balance issues that have not been fixed. These will generally have associated open bug board posts. When in doubt, email <sandbox@hackmud.com>
+
+
+## Game Balance Issues
+
+### How to Identify
+
+Issues relating to non-live game activities and balance. Generally these questions are related to fairness, competitive edge and whether a core mechanic or puzzle is fun. 
+
+Some examples:
+* "Getting into T2 from T1 is a huge skill & difficulty leap"
+* "Veteran players have a huge advantage over new players because they were there for this event"
+* "Lockjaw + x sucks"
+* "Gibson X is unsolvable"
+
+### How to Report
+
+If the answer to the question or the deployment of a fix would give you a competitive advantage as a reporter or if the question itself is a competitive advantage, then report to <support@hackmud.com>
+
+For all other balance issues, post on [the bug board](https://hackmud.com/forums/bugs_features_ideas) on the forums.
+
+### Expected Response
+
+Depending on the nature of the issue, the bug may be put into an internal backlog, discussion of the design may happen in email or in the forum post, or brought out to a wider audience.
+
+In some cases, reports to <support@hackmud.com> will be requested to be reposted to the bug board.
+
+If the answer to the question would provide a competitive edge to the reporter, measures will be taken to support fairness in the response to the report.
+
+
+## Event Issues
+
+### How to Identify
+
+Issues relating to live game events. Generally the answers to these issues could be spoilers or knowing the answer could be a distinct advantage to the person who has reported it.
+
+Some examples:
+* "We can't figure out x, is it broken?"
+* "If this thing is not broken, it's not fun."
+* "This player is incredibly good at the event, are they cheating or exploiting it somehow?"
+
+### How to Report
+
+Email <support@hackmud.com> with the details of the issue and any questions you may have.
+
+### Expected Response
+
+A confirmation of your received report. There may or may not be follow up questions for detail. All attempts will be made to not divulge competitive advantage information and any fixes will be deployed strategically to attempt fairness.
+
+
+## Conduct Issues
+
+### How to Identify
+
+Any violations of [the rules](https://hackmud.com/forums/general_discussion/rules), or questions about the rules.
+
+### How to Report
+
+Contact a moderator or admin and/or email <conduct@hackmud.com>
+
+### Expected Response
+
+Varied depending on the nature of the report or question.
+
+
+## All Other Issues
+
+### How to Identify
+
+Anything not in the above lists.
+
+### How to Report
+
+<https://hackmud.com/forums/bugs_features_ideas>
+
+### Expected Response
+
+Highly voted items generally receive priority, but it is not guaranteed that items will be visited in this order. Follow up questions will come as replies to the post.
