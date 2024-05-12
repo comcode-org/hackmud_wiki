@@ -7,7 +7,7 @@ A function that returns a random number (integer) between two integer parameters
 ## Syntax
 
 ```js
-scripts.lib().rand_int(1, 4);
+#fs.scripts.lib().rand_int(min, max, rng);
 ```
 
 ### Parameters
@@ -19,6 +19,10 @@ The minimum number to generate (inclusive). This minimum number may show up in t
 #### max
 
 The maximum number to generate (exclusive). The maximum number the function will generate will be one less than this number.
+
+#### rng (optional)
+
+A random number generator function. Defaults to Math.random.
 
 ### Return
 
