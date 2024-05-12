@@ -3,7 +3,7 @@ title: sys.init
 description: "Initializes a system, or upgrades its tier"
 ---
 
-((sys.init)) initializes a system, or upgrades its tier once it is initialized.
+((sys.init)) initializes a system, or upgrades its tier once it is initialized. ((sys.init)) also lists what features will be available at the next tier.
 
 ### Security Level
 
@@ -23,13 +23,13 @@ Cannot be called as a subscript.
 
 ### Parameters
 
-#### confirm (required)
+#### confirm
 
 The '((%Nconfirm%))' parameter confirms system initialization.
 
 ### Return
 
-Returns a ((%LSuccess%)) or ((%DFaliure%)) object.
+Returns a ((%LSuccess%)) or ((%DFailure%)) object, or a string.
 
 #### CLI
 
@@ -49,6 +49,22 @@ Correct parameters:
 Success
 
 Transferred 1MGC to trust
+```
+
+If balance is too low to initialize or upgrade:
+
+```
+>>sys.init
+Failure
+Your account balance of 580K141GC is too low to send 10MGC.
+```
+
+If system is already at maximum tier:
+
+```
+>>sys.init
+Failure
+Your system is fully initialized.
 ```
 
 #### Script
