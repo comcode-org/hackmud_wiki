@@ -8,22 +8,21 @@ acct_nt is a tier 2 [lock](/upgrades/locks) created by the #FUTUREtech corporati
 
 ## Stats
 
-acct_nt has a unique stat called "acct_nt_min" which controls the minimum amount of transactions that it will pick for its range. The lock spawns at rarities ((%1kiddie%)), ((%2h4x0r%)), and ((%3h4rdc0r3%)).
+acct_nt has a unique stat called "acct_nt_min."
+
+<details>
+  <summary>Spoilers for acct_nt's solutions</summary>
+
+The "acct_nt_min" stat controls the minimum number of transactions that the lock will pick for its range of transactions.
+</details>
+
+The lock spawns at rarities ((%1kiddie%)), ((%2h4x0r%)), and ((%3h4rdc0r3%)).
 
 ## Behavior
-
-If acct_nt's minimum transactions is not met, it will provide error info:
 
 ```
 >>> user.loc {acct_nt:""}
 Sigh. No. Your acct situation is not worth my time
-```
-
-If this check passes instead, the lock will return the following info:
-
-```
->>>user.loc {acct_nt:""}
-What was the net GC between 240423.1042 and 240425.2107
 ```
 
 ## Solving
@@ -32,6 +31,15 @@ What was the net GC between 240423.1042 and 240425.2107
 
 <details>
   <summary>Spoilers for acct_nt's solutions</summary>
+
+If acct_nt's minimum transactions is met, the lock will return something like the following:
+
+```
+>>>user.loc {acct_nt:""}
+What was the net GC between 240423.1042 and 240425.2107
+```
+
+An example unlock could be:
 
 ```
 >>user.loc {acct_nt:"2B520MGC"}
