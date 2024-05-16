@@ -4,6 +4,51 @@ title: Known Client Errors
 
 Documentation for various known errors in the client.
 
+## There was a critical error processing your request. 992
+
+Indicative of general issues with the client communicating with the server. There is often additional data alongside the error.
+
+992 errors are often a client-side issue, and are intermittent in nature.
+
+## 401 Unauthorized
+
+### Steam Auth Failure
+
+hackmud could not communicate with Steam to authenticate to your account. This usually can be the result of:
+
+- Steam maintenance (happens most often on Tuesdays)
+- Account not being logged into Steam
+- Steam being closed on your operating system
+- Launching the hackmud exectuable directly instead of through steam
+
+Make sure Steam & your OS are up-to-date (might need a restart) and that you have a stable connection to Steam
+
+### Your account has been banned
+
+Your account is banned from hackmud. A reason and expiration time is given in the error message.
+
+To discuss and appeal your ban, please contact ComCODE through [support@hackmud.com](mailto:support@hackmud.com), [conduct@hackmud.com](mailto:conduct@hackmud.com) or by opening a conduct or support ticket [on discord](https://discord.gg/QRTXHaz).
+
+## 403 Forbidden
+
+### Timestamp validation failed
+
+hackmud requires the operating system's clock to be properly set to its closest timezone. Check that your system clock is synchronized with https://time.is
+
+## no client output
+
+If there is no client output after launching the game, this is typically indicative of a man-in-the-middle (such as a censoring ISP) blocking the connection to hackmud.
+
+Please check that your web browser can access https://hackmud.com; for more guidance, please open a support ticket on [the discord](https://discord.gg/QRTXHaz).
+
+## 503 Maintenance
+
+hackmud is offline for planned maintenance. Please visit [the discord](https://discord.gg/QRTXHaz) or [Twitter](https://x.com/hackmudgame) for updates.
+
+## 405 Method Not Allowed
+
+Sometimes occurs during scheduled maintenance periods instead of a 503.
+
 ## store_list
 
 ### STORE ERROR: account is too new
@@ -22,3 +67,11 @@ Often, this error is indicative of an _untrusted_ Steam account. Unfortunately, 
   - It is not clear if VAC (Valve Anti-Cheat) bans or game bans cause this.
   - Steam support has historically not assisted in this matter. Creation of a new Steam account is the only known solution thus far.
   - In this case - once a new Steam account is created - please contact hackmud support by joining [the discord](https://discord.gg/QRTXHaz) and creating a support ticket. ComCODE can assist you in re-associating your hackmud account with the new Steam account.
+
+## The script run caused a garbage collection timeout
+
+A script execution was not able to clean up the memory used during execution in the maximum amount of time provided. This generally occurs while scraping tier 3 corporations. In this specific instance, running a script for only up to 2500ms is a known workaround.
+
+## -unexpected error has been hidden-
+
+The error you encountered has not been vetted for security, and has been hidden. If you ever see this error, raise a support or sandbox ticket on [the discord](https://discord.gg/QRTXHaz)

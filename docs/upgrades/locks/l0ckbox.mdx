@@ -29,6 +29,24 @@ To unlock, please load the appropriate k3y: tvfkyq
 
 ```
 >>user.loc {}
+To unlock, please load the appropriate k3y: tvfkyq
+
+>>sys.upgrades
+...
+017 tier_1 tool         k3y_v1
+...
+
+>>sys.upgrades {i:17, full:true}
+{
+  ...
+  k3y: "tvfkyqv"
+  ...
+}
+
+>>sys.manage {load:17}
+Success
+
+>>user.loc {}
 WARNING: BINMAT security shell inactive. Intelligent defense system offline.
 LOCK_UNLOCKED
 System <user> breached.
