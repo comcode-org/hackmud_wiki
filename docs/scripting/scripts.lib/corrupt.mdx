@@ -18,7 +18,7 @@ The string to be corrupted.
 
 #### corruption
 
-The frequency at which to corrupt the string.
+An integer specifying the frequency at which to corrupt the string. The actual frequency is given by using this integer as an index into [[.corruption_chars]]. Invalid indexes result in no corruption.
 
 ### Return
 
@@ -31,6 +31,6 @@ function(context, args) {
   const l = #fs.scripts.lib();
   const my_string = "I am a string to be corrupted.";
 
-  return l.corrupt(my_string, 1.5);
+  return l.corrupt(my_string, 3);
 }
 ```
