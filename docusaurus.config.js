@@ -59,11 +59,12 @@ const config = {
         customCss: "./src/css/custom.css",
       },
     ],
+    "@docusaurus/theme-search-algolia",
   ],
 
   // Global theme config
   // See: https://docusaurus.io/docs/api/themes/configuration
-  /** @type {import('@docusaurus/theme-common').UserThemeConfig} */
+  /** @type {import('@docusaurus/theme-common').UserThemeConfig & import('@docusaurus/theme-search-algolia').UserThemeConfig} */
   themeConfig: {
     // Supported and default color modes
     colorMode: {
@@ -173,6 +174,12 @@ const config = {
     footer: {
       copyright:
         'Licensed by <a href="https://comcode.org/" target="_blank" rel="noopener">ComCODE</a> with <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC-SA 4.0</a> for creative and educational use.',
+    },
+    // Configuration for Algolia DocSearch
+    algolia: {
+      appId: process.env.ALGOLIA_APPID,
+      apiKey: process.env.ALGOLIA_SEARCH_API_KEY,
+      indexName: "hackmud",
     },
   },
 
