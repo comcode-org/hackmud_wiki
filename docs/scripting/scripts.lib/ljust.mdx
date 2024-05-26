@@ -1,0 +1,41 @@
+---
+title: .ljust()
+---
+
+A function that left-justifies within a given width by padding it with a specified character, or space by default.
+
+## Syntax
+
+```js
+#fs.scripts.lib().ljust(string, width, character);
+```
+
+### Parameters
+
+#### string
+
+The string to be left-justified.
+
+#### width
+
+The width of the field.
+
+#### character (optional)
+
+The character used for padding. If not provided, it defaults to a space.
+
+### Return
+
+Returns a string.
+
+## Example
+
+```js
+function(context, args) {
+  const l = #fs.scripts.lib();
+  const my_string = "hello";
+  const padding = "-";
+
+  return l.ljust(my_string, 10, padding);
+}
+```
