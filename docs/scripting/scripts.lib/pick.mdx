@@ -35,7 +35,7 @@ function(context, args) {
     payment_types: ["GC", "bits", "I.O.U."],
     favorite_food: ["key", "char_count_v1", "lime"]
   };
-  const keys_to_pick = [payment_types, favorite_food];
+  const keys_to_pick = ["payment_types", "favorite_food"];
 
   return l.pick(my_obj, keys_to_pick);
 }
