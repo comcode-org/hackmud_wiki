@@ -16,6 +16,8 @@ permissions:
 env:
   NODE_INSTALL_VERSION: 20.x
   PNPM_INSTALL_VERSION: 8
+  ALGOLIA_APPID: ${{ vars.ALGOLIA_APPID }}
+  ALGOLIA_SEARCH_API_KEY: ${{ vars.ALGOLIA_SEARCH_API_KEY }}
 
 jobs:
   lint:
