@@ -23,6 +23,7 @@
     "@docusaurus/plugin-content-docs": "^3.0.1",
     "@docusaurus/plugin-sitemap": "^3.0.1",
     "@docusaurus/theme-classic": "^3.0.1",
+    "@docusaurus/theme-search-algolia": "^3.0.1",
     "@mdx-js/react": "^3.0.0",
     "hast-util-find-and-replace": "^5.0.1",
     "hastscript": "^8.0.0",
