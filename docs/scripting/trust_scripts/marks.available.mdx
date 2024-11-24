@@ -1,0 +1,57 @@
+---
+title: marks.available
+description: "Displays recommended Marks the caller can achieve"
+---
+
+((marks.available)) displays all currently-available [[marks:((%Qmarks%))]] for the user to achieve. This initially consists of Required Marks, but can become Suggested Marks and eventually Optional Marks.
+
+### Security Level
+
+HIGHSEC
+
+## Syntax
+
+### CLI
+
+```
+marks.available
+```
+
+### Script
+
+```
+#hs.marks.available()
+```
+
+### Parameters
+
+No known parameters.
+
+### Return
+
+Returns a string.
+
+#### CLI
+
+```
+>>marks.available
+Top level marks are available to earn now, run marks.<mark_name> to begin a mark
+To view progress see marks.protocol
+
+> marks.input
+  |
+  \---- kiddie_pool
+```
+
+#### Script
+
+Same as CLI.
+
+## Example
+
+```js
+function(context, args)
+{
+	return #hs.marks.available()
+}
+```
