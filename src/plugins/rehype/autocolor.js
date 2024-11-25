@@ -17,7 +17,7 @@ const trustUsers = [
   "sys",
   "trust",
   "users",
-  "marks"
+  "marks",
 ];
 
 // Matches (( <content > ))
