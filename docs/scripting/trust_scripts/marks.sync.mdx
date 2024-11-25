@@ -1,0 +1,56 @@
+---
+title: marks.sync
+description: "Skips all Required Marks"
+---
+
+((marks.sync)) skips all required/tutorial [[marks:((%Qmarks%))]] for the user - functioning as an equivalent to ((sys.migrate)) for the Marks System.
+
+### Security Level
+
+NULLSEC
+
+## Syntax
+
+### CLI
+
+```
+marks.sync
+```
+
+### Script
+
+```
+#ns.marks.sync()
+```
+
+### Parameters
+
+No known parameters.
+
+### Return
+
+Returns a string.
+
+#### CLI
+
+```
+>>marks.sync
+You have fast-forwarded to the end of the marks progression.
+
+Mark :::not_yet_obtained_required_mark::: earned - view further training with marks.available
+
+Mark :::not_yet_obtained_required_mark::: earned - view further training with marks.available
+```
+
+#### Script
+
+Same as CLI.
+
+## Example
+
+```js
+function(context, args)
+{
+	return #ns.marks.sync()
+}
+```
