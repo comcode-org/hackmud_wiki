@@ -1,0 +1,80 @@
+---
+title: marks.protocol
+description: "Displays the caller's protocol"
+---
+
+((marks.protocol)) displays the [[marks:((%Qmarks%))]] obtained by the caller, visualised through their ((%Qprotocol%)) grid.
+
+### Security Level
+
+HIGHSEC
+
+## Syntax
+
+### CLI
+
+```
+marks.protocol
+```
+
+### Script
+
+```
+#hs.marks.protocol()
+```
+
+### Parameters
+
+#### pos (optional)
+
+The '((%Npos%))' argument allows users to provide a co-ordinate as a 2-item array [x,y]. If a mark is lit at this co-ordinate, the mark name and the date it was earned will be displayed.
+
+### Return
+
+Returns a string.
+
+#### CLI
+
+```
+>>marks.protocol
+
+-- initiate protocol certification mark display --
+
+  012345678
+
+0 █████████
+1 █████████
+2 █████████
+3 █████████
+4 █████████
+```
+
+Completed marks are lit with the color ((%QQ%)); incomplete marks use the color ((%bb%))
+
+```
+>>marks.protocol {pos:[0,0]}
+
+  012345678
+
+0 o████████
+1 █████████
+2 █████████
+3 █████████
+4 █████████
+
+mark: scratch
+earned_at: YYMMDD
+```
+
+#### Script
+
+Same as CLI.
+
+## Example
+
+```js
+function(context, args)
+{
+	return #hs.marks.protocol({ pos:[2,4] })
+}
+```
