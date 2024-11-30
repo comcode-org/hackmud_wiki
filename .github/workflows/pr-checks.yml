@@ -15,7 +15,7 @@ permissions:
 
 env:
   NODE_INSTALL_VERSION: 20.x
-  PNPM_INSTALL_VERSION: 8
+  PNPM_INSTALL_VERSION: 9
   ALGOLIA_APPID: ${{ vars.ALGOLIA_APPID }}
   ALGOLIA_SEARCH_API_KEY: ${{ vars.ALGOLIA_SEARCH_API_KEY }}
 
@@ -25,10 +25,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         with:
           version: ${{ env.PNPM_INSTALL_VERSION }}
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_INSTALL_VERSION }}
           cache: pnpm
@@ -42,10 +42,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v2
+      - uses: pnpm/action-setup@v4
         with:
           version: ${{ env.PNPM_INSTALL_VERSION }}
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NODE_INSTALL_VERSION }}
           cache: pnpm
