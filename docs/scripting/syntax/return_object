@@ -1,0 +1,40 @@
+---
+title: Return Object
+---
+
+Built in function, and many user owned scripts return an object that has special formatting within the terminal. These special objects are often refered to as a ((%LSuccess%)) or ((%DFailure%)) object.
+
+## Syntax
+
+A ((%LSuccess%)) or ((%DFailure%)) object can only contain two keys. The `ok` key is required, and determines whether ((%LSuccess%)) or ((%DFailure%)) is displayed in the terminal. You may also attach a `msg` key, which will append that value, after being converted to a string.
+
+## Example
+
+```
+function(context, args) {
+    //Explains the guessing game when the script is run without a guess.
+    if (!args.guess) {
+        return "Let's play a guessing game! Guess a number between 1 and 10!"
+    }
+
+    //Return a success object if they guess they right number.
+    if (args.guess == Math.floor(Math.random() * 10)) {
+        return {
+            ok: true,
+            msg: args.guess + " was the right number!"
+        }
+    }
+
+    //In all other cases, return a failure object.
+    return {
+        ok: false,
+        msg: "Sorry, please guess again!"
+    }
+}
+
+## See Also
+
+- [[ok]]
+- [[not_impl]]
+
+```
