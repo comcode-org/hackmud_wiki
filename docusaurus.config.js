@@ -5,6 +5,12 @@ import autocolorPlugin from "./src/plugins/rehype/autocolor.js";
 const GITHUB_ORG = "comcode-org";
 const GITHUB_PROJECT = "hackmud_wiki";
 
+const USING_ALGOLIA = typeof process.env.ALGOLIA_APPID === "string";
+
+const ALGOLIA_THEME_CONFIG = USING_ALGOLIA
+  ? "@docusaurus/theme-search-algolia"
+  : null;
+
 // See: https://docusaurus.io/docs/api/docusaurus-config
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -59,7 +65,7 @@ const config = {
         customCss: "./src/css/custom.css",
       },
     ],
-    "@docusaurus/theme-search-algolia",
+    ALGOLIA_THEME_CONFIG,
   ],
 
   // Global theme config
