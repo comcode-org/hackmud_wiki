@@ -5,7 +5,7 @@ alias:
   - failure object
 ---
 
-Built in function, and many user owned scripts return an object that has special formatting within the terminal. These special objects are often refered to as a ((%LSuccess%)) or ((%DFailure%)) object.
+An object returned to the CLI from a script may be automatically formatted, depending on its contents. These types of objects are often referred to as ((%LSuccess%)) or ((%DFailure%)) objects.
 
 ## Syntax
 
