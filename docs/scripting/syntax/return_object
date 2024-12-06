@@ -13,7 +13,7 @@ A ((%LSuccess%)) or ((%DFailure%)) object can only contain two keys. The `ok` ke
 
 ## Example
 
-```
+```js
 function(context, args) {
     //Explains the guessing game when the script is run without a guess.
     if (!args.guess) {
