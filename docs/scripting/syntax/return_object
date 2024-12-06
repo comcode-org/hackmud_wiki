@@ -1,5 +1,8 @@
 ---
 title: Return Object
+alias:
+  - success object
+  - failure object
 ---
 
 Built in function, and many user owned scripts return an object that has special formatting within the terminal. These special objects are often refered to as a ((%LSuccess%)) or ((%DFailure%)) object.
