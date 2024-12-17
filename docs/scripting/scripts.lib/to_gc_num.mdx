@@ -18,12 +18,12 @@ The formatted GC string to be turned into a number.
 
 ### Return
 
-Returns a number (for valid GC string),
-OR an error object (for invalid string).
+Returns a number (for valid GC string) OR an error object (for invalid string).
+
 ```js
 {
   ok: false,
-  msg: "GC string " + gc_string + ` is not in correct format. Example GC strings: "1M234K567GC", "1B5KGC", "2MGC", "9GC".`
+  msg: "GC string " + gc_string + " is not in correct format. Example GC strings: \"1M234K567GC\", \"1B5KGC\", \"2MGC\", \"9GC\"."
 }
 ```
 
