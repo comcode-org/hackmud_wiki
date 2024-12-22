@@ -14,18 +14,18 @@ NULLSEC
 ### CLI
 
 ```
-marks.sync
+marks.sync {confirm:true}
 ```
 
 ### Script
 
-```
-#ns.marks.sync()
-```
+Cannot be called as a subscript.
 
 ### Parameters
 
-No known parameters.
+#### confirm (required)
+
+The '((%Nconfirm%))' parameter confirms syncing of your marks to the end of the required marks.
 
 ### Return
 
@@ -35,7 +35,7 @@ Returns a string.
 
 ```
 >>marks.sync
-You have fast-forwarded to the end of the marks progression.
+Your `Qprotocol` has been fast-forwarded to the end of Trust's required `Qmarks`.
 
 Mark :::not_yet_obtained_required_mark::: earned - view further training with marks.available
 
@@ -44,13 +44,4 @@ Mark :::not_yet_obtained_required_mark::: earned - view further training with ma
 
 #### Script
 
-Same as CLI.
-
-## Example
-
-```js
-function(context, args)
-{
-	return #ns.marks.sync()
-}
-```
+Cannot be called as a subscript.
