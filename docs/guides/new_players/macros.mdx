@@ -1,0 +1,50 @@
+---
+title: Macros
+description: "How to create and utilize macros"
+---
+
+Macros allow users to create shorthand for fast execution of otherwise long commands.
+
+### How to create/use a macro
+
+Creating a macro is done with the format `/macro = original.script`. Pre-defined parameters can also be applied. For example:
+
+- `/bal = accts.balance`
+- `/hl = kernel.hardline`
+- `/dc = kernel.hardline { dc:true }`
+
+Once the macro has been created, it can be used by simply typing `/<macro name>`. For instance, typing `/bal` will run ((accts.balance)).
+
+### Macros with custom arguments
+
+By using double braces, you can set up your macros to allow for custom arguments. You can reference specific arguments (seperated by spaces) using each argument's index, like `{0}`, `{1}`, and `{2}`. For example:
+
+- `/xfer = accts.xfer_gc_to {{ to:"{0}", amount:{1} }}`
+
+With the above macro, typing `/xfer trust 500` would run ((accts.xfer_gc_to)) \{ ((%Nto%)):((%V"trust"%)), ((%Namount%)):((%V500%)) \}
+
+To reference an argument that uses spaces - e.g. a chat message - use `{$}`, which references any argument not already specified by a number index. For example:
+
+- `/chat = chats.send {{ channel:"{0}", message:"{$}" }}`
+
+With this macro, typing `/chat 0000 This is a chat message!` would call ((chats.send)) \{ ((%Nchannel%)):((%V"0000"%)), ((%Nmessage%)):((%V"This is a chat message!"%)) \}
+
+### View current macros
+
+Typing `/` by itself will show a list of the current user's macros.
+
+```
+>>/
+/bal = accts.balance
+/hl = kernel.hardline
+/dc = kernel.hardline { dc:true }
+```
+
+### Delete a macro
+
+To delete an existing macro, type `/macro =` with nothing after the `=`.
+
+```
+>>/bal =
+Macro deleted.
+```
