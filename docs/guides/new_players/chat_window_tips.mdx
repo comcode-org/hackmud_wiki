@@ -1,0 +1,20 @@
+---
+title: Chat Window Tips
+description: "Helpful tips/commands for the chat window"
+---
+
+The in-game chat window has three built-in commands to allow for more efficient use.
+
+### Change the default channel - ((%A%%))((%Vchannel%))
+
+By default, messages typed in the chat window get sent to ((%V0000%)). To change this, type `%<channel>` into the chat window. For example, typing ((%A%n00bz%)) will send all future messages to the ((%Vn00bz%)) channel.
+
+### Select a specific user - ((%A+%))((%Cuser%))
+
+To use the chat window to ((chats.tell)) messages to a particular user, you can type `+<user>` into the chat window. For example, typing ((%A+risk%)) will send all future messages to the user ((%Crisk%)).
+
+### Use a custom script - ((%A&%))((custom.script))
+
+By default, typing a message into the chat window will pass it into ((chats.send)) using the ((%Nmsg%)) parameter (with the default channel passed using the ((%Nc%)) parameter), so that typing ((%AHello world!%)) into the chat window will execute ((chats.send)) \{((%Nc%)):((%V"0000"%)), ((%Nmsg%)):((%V"Hello world!"%))\}.
+
+You can change this script to anything you like, using `%<your.script>`. For example, if the user ((%Crisk%)) wants to change the color of their chat messages to green, they can create a script like ((risk.chatcolor)) that accepts ((%Nc%)) and ((%Nmsg%)) parameters, adds ((%A\`L%)) to the start of the message and ((%A\`%)) to the end, then calls ((chats.send)) to send the color-coded message. Now, ((%Crisk%)) can type ((%A&risk.%))((%Achatcolor%)) into the chat window, and make all their future chat messages green by default.
