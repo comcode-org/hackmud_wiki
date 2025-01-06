@@ -18,10 +18,10 @@ Displays the maximum amount of money which can be transferred out.
 
 ## Behavior
 
-Once transfer_v1 has been loaded, [[sys.xfer_gc_from]] can be used to target a breached system.
+Once transfer_v1 has been loaded, [[sys.xfer_gc_from:((sys.xfer_gc_from))]] can be used to target a breached system for a fee of ((1M500KGC)) or ((%12.5%))((%1%%)) of the amount being taken, whichever is higher.
 If the target system does not have enough GC to transfer the full amount, the script will return an error.
 If the upgrade is on cooldown, an error containing the remaining cooldown time will be displayed upon execution attempt.
-[[sys.xfer_gc_from]] can be executed using the following syntax:
+[[sys.xfer_gc_from:((sys.xfer_gc_from))]] can be executed using the following syntax:
 
 ```
 sys.xfer_gc_from { target: "user.loc", amount: "<desired amount (up to max) as GC string>" }
@@ -66,7 +66,7 @@ Failure
 You can't transfer more than 10MGC
 ```
 
-- Target has unsufficient funds:
+- Target has insufficient funds:
 
 ```
 >>sys.xfer_gc_from { target: "user.loc", amount: "10KGC" }
