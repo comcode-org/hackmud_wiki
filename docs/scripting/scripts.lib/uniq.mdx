@@ -4,7 +4,7 @@ title: .uniq()
 
 A function that deduplicates adjacent elements from an array, while preserving the order of the remaining elements.
 
-Similar to the *nix `uniq` command, duplicate values that are not adjacent are *not* removed.
+Similar to the \*nix `uniq` command, duplicate values that are not adjacent are _not_ removed.
 
 ## Syntax
 
@@ -29,7 +29,6 @@ function(context, args) {
   const l = #fs.scripts.lib();
   const my_array = ["apples", "apples", "bananas", "oranges", "apples", "limes"];
 
-  const uniq_array = l.uniq(my_array); // => ["apples", "bananas", "oranges", "apples", "limes"]
-  return uniq_array;
+  return l.uniq(my_array); // => ["apples", "bananas", "oranges", "apples", "limes"]
 }
 ```
