@@ -2,13 +2,13 @@
 title: Context Object
 ---
 
-The first argument to the script function is known as the "context object" or "context".
+The first argument given to script functions is known as the "context object" or "context".
 
 ## Syntax
 
 The context object always contains the following keys:
 
-- `caller`: the name of the user that initiated this script execution, as string.
+- `caller`: the name of the user that initiated this script execution, as a string.
 - `calling_script`: the full name of the script that called this script, as a string. This is only filled if the script was called via [[subscript]]. If the script was called from the CLI or via scriptor, this value is (( %Vnull% )) instead.
 - `this_script`: the full name of this script, as a string.
 - `cols`: the width of the main shell in the client running this script in characters, as a number. If called by automation (such as a [[cron_bot]] execution), (( %V128% )) is used.
