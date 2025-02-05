@@ -1,0 +1,64 @@
+---
+title: Context Object
+---
+
+The first argument to the script function is known as the "context object" or "context".
+
+## Syntax
+
+The context object always contains the following keys:
+
+- `caller`: the name of the user that initiated this script execution, as string.
+- `calling_script`: the full name of the script that called this script, as a string. This is only filled if the script was called via [[subscript]]. If the script was called from the CLI or via scriptor, this value is (( %Vnull% )) instead.
+- `this_script`: the full name of this script, as a string.
+- `cols`: the width of the main shell in the client running this script in characters, as a number. If called by automation (such as a [[cron_bot]] execution), (( %V128% )) is used.
+- `rows`: the height of the main shell in the client running this script in characters, as a number. If called by automation, (( %V64% )) is used.
+
+The following properties may also be present:
+
+- `is_scriptor`: (( %Vtrue% )) if the script is being run via a scriptor.
+- `is_brain`: (( %Vtrue% )) if the script execution was started by a [[cron_bot]].
+
+## Examples
+
+```js
+{
+  caller: "myuser",
+  calling_script: null,
+  this_script: "myuser.test_script",
+  cols: 125,
+  rows: 78
+}
+```
+
+```js
+{
+  caller: "mycron",
+  calling_script: null,
+  this_script: "mycron.bot_brain",
+  is_brain: true,
+  cols: 128,
+  rows: 64,
+}
+```
+
+```js
+{
+  caller: "myuser",
+  calling_script: "myuser.other_script",
+  this_script: "myuser.test_script",
+  cols: 125,
+  rows: 78
+}
+```
+
+```js
+{
+  caller: "myuser",
+  calling_script: null,
+  this_script: "myuser.test_script",
+  is_scriptor: true,
+  cols: 125,
+  rows: 78
+}
+```
