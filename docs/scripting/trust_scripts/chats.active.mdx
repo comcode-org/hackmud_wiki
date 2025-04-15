@@ -1,0 +1,62 @@
+---
+title: chats.active
+description: "Gets the usernames of recent tells the caller was involved in."
+---
+
+((chats.active)) returns the 5 most recent users the caller sent and received via ((chats.tell)).
+
+### Security level
+
+MIDSEC
+
+## Syntax
+
+### CLI
+
+```
+chats.active
+```
+
+### Script
+
+```
+#ms.chats.active()
+```
+
+### Parameters
+
+No known parameters.
+
+### Return
+
+Returns an object.
+
+#### CLI
+
+```
+>>chats.active
+--Sent--
+
+trust
+example_user
+
+--Received--
+
+example_user
+boo7_str4p
+```
+
+#### Script
+
+```
+{"sent":[{"user":"trust"},{"user":"example_user"}],"received":[{"user":"example_user"},{"user":"boo7_str4p"}]}
+```
+
+## Example
+
+```js
+function(context, args)
+{
+	return #ms.chats.active()
+}
+```
