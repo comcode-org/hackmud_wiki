@@ -62,7 +62,7 @@ const config = {
       "@docusaurus/theme-classic",
       // See: https://docusaurus.io/docs/api/themes/@docusaurus/theme-classic#configuration
       {
-        customCss: "./src/css/custom.css",
+        customCss: "./src/css/accessible.css",
       },
     ],
     ALGOLIA_THEME_CONFIG,
