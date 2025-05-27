@@ -75,7 +75,7 @@ const config = {
     // Supported and default color modes
     colorMode: {
       defaultMode: "dark",
-      disableSwitch: true,
+      disableSwitch: false,
       respectPrefersColorScheme: false,
     },
     // Theme configuration specific to the docs plugin
@@ -174,6 +174,11 @@ const config = {
               sidebarId: "miscGuidesSidebar",
             },
           ],
+        },
+        {
+          type: 'html',
+          position: 'right',
+          value: "<script src='/js/a11y-test.js'></script><button id='a11y-test-button' onclick='window.a11ytest'>Click me :)</button>",
         },
       ],
     },
