@@ -1,3 +1,3 @@
-window.a11ytest = function(){
-    alert('hi :DD');
-}
+window.a11ytest = function () {
+  alert("hi :DD");
+};
