@@ -29,7 +29,8 @@ export default function AccessibilityOptions() {
   return (
     <div
       class="navbar-a11y"
-      aria-label="Enable or disable accessible reading mode"
+      aria-label="Toggle accessible reading mode"
+      title="Toggle accessible reading mode"
       onClick={handleClick}
     ></div>
   );
