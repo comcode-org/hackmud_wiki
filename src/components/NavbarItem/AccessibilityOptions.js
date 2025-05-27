@@ -1,19 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 
 export default function AccessibilityOptions() {
-  const [accessibilityMode, setAccessibilityMode] = useState(() => {
-    const storedMode = localStorage.getItem("accessibilityMode");
-    return storedMode === "true" ? "true" : "false";
-  });
+  let accessibilityMode = null;
 
   useEffect(() => {
-    localStorage.setItem("accessibilityMode", accessibilityMode);
+    const storedMode = window.localStorage.getItem("accessibilityMode");
+    setAccessibilityMode(storedMode === "true" ? "true" : "false");
+  }, []);
+
+  function setAccessibilityMode(value) {
+    accessibilityMode = value;
+    window.localStorage.setItem("accessibilityMode", accessibilityMode);
 
     document.documentElement.setAttribute("data-accessible", accessibilityMode);
     for (let elem of document.getElementsByClassName("main-wrapper")) {
       elem.setAttribute("data-accessible", accessibilityMode);
     }
-  }, [accessibilityMode]);
+  }
 
   const toggleAccessibilityMode = () => {
     setAccessibilityMode(accessibilityMode === "true" ? "false" : "true");
