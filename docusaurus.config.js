@@ -62,7 +62,7 @@ const config = {
       "@docusaurus/theme-classic",
       // See: https://docusaurus.io/docs/api/themes/@docusaurus/theme-classic#configuration
       {
-        customCss: "./src/css/accessible.css",
+        customCss: "./src/css/custom.css",
       },
     ],
     ALGOLIA_THEME_CONFIG,
@@ -75,7 +75,7 @@ const config = {
     // Supported and default color modes
     colorMode: {
       defaultMode: "dark",
-      disableSwitch: false,
+      disableSwitch: true,
       respectPrefersColorScheme: false,
     },
     // Theme configuration specific to the docs plugin
