@@ -1,12 +1,12 @@
-import React, { useEffect } from "react";
+import React from "react";
 
 export default function AccessibilityOptions() {
   let accessibilityMode = null;
 
-  useEffect(() => {
+  if (typeof window !== "undefined") {
     const storedMode = window.localStorage.getItem("accessibilityMode");
     setAccessibilityMode(storedMode === "true" ? "true" : "false");
-  }, []);
+  }
 
   function setAccessibilityMode(value) {
     accessibilityMode = value;
