@@ -24,11 +24,10 @@ export default function AccessibilityOptions() {
   }
 
   return (
-    <img
-      src
+    <div
       class="navbar-a11y"
       aria-label="Enable or disable accessible reading mode"
       onClick={handleClick}
-    ></img>
+    ></div>
   );
 }
