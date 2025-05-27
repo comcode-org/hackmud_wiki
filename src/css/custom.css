@@ -44,9 +44,9 @@ html[data-theme="dark"][data-accessible="true"] {
   --ifm-color-primary-dark: #589ef1;
   --ifm-color-primary-darker: #4795f0;
   --ifm-color-primary-darkest: #1b7bec;
-  --ifm-color-primary-light: #ccdff5;
-  --ifm-color-primary-lighter: #8ba2be;
-  --ifm-color-primary-lightest: #dee1e4;
+  --ifm-color-primary-light: #b6d2f1;
+  --ifm-color-primary-lighter: #89b6ec;
+  --ifm-color-primary-lightest: #e8ebee;
   --ifm-background-color: #101215;
 
   --ifm-color-info-contrast-background: rgb(25 60 71 / 50%);
