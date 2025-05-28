@@ -28,6 +28,7 @@ html[data-theme="dark"] {
   --ifm-heading-color: var(--ifm-color-primary-lighter);
   --ifm-color-content: var(--ifm-color-primary);
   --ifm-link-color: var(--ifm-color-primary-lightest);
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary-darker);
   --ifm-menu-color: var(--ifm-color-primary);
   --ifm-toc-link-color: var(--ifm-color-primary);
 
@@ -61,6 +62,7 @@ html[data-theme="dark"][data-accessible="true"] {
   --ifm-heading-color: var(--ifm-color-primary-lighter);
   --ifm-color-content: var(--ifm-color-primary);
   --ifm-link-color: var(--ifm-color-primary-darkest);
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary-darker);
   --ifm-menu-color: var(--ifm-color-primary);
   --ifm-toc-link-color: var(--ifm-color-primary);
 
@@ -88,12 +90,13 @@ a.wikilink-new {
 
 .navbar-a11y::before {
   content: "";
-  width: 24px;
-  height: 24px;
+  width: 36px;
+  height: 36px;
   display: flex;
   background-color: var(--ifm-navbar-link-color);
   border: none;
   mask-image: url("../../assets/universal-access.svg");
+  mask-size: 100% auto;
   transition: background-color var(--ifm-transition-fast)
     var(--ifm-transition-timing-default);
 }
