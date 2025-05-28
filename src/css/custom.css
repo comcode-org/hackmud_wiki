@@ -16,6 +16,12 @@ html[data-theme="dark"] {
   --ifm-color-primary-lightest: #dfedfc;
   --ifm-background-color: #101215;
 
+  --scan-line-1: #0e0e0e;
+  --scan-line-2: #101215;
+
+  --ifm-a11y-button-color: var(--ifm-color-primary-dark);
+  --ifm-a11y-button-hover-color: var(--ifm-color-primary-darkest); 
+
   --ifm-color-info-contrast-background: rgb(25 60 71 / 50%);
   --ifm-color-warning-contrast-background: rgb(77 56 0 / 50%);
   --ifm-color-danger-contrast-background: rgb(75 17 19 / 50%);
@@ -28,6 +34,45 @@ html[data-theme="dark"] {
   --ifm-heading-color: var(--ifm-color-primary-lighter);
   --ifm-color-content: var(--ifm-color-primary);
   --ifm-link-color: var(--ifm-color-primary-lightest);
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary-darker);
+  --ifm-menu-color: var(--ifm-color-primary);
+  --ifm-toc-link-color: var(--ifm-color-primary);
+
+  --ifm-breadcrumb-border-radius: 0;
+  --ifm-global-radius: 0;
+}
+
+/* covers both accessibility states */
+html[data-theme="light"] {
+  --ifm-color-primary: #161616;
+  --ifm-color-primary-dark: #5796e4;
+  --ifm-color-primary-darker: #060f18;
+  --ifm-color-primary-darkest: #0d59c4;
+  --ifm-color-primary-light: #56585a;
+  --ifm-color-primary-lighter: #323335;
+  --ifm-color-primary-lightest: #1a1818;
+  --ifm-background-color: #c6c8cc;
+
+  --scan-line-1: #c6c8cc;
+  --scan-line-2: #c6c8cc;
+
+  --ifm-a11y-button-color: var(--ifm-color-primary-light);
+  --ifm-a11y-button-hover-color: var(--ifm-color-primary-lightest); 
+
+  --ifm-color-info-contrast-background: rgba(78, 193, 228, 0.5);
+  --ifm-color-warning-contrast-background: rgba(206, 151, 0, 0.5);
+  --ifm-color-danger-contrast-background: rgba(204, 47, 52, 0.5);
+
+  --ifm-navbar-background-color: var(--ifm-background-color);
+  --ifm-footer-background-color: var(--ifm-background-color);
+  --ifm-dropdown-background-color: var(--ifm-background-color);
+  --ifm-card-background-color: var(--ifm-background-color);
+
+  --ifm-link-color: var(--ifm-color-primary);
+
+  --ifm-heading-color: var(--ifm-color-primary-darker);
+  --ifm-color-content: var(--ifm-color-primary);
+  --ifm-link-color: var(--ifm-color-primary-darkest);
   --ifm-navbar-link-hover-color: var(--ifm-color-primary-darker);
   --ifm-menu-color: var(--ifm-color-primary);
   --ifm-toc-link-color: var(--ifm-color-primary);
@@ -93,8 +138,9 @@ a.wikilink-new {
   width: 36px;
   height: 36px;
   display: flex;
-  background-color: var(--ifm-navbar-link-color);
+  background-color: var(--ifm-a11y-button-color);
   border: none;
+  margin-right: 10px;
   mask-image: url("../../assets/universal-access.svg");
   mask-size: 100% auto;
   transition: background-color var(--ifm-transition-fast)
@@ -102,15 +148,15 @@ a.wikilink-new {
 }
 
 .navbar-a11y:hover::before {
-  background-color: var(--ifm-navbar-link-hover-color);
+  background-color: var(--ifm-a11y-button-hover-color);
 }
 
 .main-wrapper:not([data-accessible="true"]) {
   background-image: repeating-linear-gradient(
-    #0e0e0e,
-    #0e0e0e 2px,
-    #101215 2px,
-    #101215 4px
+    var(--scan-line-1),
+    var(--scan-line-1) 2px,
+    var(--scan-line-2) 2px,
+    var(--scan-line-2) 4px
   );
   background-size: 100% 4px;
 }
