@@ -1,6 +1,10 @@
 import React from "react";
 
-export default function AccessibilityOptions() {
+export default function AccessibilityOptions({ mobile }) {
+  if (mobile) {
+    return null;
+  }
+
   let accessibilityMode = null;
 
   if (typeof window !== "undefined") {
