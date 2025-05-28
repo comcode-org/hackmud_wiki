@@ -20,7 +20,6 @@ html[data-theme="dark"] {
   --ifm-color-warning-contrast-background: rgb(77 56 0 / 50%);
   --ifm-color-danger-contrast-background: rgb(75 17 19 / 50%);
 
-  --ifm-font-family-base: "whiterabbit-webfont";
   --ifm-navbar-background-color: var(--ifm-background-color);
   --ifm-footer-background-color: var(--ifm-background-color);
   --ifm-dropdown-background-color: var(--ifm-background-color);
@@ -29,6 +28,41 @@ html[data-theme="dark"] {
   --ifm-heading-color: var(--ifm-color-primary-lighter);
   --ifm-color-content: var(--ifm-color-primary);
   --ifm-link-color: var(--ifm-color-primary-lightest);
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary-darker);
+  --ifm-menu-color: var(--ifm-color-primary);
+  --ifm-toc-link-color: var(--ifm-color-primary);
+
+  --ifm-breadcrumb-border-radius: 0;
+  --ifm-global-radius: 0;
+}
+
+html:not([data-accessible="true"]) {
+  --ifm-font-family-base: "whiterabbit-webfont";
+}
+
+html[data-theme="dark"][data-accessible="true"] {
+  --ifm-color-primary: #dce0e6;
+  --ifm-color-primary-dark: #589ef1;
+  --ifm-color-primary-darker: #4795f0;
+  --ifm-color-primary-darkest: #1b7bec;
+  --ifm-color-primary-light: #b6d2f1;
+  --ifm-color-primary-lighter: #89b6ec;
+  --ifm-color-primary-lightest: #e8ebee;
+  --ifm-background-color: #101215;
+
+  --ifm-color-info-contrast-background: rgb(25 60 71 / 50%);
+  --ifm-color-warning-contrast-background: rgb(77 56 0 / 50%);
+  --ifm-color-danger-contrast-background: rgb(75 17 19 / 50%);
+
+  --ifm-navbar-background-color: var(--ifm-background-color);
+  --ifm-footer-background-color: var(--ifm-background-color);
+  --ifm-dropdown-background-color: var(--ifm-background-color);
+  --ifm-card-background-color: var(--ifm-background-color);
+
+  --ifm-heading-color: var(--ifm-color-primary-lighter);
+  --ifm-color-content: var(--ifm-color-primary);
+  --ifm-link-color: var(--ifm-color-primary-darkest);
+  --ifm-navbar-link-hover-color: var(--ifm-color-primary-darker);
   --ifm-menu-color: var(--ifm-color-primary);
   --ifm-toc-link-color: var(--ifm-color-primary);
 
@@ -54,7 +88,24 @@ a.wikilink-new {
   color: var(--ifm-color-danger);
 }
 
-.main-wrapper {
+.navbar-a11y::before {
+  content: "";
+  width: 36px;
+  height: 36px;
+  display: flex;
+  background-color: var(--ifm-navbar-link-color);
+  border: none;
+  mask-image: url("../../assets/universal-access.svg");
+  mask-size: 100% auto;
+  transition: background-color var(--ifm-transition-fast)
+    var(--ifm-transition-timing-default);
+}
+
+.navbar-a11y:hover::before {
+  background-color: var(--ifm-navbar-link-hover-color);
+}
+
+.main-wrapper:not([data-accessible="true"]) {
   background-image: repeating-linear-gradient(
     #0e0e0e,
     #0e0e0e 2px,

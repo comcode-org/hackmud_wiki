@@ -175,6 +175,10 @@ const config = {
             },
           ],
         },
+        {
+          type: "custom-AccessibilityOptions",
+          position: "right",
+        },
       ],
     },
     footer: {
