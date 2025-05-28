@@ -133,6 +133,12 @@ a.wikilink-new {
   color: var(--ifm-color-danger);
 }
 
+.navbar-spacer {
+  content: "";
+  width: 12px;
+  height: 36px;
+}
+
 .navbar-a11y::before {
   content: "";
   width: 36px;
@@ -140,7 +146,6 @@ a.wikilink-new {
   display: flex;
   background-color: var(--ifm-a11y-button-color);
   border: none;
-  margin-right: 10px;
   mask-image: url("../../assets/universal-access.svg");
   mask-size: 100% auto;
   transition: background-color var(--ifm-transition-fast)

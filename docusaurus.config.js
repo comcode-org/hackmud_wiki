@@ -179,6 +179,10 @@ const config = {
           type: "custom-AccessibilityOptions",
           position: "right",
         },
+        {
+          type: "custom-Spacer",
+          position: "right",
+        },
       ],
     },
     footer: {
