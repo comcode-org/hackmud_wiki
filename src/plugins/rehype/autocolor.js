@@ -49,9 +49,9 @@ const regexGC =
 function colorScript(_fullMatch, user, script) {
   const isTrust = trustUsers.includes(user);
   return [
-    h("span", { class: `color-${isTrust ? "trust" : "user"}` }, user),
+    h("span", { class: `color-tag color-${isTrust ? "trust" : "user"}` }, user),
     u("text", "."),
-    h("span", { class: "color-script" }, script),
+    h("span", { class: "color-tag color-script" }, script),
   ];
 }
 
@@ -61,12 +61,12 @@ function colorTag(_fullMatch, tag, inner) {
 
 function colorKvp(_fullMatch, key, value) {
   if (!value) {
-    return h("span", { class: "color-key" }, key);
+    return h("span", { class: "color-tag color-key" }, key);
   }
   return [
-    h("span", { class: "color-key" }, key),
+    h("span", { class: "color-tag color-key" }, key),
     u("text", ": "),
-    h("span", { class: "color-value" }, value),
+    h("span", { class: "color-tag color-value" }, value),
   ];
 }
 
@@ -82,16 +82,16 @@ function colorGC(_fullMatch, q, t, b, m, k, units) {
 
   for (const [letter, value] of letters_and_values) {
     if (value) {
-      out.push(h("span", { class: "color-gc-text" }, value));
+      out.push(h("span", { class: "color-tag color-gc-text" }, value));
       out.push(
-        h("span", { class: `color-gc-${letter}` }, letter.toUpperCase()),
+        h("span", { class: `color-tag color-gc-${letter}` }, letter.toUpperCase()),
       );
     }
   }
   if (units) {
-    out.push(h("span", { class: "color-gc-text" }, units));
+    out.push(h("span", { class: "color-tag color-gc-text" }, units));
   }
-  out.push(h("span", { class: "color-gc-end" }, "GC"));
+  out.push(h("span", { class: "color-tag color-gc-end" }, "GC"));
 
   return out;
 }
