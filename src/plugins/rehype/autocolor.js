@@ -84,7 +84,11 @@ function colorGC(_fullMatch, q, t, b, m, k, units) {
     if (value) {
       out.push(h("span", { class: "color-tag color-gc-text" }, value));
       out.push(
-        h("span", { class: `color-tag color-gc-${letter}` }, letter.toUpperCase()),
+        h(
+          "span",
+          { class: `color-tag color-gc-${letter}` },
+          letter.toUpperCase(),
+        ),
       );
     }
   }

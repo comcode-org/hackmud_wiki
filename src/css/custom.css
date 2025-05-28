@@ -20,7 +20,7 @@ html[data-theme="dark"] {
   --scan-line-2: #101215;
 
   --ifm-a11y-button-color: var(--ifm-color-primary-dark);
-  --ifm-a11y-button-hover-color: var(--ifm-color-primary-darkest); 
+  --ifm-a11y-button-hover-color: var(--ifm-color-primary-darkest);
 
   --ifm-color-info-contrast-background: rgb(25 60 71 / 50%);
   --ifm-color-warning-contrast-background: rgb(77 56 0 / 50%);
@@ -57,7 +57,7 @@ html[data-theme="light"] {
   --scan-line-2: #c6c8cc;
 
   --ifm-a11y-button-color: var(--ifm-color-primary-light);
-  --ifm-a11y-button-hover-color: var(--ifm-color-primary-lightest); 
+  --ifm-a11y-button-hover-color: var(--ifm-color-primary-lightest);
 
   --ifm-color-info-contrast-background: rgba(78, 193, 228, 0.5);
   --ifm-color-warning-contrast-background: rgba(206, 151, 0, 0.5);
@@ -161,10 +161,12 @@ a.wikilink-new {
   background-size: 100% 4px;
 }
 
-.color-tag { /* isnt visible in dark mode, but may be nice to toggle this in the future */
-  text-shadow: 0.5px 0.5px 1px rgb(0, 0, 0),
-  0 0 0.1em rgb(0, 0, 0),
-  0 0 0.1em rgb(0, 0, 0);
+.color-tag {
+  /* isnt visible in dark mode, but may be nice to toggle this in the future */
+  text-shadow:
+    0.5px 0.5px 1px rgb(0, 0, 0),
+    0 0 0.1em rgb(0, 0, 0),
+    0 0 0.1em rgb(0, 0, 0);
 }
 
 .color-tag[data-tag="a"] {
