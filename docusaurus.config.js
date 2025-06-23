@@ -134,7 +134,13 @@ const config = {
         {
           type: "dropdown",
           label: "Scripting",
+          to: "scripting/overview",
           items: [
+            {
+              type: "docSidebar",
+              sidebarId: "scriptingOverviewSidebar",
+              label: "Overview",
+            },
             {
               type: "docSidebar",
               sidebarId: "scriptsLibSidebar",
