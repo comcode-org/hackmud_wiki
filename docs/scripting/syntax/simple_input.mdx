@@ -1,0 +1,47 @@
+---
+title: Simple Input
+---
+
+> Simple input is input, but simpler.
+
+*- The author of this page.*
+
+## Syntax
+
+Simple input is when a script is called in the CLI, but instead of an object being given, the script is just followed by text:
+
+```
+user.script wow, such input
+```
+
+Simple input is passed into the called script's args object as a string with the key ((%Ninput%)).
+
+## Examples
+
+If a script is run with the following simple input;
+
+```
+user.script simple Input
+```
+
+The contents of that script's args would be: 
+
+```
+{input: "simple Input"}
+```
+
+A script that takes a simple input and returns that simple input would contain the following code:
+
+```js
+function(context, args) {
+
+  return args.input
+
+}
+```
+
+And with the above input, the output would be:
+
+```
+simple Input
+```
