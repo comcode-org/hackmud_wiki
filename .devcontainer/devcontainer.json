@@ -2,10 +2,11 @@
 // README at: https://github.com/devcontainers/templates/tree/main/src/universal
 {
   "name": "Default Linux Universal",
-  "image": "mcr.microsoft.com/devcontainers/universal:2-linux",
+  "image": "mcr.microsoft.com/devcontainers/universal",
   "customizations": {
     "vscode": {
       "extensions": ["esbenp.prettier-vscode", "unifiedjs.vscode-mdx"]
     }
-  }
+  },
+  "postCreateCommand": "bash .devcontainer/env-setup.sh"
 }
