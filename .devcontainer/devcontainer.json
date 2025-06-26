@@ -8,7 +8,5 @@
       "extensions": ["esbenp.prettier-vscode", "unifiedjs.vscode-mdx"]
     }
   },
-  "onCreateCommand": "bash .devcontainer/df.sh onCreate",
-  "updateContentCommand": "bash .devcontainer/df.sh updateContent",
-  "postCreateCommand": "bash .devcontainer/df.sh postCreate"
+  "onCreateCommand": "bash .devcontainer/env-setup.sh"
 }
