@@ -8,5 +8,5 @@
       "extensions": ["esbenp.prettier-vscode", "unifiedjs.vscode-mdx"]
     }
   },
-  "postCreateCommand": "pnpm install"
+  "postCreateCommand": "bash .devcontainer/env-setup.sh"
 }
