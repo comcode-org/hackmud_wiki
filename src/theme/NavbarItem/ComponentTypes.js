@@ -8,6 +8,7 @@ import DocSidebarNavbarItem from "@theme/NavbarItem/DocSidebarNavbarItem";
 import DocsVersionNavbarItem from "@theme/NavbarItem/DocsVersionNavbarItem";
 import DocsVersionDropdownNavbarItem from "@theme/NavbarItem/DocsVersionDropdownNavbarItem";
 import AccessibilityOptions from "@site/src/components/NavbarItem/AccessibilityOptions";
+import Spacer from "@site/src/components/NavbarItem/Spacer";
 
 const ComponentTypes = {
   default: DefaultNavbarItem,
@@ -23,4 +24,5 @@ const ComponentTypes = {
 export default {
   ...ComponentTypes,
   "custom-AccessibilityOptions": AccessibilityOptions,
+  "custom-Spacer": Spacer,
 };
