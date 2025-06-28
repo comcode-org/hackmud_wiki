@@ -26,16 +26,18 @@ If an \_id is included in the inserted document, that \_id will be used. This ha
 
 :::warning
 
-If a document is inserted containing an \_id that already exists in the user's database, a :::TRUST COMMUNICATION::: will be raised:
+If a document is inserted containing an \_id that already exists in the user's database, an error will be thrown:
 
 `:::TRUST COMMUNICATION::: E11000 duplicate key error collection: hackmud*production.[user] index: \_id* dup key: { : [id value] } (11000)`
 
 Any other documents inserted alongside the errant document will still be inserted.
+
+You can catch these errors with `try`/`catch` if necessary. If you do not manually specify the `_id` fields of inserted documents, these errors should never happen.
 :::
 
 ## Return Data
 
-An object is returned upon inserting one or many documents into the database, providing extra details about whether it succeeded:
+When inserting one document, an array of length 1 is returned, containing a single object, providing extra details about whether the insert succeeded:
 
 | Key    | Information                                                                       |
 | ------ | --------------------------------------------------------------------------------- |
@@ -44,6 +46,14 @@ An object is returned upon inserting one or many documents into the database, pr
 | opTime | Object that contains a property 't' -- time of insertion operation in millieconds |
 
 Other values are returned, but provide no additional usable data due to undefined conversions
+
+When inserting an array of documents, a single object (_not_ an array) is returned, containing:
+
+| Key          | Information                               |
+| ------------ | ----------------------------------------- |
+| n            | Number of documents inserted              |
+| n_inserted   | Number of documents inserted... again?    |
+| inserted_ids | Array of `_id`s of the inserted documents |
 
 ## Example
 
