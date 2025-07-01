@@ -1,0 +1,65 @@
+---
+title: NPC Names
+description: Turns out that jumble of letters has meaning.
+---
+
+Some notes about the information contained within the name of an NPC.
+
+## NPC name structure
+
+As you may have noticed by now, NPC names have a certain "shape" or "look" to them:
+
+```
+derelict_jrttl_pavv79
+unknown_ddttl_cfarmn
+uknown_jrttl_6u7yxp
+anonymous_jrwlf_v53yfr
+```
+
+The name of an NPC has 3 primary "components" to it, with the structure looking something like this:
+
+```
+[prefix]_[specs]_[id]
+```
+
+The part we care about is the `specs` section.
+
+## How to read an NPC's specs
+
+The `specs` section consists of 5 characters, which contain 2 pieces of information: "difficulty", and class.
+
+### Difficulty
+
+The first two characters denotes the strength of an NPC's lockstack, with the possible values in ascending order being:
+
+1. jr - junkrack
+2. dd - diggerdeck
+3. wb - wreckbox
+4. pr - phreakrig
+5. ls - leetstack
+
+These names relate to the assessment of lockstack strength visible in ((sys.specs)).
+
+### Class
+
+The last three characters denote the NPC's class. It is an abbreviation of the class you get when you load upgrades of a particular class.
+Think how `infiltrator` upgrades make you a `wolf`, and `architect` upgrades make you a `weaver`.
+
+The values are as follows:
+
+| NPC | Class  |  Upgrades   |
+| :-: | :----: | :---------: |
+| ttl | turtle |    locks    |
+| wlf |  wolf  | infiltrator |
+| wvr | weaver |  architect  |
+| rvn | raven  |  scavenger  |
+| stg |  stag  |  executive  |
+
+## What do I do with this?
+
+Being able to determine an NPC's class is helpful when grinding for certain types of upgrades. Need k3y upgrades? Look for `wlf`. Locks? `ttl`. Script space? `wvr`.
+
+Being able to determine an NPC's approximate difficulty can be helpful if you know your cracker can't handle some things,
+or if you don't have a lot of k3ys,
+or are trying to get tier 2 payouts from NPCs with tier 1 locks.
+A lot of things.
