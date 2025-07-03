@@ -1,0 +1,18 @@
+---
+title: priv_store
+---
+
+> Think of it as a secure account that scripts can't touch.
+
+_- Unknown, ((%Fmarks%.%Qlost_and_found%))_
+
+((%Cpriv_store%)) is a special user that does not take a user slot, cannot be retired, and cannot run any scripts other than ((accts.balance)) and ((accts.xfer_gc_to)).
+
+It can be accessed by entering ((%Cpriv_store%)) or ((%Cuser priv_store%)) into the CLI.
+
+A ((%Cpriv_store%)) user is named similar to an NPC, and can hold up to ((1B337MGC))
+
+You can transfer ((%CGC%)) to your ((%Cpriv_store%)) with ((accts.xfer_gc_to \{ to:"priv_store" \})),
+but only when calling it directly in the CLI. Subscripts cannot target ((%Cpriv_store%)).
+
+To target your ((%Cpriv_store%)) in a subscript call, you must enter the actual name of your ((%Cpriv_store%)) user.
