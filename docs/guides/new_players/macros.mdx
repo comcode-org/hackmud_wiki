@@ -48,3 +48,44 @@ To delete an existing macro, type `/macro =` with nothing after the `=`.
 >>/bal =
 Macro deleted.
 ```
+
+### Macros and symlinks
+
+Macro files (`username.macros`) can also be symlinks to another file and still work, assuming the file contents are valid.
+
+This can be used for:
+
+- Having macros backed up somewhere other than the game folder
+- Having macros synced across many users
+- Showing off just how nerdy you are
+
+#### What's a macro file?
+
+Macros in hackmud are stored in a file, which is located in the same place as `shell.txt`.
+
+> Try using running ((%C#dir%)) and going two folders up. Or navigating to:
+> > Windows - `C:\Users\USERNAME\AppData\Roaming\hackmud`\
+> > macOS - `~/.config/hackmud`\
+> > Linux - Either `~/.config/hackmud` or the game folder.
+
+The naming scheme is `username.macros`, and are plain text files.
+
+#### How symlink?
+
+((%D:::This is written by a mac user, so I have no idea if the below is true for Windows:::%))
+
+To make a symlink, we're going to use the `ln` command.
+
+***PLEASE BACKUP YOUR MACROS FILES AND CHECK `man ln`, THE USAGE MAY DIFFER FOR YOU***
+
+We want to run `ln` with the `-sfn` options, with the source file being the path to the file containing the macros, and the target file being the path to the `username.macros` in the previously mentioned directory.
+
+For example, my ln usage and command looked like this:
+
+```
+USAGE:
+ln [options] source_file target_file
+
+COMMAND:
+ln -sfn ~/Developer/hackmud/southr6/workshop/macros.txt ~/.config/hackmud/southr6.macros
+```
