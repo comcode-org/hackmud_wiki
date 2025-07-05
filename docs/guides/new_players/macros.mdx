@@ -49,38 +49,47 @@ To delete an existing macro, type `/macro =` with nothing after the `=`.
 Macro deleted.
 ```
 
-### Macros and symlinks
+## Macro storage on disk
 
-Macro files (`username.macros`) can also be symlinks to another file and still work, assuming the file contents are valid.
+### What's a macro file?
 
-This can be used for:
+Macros in hackmud are stored in a file per user, which is located in the same place as `shell.txt`.
 
-- Having macros backed up somewhere other than the game folder
-- Having macros synced across many users
-- Showing off just how nerdy you are
-
-#### What's a macro file?
-
-Macros in hackmud are stored in a file, which is located in the same place as `shell.txt`.
-
-> Try using running ((%C#dir%)) and going two folders up. Or navigating to:
+> Run ((%C#dir%)) and go two folders up. Or navigate to:
+>
 > > Windows - `C:\Users\USERNAME\AppData\Roaming\hackmud`\
 > > macOS - `~/.config/hackmud`\
 > > Linux - Either `~/.config/hackmud` or the game folder.
 
 The naming scheme is `username.macros`, and are plain text files.
 
-#### How symlink?
+### Workaround: Sharing macros between users
 
-((%D:::This is written by a mac user, so I have no idea if the below is true for Windows:::%))
+Because macros are scoped to users by default, when you switch to another user, you can't use the first user's macros.
+
+One of the ways you can solve this is with the concept of a symlink: https://en.wikipedia.org/wiki/Symbolic_link
+
+By adding a symlink to a source file for macros, each user would be editing and reading from the same file, allowing macros to be shared between users.
+
+#### How to set up a symlink on Windows
+
+TODO THIS PR
+
+#### How to set up a symlink on macOS & linux
 
 To make a symlink, we're going to use the `ln` command.
 
-***PLEASE BACKUP YOUR MACROS FILES AND CHECK `man ln`, THE USAGE MAY DIFFER FOR YOU***
+:::warning
+When mucking with files always back them up before accidentally doing destructive actions.
+:::
+
+:::note
+Syntax may differ depending on your OS, check `man ln` for usage differences.
+:::
 
 We want to run `ln` with the `-sfn` options, with the source file being the path to the file containing the macros, and the target file being the path to the `username.macros` in the previously mentioned directory.
 
-For example, my ln usage and command looked like this:
+For example on macOS, my ln usage and command looked like this:
 
 ```
 USAGE:
