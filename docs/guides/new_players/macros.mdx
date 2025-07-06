@@ -102,7 +102,7 @@ Syntax may differ depending on your OS, check `man ln` for usage differences.
 Also note, the parameters are in different orders in windows and unix.
 :::
 
-We want to run `ln` with the `-sfn` options, with the source file being the path to the file containing the macros, and the target file being the path to the `username.macros` in the previously mentioned directory.
+We want to run `ln` with the `-s` options, with the source file being the path to the file containing the macros, and the target file being the path to the `username.macros` in the previously mentioned directory.
 
 For example on macOS, my ln usage and command looked like this:
 
@@ -111,5 +111,5 @@ USAGE:
 ln [options] source_file new_link_file
 
 COMMAND:
-ln -sfn ~/Developer/hackmud/southr6/workshop/macros.txt ~/.config/hackmud/southr6.macros
+ln -s ~/Developer/hackmud/southr6/workshop/macros.txt ~/.config/hackmud/southr6.macros
 ```
