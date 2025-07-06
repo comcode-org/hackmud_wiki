@@ -71,20 +71,35 @@ One of the ways you can solve this is with the concept of a symlink: https://en.
 
 By adding a symlink to a source file for macros, each user would be editing and reading from the same file, allowing macros to be shared between users.
 
-#### How to set up a symlink on Windows
-
-TODO THIS PR
-
-#### How to set up a symlink on macOS & linux
-
-To make a symlink, we're going to use the `ln` command.
-
 :::warning
 When mucking with files always back them up before accidentally doing destructive actions.
 :::
 
+#### How to set up a symlink on Windows
+
+Windows 10 and later have access to `mklink`: https://learn.microsoft.com/en-us/windows-server/administration/windows-commands/mklink
+
+Here's an example of mapping / copying macros from user_a's macros to user_b's macros.
+
 :::note
-Syntax may differ depending on your OS, check `man ln` for usage differences.
+Running mklink requires a windows command prompt which has been started with administrator permissions.
+:::
+
+```
+USAGE:
+mklink abs_path_to_new_link_file file_path_to_link_to
+
+COMMAND:
+mklink "C:\Users\southr6\AppData\Roaming\hackmud\user_b.macros" "C:\Users\southr6\AppData\Roaming\hackmud\user_a.macros"
+```
+
+#### How to set up a symlink on macOS & linux
+
+To make a symlink these unix-based platforms, we're going to use the `ln` command.
+
+:::note
+Syntax may differ depending on your OS, check `man ln` for usage differences.  
+Also note, the parameters are in different orders in windows and unix.
 :::
 
 We want to run `ln` with the `-sfn` options, with the source file being the path to the file containing the macros, and the target file being the path to the `username.macros` in the previously mentioned directory.
@@ -93,7 +108,7 @@ For example on macOS, my ln usage and command looked like this:
 
 ```
 USAGE:
-ln [options] source_file target_file
+ln [options] source_file new_link_file
 
 COMMAND:
 ln -sfn ~/Developer/hackmud/southr6/workshop/macros.txt ~/.config/hackmud/southr6.macros
