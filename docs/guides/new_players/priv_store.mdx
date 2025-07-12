@@ -6,11 +6,13 @@ title: priv_store
 
 _- Unknown, ((%Fmarks%.%Qlost_and_found%))_
 
-((%Cpriv_store%)) is a special user that does not take a user slot, cannot be retired, and cannot run any scripts other than ((accts.balance)) and ((accts.xfer_gc_to)).
+((%Cpriv_store%)) is a special user that does not take a user slot, cannot be retired, and cannot run any scripts other than ((accts.balance)) or ((accts.xfer_gc_to)).
 
 It can be accessed by entering ((%Cpriv_store%)) or ((%Cuser priv_store%)) into the CLI.
 
-A ((%Cpriv_store%)) user is named similar to an NPC, and can hold up to ((1B337MGC))
+A ((%Cpriv_store%)) user is named similar to an NPC, and can hold up to ((1B337MGC)).
+
+A ((%Cpriv_store%)) user cannot be attacked or breached as it does not have a loc.
 
 You can transfer ((%CGC%)) to your ((%Cpriv_store%)) with ((accts.xfer_gc_to \{ to:"priv_store" \})),
 but only when calling it directly in the CLI. Subscripts cannot target ((%Cpriv_store%)).
