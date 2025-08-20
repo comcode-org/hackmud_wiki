@@ -8,7 +8,7 @@ _- Unknown, ((%Fmarks%.%Qlost_and_found%))_
 
 ((%Cpriv_store%)) is a special user that does not take a user slot, cannot be retired, and cannot run any scripts other than ((accts.balance)) or ((accts.xfer_gc_to)).
 
-It can be accessed by entering ((%Cpriv_store%)) or ((%Cuser priv_store%)) into the CLI.
+It can be accessed by entering ((%Cpriv_store%)) or ((%Cuser% %Apriv_store%)) into the CLI.
 
 A ((%Cpriv_store%)) user is named similar to an NPC, and can hold up to ((1B337MGC)).
 
@@ -18,3 +18,15 @@ You can transfer ((%CGC%)) to your ((%Cpriv_store%)) with ((accts.xfer_gc_to \{ 
 but only when calling it directly in the CLI. Subscripts cannot target ((%Cpriv_store%)).
 
 To target your ((%Cpriv_store%)) in a subscript call, you must enter the actual name of your ((%Cpriv_store%)) user.
+
+## Edge Cases & Notable Behaviours
+
+Attempting to send any amount of ((%CGC%)) to a ((%Cpriv_store%)) that is not associated with your account will always return the following irregardless of the balance of the ((%Cpriv_store%)) user:
+
+> ((%DFailure%))\
+> ((%SUser can't store that much%)) ((%CGC%))((%S. Recipient must init to tier 2.%))
+
+Attempting to send ((%CGC%)) to your ((%Cpriv_store%)) when it is full will return the following, including when the transfer is subscripted:
+
+> ((%DFailure%))\
+> ((%Sbalance would exceed the priv_store limit of 1B337MGC%))
