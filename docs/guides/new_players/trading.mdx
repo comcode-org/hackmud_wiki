@@ -18,19 +18,19 @@ The syntax for starting a trade is ((%Ctrade% %Auser%)). This will send a trade 
 
 #### Example
 
-`https` wishes to trade with `http`, so `https` sends `http` a trade request:
+`angie` wishes to trade with `bo`, so `angie` sends `bo` a trade request:
 
 ```
->>trade http
+>>trade bo
 Success
 ```
 
-`http` then sees the trade request, and accepts:
+`bo` then sees the trade request, and accepts:
 
 ```
-trade request received. begin trade with trade https
+trade request received. begin trade with trade angie
 
->>trade https
+>>trade angie
 Success
 ```
 
@@ -39,7 +39,7 @@ At which point both parties then see the trade interface appear:
 ```
 ║ trade 68b1152c50334a086f9b258e ║
 ╙━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╢
-https offers                     ║ http offers
+angie offers                     ║ bo offers
 ━━━                              ║ ━━━
                                  ║
 -- EMPTY --                      ║ -- EMPTY --
