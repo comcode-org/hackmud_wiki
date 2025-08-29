@@ -1,0 +1,103 @@
+---
+title: Trading
+description: "The guaranteed exchange."
+---
+
+{/* Bits symbol: ⌽ */}
+{/* Bits color: F */}
+
+## The trading system
+
+In hackmud, trading is an alternative method to exchange resources between users, and the only method of exchanging ((%Fbits ⌽%)) between players.
+
+Instead of using ((accts.xfer_gc_to)) and ((sys.xfer_upgrade_to)), trading uses the ((%Ctrade%)) shell command, and has its own special interface and fees.
+
+### Starting a trade
+
+The syntax for starting a trade is ((%Ctrade% %Auser%)). This will send a trade request to the inputted user, and they must do the same, with your name.
+
+#### Example
+
+`https` wishes to trade with `http`, so `https` sends `http` a trade request:
+
+```
+>>trade http
+Success
+```
+
+`http` then sees the trade request, and accepts:
+
+```
+trade request received. begin trade with trade https
+
+>>trade https
+Success
+```
+
+At which point both parties then see the trade interface appear:
+
+```
+║ trade 68b1152c50334a086f9b258e ║
+╙━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╢
+https offers                     ║ http offers
+━━━                              ║ ━━━
+                                 ║      
+-- EMPTY --                      ║ -- EMPTY --
+                                 ║   
+
+make trade offers with trade_bits, trade_gc, trade_add
+for usage see trade_help
+```
+
+A trade has begun.
+
+### Making offers
+
+((GC)), upgrades, and ((%Fbits ⌽%)) can be offered using the commands outlined in ((%Ctrade_help%)).
+
+There will be a trade fee based on what is offered, which is outlined later in detail.
+
+#### Commands
+
+The commands for making offers, as shown in ((%Ctrade_help%)):
+
+```
+trade_bits <bit amount>             [sets your offered bits amount]
+trade_fee <0 or 1>                  [selects which user pays the trade fee]
+
+trade_gc <GC num or string>         [adds GC to your offers]
+
+trade_add <upgrade index>           [adds an upgrade to your offers]
+trade_rem <upgrade trade index>     [removes an offered upgrade from your offers]
+trade_up_info <upgrade trade index> [shows detailed upgrade information for an offered upgrade]
+```
+
+### Concluding a trade
+
+Trades can end in two ways: both parties accept the trade and the resources are exchanged, or one party runs ((%Ctrade_end%)) and no resources are exchanged.
+
+### Fees
+
+Use of the trade system incurs a fee, paid with ((%Fbits ⌽%)). The minimum trade fee is ((%F3⌽%))
+
+The fee is based on the resources exchanged on completion of the trade - not all resources present - with the following calculations:
+
+- 4% of ((%Fbits ⌽%)) exchanged;
+- 30% of ((%JB%%CGC%)) exchanged;
+- Upgrade rarity, based on the below table;
+
+|       Rarity       | Fee Amount  |
+| :----------------: | :---------: |
+|    ((%0noob%))     |  ((%F3⌽%))  |
+|   ((%1kiddie%))    |  ((%F3⌽%))  |
+|    ((%2h4x0r%))    |  ((%F3⌽%))  |
+|  ((%3h4rdc0r3%))   | ((%F15⌽%))  |
+| ((%4\|\_\|b3\|2%)) | ((%F30⌽%))  |
+|    ((%531337%))    | ((%F150⌽%)) |
+
+### Notes
+
+- You cannot offer something the other party is unable to hold.
+- You can trade among your own users, but you cannot offer ((%Fbits ⌽%)).
+- The trade system can exceed the ((32BGC)) xfer limit.
+- You appear to only be able to offer one upgrade at a time.
