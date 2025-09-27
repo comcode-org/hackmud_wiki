@@ -133,6 +133,10 @@ The rest of the properties depend on the kind of the message. If the message was
 
 ## Sending messages
 
+:::note
+The in-game [[chats.send:((chats.send))]] / [[chats.tell:((chats.tell))]] message limitations (max. 1000 character or 10 lines, 5 messages per 20 seconds per user) apply to messages sent from the chat API as well, and are shared.
+:::
+
 To send a message to a channel, send the following payload to <span class="color-tag" data-tag="1">/mobile/create_chat.json</span>:
 
 ```json
@@ -162,5 +166,3 @@ In both cases, you will receive a response like so:
   "ok": true
 }
 ```
-
-NOTE: The in-game chat message limitations (max. 1000 character or 10 lines) apply to messages sent from the chat API as well.
