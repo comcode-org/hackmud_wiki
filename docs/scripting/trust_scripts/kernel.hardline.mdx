@@ -7,7 +7,7 @@ description: "Engages hardline mode"
 
 ### Security Level
 
-LOWSEC
+MIDSEC
 
 ## Syntax
 
@@ -24,7 +24,7 @@ kernel.hardline
 :::
 
 ```
-#ls.kernel.hardline({ activate: true })
+#ms.kernel.hardline({ activate: true })
 ```
 
 ### Parameters
@@ -59,6 +59,6 @@ In a script named `bot_brain`:
 ```js
 function(context, args)
 {
-	return #ls.kernel.hardline({ activate: true })
+	return #ms.kernel.hardline({ activate: true })
 }
 ```
