@@ -75,7 +75,7 @@ const config = {
     // Supported and default color modes
     colorMode: {
       defaultMode: "dark",
-      disableSwitch: true,
+      disableSwitch: false,
       respectPrefersColorScheme: false,
     },
     // Theme configuration specific to the docs plugin
@@ -177,6 +177,10 @@ const config = {
         },
         {
           type: "custom-AccessibilityOptions",
+          position: "right",
+        },
+        {
+          type: "custom-Spacer",
           position: "right",
         },
       ],
