@@ -1,0 +1,33 @@
+---
+title: count(_and_close)
+alias: count_and_close
+---
+
+Retrieve the total number of documents of the cursor, and close it.
+
+This method ignores `skip` and `limit` settings.
+
+## Syntax
+
+```
+let cursor = #db.f(query, projection)
+cursor.count()
+```
+
+or
+```
+let cursor = #db.f(query, projection)
+cursor.count_and_close()
+```
+
+### Parameters
+
+No parameters.
+
+### Return
+
+The total number of documents of this cursor, as a number.
+
+## Cursor State
+
+This function closes the cursor. If this is undesirable, try [count_and_keep_open](./count_and_keep_open).

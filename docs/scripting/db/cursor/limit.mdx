@@ -1,0 +1,25 @@
+Set the limit of the cursor.
+
+## Syntax
+
+```
+let cursor = #db.f(query, projection)
+cursor.limit(count)
+```
+
+### Parameters
+
+#### count
+
+The maximum number of results to return.
+If this parameter is `0`, the limit is removed.
+
+### Return
+
+Returns a new cursor, with the same handle as the input cursor.
+
+This can be used to chain into other methods.
+
+## Cursor State
+
+This function keeps the cursor open.

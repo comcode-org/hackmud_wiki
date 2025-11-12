@@ -1,0 +1,35 @@
+---
+title: distinct(_and_close)
+alias: distinct_and_close
+---
+
+Retrieve the unique values of a given field for all documents of the cursor, and close it.
+
+This method ignores `skip` and `limit` settings.
+
+## Syntax
+
+```
+let cursor = #db.f(query, projection)
+cursor.distinct(field)
+```
+
+or
+```
+let cursor = #db.f(query, projection)
+cursor.distinct_and_close(field)
+```
+
+### Parameters
+
+#### field
+
+A string naming the field to pull unique values from.
+
+### Return
+
+The unique values of the given field from all documents of the cursor, as an array.
+
+## Cursor State
+
+This function closes the cursor. If this is undesirable, try [distinct_and_keep_open](./distinct_and_keep_open).

@@ -1,0 +1,56 @@
+---
+title: first(_and_close)
+alias: first_and_close
+---
+
+Retrieve the first document of the cursor, and close it.
+
+## Syntax
+
+```
+let cursor = #db.f(query, projection)
+cursor.first()
+```
+
+or
+```
+let cursor = #db.f(query, projection)
+cursor.first_and_close()
+```
+
+### Parameters
+
+No parameters.
+
+### Return
+
+Returns the first document from the cursor as an object.
+If the cursor is empty, returns ((%Vnull%)).
+
+## Cursor State
+
+This function closes the cursor. If this is undesirable, try [first_and_keep_open](./first_and_keep_open).
+
+## Example
+
+For the following examples, assume the database contains the following documents, inserted in that order:
+```
+{ type: "my_data", my_key: "foo", order: 2 }
+{ type: "my_data", my_key: "bar", order: 1 }
+```
+
+```js
+function(context, args) {
+  let data = #db.f({ type: "my_data" }).first();
+  return data; // { type: "my_data", my_key: "foo", order: 2 }
+}
+```
+
+```js
+function(context, args) {
+  let data = #db.f({ type: "my_data" }).sort({ order: 1 }).first();
+  return data; // { type: "my_data", my_key: "bar", order: 1 }
+}
+```
+
+

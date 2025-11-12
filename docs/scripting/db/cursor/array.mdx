@@ -1,0 +1,31 @@
+---
+title: array(_and_close)
+alias: array_and_close
+---
+
+Retrieve all documents of the cursor, and close it.
+
+## Syntax
+
+```
+let cursor = #db.f(query, projection)
+cursor.array()
+```
+
+or
+```
+let cursor = #db.f(query, projection)
+cursor.array_and_close()
+```
+
+### Parameters
+
+No parameters.
+
+### Return
+
+Returns all documents from the cursor, as an array of objects.
+
+## Cursor State
+
+This function closes the cursor. If this is undesirable, try [array_and_keep_open](./array_and_keep_open).

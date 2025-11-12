@@ -1,0 +1,42 @@
+
+Retrieve the first document of the cursor, keeping it open.
+
+## Syntax
+
+```
+let cursor = #db.f(query, projection)
+cursor.first_and_keep_open()
+// continue using `cursor`...
+```
+
+### Parameters
+
+No parameters.
+
+### Return
+
+Returns the first document from the cursor as an object.
+If the cursor is empty, returns ((%Vnull%)).
+
+## Cursor State
+
+This function keeps the cursor open.
+
+Try [first](./first) for a variant of this function that automatically closes the cursor.
+
+## Example
+
+For the following example, assume the database contains the following documents, inserted in that order:
+```
+{ type: "my_data", my_key: "foo", order: 2 }
+{ type: "my_data", my_key: "bar", order: 1 }
+```
+
+```js
+function(context, args) {
+  let cursor = #db.f({ type: "my_data" });
+  let a = cursor.skip(1).first_and_keep_open();
+  let b = cursor.skip(0).first_and_close();
+  return [ a.my_key, b.my_key ]; // [ "bar", "foo" ]
+}
+```
