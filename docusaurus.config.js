@@ -167,6 +167,10 @@ const config = {
             },
             {
               type: "docSidebar",
+              sidebarId: "contentGuidesSidebar",
+            },
+            {
+              type: "docSidebar",
               sidebarId: "advancedSidebar",
             },
             {
