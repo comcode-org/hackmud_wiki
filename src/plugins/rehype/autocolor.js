@@ -20,12 +20,7 @@ const trustUsers = [
   "marks",
 ];
 
-const marksTrustScripts = [
-  "protocol",
-  "available",
-  "sync",
-  "clone"
-]
+const marksTrustScripts = ["protocol", "available", "sync", "clone"];
 
 // Matches (( <content > ))
 const regexAutocolorBlock = /\(\((.*?)\)\)/g;
@@ -57,10 +52,20 @@ function colorScript(_fullMatch, user, script) {
   const isTrustUser = trustUsers.includes(user);
   const isTrust = user == "trust";
   const isRisk = user == "risk";
-  const isMarksScript = (user == "marks" && !marksTrustScripts.includes(script))
+  const isMarksScript = user == "marks" && !marksTrustScripts.includes(script);
 
-  const userColor = (isTrustUser ? "trust-user" : isTrust ? "trust" : isRisk ? "risk" : "user")
-  const scriptColor = (isRisk ? "script-risk" : isMarksScript ? "script-marks" : "script")
+  const userColor = isTrustUser
+    ? "trust-user"
+    : isTrust
+      ? "trust"
+      : isRisk
+        ? "risk"
+        : "user";
+  const scriptColor = isRisk
+    ? "script-risk"
+    : isMarksScript
+      ? "script-marks"
+      : "script";
 
   return [
     h("span", { class: `color-${userColor}` }, user),
