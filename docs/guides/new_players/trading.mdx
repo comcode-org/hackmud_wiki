@@ -14,9 +14,9 @@ _- ((%V\%%)), ((risk.reward))_
 
 ## The trading system
 
-In hackmud, trading is an alternative method to exchange resources between users, the only method of exchanging ((%Fbits ⌽%)), and the process through which qubits are realised.
+In hackmud, trading is an alternative method to exchange resources between users, the only method of exchanging ((%Fbits ⌽%)), and the process through which ((%Tqubits ⓠ%)) are realised.
 
-Instead of using ((accts.xfer_gc_to)) and ((sys.xfer_upgrade_to)), trading uses the ((%Ctrade%)) shell command, and has its own special interface and fees.
+Instead of using ((accts.xfer_gc_to)) and ((sys.xfer_upgrade_to)), trading uses the ((%Ctrade%)) shell command, and has its own interface and fees.
 
 ## Starting a trade
 
@@ -62,7 +62,7 @@ A trade has begun.
 
 ## Making offers
 
-((GC)), upgrades, ((%Fbits ⌽%)), and ((%Tqubits ⓠ%)) can be offered using the commands outlined in ((%Ctrade_help%)).
+((%CGC%)), upgrades, ((%Fbits ⌽%)), and ((%Tqubits ⓠ%)) can be offered using the commands outlined in ((%Ctrade_help%)).
 
 There will be a trade fee based on what is offered, which is outlined later in detail.
 
@@ -85,7 +85,7 @@ trade_up_info <upgrade trade index> [shows detailed upgrade information for an o
 
 To offer ((%Tqubits ⓠ%)) for realization, you use the same command as when offering ((%Fbits ⌽%)) (((%Ctrade_bits%))), and ((%Tqubits ⓠ%)) will be offered first, given the current trade is a corp donation.
 
-A trade is a "corp donation" when the following criteria are met:
+To be a "corp donation", the following criteria must be met:
 
 - Exactly one party is acting as a corp
 - The non-corp party is offering ((%Fbits ⌽%)) (((%Fbits ⌽%)) and ((%Tqubits ⓠ%)) are treated the same)
@@ -107,10 +107,10 @@ The fee is based on the resources exchanged on completion of the trade - not all
 
 The trade fee will be reduced if the involved parties are corp representatives or COMCODE supporters.
 
-These fee discounts apply with "stacks" - multiple instances of criteria being met will reduce the fee further.
-For example: both parties being supporters will apply two "stacks" of discount.
+These fee reductions apply as "stacks" - multiple instances of criteria being met will reduce the fee further.
+For example: both parties being supporters will apply two "stacks" of fee reduction.
 
-Corp representative and COMCODE supporter criteria are not mutually exclusive, allowing for up to 4 stacks of discount when both parties are supporters and trading as corps.
+Corp representative and COMCODE supporter criteria are not mutually exclusive, allowing for up to 4 stacks of fee reduction when both parties are supporters and trading as corps.
 
 Corp donations (outlined above) have no fee.
 
@@ -120,39 +120,39 @@ If fee reduction criteria are met, it will be displayed in the trade UI.
 
 The fee on an exchange of bits is calculated as a percentage of the bits exchanged, with the following values:
 
-| Discount Stacks | Fee %  |
-| :-------------: | :----: |
-|        0        |   5%   |
-|        1        |   4%   |
-|        2        |   3%   |
-|        3        |   2%   |
-|        4        |   1%   |
-|  Corp donation  | No fee |
+| Reduction Stacks | Fee %  |
+| :--------------: | :----: |
+|        0         |   5%   |
+|        1         |   4%   |
+|        2         |   3%   |
+|        3         |   2%   |
+|        4         |   1%   |
+|  Corp donation   | No fee |
 
 ### GC
 
 The fee on an exchange of ((GC)) is calculated as a percentage of the ((BGC)) exchanged, with the following values:
 
-| Discount Stacks | Fee % |
-| :-------------: | :---: |
-|        0        |  50%  |
-|        1        |  40%  |
-|        2        |  30%  |
-|        3        |  20%  |
-|        4        |  10%  |
+| Reduction Stacks | Fee % |
+| :--------------: | :---: |
+|        0         |  50%  |
+|        1         |  40%  |
+|        2         |  30%  |
+|        3         |  20%  |
+|        4         |  10%  |
 
 ### Upgrades
 
 The fee on an exchange of upgrades is based on the rarity of the upgrades, with the following values:
 
-|         Rarity         | 0 Discount  | 1 Discount  | 2 Discount  | 3 Discount  | 4 Discount  |
-| :--------------------: | :---------: | :---------: | :---------: | :---------: | :---------: |
-|     ((%0noob%))      | ((%F3 ⌽%))  | ((%F3 ⌽%))  | ((%F3 ⌽%))  | ((%F3 ⌽%))  | ((%F3 ⌽%))  |
-|    ((%1kiddie%))     | ((%F3 ⌽%))  | ((%F3 ⌽%))  | ((%F3 ⌽%))  | ((%F3 ⌽%))  | ((%F3 ⌽%))  |
-|     ((%2h4x0r%))     | ((%F5 ⌽%))  | ((%F4 ⌽%))  | ((%F3 ⌽%))  | ((%F3 ⌽%))  | ((%F3 ⌽%))  |
-|   ((%3h4rdc0r3%))    | ((%F25 ⌽%)) | ((%F20 ⌽%)) | ((%F15 ⌽%)) | ((%F10 ⌽%)) | ((%F5 ⌽%))  |
-|  ((%4\|\_\|b3\|2%))  | ((%F50 ⌽%)) | ((%F40 ⌽%)) | ((%F30 ⌽%)) | ((%F20 ⌽%)) | ((%F10 ⌽%)) |
-|     ((%531337%))     |   ERR404    |   ERR404    |   ERR404    |   ERR404    |   ERR404    |
+|       Rarity       | 0 Reduction | 1 Reduction | 2 Reduction | 3 Reduction | 4 Reduction |
+| :----------------: | :---------: | :---------: | :---------: | :---------: | :---------: |
+|    ((%0noob%))     | ((%F3 ⌽%))  | ((%F3 ⌽%))  | ((%F3 ⌽%))  | ((%F3 ⌽%))  | ((%F3 ⌽%))  |
+|   ((%1kiddie%))    | ((%F3 ⌽%))  | ((%F3 ⌽%))  | ((%F3 ⌽%))  | ((%F3 ⌽%))  | ((%F3 ⌽%))  |
+|    ((%2h4x0r%))    | ((%F5 ⌽%))  | ((%F4 ⌽%))  | ((%F3 ⌽%))  | ((%F3 ⌽%))  | ((%F3 ⌽%))  |
+|  ((%3h4rdc0r3%))   | ((%F25 ⌽%)) | ((%F20 ⌽%)) | ((%F15 ⌽%)) | ((%F10 ⌽%)) | ((%F5 ⌽%))  |
+| ((%4\|\_\|b3\|2%)) | ((%F50 ⌽%)) | ((%F40 ⌽%)) | ((%F30 ⌽%)) | ((%F20 ⌽%)) | ((%F10 ⌽%)) |
+|    ((%531337%))    |   ERR404    |   ERR404    |   ERR404    |   ERR404    |   ERR404    |
 
 ## Notes
 
@@ -162,5 +162,5 @@ The fee on an exchange of upgrades is based on the rarity of the upgrades, with 
 - The trade system can exceed the ((32BGC)) xfer limit.
 - Each party appears to only be able to offer 1 upgrade.
 - Fees of rarity 5 upgrades are currently undocumented.
-- Fee discount stacks are counted based on the users.
-  - A supporter doing a trade between their own users (no corp parties) would have 2 stacks of discount, not 1.
+- Fee reduction stacks are counted based on the users.
+  - A supporter doing a trade between their own users (no corp parties) would have 2 stacks of fee reduction, not 1.
