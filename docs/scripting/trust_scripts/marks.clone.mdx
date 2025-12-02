@@ -1,0 +1,104 @@
+---
+title: marks.sync
+description: "Get marks between users."
+---
+
+((marks.clone)) allows you to acquire a mark you've gotten on another user, without needing to meet mark criteria.
+
+### Security Level
+
+NULLSEC
+
+## Syntax
+
+### CLI
+
+```
+marks.cone {name:"init"}
+```
+
+### Script
+
+```
+#ns.marks.clone({name:"init"})
+```
+
+### Parameters
+
+#### name (required)
+
+The ((%Nname%)) parameter is the name of the mark you want to clone to the current user.
+
+### Return
+
+Returns a script response object, with varying messages on failure.
+
+#### CLI
+
+##### Normal mark
+
+```
+>>marks.clone {name:"example_mark"}
+Success
+
+Mark :::example_mark:: earned.
+
+view further training with marks.available
+view completed mark with marks.protocol { name: "example_mark" }
+```
+
+##### Hidden mark
+
+```
+>>marks.clone {name:"example_mark"}
+Success
+
+mark :::example_mark:: has been hidden
+
+view further training with marks.available
+view completed mark with marks.protocol { name: "example_mark" }
+```
+
+##### Unobtained mark
+
+```
+>>marks.clone {name:"example_mark"}
+Failure
+this mark has not been earned on any of your users
+```
+
+##### Already present mark
+
+```
+>>marks.clone {name:"example_mark"}
+Failure
+you have already earned this mark on this user
+```
+
+#### Script
+
+##### Success
+
+```
+{
+  ok: true
+}
+```
+
+##### Unobtained
+
+```
+{
+  ok: false,
+  msg: "this mark has not been earned on any of your users"
+}
+```
+
+##### Already present
+
+```
+{
+  ok: false,
+  msg: "you have already earned this mark on this user"
+}
+```
