@@ -159,6 +159,24 @@ const config = {
         },
         {
           type: "dropdown",
+          label: "Concepts",
+          items: [
+            {
+              type: "docSidebar",
+              sidebarId: "systemsConceptSidebar",
+            },
+            {
+              type: "docSidebar",
+              sidebarId: "resourcesConceptSidebar",
+            },
+            {
+              type: "docSidebar",
+              sidebarId: "clientConceptSidebar",
+            },
+          ],
+        },
+        {
+          type: "dropdown",
           label: "Guides",
           items: [
             {
@@ -172,24 +190,6 @@ const config = {
             {
               type: "docSidebar",
               sidebarId: "miscGuidesSidebar",
-            },
-          ],
-        },
-        {
-          type: "dropdown",
-          label: "Concepts",
-          items: [
-            {
-              type: "docSidebar",
-              sidebarId: "resourcesConceptSidebar",
-            },
-            {
-              type: "docSidebar",
-              sidebarId: "systemsConceptSidebar",
-            },
-            {
-              type: "docSidebar",
-              sidebarId: "clientConceptSidebar",
             },
           ],
         },
