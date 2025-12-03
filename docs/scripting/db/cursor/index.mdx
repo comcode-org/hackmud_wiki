@@ -1,0 +1,55 @@
+---
+title: Cursors
+sidebar_collapsible: true
+sidebar_collapsed: true
+---
+
+Database cursors are special objects returned from [#db.f(..)](../db.f).
+
+## Usage
+
+Cursors are exclusively returned from #db.f(..):
+
+```
+let cursor = #db.f(query, projection)
+```
+
+A cursor _MUST_ be closed before the script run finishes, otherwise the following error occurs:
+
+> `:::TRUST COMMUNICATION::: 1 db cursors were left open at end of script run`
+
+Cursors can be closed via the [close](./close) method, or by using a terminating method such as [`first`](./first).
+
+After a cursor is closed, it can no longer be used. Subsequent attempts to use the cursor result in the following error:
+
+> `:::TRUST COMMUNICATION::: cursor was invalid. this can happen if it was used after being closed`
+
+### Cursor Handles
+
+((%FTODO: Write something that people who have never used a file descriptor in their life can understand.%))
+
+<details>
+<summary>Technical details</summary>
+
+A cursor is a wrapper object around a _"cursor handle"_.
+`#db.f` always returns a cursor with a new, unique "cursor handle".
+
+Multiple cursor objects can refer to the same "cursor handle".
+See [skip](./skip) for a method that causes this to happen.
+
+When _any_ cursor with a given "cursor handle" is closed, _all_ cursors for that "cursor handle" become invalid.
+(You only need to close one cursor for each "cursor handle" to avoid the 'cursors were left open' error.)
+
+Cursor objects that use the same "cursor handle" are nevertheless separate objects, and do not compare equal.
+
+Note that your code will never interact with a "cursor handle" directly, only with cursor objects.
+
+</details>
+
+## Methods
+
+The following is an auto-generated list of cursor methods:
+
+import DocCardList from '@theme/DocCardList';
+
+<DocCardList />
