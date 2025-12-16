@@ -1,0 +1,24 @@
+Call a function on all documents of the cursor, keeping it open.
+
+## Syntax
+
+```
+let cursor = #db.f(query, projection)
+cursor.each_and_keep_open(fn)
+```
+
+### Parameters
+
+#### fn
+
+The function to call. This function is called once per document, with the document passed as the only argument.
+
+### Return
+
+Always returns ((%Vundefined%)).
+
+## Cursor state
+
+This function keeps the cursor open.
+
+Try [each](./each) for a variant of this function that automatically closes the cursor.
