@@ -1,0 +1,27 @@
+Set the sort order of the cursor.
+
+## Syntax
+
+```
+let cursor = #db.f(query, projection)
+cursor.sort(sort)
+```
+
+### Parameters
+
+#### sort
+
+An object specifying the sort order, e.g. (( \{ n_hits: 1, n_fails: -1 \} )).
+Each key is the path of a sort key, each value specifies direction (((%V1%)) for ascending, ((%V-1%)) for descending).
+
+Note that the order of keys in the object matters.
+
+### Return
+
+Returns a new cursor, with the same handle as the input cursor.
+
+This can be used to chain into other methods.
+
+## Cursor State
+
+This function keeps the cursor open.
