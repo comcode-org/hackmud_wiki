@@ -13,6 +13,7 @@ cursor.first()
 ```
 
 or
+
 ```
 let cursor = #db.f(query, projection)
 cursor.first_and_close()
@@ -34,6 +35,7 @@ This function closes the cursor. If this is undesirable, try [first_and_keep_ope
 ## Example
 
 For the following examples, assume the database contains the following documents, inserted in that order:
+
 ```
 { type: "my_data", my_key: "foo", order: 2 }
 { type: "my_data", my_key: "bar", order: 1 }
@@ -52,5 +54,3 @@ function(context, args) {
   return data; // { type: "my_data", my_key: "bar", order: 1 }
 }
 ```
-
-
