@@ -134,7 +134,7 @@ Generally not applicable. If there are spoiler concerns in documentation or guid
 <details>
   <summary>Lorem Ipsum</summary>
 
-Dolor icecream :)
+Dolor ice cream :)
 
 </details>
 ```
