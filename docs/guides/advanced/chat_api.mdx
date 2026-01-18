@@ -75,6 +75,8 @@ To read messages, send the following payload to <span class="color-tag" data-tag
 
 You must specify either ((%Nbefore%)) or ((%Nafter%)). This endpoint may not be used to retrieve historical data, as it is capped to only return messages from the last 10 minutes. You may only call this endpoint once every 2 seconds.
 
+All timestamps are Date.now() / 1000
+
 You will receive a response like this:
 
 ```json
