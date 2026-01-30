@@ -18,13 +18,13 @@ Similar to a [MongoDB db.collection.update()](https://www.mongodb.com/docs/manua
 
 Selection filter for documents in the script owner's database. An empty query ( `{}` ) selects all documents.
 
-Various [MongoDB query operators](https://www.mongodb.com/docs/manual/reference/operator/query/) can be used for conditional matching and other advanced querying functionality.
+Various [MongoDB query operators](https://www.mongodb.com/docs/manual/reference/mql/query-predicates/) can be used for conditional matching and other advanced querying functionality.
 
 If no match is found, this query will be used as the basis for a new document, ready for insertion.
 
 ### update
 
-Can be either a document object (in which case all matches will be replaced by the new document), _or_ an "update document" containing [MongoDB update operators](https://www.mongodb.com/docs/manual/reference/operator/update/).
+Can be either a document object (in which case all matches will be replaced by the new document), _or_ an "update document" containing [MongoDB update operators](https://www.mongodb.com/docs/manual/reference/mql/update/).
 
 Update operators can be used to set new individual values, increment integer values atomically, pop and push to arrays, and more. For a comprehensive list, please see MongoDB's update operator documentation above.
 
