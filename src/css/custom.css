@@ -1,9 +1,9 @@
 @font-face {
-  font-family: "whiterabbit-webfont";
+  font-family: "white-bunnybat";
   src:
-    url("../../assets/whiterabbit-webfont.ttf") format("truetype"),
-    url("../../assets/whiterabbit-webfont.woff") format("woff"),
-    url("../../assets/whiterabbit-webfont.woff2") format("woff2");
+    url("../../assets/white-bunnybat/white-bunnybat.ttf") format("truetype"),
+    url("../../assets/white-bunnybat/white-bunnybat.woff") format("woff"),
+    url("../../assets/white-bunnybat/white-bunnybat.woff2") format("woff2");
 }
 
 html[data-theme="dark"] {
@@ -37,7 +37,7 @@ html[data-theme="dark"] {
 }
 
 html:not([data-accessible="true"]) {
-  --ifm-font-family-base: "whiterabbit-webfont";
+  --ifm-font-family-base: "white-bunnybat";
 }
 
 html[data-theme="dark"][data-accessible="true"] {
@@ -97,8 +97,7 @@ a.wikilink-new {
   border: none;
   mask-image: url("../../assets/universal-access.svg");
   mask-size: 100% auto;
-  transition: background-color var(--ifm-transition-fast)
-    var(--ifm-transition-timing-default);
+  transition: background-color var(--ifm-transition-fast) var(--ifm-transition-timing-default);
 }
 
 .navbar-a11y:hover::before {
@@ -106,12 +105,10 @@ a.wikilink-new {
 }
 
 .main-wrapper:not([data-accessible="true"]) {
-  background-image: repeating-linear-gradient(
-    #0e0e0e,
-    #0e0e0e 2px,
-    #101215 2px,
-    #101215 4px
-  );
+  background-image: repeating-linear-gradient(#0e0e0e,
+      #0e0e0e 2px,
+      #101215 2px,
+      #101215 4px);
   background-size: 100% 4px;
 }
 
