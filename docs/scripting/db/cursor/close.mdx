@@ -1,0 +1,34 @@
+Close the cursor.
+
+This method is ((%Fidempotent%)):
+calling it multiple times results in identical behavior to calling it once.
+
+## Syntax
+
+```
+let cursor = #db.f(query, projection)
+cursor.close()
+```
+
+### Parameters
+
+No parameters.
+
+### Return
+
+Always returns ((%Vnull%)).
+
+## Cursor State
+
+This function closes the cursor.
+
+## Example
+
+```js
+function(context, args) {
+  let cursor = #db.f({ type: "my_data" });
+
+  // removing the following line causes an error:
+  cursor.close();
+}
+```

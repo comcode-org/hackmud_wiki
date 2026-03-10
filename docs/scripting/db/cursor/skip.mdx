@@ -1,0 +1,25 @@
+Set the skip count of the cursor.
+
+## Syntax
+
+```
+let cursor = #db.f(query, projection)
+cursor.skip(skip)
+```
+
+### Parameters
+
+#### skip
+
+The number of results to skip.
+Note that this is not cumulative; `cursor.skip(5).skip(1)` will skip 1 document, not 6.
+
+### Return
+
+Returns a new cursor, with the same handle as the input cursor.
+
+This can be used to chain into other methods.
+
+## Cursor State
+
+This function keeps the cursor open.

@@ -1,0 +1,26 @@
+Retrieve the unique values of a given field for all documents of the cursor, keeping it open.
+
+This method ignores `skip` and `limit` settings.
+
+## Syntax
+
+```
+let cursor = #db.f(query, projection)
+cursor.distinct_and_keep_open(field)
+```
+
+### Parameters
+
+#### field
+
+A string naming the field to pull unique values from.
+
+### Return
+
+The unique values of the given field from all documents of the cursor, as an array.
+
+## Cursor State
+
+This function keeps the cursor open.
+
+Try [distinct](./distinct) for a variant of this function that automatically closes the cursor.
