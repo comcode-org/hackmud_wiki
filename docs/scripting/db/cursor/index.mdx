@@ -26,25 +26,18 @@ After a cursor is closed, it can no longer be used. Subsequent attempts to use t
 
 ### Cursor Handles
 
-((%FTODO: Write something that people who have never used a file descriptor in their life can understand.%))
+A 'cursor' as returned from #db.f(..) consists of two parts: an internal cursor handle, and a cursor object wrapping that handle.
+Your scripts will never interact with cursor handles directly, only cursor objects.
 
-<details>
-<summary>Technical details</summary>
+All cursor state, including whether the cursor is open, is tracked based on cursor _handles_, not cursor _objects_.
+This means you only need to call a closing method (such as [close](./close)) on _one_ cursor object per handle.
 
-A cursor is a wrapper object around a _"cursor handle"_.
-`#db.f` always returns a cursor with a new, unique "cursor handle".
+Methods that affect cursor state, such as [skip](./skip) and [limit](./limit), affect all cursor objects wrapping the same handle.
 
-Multiple cursor objects can refer to the same "cursor handle".
-See [skip](./skip) for a method that causes this to happen.
+Some methods (such as [skip](./skip)) return a new cursor object that refers to the same cursor handle as the object they are called on.
 
-When _any_ cursor with a given "cursor handle" is closed, _all_ cursors for that "cursor handle" become invalid.
-(You only need to close one cursor for each "cursor handle" to avoid the 'cursors were left open' error.)
-
-Cursor objects that use the same "cursor handle" are nevertheless separate objects, and do not compare equal.
-
-Note that your code will never interact with a "cursor handle" directly, only with cursor objects.
-
-</details>
+Two cursor objects wrapping the same handle do not compare equal (i.e. `a === b` yields false).
+There is no built-in way to check if two cursor objects refer to the same handle.
 
 ## Methods
 
