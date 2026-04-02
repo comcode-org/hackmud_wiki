@@ -26,18 +26,18 @@ After a cursor is closed, it can no longer be used. Subsequent attempts to use t
 
 ### Cursor Handles
 
-A 'cursor' as returned from #db.f(..) consists of two parts: an internal cursor handle, and a cursor object wrapping that handle.
-Your scripts will never interact with cursor handles directly, only cursor objects.
+A 'cursor' as returned from #db.f(..) consists of two parts: an internal ((%Fcursor handle%)), and a ((%Icursor object%)) wrapping that handle.
+Your scripts will never interact with ((%Fcursor handles%)) directly, only ((%Icursor objects%)).
 
-All cursor state, including whether the cursor is open, is tracked based on cursor _handles_, not cursor _objects_.
-This means you only need to call a closing method (such as [close](./close)) on _one_ cursor object per handle.
+All cursor state, including whether the cursor is open, is tracked based on ((%Fcursor%)) _((%Fhandles%))_, not ((%Icursor%)) _((%Iobjects%))_.
+This means you only need to call a closing method (such as [close](./close)) on _one_ ((%Icursor object%)) per ((%Fhandle%)).
 
-Methods that affect cursor state, such as [skip](./skip) and [limit](./limit), affect all cursor objects wrapping the same handle.
+Methods that affect cursor state, such as [skip](./skip) and [limit](./limit), affect all ((%Icursor objects%)) wrapping the same ((%Fhandle%)).
 
-Some methods (such as [skip](./skip)) return a new cursor object that refers to the same cursor handle as the object they are called on.
+Some methods (such as [skip](./skip)) return a new ((%Icursor object%)) that refers to the same ((%Fcursor handle%)) as the ((%Iobject%)) they are called on.
 
-Two cursor objects wrapping the same handle do not compare equal (i.e. `a === b` yields false).
-There is no built-in way to check if two cursor objects refer to the same handle.
+Two ((%Icursor objects%)) wrapping the same ((%Fhandle%)) do not compare equal (i.e. `a === b` yields false).
+There is no built-in way to check if two cursor ((%Iobjects%)) refer to the same ((%Fhandle%)).
 
 ## Methods
 
