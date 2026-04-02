@@ -1,0 +1,48 @@
+---
+title: Cursors
+sidebar_collapsible: true
+sidebar_collapsed: true
+---
+
+Database cursors are special objects returned from [#db.f(..)](../db.f).
+
+## Usage
+
+Cursors are exclusively returned from #db.f(..):
+
+```
+let cursor = #db.f(query, projection)
+```
+
+A cursor _MUST_ be closed before the script run finishes, otherwise the following error occurs:
+
+> `:::TRUST COMMUNICATION::: 1 db cursors were left open at end of script run`
+
+Cursors can be closed via the [close](./close) method, or by using a terminating method such as [`first`](./first).
+
+After a cursor is closed, it can no longer be used. Subsequent attempts to use the cursor result in the following error:
+
+> `:::TRUST COMMUNICATION::: cursor was invalid. this can happen if it was used after being closed`
+
+### Cursor Handles
+
+A 'cursor' as returned from #db.f(..) consists of two parts: an internal ((%Fcursor handle%)), and a ((%Icursor object%)) wrapping that handle.
+Your scripts will never interact with ((%Fcursor handles%)) directly, only ((%Icursor objects%)).
+
+All cursor state, including whether the cursor is open, is tracked based on ((%Fcursor%)) _((%Fhandles%))_, not ((%Icursor%)) _((%Iobjects%))_.
+This means you only need to call a closing method (such as [close](./close)) on _one_ ((%Icursor object%)) per ((%Fhandle%)).
+
+Methods that affect cursor state, such as [skip](./skip) and [limit](./limit), affect all ((%Icursor objects%)) wrapping the same ((%Fhandle%)).
+
+Some methods (such as [skip](./skip)) return a new ((%Icursor object%)) that refers to the same ((%Fcursor handle%)) as the ((%Iobject%)) they are called on.
+
+Two ((%Icursor objects%)) wrapping the same ((%Fhandle%)) do not compare equal (i.e. `a === b` yields false).
+There is no built-in way to check if two cursor ((%Iobjects%)) refer to the same ((%Fhandle%)).
+
+## Methods
+
+The following is an auto-generated list of cursor methods:
+
+import DocCardList from "@theme/DocCardList";
+
+<DocCardList />

@@ -1,0 +1,22 @@
+Retrieve all documents of the cursor, keeping it open.
+
+## Syntax
+
+```
+let cursor = #db.f(query, projection)
+cursor.array_and_keep_open()
+```
+
+### Parameters
+
+No parameters.
+
+### Return
+
+Returns all documents from the cursor, as an array of objects.
+
+## Cursor State
+
+This function keeps the cursor open.
+
+Try [array](./array) for a variant of this function that automatically closes the cursor.
