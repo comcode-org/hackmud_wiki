@@ -14,7 +14,12 @@ cursor.sort(sort)
 An object specifying the sort order, e.g. (( \{ n_hits: 1, n_fails: -1 \} )).
 Each key is the path of a sort key, each value specifies direction (((%V1%)) for ascending, ((%V-1%)) for descending).
 
-Note that the order of keys in the object matters.
+Note that the order of properties in the object directly affects the sort order:
+
+The sort object (( \{ n_hits: 1, n_fails: -1 \} )) sorts by ((%Nn_hits%)) ascending first, and only if two documents have identical ((%Nn_hits%)) values, sorts them by ((%Nn_fails%)) descending.
+The sort object (( \{ n_fails: -1, n_hits: 1 \} )) does the opposite: it sorts by ((%Nn_fails%)) descending first, and only compares ((%Nn_hits%)) if ((%Nn_fails%)) on two documents is equal.
+
+(In JavaScript, 'regular' properties are ordered by creation order, with the first created property appearing first. Keep this in mind when dynamically building sort objects.)
 
 ### Return
 
