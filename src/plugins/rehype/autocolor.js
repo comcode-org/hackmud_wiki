@@ -39,7 +39,7 @@ const regexColorTag = /%([0-9a-zA-z])(.+?)%/g;
 // Values can be strings, numbers, null, true, false, or scriptors
 // This will also match <key>: { or <key>: [ but will NOT include the { or [ in the match to be colorized
 const regexKvp =
-  /(\w+|".*?")[ ]*:[ ]*(?:(".*?"|\d+(?:\.\d*)?|null|true|false|#s\.\w+\.\w+)|(?=\{|\[))/g;
+  /(\w+|".*?")[ ]*:[ ]*(?:(".*?"|-?\d+(?:\.\d*)?|null|true|false|#s\.\w+\.\w+)|(?=\{|\[))/g;
 
 // Matches GC strings, e.g. 1Q1T1B1M1K1GC
 // Explicitly does NOT match the text GC on its own
