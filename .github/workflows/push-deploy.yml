@@ -60,3 +60,15 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
+  notify:
+    name: Trigger wiki update notification
+    runs-on: ubuntu-latest
+    needs: deploy
+    steps:
+      - name: Trigger wiki update notification
+        uses: peter-evans/repository-dispatch@28959ce8df70de7be546dd1250a005dd32156697 # v4.0.1
+        with:
+          token: ${{ secrets.DISCORD_DISPATCH_TOKEN }}
+          repository: comcode-org/discord
+          event-type: wiki-updated
