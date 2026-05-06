@@ -1,9 +1,9 @@
 @font-face {
-  font-family: "whiterabbit-webfont";
+  font-family: "white-bunnybat";
   src:
-    url("../../assets/whiterabbit-webfont.ttf") format("truetype"),
-    url("../../assets/whiterabbit-webfont.woff") format("woff"),
-    url("../../assets/whiterabbit-webfont.woff2") format("woff2");
+    url("../../assets/white-bunnybat/white-bunnybat.ttf") format("truetype"),
+    url("../../assets/white-bunnybat/white-bunnybat.woff") format("woff"),
+    url("../../assets/white-bunnybat/white-bunnybat.woff2") format("woff2");
 }
 
 html[data-theme="dark"] {
@@ -37,7 +37,7 @@ html[data-theme="dark"] {
 }
 
 html:not([data-accessible="true"]) {
-  --ifm-font-family-base: "whiterabbit-webfont";
+  --ifm-font-family-base: "white-bunnybat";
 }
 
 html[data-theme="dark"][data-accessible="true"] {
