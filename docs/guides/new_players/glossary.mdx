@@ -67,7 +67,7 @@ Typically something in a script that is true, but purely by coincidence rather t
 
 ### init
 
-To initialize your system with sys.init. Typically this means the first init (from uninit to t1), but can mean any init.
+To initialize your system with [[sys.init:((sys.init))]]. Typically this means the first init (from uninit to t1), but can mean any init.
 
 ### Jargon File
 
@@ -75,7 +75,7 @@ A reference to a [specific file](https://en.wikipedia.org/wiki/Jargon_File) whic
 
 ### loc
 
-Short for sys.loc (location): The address of your system. They are assigned when you init to t1. Anyone with your loc can hack you at any time. Your loc is a script, just like any other.
+Short for [[sys.loc:((sys.loc))]] (location): The address of your system. They are assigned when you init to t1. Anyone with your loc can hack you at any time. Your loc is a script, just like any other.
 
 ### loc rotation
 
@@ -155,11 +155,11 @@ Calling NPC corp scripts (typically of a specific tier, i.e. t1 scraping) and co
 
 ### scriptor
 
-A script passed into another script on the command line as an argument, of the form \{ argname: #s.script.name \}. Scriptors are exposed in scripts as an object containing name (a string) and call (a function).
+A script passed into another script on the command line as an argument, of the form ((user.script \{ argname: #s.script.name \})). Scriptors are exposed in scripts as an object containing name (a string) and call (a function).
 
 ### scropotrable
 
-"scriptorable". meme derived from a typo made by user dtr.
+"scriptorable", or a script which can be called and easily parsed as a subscript. Meme derived from a typo made by player dtr.
 
 ### sean-
 
@@ -167,7 +167,7 @@ A prefix used to indicate that something is provided by or part of the game itse
 
 ### sector
 
-All public and not hidden scripts are assigned to a sector. Sectors can be listed with scripts.fullsec, scripts.highsec, ... To view the scripts in a sector, you must join that sector's channel, e\.g. if you want to see the scripts in FORM_ALPHA_0, you must join the chat channel FORM_ALPHA_0. After joining that sector's chat channel, you can view the scripts in it with (( scripts.\<seclevel> \{ sector: "\<sectorname>\" } )).
+All public and not hidden scripts are assigned to a sector. Sectors can be listed with scripts.fullsec, scripts.highsec, ... To view the scripts in a sector, you must join that sector's channel, e\.g. if you want to see the scripts in FORM_ALPHA_0, you must join the chat channel FORM_ALPHA_0. After joining that sector's chat channel, you can view the scripts in it with (( scripts.xsec \{ sector: "\<sectorname>\" } )).
 
 ### sentience
 
@@ -177,7 +177,7 @@ See [PC](#pc).
 
 The process that assigns a script to a sector. Shifting a script takes 5 minutes, and is required with any sec level change of a public script, or when first making a script public.
 
-### stuck NPCs
+### stuck NPCs/hung NPCs
 
 Some NPCs can get stuck by malfunctioning crackers (typically by calling them after they pop or solving the last lock within the last 1000ms of your script run). Rather than popping, the NPC persists, possibly partially deleted.
 
@@ -195,7 +195,7 @@ Shorthand for tier 1 through tier 4. Used for upgrade tiers, init tiers, and NPC
 
 ### truthworth
 
-A meme originating from the sripts user. Trustworthy. Sometimes used jokingly.
+A meme originating from a player-made scam, later canonised in NPC corp content. Trustworthy. Typically used jokingly.
 
 ### truthy
 
@@ -203,7 +203,7 @@ In JS, any value that, if present in an `if()` statement, causes the if body to 
 
 ### typosquat
 
-Scripts, usually scams, with very similar names to trust scripts. Users with names similar to trust users (such as kernal, sus, sripts) are typically employed, though things like upgrades.manage are arguably typosquats as well.
+Scripts, usually scams, with very similar names to trust scripts. Users with names similar to trust users (such as ((`Ckernal`)), ((`Cmarkets`)), ((`Cscript`))) are typically employed. Many of the most powerful typosquat users - such as ((`Cscript`)) - are reserved by the game and are parked in the ((`VF007`)) chat channel.
 
 ### uninit
 
